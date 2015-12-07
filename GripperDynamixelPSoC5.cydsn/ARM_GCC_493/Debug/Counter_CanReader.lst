@@ -1,0 +1,2021 @@
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"Counter_CanReader.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	Counter_CanReader_initVar
+  19              		.bss
+  20              		.type	Counter_CanReader_initVar, %object
+  21              		.size	Counter_CanReader_initVar, 1
+  22              	Counter_CanReader_initVar:
+  23 0000 00       		.space	1
+  24              		.section	.text.Counter_CanReader_Init,"ax",%progbits
+  25              		.align	2
+  26              		.global	Counter_CanReader_Init
+  27              		.thumb
+  28              		.thumb_func
+  29              		.type	Counter_CanReader_Init, %function
+  30              	Counter_CanReader_Init:
+  31              	.LFB0:
+  32              		.file 1 ".\\Generated_Source\\PSoC5\\Counter_CanReader.c"
+   1:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/Counter_CanReader.c **** * File Name: Counter_CanReader.c  
+   3:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Version 3.0
+   4:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+   5:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  Description:
+   6:.\Generated_Source\PSoC5/Counter_CanReader.c **** *     The Counter component consists of a 8, 16, 24 or 32-bit counter with
+   7:.\Generated_Source\PSoC5/Counter_CanReader.c **** *     a selectable period between 2 and 2^Width - 1.  
+   8:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+   9:.\Generated_Source\PSoC5/Counter_CanReader.c **** *   Note:
+  10:.\Generated_Source\PSoC5/Counter_CanReader.c **** *     None
+  11:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+  12:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+  13:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  14:.\Generated_Source\PSoC5/Counter_CanReader.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  15:.\Generated_Source\PSoC5/Counter_CanReader.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  16:.\Generated_Source\PSoC5/Counter_CanReader.c **** * the software package with which this file was provided.
+  17:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+  18:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+  19:.\Generated_Source\PSoC5/Counter_CanReader.c **** #include "Counter_CanReader.h"
+  20:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+  21:.\Generated_Source\PSoC5/Counter_CanReader.c **** uint8 Counter_CanReader_initVar = 0u;
+  22:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+  23:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+  24:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+  25:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_Init
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 2
+
+
+  26:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+  27:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+  28:.\Generated_Source\PSoC5/Counter_CanReader.c **** *     Initialize to the schematic state
+  29:.\Generated_Source\PSoC5/Counter_CanReader.c **** * 
+  30:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+  31:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void  
+  32:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+  33:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+  34:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void
+  35:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+  36:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+  37:.\Generated_Source\PSoC5/Counter_CanReader.c **** void Counter_CanReader_Init(void) 
+  38:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+  33              		.loc 1 38 0
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 0
+  36              		@ frame_needed = 1, uses_anonymous_args = 0
+  37 0000 80B5     		push	{r7, lr}
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 7, -8
+  40              		.cfi_offset 14, -4
+  41 0002 00AF     		add	r7, sp, #0
+  42              		.cfi_def_cfa_register 7
+  39:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #if (!Counter_CanReader_UsingFixedFunction && !Counter_CanReader_ControlRegRemoved)
+  40:.\Generated_Source\PSoC5/Counter_CanReader.c ****             uint8 ctrl;
+  41:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #endif /* (!Counter_CanReader_UsingFixedFunction && !Counter_CanReader_ControlRegRemoved) *
+  42:.\Generated_Source\PSoC5/Counter_CanReader.c ****         
+  43:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #if(!Counter_CanReader_UsingFixedFunction) 
+  44:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Interrupt State Backup for Critical Region*/
+  45:.\Generated_Source\PSoC5/Counter_CanReader.c ****             uint8 Counter_CanReader_interruptState;
+  46:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #endif /* (!Counter_CanReader_UsingFixedFunction) */
+  47:.\Generated_Source\PSoC5/Counter_CanReader.c ****         
+  48:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #if (Counter_CanReader_UsingFixedFunction)
+  49:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Clear all bits but the enable bit (if it's already set for Timer operation */
+  50:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_CONTROL &= Counter_CanReader_CTRL_ENABLE;
+  43              		.loc 1 50 0
+  44 0004 204A     		ldr	r2, .L2
+  45 0006 204B     		ldr	r3, .L2
+  46 0008 1B78     		ldrb	r3, [r3]
+  47 000a DBB2     		uxtb	r3, r3
+  48 000c 03F00103 		and	r3, r3, #1
+  49 0010 DBB2     		uxtb	r3, r3
+  50 0012 1370     		strb	r3, [r2]
+  51:.\Generated_Source\PSoC5/Counter_CanReader.c ****             
+  52:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Clear the mode bits for continuous run mode */
+  53:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #if (CY_PSOC5A)
+  54:.\Generated_Source\PSoC5/Counter_CanReader.c ****                 Counter_CanReader_CONTROL2 &= ((uint8)(~Counter_CanReader_CTRL_MODE_MASK));
+  55:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #endif /* (CY_PSOC5A) */
+  56:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #if (CY_PSOC3 || CY_PSOC5LP)
+  57:.\Generated_Source\PSoC5/Counter_CanReader.c ****                 Counter_CanReader_CONTROL3 &= ((uint8)(~Counter_CanReader_CTRL_MODE_MASK));        
+  51              		.loc 1 57 0
+  52 0014 1D4A     		ldr	r2, .L2+4
+  53 0016 1D4B     		ldr	r3, .L2+4
+  54 0018 1B78     		ldrb	r3, [r3]
+  55 001a DBB2     		uxtb	r3, r3
+  56 001c 23F00303 		bic	r3, r3, #3
+  57 0020 DBB2     		uxtb	r3, r3
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 3
+
+
+  58 0022 1370     		strb	r3, [r2]
+  58:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #endif /* (CY_PSOC3 || CY_PSOC5LP) */
+  59:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Check if One Shot mode is enabled i.e. RunMode !=0*/
+  60:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #if (Counter_CanReader_RunModeUsed != 0x0u)
+  61:.\Generated_Source\PSoC5/Counter_CanReader.c ****                 /* Set 3rd bit of Control register to enable one shot mode */
+  62:.\Generated_Source\PSoC5/Counter_CanReader.c ****                 Counter_CanReader_CONTROL |= Counter_CanReader_ONESHOT;
+  63:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #endif /* (Counter_CanReader_RunModeUsed != 0x0u) */
+  64:.\Generated_Source\PSoC5/Counter_CanReader.c ****             
+  65:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Set the IRQ to use the status register interrupts */
+  66:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_CONTROL2 |= Counter_CanReader_CTRL2_IRQ_SEL;
+  59              		.loc 1 66 0
+  60 0024 1A4A     		ldr	r2, .L2+8
+  61 0026 1A4B     		ldr	r3, .L2+8
+  62 0028 1B78     		ldrb	r3, [r3]
+  63 002a DBB2     		uxtb	r3, r3
+  64 002c 43F00103 		orr	r3, r3, #1
+  65 0030 DBB2     		uxtb	r3, r3
+  66 0032 1370     		strb	r3, [r2]
+  67:.\Generated_Source\PSoC5/Counter_CanReader.c ****             
+  68:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
+  69:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_RT1 &= ((uint8)(~Counter_CanReader_RT1_MASK));
+  67              		.loc 1 69 0
+  68 0034 174A     		ldr	r2, .L2+12
+  69 0036 174B     		ldr	r3, .L2+12
+  70 0038 1B78     		ldrb	r3, [r3]
+  71 003a DBB2     		uxtb	r3, r3
+  72 003c 23F03003 		bic	r3, r3, #48
+  73 0040 DBB2     		uxtb	r3, r3
+  74 0042 1370     		strb	r3, [r2]
+  70:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_RT1 |= Counter_CanReader_SYNC;     
+  75              		.loc 1 70 0
+  76 0044 134A     		ldr	r2, .L2+12
+  77 0046 134B     		ldr	r3, .L2+12
+  78 0048 1B78     		ldrb	r3, [r3]
+  79 004a DBB2     		uxtb	r3, r3
+  80 004c 43F03003 		orr	r3, r3, #48
+  81 0050 DBB2     		uxtb	r3, r3
+  82 0052 1370     		strb	r3, [r2]
+  71:.\Generated_Source\PSoC5/Counter_CanReader.c ****                     
+  72:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /*Enable DSI Sync all all inputs of the Timer*/
+  73:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_RT1 &= ((uint8)(~Counter_CanReader_SYNCDSI_MASK));
+  83              		.loc 1 73 0
+  84 0054 0F4A     		ldr	r2, .L2+12
+  85 0056 0F4B     		ldr	r3, .L2+12
+  86 0058 1B78     		ldrb	r3, [r3]
+  87 005a DBB2     		uxtb	r3, r3
+  88 005c 23F00F03 		bic	r3, r3, #15
+  89 0060 DBB2     		uxtb	r3, r3
+  90 0062 1370     		strb	r3, [r2]
+  74:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_RT1 |= Counter_CanReader_SYNCDSI_EN;
+  91              		.loc 1 74 0
+  92 0064 0B4A     		ldr	r2, .L2+12
+  93 0066 0B4B     		ldr	r3, .L2+12
+  94 0068 1B78     		ldrb	r3, [r3]
+  95 006a DBB2     		uxtb	r3, r3
+  96 006c 43F00F03 		orr	r3, r3, #15
+  97 0070 DBB2     		uxtb	r3, r3
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 4
+
+
+  98 0072 1370     		strb	r3, [r2]
+  75:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+  76:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #else
+  77:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #if(!Counter_CanReader_ControlRegRemoved)
+  78:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Set the default compare mode defined in the parameter */
+  79:.\Generated_Source\PSoC5/Counter_CanReader.c ****             ctrl = Counter_CanReader_CONTROL & ((uint8)(~Counter_CanReader_CTRL_CMPMODE_MASK));
+  80:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_CONTROL = ctrl | Counter_CanReader_DEFAULT_COMPARE_MODE;
+  81:.\Generated_Source\PSoC5/Counter_CanReader.c ****             
+  82:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Set the default capture mode defined in the parameter */
+  83:.\Generated_Source\PSoC5/Counter_CanReader.c ****             ctrl = Counter_CanReader_CONTROL & ((uint8)(~Counter_CanReader_CTRL_CAPMODE_MASK));
+  84:.\Generated_Source\PSoC5/Counter_CanReader.c ****             
+  85:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #if( 0 != Counter_CanReader_CAPTURE_MODE_CONF)
+  86:.\Generated_Source\PSoC5/Counter_CanReader.c ****                 Counter_CanReader_CONTROL = ctrl | Counter_CanReader_DEFAULT_CAPTURE_MODE;
+  87:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #else
+  88:.\Generated_Source\PSoC5/Counter_CanReader.c ****                 Counter_CanReader_CONTROL = ctrl;
+  89:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #endif /* 0 != Counter_CanReader_CAPTURE_MODE */ 
+  90:.\Generated_Source\PSoC5/Counter_CanReader.c ****             
+  91:.\Generated_Source\PSoC5/Counter_CanReader.c ****             #endif /* (!Counter_CanReader_ControlRegRemoved) */
+  92:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #endif /* (Counter_CanReader_UsingFixedFunction) */
+  93:.\Generated_Source\PSoC5/Counter_CanReader.c ****         
+  94:.\Generated_Source\PSoC5/Counter_CanReader.c ****         /* Clear all data in the FIFO's */
+  95:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #if (!Counter_CanReader_UsingFixedFunction)
+  96:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_ClearFIFO();
+  97:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #endif /* (!Counter_CanReader_UsingFixedFunction) */
+  98:.\Generated_Source\PSoC5/Counter_CanReader.c ****         
+  99:.\Generated_Source\PSoC5/Counter_CanReader.c ****         /* Set Initial values from Configuration */
+ 100:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_WritePeriod(Counter_CanReader_INIT_PERIOD_VALUE);
+  99              		.loc 1 100 0
+ 100 0074 4820     		movs	r0, #72
+ 101 0076 FFF7FEFF 		bl	Counter_CanReader_WritePeriod
+ 101:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #if (!(Counter_CanReader_UsingFixedFunction && (CY_PSOC5A)))
+ 102:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_WriteCounter(Counter_CanReader_INIT_COUNTER_VALUE);
+ 102              		.loc 1 102 0
+ 103 007a 0020     		movs	r0, #0
+ 104 007c FFF7FEFF 		bl	Counter_CanReader_WriteCounter
+ 103:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #endif /* (!(Counter_CanReader_UsingFixedFunction && (CY_PSOC5A))) */
+ 104:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_SetInterruptMode(Counter_CanReader_INIT_INTERRUPTS_MASK);
+ 105              		.loc 1 104 0
+ 106 0080 0820     		movs	r0, #8
+ 107 0082 FFF7FEFF 		bl	Counter_CanReader_SetInterruptMode
+ 105:.\Generated_Source\PSoC5/Counter_CanReader.c ****         
+ 106:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #if (!Counter_CanReader_UsingFixedFunction)
+ 107:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Read the status register to clear the unwanted interrupts */
+ 108:.\Generated_Source\PSoC5/Counter_CanReader.c ****             (void)Counter_CanReader_ReadStatusRegister();
+ 109:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Set the compare value (only available to non-fixed function implementation */
+ 110:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_WriteCompare(Counter_CanReader_INIT_COMPARE_VALUE);
+ 111:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Use the interrupt output of the status register for IRQ output */
+ 112:.\Generated_Source\PSoC5/Counter_CanReader.c ****             
+ 113:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region cri
+ 114:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Enter Critical Region*/
+ 115:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_interruptState = CyEnterCriticalSection();
+ 116:.\Generated_Source\PSoC5/Counter_CanReader.c ****             
+ 117:.\Generated_Source\PSoC5/Counter_CanReader.c ****             Counter_CanReader_STATUS_AUX_CTRL |= Counter_CanReader_STATUS_ACTL_INT_EN_MASK;
+ 118:.\Generated_Source\PSoC5/Counter_CanReader.c ****             
+ 119:.\Generated_Source\PSoC5/Counter_CanReader.c ****             /* Exit Critical Region*/
+ 120:.\Generated_Source\PSoC5/Counter_CanReader.c ****             CyExitCriticalSection(Counter_CanReader_interruptState);
+ 121:.\Generated_Source\PSoC5/Counter_CanReader.c ****             
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 5
+
+
+ 122:.\Generated_Source\PSoC5/Counter_CanReader.c ****         #endif /* (!Counter_CanReader_UsingFixedFunction) */
+ 123:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 108              		.loc 1 123 0
+ 109 0086 80BD     		pop	{r7, pc}
+ 110              	.L3:
+ 111              		.align	2
+ 112              	.L2:
+ 113 0088 004F0040 		.word	1073762048
+ 114 008c 024F0040 		.word	1073762050
+ 115 0090 014F0040 		.word	1073762049
+ 116 0094 0B4F0040 		.word	1073762059
+ 117              		.cfi_endproc
+ 118              	.LFE0:
+ 119              		.size	Counter_CanReader_Init, .-Counter_CanReader_Init
+ 120              		.section	.text.Counter_CanReader_Enable,"ax",%progbits
+ 121              		.align	2
+ 122              		.global	Counter_CanReader_Enable
+ 123              		.thumb
+ 124              		.thumb_func
+ 125              		.type	Counter_CanReader_Enable, %function
+ 126              	Counter_CanReader_Enable:
+ 127              	.LFB1:
+ 124:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 125:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 126:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 127:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_Enable
+ 128:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 129:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 130:.\Generated_Source\PSoC5/Counter_CanReader.c **** *     Enable the Counter
+ 131:.\Generated_Source\PSoC5/Counter_CanReader.c **** * 
+ 132:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 133:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void  
+ 134:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 135:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 136:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void
+ 137:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 138:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Side Effects: 
+ 139:.\Generated_Source\PSoC5/Counter_CanReader.c **** *   If the Enable mode is set to Hardware only then this function has no effect 
+ 140:.\Generated_Source\PSoC5/Counter_CanReader.c **** *   on the operation of the counter.
+ 141:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 142:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 143:.\Generated_Source\PSoC5/Counter_CanReader.c **** void Counter_CanReader_Enable(void) 
+ 144:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 128              		.loc 1 144 0
+ 129              		.cfi_startproc
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 1, uses_anonymous_args = 0
+ 132              		@ link register save eliminated.
+ 133 0000 80B4     		push	{r7}
+ 134              		.cfi_def_cfa_offset 4
+ 135              		.cfi_offset 7, -4
+ 136 0002 00AF     		add	r7, sp, #0
+ 137              		.cfi_def_cfa_register 7
+ 145:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* Globally Enable the Fixed Function Block chosen */
+ 146:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #if (Counter_CanReader_UsingFixedFunction)
+ 147:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_GLOBAL_ENABLE |= Counter_CanReader_BLOCK_EN_MASK;
+ 138              		.loc 1 147 0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 6
+
+
+ 139 0004 0D4A     		ldr	r2, .L5
+ 140 0006 0D4B     		ldr	r3, .L5
+ 141 0008 1B78     		ldrb	r3, [r3]
+ 142 000a DBB2     		uxtb	r3, r3
+ 143 000c 43F00103 		orr	r3, r3, #1
+ 144 0010 DBB2     		uxtb	r3, r3
+ 145 0012 1370     		strb	r3, [r2]
+ 148:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_GLOBAL_STBY_ENABLE |= Counter_CanReader_BLOCK_STBY_EN_MASK;
+ 146              		.loc 1 148 0
+ 147 0014 0A4A     		ldr	r2, .L5+4
+ 148 0016 0A4B     		ldr	r3, .L5+4
+ 149 0018 1B78     		ldrb	r3, [r3]
+ 150 001a DBB2     		uxtb	r3, r3
+ 151 001c 43F00103 		orr	r3, r3, #1
+ 152 0020 DBB2     		uxtb	r3, r3
+ 153 0022 1370     		strb	r3, [r2]
+ 149:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #endif /* (Counter_CanReader_UsingFixedFunction) */  
+ 150:.\Generated_Source\PSoC5/Counter_CanReader.c ****         
+ 151:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* Enable the counter from the control register  */
+ 152:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* If Fixed Function then make sure Mode is set correctly */
+ 153:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* else make sure reset is clear */
+ 154:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #if(!Counter_CanReader_ControlRegRemoved || Counter_CanReader_UsingFixedFunction)
+ 155:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_CONTROL |= Counter_CanReader_CTRL_ENABLE;                
+ 154              		.loc 1 155 0
+ 155 0024 074A     		ldr	r2, .L5+8
+ 156 0026 074B     		ldr	r3, .L5+8
+ 157 0028 1B78     		ldrb	r3, [r3]
+ 158 002a DBB2     		uxtb	r3, r3
+ 159 002c 43F00103 		orr	r3, r3, #1
+ 160 0030 DBB2     		uxtb	r3, r3
+ 161 0032 1370     		strb	r3, [r2]
+ 156:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #endif /* (!Counter_CanReader_ControlRegRemoved || Counter_CanReader_UsingFixedFunction) */
+ 157:.\Generated_Source\PSoC5/Counter_CanReader.c ****     
+ 158:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 162              		.loc 1 158 0
+ 163 0034 BD46     		mov	sp, r7
+ 164              		.cfi_def_cfa_register 13
+ 165              		@ sp needed
+ 166 0036 5DF8047B 		ldr	r7, [sp], #4
+ 167              		.cfi_restore 7
+ 168              		.cfi_def_cfa_offset 0
+ 169 003a 7047     		bx	lr
+ 170              	.L6:
+ 171              		.align	2
+ 172              	.L5:
+ 173 003c A3430040 		.word	1073759139
+ 174 0040 B3430040 		.word	1073759155
+ 175 0044 004F0040 		.word	1073762048
+ 176              		.cfi_endproc
+ 177              	.LFE1:
+ 178              		.size	Counter_CanReader_Enable, .-Counter_CanReader_Enable
+ 179              		.section	.text.Counter_CanReader_Start,"ax",%progbits
+ 180              		.align	2
+ 181              		.global	Counter_CanReader_Start
+ 182              		.thumb
+ 183              		.thumb_func
+ 184              		.type	Counter_CanReader_Start, %function
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 7
+
+
+ 185              	Counter_CanReader_Start:
+ 186              	.LFB2:
+ 159:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 160:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 161:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 162:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_Start
+ 163:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 164:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 165:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  Enables the counter for operation 
+ 166:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 167:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 168:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void  
+ 169:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 170:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 171:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void
+ 172:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 173:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Global variables:
+ 174:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  Counter_CanReader_initVar: Is modified when this function is called for the  
+ 175:.\Generated_Source\PSoC5/Counter_CanReader.c **** *   first time. Is used to ensure that initialization happens only once.
+ 176:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 177:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 178:.\Generated_Source\PSoC5/Counter_CanReader.c **** void Counter_CanReader_Start(void) 
+ 179:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 187              		.loc 1 179 0
+ 188              		.cfi_startproc
+ 189              		@ args = 0, pretend = 0, frame = 0
+ 190              		@ frame_needed = 1, uses_anonymous_args = 0
+ 191 0000 80B5     		push	{r7, lr}
+ 192              		.cfi_def_cfa_offset 8
+ 193              		.cfi_offset 7, -8
+ 194              		.cfi_offset 14, -4
+ 195 0002 00AF     		add	r7, sp, #0
+ 196              		.cfi_def_cfa_register 7
+ 180:.\Generated_Source\PSoC5/Counter_CanReader.c ****     if(Counter_CanReader_initVar == 0u)
+ 197              		.loc 1 180 0
+ 198 0004 054B     		ldr	r3, .L9
+ 199 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 200 0008 002B     		cmp	r3, #0
+ 201 000a 04D1     		bne	.L8
+ 181:.\Generated_Source\PSoC5/Counter_CanReader.c ****     {
+ 182:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_Init();
+ 202              		.loc 1 182 0
+ 203 000c FFF7FEFF 		bl	Counter_CanReader_Init
+ 183:.\Generated_Source\PSoC5/Counter_CanReader.c ****         
+ 184:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_initVar = 1u; /* Clear this bit for Initialization */        
+ 204              		.loc 1 184 0
+ 205 0010 024B     		ldr	r3, .L9
+ 206 0012 0122     		movs	r2, #1
+ 207 0014 1A70     		strb	r2, [r3]
+ 208              	.L8:
+ 185:.\Generated_Source\PSoC5/Counter_CanReader.c ****     }
+ 186:.\Generated_Source\PSoC5/Counter_CanReader.c ****     
+ 187:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* Enable the Counter */
+ 188:.\Generated_Source\PSoC5/Counter_CanReader.c ****     Counter_CanReader_Enable();        
+ 209              		.loc 1 188 0
+ 210 0016 FFF7FEFF 		bl	Counter_CanReader_Enable
+ 189:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 8
+
+
+ 211              		.loc 1 189 0
+ 212 001a 80BD     		pop	{r7, pc}
+ 213              	.L10:
+ 214              		.align	2
+ 215              	.L9:
+ 216 001c 00000000 		.word	Counter_CanReader_initVar
+ 217              		.cfi_endproc
+ 218              	.LFE2:
+ 219              		.size	Counter_CanReader_Start, .-Counter_CanReader_Start
+ 220              		.section	.text.Counter_CanReader_Stop,"ax",%progbits
+ 221              		.align	2
+ 222              		.global	Counter_CanReader_Stop
+ 223              		.thumb
+ 224              		.thumb_func
+ 225              		.type	Counter_CanReader_Stop, %function
+ 226              	Counter_CanReader_Stop:
+ 227              	.LFB3:
+ 190:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 191:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 192:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 193:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_Stop
+ 194:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 195:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 196:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Halts the counter, but does not change any modes or disable interrupts.
+ 197:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 198:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 199:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void  
+ 200:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 201:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 202:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void
+ 203:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 204:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Side Effects: If the Enable mode is set to Hardware only then this function
+ 205:.\Generated_Source\PSoC5/Counter_CanReader.c **** *               has no effect on the operation of the counter.
+ 206:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 207:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 208:.\Generated_Source\PSoC5/Counter_CanReader.c **** void Counter_CanReader_Stop(void) 
+ 209:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 228              		.loc 1 209 0
+ 229              		.cfi_startproc
+ 230              		@ args = 0, pretend = 0, frame = 0
+ 231              		@ frame_needed = 1, uses_anonymous_args = 0
+ 232              		@ link register save eliminated.
+ 233 0000 80B4     		push	{r7}
+ 234              		.cfi_def_cfa_offset 4
+ 235              		.cfi_offset 7, -4
+ 236 0002 00AF     		add	r7, sp, #0
+ 237              		.cfi_def_cfa_register 7
+ 210:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* Disable Counter */
+ 211:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #if(!Counter_CanReader_ControlRegRemoved || Counter_CanReader_UsingFixedFunction)
+ 212:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_CONTROL &= ((uint8)(~Counter_CanReader_CTRL_ENABLE));        
+ 238              		.loc 1 212 0
+ 239 0004 0D4A     		ldr	r2, .L12
+ 240 0006 0D4B     		ldr	r3, .L12
+ 241 0008 1B78     		ldrb	r3, [r3]
+ 242 000a DBB2     		uxtb	r3, r3
+ 243 000c 23F00103 		bic	r3, r3, #1
+ 244 0010 DBB2     		uxtb	r3, r3
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 9
+
+
+ 245 0012 1370     		strb	r3, [r2]
+ 213:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #endif /* (!Counter_CanReader_ControlRegRemoved || Counter_CanReader_UsingFixedFunction) */
+ 214:.\Generated_Source\PSoC5/Counter_CanReader.c ****     
+ 215:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* Globally disable the Fixed Function Block chosen */
+ 216:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #if (Counter_CanReader_UsingFixedFunction)
+ 217:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_GLOBAL_ENABLE &= ((uint8)(~Counter_CanReader_BLOCK_EN_MASK));
+ 246              		.loc 1 217 0
+ 247 0014 0A4A     		ldr	r2, .L12+4
+ 248 0016 0A4B     		ldr	r3, .L12+4
+ 249 0018 1B78     		ldrb	r3, [r3]
+ 250 001a DBB2     		uxtb	r3, r3
+ 251 001c 23F00103 		bic	r3, r3, #1
+ 252 0020 DBB2     		uxtb	r3, r3
+ 253 0022 1370     		strb	r3, [r2]
+ 218:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_GLOBAL_STBY_ENABLE &= ((uint8)(~Counter_CanReader_BLOCK_STBY_EN_MASK));
+ 254              		.loc 1 218 0
+ 255 0024 074A     		ldr	r2, .L12+8
+ 256 0026 074B     		ldr	r3, .L12+8
+ 257 0028 1B78     		ldrb	r3, [r3]
+ 258 002a DBB2     		uxtb	r3, r3
+ 259 002c 23F00103 		bic	r3, r3, #1
+ 260 0030 DBB2     		uxtb	r3, r3
+ 261 0032 1370     		strb	r3, [r2]
+ 219:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #endif /* (Counter_CanReader_UsingFixedFunction) */
+ 220:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 262              		.loc 1 220 0
+ 263 0034 BD46     		mov	sp, r7
+ 264              		.cfi_def_cfa_register 13
+ 265              		@ sp needed
+ 266 0036 5DF8047B 		ldr	r7, [sp], #4
+ 267              		.cfi_restore 7
+ 268              		.cfi_def_cfa_offset 0
+ 269 003a 7047     		bx	lr
+ 270              	.L13:
+ 271              		.align	2
+ 272              	.L12:
+ 273 003c 004F0040 		.word	1073762048
+ 274 0040 A3430040 		.word	1073759139
+ 275 0044 B3430040 		.word	1073759155
+ 276              		.cfi_endproc
+ 277              	.LFE3:
+ 278              		.size	Counter_CanReader_Stop, .-Counter_CanReader_Stop
+ 279              		.section	.text.Counter_CanReader_SetInterruptMode,"ax",%progbits
+ 280              		.align	2
+ 281              		.global	Counter_CanReader_SetInterruptMode
+ 282              		.thumb
+ 283              		.thumb_func
+ 284              		.type	Counter_CanReader_SetInterruptMode, %function
+ 285              	Counter_CanReader_SetInterruptMode:
+ 286              	.LFB4:
+ 221:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 222:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 223:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 224:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_SetInterruptMode
+ 225:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 226:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 227:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Configures which interrupt sources are enabled to generate the final interrupt
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 10
+
+
+ 228:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 229:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 230:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  InterruptsMask: This parameter is an or'd collection of the status bits
+ 231:.\Generated_Source\PSoC5/Counter_CanReader.c **** *                   which will be allowed to generate the counters interrupt.   
+ 232:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 233:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 234:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void
+ 235:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 236:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 237:.\Generated_Source\PSoC5/Counter_CanReader.c **** void Counter_CanReader_SetInterruptMode(uint8 interruptsMask) 
+ 238:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 287              		.loc 1 238 0
+ 288              		.cfi_startproc
+ 289              		@ args = 0, pretend = 0, frame = 8
+ 290              		@ frame_needed = 1, uses_anonymous_args = 0
+ 291              		@ link register save eliminated.
+ 292 0000 80B4     		push	{r7}
+ 293              		.cfi_def_cfa_offset 4
+ 294              		.cfi_offset 7, -4
+ 295 0002 83B0     		sub	sp, sp, #12
+ 296              		.cfi_def_cfa_offset 16
+ 297 0004 00AF     		add	r7, sp, #0
+ 298              		.cfi_def_cfa_register 7
+ 299 0006 0346     		mov	r3, r0
+ 300 0008 FB71     		strb	r3, [r7, #7]
+ 239:.\Generated_Source\PSoC5/Counter_CanReader.c ****     Counter_CanReader_STATUS_MASK = interruptsMask;
+ 301              		.loc 1 239 0
+ 302 000a 044A     		ldr	r2, .L15
+ 303 000c FB79     		ldrb	r3, [r7, #7]
+ 304 000e 1370     		strb	r3, [r2]
+ 240:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 305              		.loc 1 240 0
+ 306 0010 0C37     		adds	r7, r7, #12
+ 307              		.cfi_def_cfa_offset 4
+ 308 0012 BD46     		mov	sp, r7
+ 309              		.cfi_def_cfa_register 13
+ 310              		@ sp needed
+ 311 0014 5DF8047B 		ldr	r7, [sp], #4
+ 312              		.cfi_restore 7
+ 313              		.cfi_def_cfa_offset 0
+ 314 0018 7047     		bx	lr
+ 315              	.L16:
+ 316 001a 00BF     		.align	2
+ 317              	.L15:
+ 318 001c 034F0040 		.word	1073762051
+ 319              		.cfi_endproc
+ 320              	.LFE4:
+ 321              		.size	Counter_CanReader_SetInterruptMode, .-Counter_CanReader_SetInterruptMode
+ 322              		.section	.text.Counter_CanReader_ReadStatusRegister,"ax",%progbits
+ 323              		.align	2
+ 324              		.global	Counter_CanReader_ReadStatusRegister
+ 325              		.thumb
+ 326              		.thumb_func
+ 327              		.type	Counter_CanReader_ReadStatusRegister, %function
+ 328              	Counter_CanReader_ReadStatusRegister:
+ 329              	.LFB5:
+ 241:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 11
+
+
+ 242:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 243:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 244:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_ReadStatusRegister
+ 245:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 246:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 247:.\Generated_Source\PSoC5/Counter_CanReader.c **** *   Reads the status register and returns it's state. This function should use
+ 248:.\Generated_Source\PSoC5/Counter_CanReader.c **** *       defined types for the bit-field information as the bits in this
+ 249:.\Generated_Source\PSoC5/Counter_CanReader.c **** *       register may be permuteable.
+ 250:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 251:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 252:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void
+ 253:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 254:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 255:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  (uint8) The contents of the status register
+ 256:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 257:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Side Effects:
+ 258:.\Generated_Source\PSoC5/Counter_CanReader.c **** *   Status register bits may be clear on read. 
+ 259:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 260:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 261:.\Generated_Source\PSoC5/Counter_CanReader.c **** uint8   Counter_CanReader_ReadStatusRegister(void) 
+ 262:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 330              		.loc 1 262 0
+ 331              		.cfi_startproc
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 1, uses_anonymous_args = 0
+ 334              		@ link register save eliminated.
+ 335 0000 80B4     		push	{r7}
+ 336              		.cfi_def_cfa_offset 4
+ 337              		.cfi_offset 7, -4
+ 338 0002 00AF     		add	r7, sp, #0
+ 339              		.cfi_def_cfa_register 7
+ 263:.\Generated_Source\PSoC5/Counter_CanReader.c ****     return Counter_CanReader_STATUS;
+ 340              		.loc 1 263 0
+ 341 0004 034B     		ldr	r3, .L19
+ 342 0006 1B78     		ldrb	r3, [r3]
+ 343 0008 DBB2     		uxtb	r3, r3
+ 264:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 344              		.loc 1 264 0
+ 345 000a 1846     		mov	r0, r3
+ 346 000c BD46     		mov	sp, r7
+ 347              		.cfi_def_cfa_register 13
+ 348              		@ sp needed
+ 349 000e 5DF8047B 		ldr	r7, [sp], #4
+ 350              		.cfi_restore 7
+ 351              		.cfi_def_cfa_offset 0
+ 352 0012 7047     		bx	lr
+ 353              	.L20:
+ 354              		.align	2
+ 355              	.L19:
+ 356 0014 034F0040 		.word	1073762051
+ 357              		.cfi_endproc
+ 358              	.LFE5:
+ 359              		.size	Counter_CanReader_ReadStatusRegister, .-Counter_CanReader_ReadStatusRegister
+ 360              		.section	.text.Counter_CanReader_ReadControlRegister,"ax",%progbits
+ 361              		.align	2
+ 362              		.global	Counter_CanReader_ReadControlRegister
+ 363              		.thumb
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 12
+
+
+ 364              		.thumb_func
+ 365              		.type	Counter_CanReader_ReadControlRegister, %function
+ 366              	Counter_CanReader_ReadControlRegister:
+ 367              	.LFB6:
+ 265:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 266:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 267:.\Generated_Source\PSoC5/Counter_CanReader.c **** #if(!Counter_CanReader_ControlRegRemoved)
+ 268:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 269:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_ReadControlRegister
+ 270:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 271:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 272:.\Generated_Source\PSoC5/Counter_CanReader.c **** *   Reads the control register and returns it's state. This function should use
+ 273:.\Generated_Source\PSoC5/Counter_CanReader.c **** *       defined types for the bit-field information as the bits in this
+ 274:.\Generated_Source\PSoC5/Counter_CanReader.c **** *       register may be permuteable.
+ 275:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 276:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 277:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void
+ 278:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 279:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 280:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  (uint8) The contents of the control register
+ 281:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 282:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 283:.\Generated_Source\PSoC5/Counter_CanReader.c **** uint8   Counter_CanReader_ReadControlRegister(void) 
+ 284:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 368              		.loc 1 284 0
+ 369              		.cfi_startproc
+ 370              		@ args = 0, pretend = 0, frame = 0
+ 371              		@ frame_needed = 1, uses_anonymous_args = 0
+ 372              		@ link register save eliminated.
+ 373 0000 80B4     		push	{r7}
+ 374              		.cfi_def_cfa_offset 4
+ 375              		.cfi_offset 7, -4
+ 376 0002 00AF     		add	r7, sp, #0
+ 377              		.cfi_def_cfa_register 7
+ 285:.\Generated_Source\PSoC5/Counter_CanReader.c ****     return Counter_CanReader_CONTROL;
+ 378              		.loc 1 285 0
+ 379 0004 034B     		ldr	r3, .L23
+ 380 0006 1B78     		ldrb	r3, [r3]
+ 381 0008 DBB2     		uxtb	r3, r3
+ 286:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 382              		.loc 1 286 0
+ 383 000a 1846     		mov	r0, r3
+ 384 000c BD46     		mov	sp, r7
+ 385              		.cfi_def_cfa_register 13
+ 386              		@ sp needed
+ 387 000e 5DF8047B 		ldr	r7, [sp], #4
+ 388              		.cfi_restore 7
+ 389              		.cfi_def_cfa_offset 0
+ 390 0012 7047     		bx	lr
+ 391              	.L24:
+ 392              		.align	2
+ 393              	.L23:
+ 394 0014 004F0040 		.word	1073762048
+ 395              		.cfi_endproc
+ 396              	.LFE6:
+ 397              		.size	Counter_CanReader_ReadControlRegister, .-Counter_CanReader_ReadControlRegister
+ 398              		.section	.text.Counter_CanReader_WriteControlRegister,"ax",%progbits
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 13
+
+
+ 399              		.align	2
+ 400              		.global	Counter_CanReader_WriteControlRegister
+ 401              		.thumb
+ 402              		.thumb_func
+ 403              		.type	Counter_CanReader_WriteControlRegister, %function
+ 404              	Counter_CanReader_WriteControlRegister:
+ 405              	.LFB7:
+ 287:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 288:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 289:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 290:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_WriteControlRegister
+ 291:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 292:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 293:.\Generated_Source\PSoC5/Counter_CanReader.c **** *   Sets the bit-field of the control register.  This function should use
+ 294:.\Generated_Source\PSoC5/Counter_CanReader.c **** *       defined types for the bit-field information as the bits in this
+ 295:.\Generated_Source\PSoC5/Counter_CanReader.c **** *       register may be permuteable.
+ 296:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 297:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 298:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void
+ 299:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 300:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 301:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  (uint8) The contents of the control register
+ 302:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 303:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 304:.\Generated_Source\PSoC5/Counter_CanReader.c **** void    Counter_CanReader_WriteControlRegister(uint8 control) 
+ 305:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 406              		.loc 1 305 0
+ 407              		.cfi_startproc
+ 408              		@ args = 0, pretend = 0, frame = 8
+ 409              		@ frame_needed = 1, uses_anonymous_args = 0
+ 410              		@ link register save eliminated.
+ 411 0000 80B4     		push	{r7}
+ 412              		.cfi_def_cfa_offset 4
+ 413              		.cfi_offset 7, -4
+ 414 0002 83B0     		sub	sp, sp, #12
+ 415              		.cfi_def_cfa_offset 16
+ 416 0004 00AF     		add	r7, sp, #0
+ 417              		.cfi_def_cfa_register 7
+ 418 0006 0346     		mov	r3, r0
+ 419 0008 FB71     		strb	r3, [r7, #7]
+ 306:.\Generated_Source\PSoC5/Counter_CanReader.c ****     Counter_CanReader_CONTROL = control;
+ 420              		.loc 1 306 0
+ 421 000a 044A     		ldr	r2, .L26
+ 422 000c FB79     		ldrb	r3, [r7, #7]
+ 423 000e 1370     		strb	r3, [r2]
+ 307:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 424              		.loc 1 307 0
+ 425 0010 0C37     		adds	r7, r7, #12
+ 426              		.cfi_def_cfa_offset 4
+ 427 0012 BD46     		mov	sp, r7
+ 428              		.cfi_def_cfa_register 13
+ 429              		@ sp needed
+ 430 0014 5DF8047B 		ldr	r7, [sp], #4
+ 431              		.cfi_restore 7
+ 432              		.cfi_def_cfa_offset 0
+ 433 0018 7047     		bx	lr
+ 434              	.L27:
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 14
+
+
+ 435 001a 00BF     		.align	2
+ 436              	.L26:
+ 437 001c 004F0040 		.word	1073762048
+ 438              		.cfi_endproc
+ 439              	.LFE7:
+ 440              		.size	Counter_CanReader_WriteControlRegister, .-Counter_CanReader_WriteControlRegister
+ 441              		.section	.text.Counter_CanReader_WriteCounter,"ax",%progbits
+ 442              		.align	2
+ 443              		.global	Counter_CanReader_WriteCounter
+ 444              		.thumb
+ 445              		.thumb_func
+ 446              		.type	Counter_CanReader_WriteCounter, %function
+ 447              	Counter_CanReader_WriteCounter:
+ 448              	.LFB8:
+ 308:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 309:.\Generated_Source\PSoC5/Counter_CanReader.c **** #endif  /* (!Counter_CanReader_ControlRegRemoved) */
+ 310:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 311:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 312:.\Generated_Source\PSoC5/Counter_CanReader.c **** #if (!(Counter_CanReader_UsingFixedFunction && (CY_PSOC5A)))
+ 313:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 314:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_WriteCounter
+ 315:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 316:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 317:.\Generated_Source\PSoC5/Counter_CanReader.c **** *   This funtion is used to set the counter to a specific value
+ 318:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 319:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 320:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  counter:  New counter value. 
+ 321:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 322:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 323:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void 
+ 324:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 325:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 326:.\Generated_Source\PSoC5/Counter_CanReader.c **** void Counter_CanReader_WriteCounter(uint8 counter) \
+ 327:.\Generated_Source\PSoC5/Counter_CanReader.c ****                                    
+ 328:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 449              		.loc 1 328 0
+ 450              		.cfi_startproc
+ 451              		@ args = 0, pretend = 0, frame = 8
+ 452              		@ frame_needed = 1, uses_anonymous_args = 0
+ 453 0000 80B5     		push	{r7, lr}
+ 454              		.cfi_def_cfa_offset 8
+ 455              		.cfi_offset 7, -8
+ 456              		.cfi_offset 14, -4
+ 457 0002 82B0     		sub	sp, sp, #8
+ 458              		.cfi_def_cfa_offset 16
+ 459 0004 00AF     		add	r7, sp, #0
+ 460              		.cfi_def_cfa_register 7
+ 461 0006 0346     		mov	r3, r0
+ 462 0008 FB71     		strb	r3, [r7, #7]
+ 329:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #if(Counter_CanReader_UsingFixedFunction)
+ 330:.\Generated_Source\PSoC5/Counter_CanReader.c ****         /* assert if block is already enabled */
+ 331:.\Generated_Source\PSoC5/Counter_CanReader.c ****         CYASSERT (0u == (Counter_CanReader_GLOBAL_ENABLE & Counter_CanReader_BLOCK_EN_MASK));
+ 463              		.loc 1 331 0
+ 464 000a 104B     		ldr	r3, .L30
+ 465 000c 1B78     		ldrb	r3, [r3]
+ 466 000e DBB2     		uxtb	r3, r3
+ 467 0010 03F00103 		and	r3, r3, #1
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 15
+
+
+ 468 0014 002B     		cmp	r3, #0
+ 469 0016 02D0     		beq	.L29
+ 470              		.loc 1 331 0 is_stmt 0 discriminator 1
+ 471 0018 0020     		movs	r0, #0
+ 472 001a FFF7FEFF 		bl	CyHalt
+ 473              	.L29:
+ 332:.\Generated_Source\PSoC5/Counter_CanReader.c ****         /* If block is disabled, enable it and then write the counter */
+ 333:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_GLOBAL_ENABLE |= Counter_CanReader_BLOCK_EN_MASK;
+ 474              		.loc 1 333 0 is_stmt 1
+ 475 001e 0B4A     		ldr	r2, .L30
+ 476 0020 0A4B     		ldr	r3, .L30
+ 477 0022 1B78     		ldrb	r3, [r3]
+ 478 0024 DBB2     		uxtb	r3, r3
+ 479 0026 43F00103 		orr	r3, r3, #1
+ 480 002a DBB2     		uxtb	r3, r3
+ 481 002c 1370     		strb	r3, [r2]
+ 334:.\Generated_Source\PSoC5/Counter_CanReader.c ****         CY_SET_REG16(Counter_CanReader_COUNTER_LSB_PTR, (uint16)counter);
+ 482              		.loc 1 334 0
+ 483 002e 084B     		ldr	r3, .L30+4
+ 484 0030 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 485 0032 92B2     		uxth	r2, r2
+ 486 0034 1A80     		strh	r2, [r3]	@ movhi
+ 335:.\Generated_Source\PSoC5/Counter_CanReader.c ****         Counter_CanReader_GLOBAL_ENABLE &= ((uint8)(~Counter_CanReader_BLOCK_EN_MASK));
+ 487              		.loc 1 335 0
+ 488 0036 054A     		ldr	r2, .L30
+ 489 0038 044B     		ldr	r3, .L30
+ 490 003a 1B78     		ldrb	r3, [r3]
+ 491 003c DBB2     		uxtb	r3, r3
+ 492 003e 23F00103 		bic	r3, r3, #1
+ 493 0042 DBB2     		uxtb	r3, r3
+ 494 0044 1370     		strb	r3, [r2]
+ 336:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #else
+ 337:.\Generated_Source\PSoC5/Counter_CanReader.c ****         CY_SET_REG8(Counter_CanReader_COUNTER_LSB_PTR, counter);
+ 338:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #endif /* (Counter_CanReader_UsingFixedFunction) */
+ 339:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 495              		.loc 1 339 0
+ 496 0046 0837     		adds	r7, r7, #8
+ 497              		.cfi_def_cfa_offset 8
+ 498 0048 BD46     		mov	sp, r7
+ 499              		.cfi_def_cfa_register 13
+ 500              		@ sp needed
+ 501 004a 80BD     		pop	{r7, pc}
+ 502              	.L31:
+ 503              		.align	2
+ 504              	.L30:
+ 505 004c A3430040 		.word	1073759139
+ 506 0050 064F0040 		.word	1073762054
+ 507              		.cfi_endproc
+ 508              	.LFE8:
+ 509              		.size	Counter_CanReader_WriteCounter, .-Counter_CanReader_WriteCounter
+ 510              		.section	.text.Counter_CanReader_ReadCounter,"ax",%progbits
+ 511              		.align	2
+ 512              		.global	Counter_CanReader_ReadCounter
+ 513              		.thumb
+ 514              		.thumb_func
+ 515              		.type	Counter_CanReader_ReadCounter, %function
+ 516              	Counter_CanReader_ReadCounter:
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 16
+
+
+ 517              	.LFB9:
+ 340:.\Generated_Source\PSoC5/Counter_CanReader.c **** #endif /* (!(Counter_CanReader_UsingFixedFunction && (CY_PSOC5A))) */
+ 341:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 342:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 343:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 344:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_ReadCounter
+ 345:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 346:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 347:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Returns the current value of the counter.  It doesn't matter
+ 348:.\Generated_Source\PSoC5/Counter_CanReader.c **** * if the counter is enabled or running.
+ 349:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 350:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 351:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void:  
+ 352:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 353:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 354:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  (uint8) The present value of the counter.
+ 355:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 356:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 357:.\Generated_Source\PSoC5/Counter_CanReader.c **** uint8 Counter_CanReader_ReadCounter(void) 
+ 358:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 518              		.loc 1 358 0
+ 519              		.cfi_startproc
+ 520              		@ args = 0, pretend = 0, frame = 0
+ 521              		@ frame_needed = 1, uses_anonymous_args = 0
+ 522              		@ link register save eliminated.
+ 523 0000 80B4     		push	{r7}
+ 524              		.cfi_def_cfa_offset 4
+ 525              		.cfi_offset 7, -4
+ 526 0002 00AF     		add	r7, sp, #0
+ 527              		.cfi_def_cfa_register 7
+ 359:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* Force capture by reading Accumulator */
+ 360:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* Must first do a software capture to be able to read the counter */
+ 361:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
+ 362:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #if(Counter_CanReader_UsingFixedFunction)
+ 363:.\Generated_Source\PSoC5/Counter_CanReader.c **** 		(void)CY_GET_REG16(Counter_CanReader_COUNTER_LSB_PTR);
+ 528              		.loc 1 363 0
+ 529 0004 054B     		ldr	r3, .L34
+ 530 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 364:.\Generated_Source\PSoC5/Counter_CanReader.c **** 	#else
+ 365:.\Generated_Source\PSoC5/Counter_CanReader.c **** 		(void)CY_GET_REG8(Counter_CanReader_COUNTER_LSB_PTR_8BIT);
+ 366:.\Generated_Source\PSoC5/Counter_CanReader.c **** 	#endif/* (Counter_CanReader_UsingFixedFunction) */
+ 367:.\Generated_Source\PSoC5/Counter_CanReader.c ****     
+ 368:.\Generated_Source\PSoC5/Counter_CanReader.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
+ 369:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #if(Counter_CanReader_UsingFixedFunction)
+ 370:.\Generated_Source\PSoC5/Counter_CanReader.c ****         return ((uint8)CY_GET_REG16(Counter_CanReader_STATICCOUNT_LSB_PTR));
+ 531              		.loc 1 370 0
+ 532 0008 054B     		ldr	r3, .L34+4
+ 533 000a 1B88     		ldrh	r3, [r3]	@ movhi
+ 534 000c 9BB2     		uxth	r3, r3
+ 535 000e DBB2     		uxtb	r3, r3
+ 371:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #else
+ 372:.\Generated_Source\PSoC5/Counter_CanReader.c ****         return (CY_GET_REG8(Counter_CanReader_STATICCOUNT_LSB_PTR));
+ 373:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #endif /* (Counter_CanReader_UsingFixedFunction) */
+ 374:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 536              		.loc 1 374 0
+ 537 0010 1846     		mov	r0, r3
+ 538 0012 BD46     		mov	sp, r7
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 17
+
+
+ 539              		.cfi_def_cfa_register 13
+ 540              		@ sp needed
+ 541 0014 5DF8047B 		ldr	r7, [sp], #4
+ 542              		.cfi_restore 7
+ 543              		.cfi_def_cfa_offset 0
+ 544 0018 7047     		bx	lr
+ 545              	.L35:
+ 546 001a 00BF     		.align	2
+ 547              	.L34:
+ 548 001c 064F0040 		.word	1073762054
+ 549 0020 084F0040 		.word	1073762056
+ 550              		.cfi_endproc
+ 551              	.LFE9:
+ 552              		.size	Counter_CanReader_ReadCounter, .-Counter_CanReader_ReadCounter
+ 553              		.section	.text.Counter_CanReader_ReadCapture,"ax",%progbits
+ 554              		.align	2
+ 555              		.global	Counter_CanReader_ReadCapture
+ 556              		.thumb
+ 557              		.thumb_func
+ 558              		.type	Counter_CanReader_ReadCapture, %function
+ 559              	Counter_CanReader_ReadCapture:
+ 560              	.LFB10:
+ 375:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 376:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 377:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 378:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_ReadCapture
+ 379:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 380:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 381:.\Generated_Source\PSoC5/Counter_CanReader.c **** *   This function returns the last value captured.
+ 382:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 383:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 384:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void
+ 385:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 386:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 387:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  (uint8) Present Capture value.
+ 388:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 389:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 390:.\Generated_Source\PSoC5/Counter_CanReader.c **** uint8 Counter_CanReader_ReadCapture(void) 
+ 391:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 561              		.loc 1 391 0
+ 562              		.cfi_startproc
+ 563              		@ args = 0, pretend = 0, frame = 0
+ 564              		@ frame_needed = 1, uses_anonymous_args = 0
+ 565              		@ link register save eliminated.
+ 566 0000 80B4     		push	{r7}
+ 567              		.cfi_def_cfa_offset 4
+ 568              		.cfi_offset 7, -4
+ 569 0002 00AF     		add	r7, sp, #0
+ 570              		.cfi_def_cfa_register 7
+ 392:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #if(Counter_CanReader_UsingFixedFunction)
+ 393:.\Generated_Source\PSoC5/Counter_CanReader.c ****         return ((uint8)CY_GET_REG16(Counter_CanReader_STATICCOUNT_LSB_PTR));
+ 571              		.loc 1 393 0
+ 572 0004 044B     		ldr	r3, .L38
+ 573 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 574 0008 9BB2     		uxth	r3, r3
+ 575 000a DBB2     		uxtb	r3, r3
+ 394:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #else
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 18
+
+
+ 395:.\Generated_Source\PSoC5/Counter_CanReader.c ****         return (CY_GET_REG8(Counter_CanReader_STATICCOUNT_LSB_PTR));
+ 396:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #endif /* (Counter_CanReader_UsingFixedFunction) */
+ 397:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 576              		.loc 1 397 0
+ 577 000c 1846     		mov	r0, r3
+ 578 000e BD46     		mov	sp, r7
+ 579              		.cfi_def_cfa_register 13
+ 580              		@ sp needed
+ 581 0010 5DF8047B 		ldr	r7, [sp], #4
+ 582              		.cfi_restore 7
+ 583              		.cfi_def_cfa_offset 0
+ 584 0014 7047     		bx	lr
+ 585              	.L39:
+ 586 0016 00BF     		.align	2
+ 587              	.L38:
+ 588 0018 084F0040 		.word	1073762056
+ 589              		.cfi_endproc
+ 590              	.LFE10:
+ 591              		.size	Counter_CanReader_ReadCapture, .-Counter_CanReader_ReadCapture
+ 592              		.section	.text.Counter_CanReader_WritePeriod,"ax",%progbits
+ 593              		.align	2
+ 594              		.global	Counter_CanReader_WritePeriod
+ 595              		.thumb
+ 596              		.thumb_func
+ 597              		.type	Counter_CanReader_WritePeriod, %function
+ 598              	Counter_CanReader_WritePeriod:
+ 599              	.LFB11:
+ 398:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 399:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 400:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 401:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_WritePeriod
+ 402:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 403:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 404:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Changes the period of the counter.  The new period 
+ 405:.\Generated_Source\PSoC5/Counter_CanReader.c **** * will be loaded the next time terminal count is detected.
+ 406:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 407:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 408:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  period: (uint8) A value of 0 will result in
+ 409:.\Generated_Source\PSoC5/Counter_CanReader.c **** *         the counter remaining at zero.  
+ 410:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 411:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 412:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void
+ 413:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 414:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 415:.\Generated_Source\PSoC5/Counter_CanReader.c **** void Counter_CanReader_WritePeriod(uint8 period) 
+ 416:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 600              		.loc 1 416 0
+ 601              		.cfi_startproc
+ 602              		@ args = 0, pretend = 0, frame = 8
+ 603              		@ frame_needed = 1, uses_anonymous_args = 0
+ 604              		@ link register save eliminated.
+ 605 0000 80B4     		push	{r7}
+ 606              		.cfi_def_cfa_offset 4
+ 607              		.cfi_offset 7, -4
+ 608 0002 83B0     		sub	sp, sp, #12
+ 609              		.cfi_def_cfa_offset 16
+ 610 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 19
+
+
+ 611              		.cfi_def_cfa_register 7
+ 612 0006 0346     		mov	r3, r0
+ 613 0008 FB71     		strb	r3, [r7, #7]
+ 417:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #if(Counter_CanReader_UsingFixedFunction)
+ 418:.\Generated_Source\PSoC5/Counter_CanReader.c ****         CY_SET_REG16(Counter_CanReader_PERIOD_LSB_PTR,(uint16)period);
+ 614              		.loc 1 418 0
+ 615 000a 044B     		ldr	r3, .L41
+ 616 000c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 617 000e 92B2     		uxth	r2, r2
+ 618 0010 1A80     		strh	r2, [r3]	@ movhi
+ 419:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #else
+ 420:.\Generated_Source\PSoC5/Counter_CanReader.c ****         CY_SET_REG8(Counter_CanReader_PERIOD_LSB_PTR, period);
+ 421:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #endif /* (Counter_CanReader_UsingFixedFunction) */
+ 422:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 619              		.loc 1 422 0
+ 620 0012 0C37     		adds	r7, r7, #12
+ 621              		.cfi_def_cfa_offset 4
+ 622 0014 BD46     		mov	sp, r7
+ 623              		.cfi_def_cfa_register 13
+ 624              		@ sp needed
+ 625 0016 5DF8047B 		ldr	r7, [sp], #4
+ 626              		.cfi_restore 7
+ 627              		.cfi_def_cfa_offset 0
+ 628 001a 7047     		bx	lr
+ 629              	.L42:
+ 630              		.align	2
+ 631              	.L41:
+ 632 001c 044F0040 		.word	1073762052
+ 633              		.cfi_endproc
+ 634              	.LFE11:
+ 635              		.size	Counter_CanReader_WritePeriod, .-Counter_CanReader_WritePeriod
+ 636              		.section	.text.Counter_CanReader_ReadPeriod,"ax",%progbits
+ 637              		.align	2
+ 638              		.global	Counter_CanReader_ReadPeriod
+ 639              		.thumb
+ 640              		.thumb_func
+ 641              		.type	Counter_CanReader_ReadPeriod, %function
+ 642              	Counter_CanReader_ReadPeriod:
+ 643              	.LFB12:
+ 423:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 424:.\Generated_Source\PSoC5/Counter_CanReader.c **** 
+ 425:.\Generated_Source\PSoC5/Counter_CanReader.c **** /*******************************************************************************
+ 426:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Function Name: Counter_CanReader_ReadPeriod
+ 427:.\Generated_Source\PSoC5/Counter_CanReader.c **** ********************************************************************************
+ 428:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Summary:
+ 429:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Reads the current period value without affecting counter operation.
+ 430:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 431:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Parameters:  
+ 432:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  void:  
+ 433:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 434:.\Generated_Source\PSoC5/Counter_CanReader.c **** * Return: 
+ 435:.\Generated_Source\PSoC5/Counter_CanReader.c **** *  (uint8) Present period value.
+ 436:.\Generated_Source\PSoC5/Counter_CanReader.c **** *
+ 437:.\Generated_Source\PSoC5/Counter_CanReader.c **** *******************************************************************************/
+ 438:.\Generated_Source\PSoC5/Counter_CanReader.c **** uint8 Counter_CanReader_ReadPeriod(void) 
+ 439:.\Generated_Source\PSoC5/Counter_CanReader.c **** {
+ 644              		.loc 1 439 0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 20
+
+
+ 645              		.cfi_startproc
+ 646              		@ args = 0, pretend = 0, frame = 0
+ 647              		@ frame_needed = 1, uses_anonymous_args = 0
+ 648              		@ link register save eliminated.
+ 649 0000 80B4     		push	{r7}
+ 650              		.cfi_def_cfa_offset 4
+ 651              		.cfi_offset 7, -4
+ 652 0002 00AF     		add	r7, sp, #0
+ 653              		.cfi_def_cfa_register 7
+ 440:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #if(Counter_CanReader_UsingFixedFunction)
+ 441:.\Generated_Source\PSoC5/Counter_CanReader.c ****         return ((uint8)CY_GET_REG16(Counter_CanReader_PERIOD_LSB_PTR));
+ 654              		.loc 1 441 0
+ 655 0004 044B     		ldr	r3, .L45
+ 656 0006 1B88     		ldrh	r3, [r3]	@ movhi
+ 657 0008 9BB2     		uxth	r3, r3
+ 658 000a DBB2     		uxtb	r3, r3
+ 442:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #else
+ 443:.\Generated_Source\PSoC5/Counter_CanReader.c ****         return (CY_GET_REG8(Counter_CanReader_PERIOD_LSB_PTR));
+ 444:.\Generated_Source\PSoC5/Counter_CanReader.c ****     #endif /* (Counter_CanReader_UsingFixedFunction) */
+ 445:.\Generated_Source\PSoC5/Counter_CanReader.c **** }
+ 659              		.loc 1 445 0
+ 660 000c 1846     		mov	r0, r3
+ 661 000e BD46     		mov	sp, r7
+ 662              		.cfi_def_cfa_register 13
+ 663              		@ sp needed
+ 664 0010 5DF8047B 		ldr	r7, [sp], #4
+ 665              		.cfi_restore 7
+ 666              		.cfi_def_cfa_offset 0
+ 667 0014 7047     		bx	lr
+ 668              	.L46:
+ 669 0016 00BF     		.align	2
+ 670              	.L45:
+ 671 0018 044F0040 		.word	1073762052
+ 672              		.cfi_endproc
+ 673              	.LFE12:
+ 674              		.size	Counter_CanReader_ReadPeriod, .-Counter_CanReader_ReadPeriod
+ 675              		.text
+ 676              	.Letext0:
+ 677              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 678              		.section	.debug_info,"",%progbits
+ 679              	.Ldebug_info0:
+ 680 0000 15020000 		.4byte	0x215
+ 681 0004 0400     		.2byte	0x4
+ 682 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 683 000a 04       		.byte	0x4
+ 684 000b 01       		.uleb128 0x1
+ 685 000c 68010000 		.4byte	.LASF34
+ 686 0010 01       		.byte	0x1
+ 687 0011 2C030000 		.4byte	.LASF35
+ 688 0015 0A010000 		.4byte	.LASF36
+ 689 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 690 001d 00000000 		.4byte	0
+ 691 0021 00000000 		.4byte	.Ldebug_line0
+ 692 0025 02       		.uleb128 0x2
+ 693 0026 01       		.byte	0x1
+ 694 0027 06       		.byte	0x6
+ 695 0028 77030000 		.4byte	.LASF0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 21
+
+
+ 696 002c 02       		.uleb128 0x2
+ 697 002d 01       		.byte	0x1
+ 698 002e 08       		.byte	0x8
+ 699 002f E5000000 		.4byte	.LASF1
+ 700 0033 02       		.uleb128 0x2
+ 701 0034 02       		.byte	0x2
+ 702 0035 05       		.byte	0x5
+ 703 0036 C8020000 		.4byte	.LASF2
+ 704 003a 02       		.uleb128 0x2
+ 705 003b 02       		.byte	0x2
+ 706 003c 07       		.byte	0x7
+ 707 003d 44000000 		.4byte	.LASF3
+ 708 0041 02       		.uleb128 0x2
+ 709 0042 04       		.byte	0x4
+ 710 0043 05       		.byte	0x5
+ 711 0044 23030000 		.4byte	.LASF4
+ 712 0048 02       		.uleb128 0x2
+ 713 0049 04       		.byte	0x4
+ 714 004a 07       		.byte	0x7
+ 715 004b F8000000 		.4byte	.LASF5
+ 716 004f 02       		.uleb128 0x2
+ 717 0050 08       		.byte	0x8
+ 718 0051 05       		.byte	0x5
+ 719 0052 83020000 		.4byte	.LASF6
+ 720 0056 02       		.uleb128 0x2
+ 721 0057 08       		.byte	0x8
+ 722 0058 07       		.byte	0x7
+ 723 0059 2E020000 		.4byte	.LASF7
+ 724 005d 03       		.uleb128 0x3
+ 725 005e 04       		.byte	0x4
+ 726 005f 05       		.byte	0x5
+ 727 0060 696E7400 		.ascii	"int\000"
+ 728 0064 02       		.uleb128 0x2
+ 729 0065 04       		.byte	0x4
+ 730 0066 07       		.byte	0x7
+ 731 0067 04020000 		.4byte	.LASF8
+ 732 006b 04       		.uleb128 0x4
+ 733 006c F8020000 		.4byte	.LASF9
+ 734 0070 02       		.byte	0x2
+ 735 0071 A1       		.byte	0xa1
+ 736 0072 2C000000 		.4byte	0x2c
+ 737 0076 04       		.uleb128 0x4
+ 738 0077 FD010000 		.4byte	.LASF10
+ 739 007b 02       		.byte	0x2
+ 740 007c A2       		.byte	0xa2
+ 741 007d 3A000000 		.4byte	0x3a
+ 742 0081 02       		.uleb128 0x2
+ 743 0082 04       		.byte	0x4
+ 744 0083 04       		.byte	0x4
+ 745 0084 95000000 		.4byte	.LASF11
+ 746 0088 02       		.uleb128 0x2
+ 747 0089 08       		.byte	0x8
+ 748 008a 04       		.byte	0x4
+ 749 008b F6010000 		.4byte	.LASF12
+ 750 008f 02       		.uleb128 0x2
+ 751 0090 01       		.byte	0x1
+ 752 0091 08       		.byte	0x8
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 22
+
+
+ 753 0092 91020000 		.4byte	.LASF13
+ 754 0096 05       		.uleb128 0x5
+ 755 0097 F3000000 		.4byte	.LASF14
+ 756 009b 02       		.byte	0x2
+ 757 009c 4B01     		.2byte	0x14b
+ 758 009e A2000000 		.4byte	0xa2
+ 759 00a2 06       		.uleb128 0x6
+ 760 00a3 6B000000 		.4byte	0x6b
+ 761 00a7 05       		.uleb128 0x5
+ 762 00a8 00000000 		.4byte	.LASF15
+ 763 00ac 02       		.byte	0x2
+ 764 00ad 4C01     		.2byte	0x14c
+ 765 00af B3000000 		.4byte	0xb3
+ 766 00b3 06       		.uleb128 0x6
+ 767 00b4 76000000 		.4byte	0x76
+ 768 00b8 02       		.uleb128 0x2
+ 769 00b9 04       		.byte	0x4
+ 770 00ba 07       		.byte	0x7
+ 771 00bb 7A020000 		.4byte	.LASF16
+ 772 00bf 07       		.uleb128 0x7
+ 773 00c0 63020000 		.4byte	.LASF17
+ 774 00c4 01       		.byte	0x1
+ 775 00c5 25       		.byte	0x25
+ 776 00c6 00000000 		.4byte	.LFB0
+ 777 00ca 98000000 		.4byte	.LFE0-.LFB0
+ 778 00ce 01       		.uleb128 0x1
+ 779 00cf 9C       		.byte	0x9c
+ 780 00d0 08       		.uleb128 0x8
+ 781 00d1 06000000 		.4byte	.LASF18
+ 782 00d5 01       		.byte	0x1
+ 783 00d6 8F       		.byte	0x8f
+ 784 00d7 00000000 		.4byte	.LFB1
+ 785 00db 48000000 		.4byte	.LFE1-.LFB1
+ 786 00df 01       		.uleb128 0x1
+ 787 00e0 9C       		.byte	0x9c
+ 788 00e1 07       		.uleb128 0x7
+ 789 00e2 B0020000 		.4byte	.LASF19
+ 790 00e6 01       		.byte	0x1
+ 791 00e7 B2       		.byte	0xb2
+ 792 00e8 00000000 		.4byte	.LFB2
+ 793 00ec 20000000 		.4byte	.LFE2-.LFB2
+ 794 00f0 01       		.uleb128 0x1
+ 795 00f1 9C       		.byte	0x9c
+ 796 00f2 08       		.uleb128 0x8
+ 797 00f3 57000000 		.4byte	.LASF20
+ 798 00f7 01       		.byte	0x1
+ 799 00f8 D0       		.byte	0xd0
+ 800 00f9 00000000 		.4byte	.LFB3
+ 801 00fd 48000000 		.4byte	.LFE3-.LFB3
+ 802 0101 01       		.uleb128 0x1
+ 803 0102 9C       		.byte	0x9c
+ 804 0103 09       		.uleb128 0x9
+ 805 0104 A3000000 		.4byte	.LASF23
+ 806 0108 01       		.byte	0x1
+ 807 0109 ED       		.byte	0xed
+ 808 010a 00000000 		.4byte	.LFB4
+ 809 010e 20000000 		.4byte	.LFE4-.LFB4
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 23
+
+
+ 810 0112 01       		.uleb128 0x1
+ 811 0113 9C       		.byte	0x9c
+ 812 0114 27010000 		.4byte	0x127
+ 813 0118 0A       		.uleb128 0xa
+ 814 0119 59010000 		.4byte	.LASF25
+ 815 011d 01       		.byte	0x1
+ 816 011e ED       		.byte	0xed
+ 817 011f 6B000000 		.4byte	0x6b
+ 818 0123 02       		.uleb128 0x2
+ 819 0124 91       		.byte	0x91
+ 820 0125 77       		.sleb128 -9
+ 821 0126 00       		.byte	0
+ 822 0127 0B       		.uleb128 0xb
+ 823 0128 FE020000 		.4byte	.LASF21
+ 824 012c 01       		.byte	0x1
+ 825 012d 0501     		.2byte	0x105
+ 826 012f 6B000000 		.4byte	0x6b
+ 827 0133 00000000 		.4byte	.LFB5
+ 828 0137 18000000 		.4byte	.LFE5-.LFB5
+ 829 013b 01       		.uleb128 0x1
+ 830 013c 9C       		.byte	0x9c
+ 831 013d 0B       		.uleb128 0xb
+ 832 013e D2020000 		.4byte	.LASF22
+ 833 0142 01       		.byte	0x1
+ 834 0143 1B01     		.2byte	0x11b
+ 835 0145 6B000000 		.4byte	0x6b
+ 836 0149 00000000 		.4byte	.LFB6
+ 837 014d 18000000 		.4byte	.LFE6-.LFB6
+ 838 0151 01       		.uleb128 0x1
+ 839 0152 9C       		.byte	0x9c
+ 840 0153 0C       		.uleb128 0xc
+ 841 0154 6E000000 		.4byte	.LASF24
+ 842 0158 01       		.byte	0x1
+ 843 0159 3001     		.2byte	0x130
+ 844 015b 00000000 		.4byte	.LFB7
+ 845 015f 20000000 		.4byte	.LFE7-.LFB7
+ 846 0163 01       		.uleb128 0x1
+ 847 0164 9C       		.byte	0x9c
+ 848 0165 79010000 		.4byte	0x179
+ 849 0169 0D       		.uleb128 0xd
+ 850 016a 51010000 		.4byte	.LASF26
+ 851 016e 01       		.byte	0x1
+ 852 016f 3001     		.2byte	0x130
+ 853 0171 6B000000 		.4byte	0x6b
+ 854 0175 02       		.uleb128 0x2
+ 855 0176 91       		.byte	0x91
+ 856 0177 77       		.sleb128 -9
+ 857 0178 00       		.byte	0
+ 858 0179 0E       		.uleb128 0xe
+ 859 017a C6000000 		.4byte	.LASF27
+ 860 017e 01       		.byte	0x1
+ 861 017f 4601     		.2byte	0x146
+ 862 0181 00000000 		.4byte	.LFB8
+ 863 0185 54000000 		.4byte	.LFE8-.LFB8
+ 864 0189 01       		.uleb128 0x1
+ 865 018a 9C       		.byte	0x9c
+ 866 018b 9F010000 		.4byte	0x19f
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 24
+
+
+ 867 018f 0D       		.uleb128 0xd
+ 868 0190 9B000000 		.4byte	.LASF28
+ 869 0194 01       		.byte	0x1
+ 870 0195 4601     		.2byte	0x146
+ 871 0197 6B000000 		.4byte	0x6b
+ 872 019b 02       		.uleb128 0x2
+ 873 019c 91       		.byte	0x91
+ 874 019d 77       		.sleb128 -9
+ 875 019e 00       		.byte	0
+ 876 019f 0B       		.uleb128 0xb
+ 877 01a0 59030000 		.4byte	.LASF29
+ 878 01a4 01       		.byte	0x1
+ 879 01a5 6501     		.2byte	0x165
+ 880 01a7 6B000000 		.4byte	0x6b
+ 881 01ab 00000000 		.4byte	.LFB9
+ 882 01af 24000000 		.4byte	.LFE9-.LFB9
+ 883 01b3 01       		.uleb128 0x1
+ 884 01b4 9C       		.byte	0x9c
+ 885 01b5 0B       		.uleb128 0xb
+ 886 01b6 45020000 		.4byte	.LASF30
+ 887 01ba 01       		.byte	0x1
+ 888 01bb 8601     		.2byte	0x186
+ 889 01bd 6B000000 		.4byte	0x6b
+ 890 01c1 00000000 		.4byte	.LFB10
+ 891 01c5 1C000000 		.4byte	.LFE10-.LFB10
+ 892 01c9 01       		.uleb128 0x1
+ 893 01ca 9C       		.byte	0x9c
+ 894 01cb 0C       		.uleb128 0xc
+ 895 01cc 1F000000 		.4byte	.LASF31
+ 896 01d0 01       		.byte	0x1
+ 897 01d1 9F01     		.2byte	0x19f
+ 898 01d3 00000000 		.4byte	.LFB11
+ 899 01d7 20000000 		.4byte	.LFE11-.LFB11
+ 900 01db 01       		.uleb128 0x1
+ 901 01dc 9C       		.byte	0x9c
+ 902 01dd F1010000 		.4byte	0x1f1
+ 903 01e1 0D       		.uleb128 0xd
+ 904 01e2 3D000000 		.4byte	.LASF32
+ 905 01e6 01       		.byte	0x1
+ 906 01e7 9F01     		.2byte	0x19f
+ 907 01e9 6B000000 		.4byte	0x6b
+ 908 01ed 02       		.uleb128 0x2
+ 909 01ee 91       		.byte	0x91
+ 910 01ef 77       		.sleb128 -9
+ 911 01f0 00       		.byte	0
+ 912 01f1 0B       		.uleb128 0xb
+ 913 01f2 11020000 		.4byte	.LASF33
+ 914 01f6 01       		.byte	0x1
+ 915 01f7 B601     		.2byte	0x1b6
+ 916 01f9 6B000000 		.4byte	0x6b
+ 917 01fd 00000000 		.4byte	.LFB12
+ 918 0201 1C000000 		.4byte	.LFE12-.LFB12
+ 919 0205 01       		.uleb128 0x1
+ 920 0206 9C       		.byte	0x9c
+ 921 0207 0F       		.uleb128 0xf
+ 922 0208 96020000 		.4byte	.LASF37
+ 923 020c 01       		.byte	0x1
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 25
+
+
+ 924 020d 15       		.byte	0x15
+ 925 020e 6B000000 		.4byte	0x6b
+ 926 0212 05       		.uleb128 0x5
+ 927 0213 03       		.byte	0x3
+ 928 0214 00000000 		.4byte	Counter_CanReader_initVar
+ 929 0218 00       		.byte	0
+ 930              		.section	.debug_abbrev,"",%progbits
+ 931              	.Ldebug_abbrev0:
+ 932 0000 01       		.uleb128 0x1
+ 933 0001 11       		.uleb128 0x11
+ 934 0002 01       		.byte	0x1
+ 935 0003 25       		.uleb128 0x25
+ 936 0004 0E       		.uleb128 0xe
+ 937 0005 13       		.uleb128 0x13
+ 938 0006 0B       		.uleb128 0xb
+ 939 0007 03       		.uleb128 0x3
+ 940 0008 0E       		.uleb128 0xe
+ 941 0009 1B       		.uleb128 0x1b
+ 942 000a 0E       		.uleb128 0xe
+ 943 000b 55       		.uleb128 0x55
+ 944 000c 17       		.uleb128 0x17
+ 945 000d 11       		.uleb128 0x11
+ 946 000e 01       		.uleb128 0x1
+ 947 000f 10       		.uleb128 0x10
+ 948 0010 17       		.uleb128 0x17
+ 949 0011 00       		.byte	0
+ 950 0012 00       		.byte	0
+ 951 0013 02       		.uleb128 0x2
+ 952 0014 24       		.uleb128 0x24
+ 953 0015 00       		.byte	0
+ 954 0016 0B       		.uleb128 0xb
+ 955 0017 0B       		.uleb128 0xb
+ 956 0018 3E       		.uleb128 0x3e
+ 957 0019 0B       		.uleb128 0xb
+ 958 001a 03       		.uleb128 0x3
+ 959 001b 0E       		.uleb128 0xe
+ 960 001c 00       		.byte	0
+ 961 001d 00       		.byte	0
+ 962 001e 03       		.uleb128 0x3
+ 963 001f 24       		.uleb128 0x24
+ 964 0020 00       		.byte	0
+ 965 0021 0B       		.uleb128 0xb
+ 966 0022 0B       		.uleb128 0xb
+ 967 0023 3E       		.uleb128 0x3e
+ 968 0024 0B       		.uleb128 0xb
+ 969 0025 03       		.uleb128 0x3
+ 970 0026 08       		.uleb128 0x8
+ 971 0027 00       		.byte	0
+ 972 0028 00       		.byte	0
+ 973 0029 04       		.uleb128 0x4
+ 974 002a 16       		.uleb128 0x16
+ 975 002b 00       		.byte	0
+ 976 002c 03       		.uleb128 0x3
+ 977 002d 0E       		.uleb128 0xe
+ 978 002e 3A       		.uleb128 0x3a
+ 979 002f 0B       		.uleb128 0xb
+ 980 0030 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 26
+
+
+ 981 0031 0B       		.uleb128 0xb
+ 982 0032 49       		.uleb128 0x49
+ 983 0033 13       		.uleb128 0x13
+ 984 0034 00       		.byte	0
+ 985 0035 00       		.byte	0
+ 986 0036 05       		.uleb128 0x5
+ 987 0037 16       		.uleb128 0x16
+ 988 0038 00       		.byte	0
+ 989 0039 03       		.uleb128 0x3
+ 990 003a 0E       		.uleb128 0xe
+ 991 003b 3A       		.uleb128 0x3a
+ 992 003c 0B       		.uleb128 0xb
+ 993 003d 3B       		.uleb128 0x3b
+ 994 003e 05       		.uleb128 0x5
+ 995 003f 49       		.uleb128 0x49
+ 996 0040 13       		.uleb128 0x13
+ 997 0041 00       		.byte	0
+ 998 0042 00       		.byte	0
+ 999 0043 06       		.uleb128 0x6
+ 1000 0044 35       		.uleb128 0x35
+ 1001 0045 00       		.byte	0
+ 1002 0046 49       		.uleb128 0x49
+ 1003 0047 13       		.uleb128 0x13
+ 1004 0048 00       		.byte	0
+ 1005 0049 00       		.byte	0
+ 1006 004a 07       		.uleb128 0x7
+ 1007 004b 2E       		.uleb128 0x2e
+ 1008 004c 00       		.byte	0
+ 1009 004d 3F       		.uleb128 0x3f
+ 1010 004e 19       		.uleb128 0x19
+ 1011 004f 03       		.uleb128 0x3
+ 1012 0050 0E       		.uleb128 0xe
+ 1013 0051 3A       		.uleb128 0x3a
+ 1014 0052 0B       		.uleb128 0xb
+ 1015 0053 3B       		.uleb128 0x3b
+ 1016 0054 0B       		.uleb128 0xb
+ 1017 0055 27       		.uleb128 0x27
+ 1018 0056 19       		.uleb128 0x19
+ 1019 0057 11       		.uleb128 0x11
+ 1020 0058 01       		.uleb128 0x1
+ 1021 0059 12       		.uleb128 0x12
+ 1022 005a 06       		.uleb128 0x6
+ 1023 005b 40       		.uleb128 0x40
+ 1024 005c 18       		.uleb128 0x18
+ 1025 005d 9642     		.uleb128 0x2116
+ 1026 005f 19       		.uleb128 0x19
+ 1027 0060 00       		.byte	0
+ 1028 0061 00       		.byte	0
+ 1029 0062 08       		.uleb128 0x8
+ 1030 0063 2E       		.uleb128 0x2e
+ 1031 0064 00       		.byte	0
+ 1032 0065 3F       		.uleb128 0x3f
+ 1033 0066 19       		.uleb128 0x19
+ 1034 0067 03       		.uleb128 0x3
+ 1035 0068 0E       		.uleb128 0xe
+ 1036 0069 3A       		.uleb128 0x3a
+ 1037 006a 0B       		.uleb128 0xb
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 27
+
+
+ 1038 006b 3B       		.uleb128 0x3b
+ 1039 006c 0B       		.uleb128 0xb
+ 1040 006d 27       		.uleb128 0x27
+ 1041 006e 19       		.uleb128 0x19
+ 1042 006f 11       		.uleb128 0x11
+ 1043 0070 01       		.uleb128 0x1
+ 1044 0071 12       		.uleb128 0x12
+ 1045 0072 06       		.uleb128 0x6
+ 1046 0073 40       		.uleb128 0x40
+ 1047 0074 18       		.uleb128 0x18
+ 1048 0075 9742     		.uleb128 0x2117
+ 1049 0077 19       		.uleb128 0x19
+ 1050 0078 00       		.byte	0
+ 1051 0079 00       		.byte	0
+ 1052 007a 09       		.uleb128 0x9
+ 1053 007b 2E       		.uleb128 0x2e
+ 1054 007c 01       		.byte	0x1
+ 1055 007d 3F       		.uleb128 0x3f
+ 1056 007e 19       		.uleb128 0x19
+ 1057 007f 03       		.uleb128 0x3
+ 1058 0080 0E       		.uleb128 0xe
+ 1059 0081 3A       		.uleb128 0x3a
+ 1060 0082 0B       		.uleb128 0xb
+ 1061 0083 3B       		.uleb128 0x3b
+ 1062 0084 0B       		.uleb128 0xb
+ 1063 0085 27       		.uleb128 0x27
+ 1064 0086 19       		.uleb128 0x19
+ 1065 0087 11       		.uleb128 0x11
+ 1066 0088 01       		.uleb128 0x1
+ 1067 0089 12       		.uleb128 0x12
+ 1068 008a 06       		.uleb128 0x6
+ 1069 008b 40       		.uleb128 0x40
+ 1070 008c 18       		.uleb128 0x18
+ 1071 008d 9742     		.uleb128 0x2117
+ 1072 008f 19       		.uleb128 0x19
+ 1073 0090 01       		.uleb128 0x1
+ 1074 0091 13       		.uleb128 0x13
+ 1075 0092 00       		.byte	0
+ 1076 0093 00       		.byte	0
+ 1077 0094 0A       		.uleb128 0xa
+ 1078 0095 05       		.uleb128 0x5
+ 1079 0096 00       		.byte	0
+ 1080 0097 03       		.uleb128 0x3
+ 1081 0098 0E       		.uleb128 0xe
+ 1082 0099 3A       		.uleb128 0x3a
+ 1083 009a 0B       		.uleb128 0xb
+ 1084 009b 3B       		.uleb128 0x3b
+ 1085 009c 0B       		.uleb128 0xb
+ 1086 009d 49       		.uleb128 0x49
+ 1087 009e 13       		.uleb128 0x13
+ 1088 009f 02       		.uleb128 0x2
+ 1089 00a0 18       		.uleb128 0x18
+ 1090 00a1 00       		.byte	0
+ 1091 00a2 00       		.byte	0
+ 1092 00a3 0B       		.uleb128 0xb
+ 1093 00a4 2E       		.uleb128 0x2e
+ 1094 00a5 00       		.byte	0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 28
+
+
+ 1095 00a6 3F       		.uleb128 0x3f
+ 1096 00a7 19       		.uleb128 0x19
+ 1097 00a8 03       		.uleb128 0x3
+ 1098 00a9 0E       		.uleb128 0xe
+ 1099 00aa 3A       		.uleb128 0x3a
+ 1100 00ab 0B       		.uleb128 0xb
+ 1101 00ac 3B       		.uleb128 0x3b
+ 1102 00ad 05       		.uleb128 0x5
+ 1103 00ae 27       		.uleb128 0x27
+ 1104 00af 19       		.uleb128 0x19
+ 1105 00b0 49       		.uleb128 0x49
+ 1106 00b1 13       		.uleb128 0x13
+ 1107 00b2 11       		.uleb128 0x11
+ 1108 00b3 01       		.uleb128 0x1
+ 1109 00b4 12       		.uleb128 0x12
+ 1110 00b5 06       		.uleb128 0x6
+ 1111 00b6 40       		.uleb128 0x40
+ 1112 00b7 18       		.uleb128 0x18
+ 1113 00b8 9742     		.uleb128 0x2117
+ 1114 00ba 19       		.uleb128 0x19
+ 1115 00bb 00       		.byte	0
+ 1116 00bc 00       		.byte	0
+ 1117 00bd 0C       		.uleb128 0xc
+ 1118 00be 2E       		.uleb128 0x2e
+ 1119 00bf 01       		.byte	0x1
+ 1120 00c0 3F       		.uleb128 0x3f
+ 1121 00c1 19       		.uleb128 0x19
+ 1122 00c2 03       		.uleb128 0x3
+ 1123 00c3 0E       		.uleb128 0xe
+ 1124 00c4 3A       		.uleb128 0x3a
+ 1125 00c5 0B       		.uleb128 0xb
+ 1126 00c6 3B       		.uleb128 0x3b
+ 1127 00c7 05       		.uleb128 0x5
+ 1128 00c8 27       		.uleb128 0x27
+ 1129 00c9 19       		.uleb128 0x19
+ 1130 00ca 11       		.uleb128 0x11
+ 1131 00cb 01       		.uleb128 0x1
+ 1132 00cc 12       		.uleb128 0x12
+ 1133 00cd 06       		.uleb128 0x6
+ 1134 00ce 40       		.uleb128 0x40
+ 1135 00cf 18       		.uleb128 0x18
+ 1136 00d0 9742     		.uleb128 0x2117
+ 1137 00d2 19       		.uleb128 0x19
+ 1138 00d3 01       		.uleb128 0x1
+ 1139 00d4 13       		.uleb128 0x13
+ 1140 00d5 00       		.byte	0
+ 1141 00d6 00       		.byte	0
+ 1142 00d7 0D       		.uleb128 0xd
+ 1143 00d8 05       		.uleb128 0x5
+ 1144 00d9 00       		.byte	0
+ 1145 00da 03       		.uleb128 0x3
+ 1146 00db 0E       		.uleb128 0xe
+ 1147 00dc 3A       		.uleb128 0x3a
+ 1148 00dd 0B       		.uleb128 0xb
+ 1149 00de 3B       		.uleb128 0x3b
+ 1150 00df 05       		.uleb128 0x5
+ 1151 00e0 49       		.uleb128 0x49
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 29
+
+
+ 1152 00e1 13       		.uleb128 0x13
+ 1153 00e2 02       		.uleb128 0x2
+ 1154 00e3 18       		.uleb128 0x18
+ 1155 00e4 00       		.byte	0
+ 1156 00e5 00       		.byte	0
+ 1157 00e6 0E       		.uleb128 0xe
+ 1158 00e7 2E       		.uleb128 0x2e
+ 1159 00e8 01       		.byte	0x1
+ 1160 00e9 3F       		.uleb128 0x3f
+ 1161 00ea 19       		.uleb128 0x19
+ 1162 00eb 03       		.uleb128 0x3
+ 1163 00ec 0E       		.uleb128 0xe
+ 1164 00ed 3A       		.uleb128 0x3a
+ 1165 00ee 0B       		.uleb128 0xb
+ 1166 00ef 3B       		.uleb128 0x3b
+ 1167 00f0 05       		.uleb128 0x5
+ 1168 00f1 27       		.uleb128 0x27
+ 1169 00f2 19       		.uleb128 0x19
+ 1170 00f3 11       		.uleb128 0x11
+ 1171 00f4 01       		.uleb128 0x1
+ 1172 00f5 12       		.uleb128 0x12
+ 1173 00f6 06       		.uleb128 0x6
+ 1174 00f7 40       		.uleb128 0x40
+ 1175 00f8 18       		.uleb128 0x18
+ 1176 00f9 9642     		.uleb128 0x2116
+ 1177 00fb 19       		.uleb128 0x19
+ 1178 00fc 01       		.uleb128 0x1
+ 1179 00fd 13       		.uleb128 0x13
+ 1180 00fe 00       		.byte	0
+ 1181 00ff 00       		.byte	0
+ 1182 0100 0F       		.uleb128 0xf
+ 1183 0101 34       		.uleb128 0x34
+ 1184 0102 00       		.byte	0
+ 1185 0103 03       		.uleb128 0x3
+ 1186 0104 0E       		.uleb128 0xe
+ 1187 0105 3A       		.uleb128 0x3a
+ 1188 0106 0B       		.uleb128 0xb
+ 1189 0107 3B       		.uleb128 0x3b
+ 1190 0108 0B       		.uleb128 0xb
+ 1191 0109 49       		.uleb128 0x49
+ 1192 010a 13       		.uleb128 0x13
+ 1193 010b 3F       		.uleb128 0x3f
+ 1194 010c 19       		.uleb128 0x19
+ 1195 010d 02       		.uleb128 0x2
+ 1196 010e 18       		.uleb128 0x18
+ 1197 010f 00       		.byte	0
+ 1198 0110 00       		.byte	0
+ 1199 0111 00       		.byte	0
+ 1200              		.section	.debug_aranges,"",%progbits
+ 1201 0000 7C000000 		.4byte	0x7c
+ 1202 0004 0200     		.2byte	0x2
+ 1203 0006 00000000 		.4byte	.Ldebug_info0
+ 1204 000a 04       		.byte	0x4
+ 1205 000b 00       		.byte	0
+ 1206 000c 0000     		.2byte	0
+ 1207 000e 0000     		.2byte	0
+ 1208 0010 00000000 		.4byte	.LFB0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 30
+
+
+ 1209 0014 98000000 		.4byte	.LFE0-.LFB0
+ 1210 0018 00000000 		.4byte	.LFB1
+ 1211 001c 48000000 		.4byte	.LFE1-.LFB1
+ 1212 0020 00000000 		.4byte	.LFB2
+ 1213 0024 20000000 		.4byte	.LFE2-.LFB2
+ 1214 0028 00000000 		.4byte	.LFB3
+ 1215 002c 48000000 		.4byte	.LFE3-.LFB3
+ 1216 0030 00000000 		.4byte	.LFB4
+ 1217 0034 20000000 		.4byte	.LFE4-.LFB4
+ 1218 0038 00000000 		.4byte	.LFB5
+ 1219 003c 18000000 		.4byte	.LFE5-.LFB5
+ 1220 0040 00000000 		.4byte	.LFB6
+ 1221 0044 18000000 		.4byte	.LFE6-.LFB6
+ 1222 0048 00000000 		.4byte	.LFB7
+ 1223 004c 20000000 		.4byte	.LFE7-.LFB7
+ 1224 0050 00000000 		.4byte	.LFB8
+ 1225 0054 54000000 		.4byte	.LFE8-.LFB8
+ 1226 0058 00000000 		.4byte	.LFB9
+ 1227 005c 24000000 		.4byte	.LFE9-.LFB9
+ 1228 0060 00000000 		.4byte	.LFB10
+ 1229 0064 1C000000 		.4byte	.LFE10-.LFB10
+ 1230 0068 00000000 		.4byte	.LFB11
+ 1231 006c 20000000 		.4byte	.LFE11-.LFB11
+ 1232 0070 00000000 		.4byte	.LFB12
+ 1233 0074 1C000000 		.4byte	.LFE12-.LFB12
+ 1234 0078 00000000 		.4byte	0
+ 1235 007c 00000000 		.4byte	0
+ 1236              		.section	.debug_ranges,"",%progbits
+ 1237              	.Ldebug_ranges0:
+ 1238 0000 00000000 		.4byte	.LFB0
+ 1239 0004 98000000 		.4byte	.LFE0
+ 1240 0008 00000000 		.4byte	.LFB1
+ 1241 000c 48000000 		.4byte	.LFE1
+ 1242 0010 00000000 		.4byte	.LFB2
+ 1243 0014 20000000 		.4byte	.LFE2
+ 1244 0018 00000000 		.4byte	.LFB3
+ 1245 001c 48000000 		.4byte	.LFE3
+ 1246 0020 00000000 		.4byte	.LFB4
+ 1247 0024 20000000 		.4byte	.LFE4
+ 1248 0028 00000000 		.4byte	.LFB5
+ 1249 002c 18000000 		.4byte	.LFE5
+ 1250 0030 00000000 		.4byte	.LFB6
+ 1251 0034 18000000 		.4byte	.LFE6
+ 1252 0038 00000000 		.4byte	.LFB7
+ 1253 003c 20000000 		.4byte	.LFE7
+ 1254 0040 00000000 		.4byte	.LFB8
+ 1255 0044 54000000 		.4byte	.LFE8
+ 1256 0048 00000000 		.4byte	.LFB9
+ 1257 004c 24000000 		.4byte	.LFE9
+ 1258 0050 00000000 		.4byte	.LFB10
+ 1259 0054 1C000000 		.4byte	.LFE10
+ 1260 0058 00000000 		.4byte	.LFB11
+ 1261 005c 20000000 		.4byte	.LFE11
+ 1262 0060 00000000 		.4byte	.LFB12
+ 1263 0064 1C000000 		.4byte	.LFE12
+ 1264 0068 00000000 		.4byte	0
+ 1265 006c 00000000 		.4byte	0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 31
+
+
+ 1266              		.section	.debug_line,"",%progbits
+ 1267              	.Ldebug_line0:
+ 1268 0000 62010000 		.section	.debug_str,"MS",%progbits,1
+ 1268      02005000 
+ 1268      00000201 
+ 1268      FB0E0D00 
+ 1268      01010101 
+ 1269              	.LASF15:
+ 1270 0000 72656731 		.ascii	"reg16\000"
+ 1270      3600
+ 1271              	.LASF18:
+ 1272 0006 436F756E 		.ascii	"Counter_CanReader_Enable\000"
+ 1272      7465725F 
+ 1272      43616E52 
+ 1272      65616465 
+ 1272      725F456E 
+ 1273              	.LASF31:
+ 1274 001f 436F756E 		.ascii	"Counter_CanReader_WritePeriod\000"
+ 1274      7465725F 
+ 1274      43616E52 
+ 1274      65616465 
+ 1274      725F5772 
+ 1275              	.LASF32:
+ 1276 003d 70657269 		.ascii	"period\000"
+ 1276      6F6400
+ 1277              	.LASF3:
+ 1278 0044 73686F72 		.ascii	"short unsigned int\000"
+ 1278      7420756E 
+ 1278      7369676E 
+ 1278      65642069 
+ 1278      6E7400
+ 1279              	.LASF20:
+ 1280 0057 436F756E 		.ascii	"Counter_CanReader_Stop\000"
+ 1280      7465725F 
+ 1280      43616E52 
+ 1280      65616465 
+ 1280      725F5374 
+ 1281              	.LASF24:
+ 1282 006e 436F756E 		.ascii	"Counter_CanReader_WriteControlRegister\000"
+ 1282      7465725F 
+ 1282      43616E52 
+ 1282      65616465 
+ 1282      725F5772 
+ 1283              	.LASF11:
+ 1284 0095 666C6F61 		.ascii	"float\000"
+ 1284      7400
+ 1285              	.LASF28:
+ 1286 009b 636F756E 		.ascii	"counter\000"
+ 1286      74657200 
+ 1287              	.LASF23:
+ 1288 00a3 436F756E 		.ascii	"Counter_CanReader_SetInterruptMode\000"
+ 1288      7465725F 
+ 1288      43616E52 
+ 1288      65616465 
+ 1288      725F5365 
+ 1289              	.LASF27:
+ 1290 00c6 436F756E 		.ascii	"Counter_CanReader_WriteCounter\000"
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 32
+
+
+ 1290      7465725F 
+ 1290      43616E52 
+ 1290      65616465 
+ 1290      725F5772 
+ 1291              	.LASF1:
+ 1292 00e5 756E7369 		.ascii	"unsigned char\000"
+ 1292      676E6564 
+ 1292      20636861 
+ 1292      7200
+ 1293              	.LASF14:
+ 1294 00f3 72656738 		.ascii	"reg8\000"
+ 1294      00
+ 1295              	.LASF5:
+ 1296 00f8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1296      20756E73 
+ 1296      69676E65 
+ 1296      6420696E 
+ 1296      7400
+ 1297              	.LASF36:
+ 1298 010a 433A5C55 		.ascii	"C:\\Users\\plod1602\\Desktop\\GripperPSoC5_CAN\\Gri"
+ 1298      73657273 
+ 1298      5C706C6F 
+ 1298      64313630 
+ 1298      325C4465 
+ 1299 0138 70706572 		.ascii	"pperDynamixelPSoC5.cydsn\000"
+ 1299      44796E61 
+ 1299      6D697865 
+ 1299      6C50536F 
+ 1299      43352E63 
+ 1300              	.LASF26:
+ 1301 0151 636F6E74 		.ascii	"control\000"
+ 1301      726F6C00 
+ 1302              	.LASF25:
+ 1303 0159 696E7465 		.ascii	"interruptsMask\000"
+ 1303      72727570 
+ 1303      74734D61 
+ 1303      736B00
+ 1304              	.LASF34:
+ 1305 0168 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1305      4320342E 
+ 1305      392E3320 
+ 1305      32303135 
+ 1305      30333033 
+ 1306 019b 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1306      20726576 
+ 1306      6973696F 
+ 1306      6E203232 
+ 1306      31323230 
+ 1307 01ce 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1307      66756E63 
+ 1307      74696F6E 
+ 1307      2D736563 
+ 1307      74696F6E 
+ 1308              	.LASF12:
+ 1309 01f6 646F7562 		.ascii	"double\000"
+ 1309      6C6500
+ 1310              	.LASF10:
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 33
+
+
+ 1311 01fd 75696E74 		.ascii	"uint16\000"
+ 1311      313600
+ 1312              	.LASF8:
+ 1313 0204 756E7369 		.ascii	"unsigned int\000"
+ 1313      676E6564 
+ 1313      20696E74 
+ 1313      00
+ 1314              	.LASF33:
+ 1315 0211 436F756E 		.ascii	"Counter_CanReader_ReadPeriod\000"
+ 1315      7465725F 
+ 1315      43616E52 
+ 1315      65616465 
+ 1315      725F5265 
+ 1316              	.LASF7:
+ 1317 022e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1317      206C6F6E 
+ 1317      6720756E 
+ 1317      7369676E 
+ 1317      65642069 
+ 1318              	.LASF30:
+ 1319 0245 436F756E 		.ascii	"Counter_CanReader_ReadCapture\000"
+ 1319      7465725F 
+ 1319      43616E52 
+ 1319      65616465 
+ 1319      725F5265 
+ 1320              	.LASF17:
+ 1321 0263 436F756E 		.ascii	"Counter_CanReader_Init\000"
+ 1321      7465725F 
+ 1321      43616E52 
+ 1321      65616465 
+ 1321      725F496E 
+ 1322              	.LASF16:
+ 1323 027a 73697A65 		.ascii	"sizetype\000"
+ 1323      74797065 
+ 1323      00
+ 1324              	.LASF6:
+ 1325 0283 6C6F6E67 		.ascii	"long long int\000"
+ 1325      206C6F6E 
+ 1325      6720696E 
+ 1325      7400
+ 1326              	.LASF13:
+ 1327 0291 63686172 		.ascii	"char\000"
+ 1327      00
+ 1328              	.LASF37:
+ 1329 0296 436F756E 		.ascii	"Counter_CanReader_initVar\000"
+ 1329      7465725F 
+ 1329      43616E52 
+ 1329      65616465 
+ 1329      725F696E 
+ 1330              	.LASF19:
+ 1331 02b0 436F756E 		.ascii	"Counter_CanReader_Start\000"
+ 1331      7465725F 
+ 1331      43616E52 
+ 1331      65616465 
+ 1331      725F5374 
+ 1332              	.LASF2:
+ 1333 02c8 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccHNgRWB.s 			page 34
+
+
+ 1333      7420696E 
+ 1333      7400
+ 1334              	.LASF22:
+ 1335 02d2 436F756E 		.ascii	"Counter_CanReader_ReadControlRegister\000"
+ 1335      7465725F 
+ 1335      43616E52 
+ 1335      65616465 
+ 1335      725F5265 
+ 1336              	.LASF9:
+ 1337 02f8 75696E74 		.ascii	"uint8\000"
+ 1337      3800
+ 1338              	.LASF21:
+ 1339 02fe 436F756E 		.ascii	"Counter_CanReader_ReadStatusRegister\000"
+ 1339      7465725F 
+ 1339      43616E52 
+ 1339      65616465 
+ 1339      725F5265 
+ 1340              	.LASF4:
+ 1341 0323 6C6F6E67 		.ascii	"long int\000"
+ 1341      20696E74 
+ 1341      00
+ 1342              	.LASF35:
+ 1343 032c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Counter_CanReader.c\000"
+ 1343      6E657261 
+ 1343      7465645F 
+ 1343      536F7572 
+ 1343      63655C50 
+ 1344              	.LASF29:
+ 1345 0359 436F756E 		.ascii	"Counter_CanReader_ReadCounter\000"
+ 1345      7465725F 
+ 1345      43616E52 
+ 1345      65616465 
+ 1345      725F5265 
+ 1346              	.LASF0:
+ 1347 0377 7369676E 		.ascii	"signed char\000"
+ 1347      65642063 
+ 1347      68617200 
+ 1348              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
