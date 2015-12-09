@@ -1,0 +1,1937 @@
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	messageToBeTreatedCount
+  19              		.bss
+  20              		.align	2
+  21              		.type	messageToBeTreatedCount, %object
+  22              		.size	messageToBeTreatedCount, 4
+  23              	messageToBeTreatedCount:
+  24 0000 00000000 		.space	4
+  25              		.global	msgToBeTreatedIndex
+  26              		.align	2
+  27              		.type	msgToBeTreatedIndex, %object
+  28              		.size	msgToBeTreatedIndex, 4
+  29              	msgToBeTreatedIndex:
+  30 0004 00000000 		.space	4
+  31              		.global	msgToBeStoredIndex
+  32              		.align	2
+  33              		.type	msgToBeStoredIndex, %object
+  34              		.size	msgToBeStoredIndex, 4
+  35              	msgToBeStoredIndex:
+  36 0008 00000000 		.space	4
+  37              		.comm	receivedMsgs,800,4
+  38              		.global	readCanMessage
+  39              		.type	readCanMessage, %object
+  40              		.size	readCanMessage, 1
+  41              	readCanMessage:
+  42 000c 00       		.space	1
+  43              		.global	treatingAddress
+  44              		.type	treatingAddress, %object
+  45              		.size	treatingAddress, 1
+  46              	treatingAddress:
+  47 000d 00       		.space	1
+  48 000e 0000     		.section	.text.treatCanMessage,"ax",%progbits
+  49              		.align	2
+  50              		.global	treatCanMessage
+  51              		.thumb
+  52              		.thumb_func
+  53              		.type	treatCanMessage, %function
+  54              	treatCanMessage:
+  55              	.LFB56:
+  56              		.file 1 ".\\main.c"
+   1:.\main.c      **** /*******************************************************************************
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 2
+
+
+   2:.\main.c      **** * Project Name:      module-gripper-psoc
+   3:.\main.c      **** * Version:           1.0
+   4:.\main.c      **** *
+   5:.\main.c      **** * Device Used:       PSoC 5 CY8C5588AXI-LP035
+   6:.\main.c      **** * Software Used:     PSoC Creator v3.3
+   7:.\main.c      **** * Compiler Used:     ARM GCC 4.9-2015-q1-update
+   8:.\main.c      **** ********************************************************************************
+   9:.\main.c      **** * Theory of Operation:
+  10:.\main.c      **** *
+  11:.\main.c      **** *
+  12:.\main.c      **** *******************************************************************************/
+  13:.\main.c      **** #include "main.h"
+  14:.\main.c      **** 
+  15:.\main.c      **** 
+  16:.\main.c      **** /* **************************************
+  17:.\main.c      ****    MACROS
+  18:.\main.c      ****  * *************************************/
+  19:.\main.c      **** 
+  20:.\main.c      **** #define SETCLOCK_4MHZ ControlReg_Write(ControlReg_Read() | 0x01)
+  21:.\main.c      **** #define SETCLOCK_8MHZ ControlReg_Write(ControlReg_Read() & 0xFE)
+  22:.\main.c      **** 
+  23:.\main.c      **** /* **************************************
+  24:.\main.c      ****    VARIABLES
+  25:.\main.c      ****  * *************************************/
+  26:.\main.c      **** 
+  27:.\main.c      **** 
+  28:.\main.c      **** // ------- VARIABLES CAN ---------
+  29:.\main.c      **** int messageToBeTreatedCount = 0;
+  30:.\main.c      **** int msgToBeTreatedIndex = 0;
+  31:.\main.c      **** int msgToBeStoredIndex = 0;
+  32:.\main.c      **** CAN_MSG receivedMsgs[MAX_MSG_BUFFER_SIZE];
+  33:.\main.c      **** // ----------------------------
+  34:.\main.c      **** 
+  35:.\main.c      **** volatile uint8 readCanMessage = 0;
+  36:.\main.c      **** uint8 treatingAddress = 0;
+  37:.\main.c      **** 
+  38:.\main.c      **** 
+  39:.\main.c      **** 
+  40:.\main.c      **** uint8 treatCanMessage(uint8* canPacket)
+  41:.\main.c      **** {   
+  57              		.loc 1 41 0
+  58              		.cfi_startproc
+  59              		@ args = 0, pretend = 0, frame = 16
+  60              		@ frame_needed = 1, uses_anonymous_args = 0
+  61 0000 90B5     		push	{r4, r7, lr}
+  62              		.cfi_def_cfa_offset 12
+  63              		.cfi_offset 4, -12
+  64              		.cfi_offset 7, -8
+  65              		.cfi_offset 14, -4
+  66 0002 89B0     		sub	sp, sp, #36
+  67              		.cfi_def_cfa_offset 48
+  68 0004 04AF     		add	r7, sp, #16
+  69              		.cfi_def_cfa 7, 32
+  70 0006 7860     		str	r0, [r7, #4]
+  42:.\main.c      ****     uint16 rightMotorPosition = 0;
+  71              		.loc 1 42 0
+  72 0008 0023     		movs	r3, #0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 3
+
+
+  73 000a FB81     		strh	r3, [r7, #14]	@ movhi
+  43:.\main.c      ****     uint16 leftMotorPosition = 0;
+  74              		.loc 1 43 0
+  75 000c 0023     		movs	r3, #0
+  76 000e BB81     		strh	r3, [r7, #12]	@ movhi
+  44:.\main.c      ****     
+  45:.\main.c      ****     switch(canPacket[0])
+  77              		.loc 1 45 0
+  78 0010 7B68     		ldr	r3, [r7, #4]
+  79 0012 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  80 0014 0E2B     		cmp	r3, #14
+  81 0016 00F29181 		bhi	.L2
+  82 001a 01A2     		adr	r2, .L4
+  83 001c 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+  84              		.p2align 2
+  85              	.L4:
+  86 0020 5D000000 		.word	.L3+1
+  87 0024 63000000 		.word	.L5+1
+  88 0028 83000000 		.word	.L6+1
+  89 002c A5010000 		.word	.L7+1
+  90 0030 D5010000 		.word	.L8+1
+  91 0034 05020000 		.word	.L9+1
+  92 0038 49010000 		.word	.L10+1
+  93 003c 77010000 		.word	.L11+1
+  94 0040 19010000 		.word	.L12+1
+  95 0044 23020000 		.word	.L13+1
+  96 0048 51020000 		.word	.L14+1
+  97 004c C3020000 		.word	.L15+1
+  98 0050 D7020000 		.word	.L16+1
+  99 0054 EB020000 		.word	.L17+1
+ 100 0058 1B030000 		.word	.L18+1
+ 101              		.p2align 1
+ 102              	.L3:
+  46:.\main.c      ****     {
+  47:.\main.c      ****         case CAN_INSTRUCTION_SET_Z_AXIS_HOME:
+  48:.\main.c      ****             
+  49:.\main.c      ****             Z_Axis_Home();
+ 103              		.loc 1 49 0
+ 104 005c FFF7FEFF 		bl	Z_Axis_Home
+  50:.\main.c      ****             break;
+ 105              		.loc 1 50 0
+ 106 0060 6CE1     		b	.L2
+ 107              	.L5:
+  51:.\main.c      ****         
+  52:.\main.c      ****         case CAN_INSTRUCTION_SET_Z_AXIS_POSITION:
+  53:.\main.c      ****             
+  54:.\main.c      ****             Z_Axis_GoTo((uint16)(canPacket[6]<<8) | canPacket[7]);
+ 108              		.loc 1 54 0
+ 109 0062 7B68     		ldr	r3, [r7, #4]
+ 110 0064 0633     		adds	r3, r3, #6
+ 111 0066 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 112 0068 9BB2     		uxth	r3, r3
+ 113 006a 1B02     		lsls	r3, r3, #8
+ 114 006c 9AB2     		uxth	r2, r3
+ 115 006e 7B68     		ldr	r3, [r7, #4]
+ 116 0070 0733     		adds	r3, r3, #7
+ 117 0072 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 4
+
+
+ 118 0074 9BB2     		uxth	r3, r3
+ 119 0076 1343     		orrs	r3, r3, r2
+ 120 0078 9BB2     		uxth	r3, r3
+ 121 007a 1846     		mov	r0, r3
+ 122 007c FFF7FEFF 		bl	Z_Axis_GoTo
+  55:.\main.c      ****             break;
+ 123              		.loc 1 55 0
+ 124 0080 5CE1     		b	.L2
+ 125              	.L6:
+  56:.\main.c      ****             
+  57:.\main.c      ****         case CAN_INSTRUCTION_OPEN_GRIPPER:
+  58:.\main.c      ****             
+  59:.\main.c      ****             // canPacket[1]:
+  60:.\main.c      ****             //      pourcentage of the openning
+  61:.\main.c      ****             
+  62:.\main.c      ****             rightMotorPosition = ((motorAngleLimits[MOTOR_RIGHT_ANGLE_CCW] - motorAngleLimits[MOTOR
+ 126              		.loc 1 62 0
+ 127 0082 B14B     		ldr	r3, .L23
+ 128 0084 DB88     		ldrh	r3, [r3, #6]
+ 129 0086 1A46     		mov	r2, r3
+ 130 0088 AF4B     		ldr	r3, .L23
+ 131 008a 9B88     		ldrh	r3, [r3, #4]
+ 132 008c D31A     		subs	r3, r2, r3
+ 133 008e 7A68     		ldr	r2, [r7, #4]
+ 134 0090 0132     		adds	r2, r2, #1
+ 135 0092 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 136 0094 02FB03F3 		mul	r3, r2, r3
+ 137 0098 AC4A     		ldr	r2, .L23+4
+ 138 009a 82FB0312 		smull	r1, r2, r2, r3
+ 139 009e 5211     		asrs	r2, r2, #5
+ 140 00a0 DB17     		asrs	r3, r3, #31
+ 141 00a2 D31A     		subs	r3, r2, r3
+ 142 00a4 9AB2     		uxth	r2, r3
+ 143 00a6 A84B     		ldr	r3, .L23
+ 144 00a8 9B88     		ldrh	r3, [r3, #4]
+ 145 00aa 1344     		add	r3, r3, r2
+ 146 00ac FB81     		strh	r3, [r7, #14]	@ movhi
+  63:.\main.c      ****             leftMotorPosition  = ((motorAngleLimits[MOTOR_LEFT_ANGLE_CCW] - motorAngleLimits[MOTOR_
+ 147              		.loc 1 63 0
+ 148 00ae A64B     		ldr	r3, .L23
+ 149 00b0 5B88     		ldrh	r3, [r3, #2]
+ 150 00b2 1A46     		mov	r2, r3
+ 151 00b4 A44B     		ldr	r3, .L23
+ 152 00b6 1B88     		ldrh	r3, [r3]
+ 153 00b8 D31A     		subs	r3, r2, r3
+ 154 00ba 7A68     		ldr	r2, [r7, #4]
+ 155 00bc 0132     		adds	r2, r2, #1
+ 156 00be 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 157 00c0 C2F16402 		rsb	r2, r2, #100
+ 158 00c4 02FB03F3 		mul	r3, r2, r3
+ 159 00c8 A04A     		ldr	r2, .L23+4
+ 160 00ca 82FB0312 		smull	r1, r2, r2, r3
+ 161 00ce 5211     		asrs	r2, r2, #5
+ 162 00d0 DB17     		asrs	r3, r3, #31
+ 163 00d2 D31A     		subs	r3, r2, r3
+ 164 00d4 9AB2     		uxth	r2, r3
+ 165 00d6 9C4B     		ldr	r3, .L23
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 5
+
+
+ 166 00d8 1B88     		ldrh	r3, [r3]
+ 167 00da 1344     		add	r3, r3, r2
+ 168 00dc BB81     		strh	r3, [r7, #12]	@ movhi
+  64:.\main.c      ****             
+  65:.\main.c      ****             sendPacketToDynamixel(dynamixel_setPositionRegPacket(motorType[MOTOR_TYPE_RIGHT], right
+ 169              		.loc 1 65 0
+ 170 00de 9C4B     		ldr	r3, .L23+8
+ 171 00e0 DA78     		ldrb	r2, [r3, #3]	@ zero_extendqisi2
+ 172 00e2 FB89     		ldrh	r3, [r7, #14]
+ 173 00e4 1046     		mov	r0, r2
+ 174 00e6 1946     		mov	r1, r3
+ 175 00e8 FFF7FEFF 		bl	dynamixel_setPositionRegPacket
+ 176 00ec 0346     		mov	r3, r0
+ 177 00ee 1846     		mov	r0, r3
+ 178 00f0 FFF7FEFF 		bl	sendPacketToDynamixel
+  66:.\main.c      ****             sendPacketToDynamixel(dynamixel_setPositionRegPacket(motorType[MOTOR_TYPE_LEFT], leftMo
+ 179              		.loc 1 66 0
+ 180 00f4 964B     		ldr	r3, .L23+8
+ 181 00f6 1A79     		ldrb	r2, [r3, #4]	@ zero_extendqisi2
+ 182 00f8 BB89     		ldrh	r3, [r7, #12]
+ 183 00fa 1046     		mov	r0, r2
+ 184 00fc 1946     		mov	r1, r3
+ 185 00fe FFF7FEFF 		bl	dynamixel_setPositionRegPacket
+ 186 0102 0346     		mov	r3, r0
+ 187 0104 1846     		mov	r0, r3
+ 188 0106 FFF7FEFF 		bl	sendPacketToDynamixel
+  67:.\main.c      ****             sendPacketToDynamixel(dynamixel_getActionPacket());
+ 189              		.loc 1 67 0
+ 190 010a FFF7FEFF 		bl	dynamixel_getActionPacket
+ 191 010e 0346     		mov	r3, r0
+ 192 0110 1846     		mov	r0, r3
+ 193 0112 FFF7FEFF 		bl	sendPacketToDynamixel
+  68:.\main.c      ****             break;
+ 194              		.loc 1 68 0
+ 195 0116 11E1     		b	.L2
+ 196              	.L12:
+  69:.\main.c      ****             
+  70:.\main.c      ****         case CAN_INSTRUCTION_MOVE:
+  71:.\main.c      ****             
+  72:.\main.c      ****             // canPacket[1]:
+  73:.\main.c      ****             //      ID of the motor
+  74:.\main.c      ****             // canPacket[2] & canPacket[3]:
+  75:.\main.c      ****             //      Position of the motor (between 0 and 0x3ff)
+  76:.\main.c      ****             
+  77:.\main.c      ****             sendPacketToDynamixel(dynamixel_setPositionPacket(canPacket[1], (uint16)((canPacket[3]<
+ 197              		.loc 1 77 0
+ 198 0118 7B68     		ldr	r3, [r7, #4]
+ 199 011a 0133     		adds	r3, r3, #1
+ 200 011c 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 201 011e 7B68     		ldr	r3, [r7, #4]
+ 202 0120 0333     		adds	r3, r3, #3
+ 203 0122 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 204 0124 9BB2     		uxth	r3, r3
+ 205 0126 1B02     		lsls	r3, r3, #8
+ 206 0128 9AB2     		uxth	r2, r3
+ 207 012a 7B68     		ldr	r3, [r7, #4]
+ 208 012c 0233     		adds	r3, r3, #2
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 6
+
+
+ 209 012e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 210 0130 9BB2     		uxth	r3, r3
+ 211 0132 1344     		add	r3, r3, r2
+ 212 0134 9BB2     		uxth	r3, r3
+ 213 0136 0846     		mov	r0, r1
+ 214 0138 1946     		mov	r1, r3
+ 215 013a FFF7FEFF 		bl	dynamixel_setPositionPacket
+ 216 013e 0346     		mov	r3, r0
+ 217 0140 1846     		mov	r0, r3
+ 218 0142 FFF7FEFF 		bl	sendPacketToDynamixel
+  78:.\main.c      ****             break;
+ 219              		.loc 1 78 0
+ 220 0146 F9E0     		b	.L2
+ 221              	.L10:
+  79:.\main.c      ****         
+  80:.\main.c      ****         case CAN_INSTRUCTION_TILT:
+  81:.\main.c      ****             
+  82:.\main.c      ****             // canPacket[1] & canPacket[2]:
+  83:.\main.c      ****             //      position of the motor
+  84:.\main.c      **** 
+  85:.\main.c      ****             sendPacketToDynamixel(dynamixel_setPositionPacket(motorType[MOTOR_TYPE_TILT], (uint16)(
+ 222              		.loc 1 85 0
+ 223 0148 814B     		ldr	r3, .L23+8
+ 224 014a 9978     		ldrb	r1, [r3, #2]	@ zero_extendqisi2
+ 225 014c 7B68     		ldr	r3, [r7, #4]
+ 226 014e 0233     		adds	r3, r3, #2
+ 227 0150 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 228 0152 9BB2     		uxth	r3, r3
+ 229 0154 1B02     		lsls	r3, r3, #8
+ 230 0156 9AB2     		uxth	r2, r3
+ 231 0158 7B68     		ldr	r3, [r7, #4]
+ 232 015a 0133     		adds	r3, r3, #1
+ 233 015c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 234 015e 9BB2     		uxth	r3, r3
+ 235 0160 1344     		add	r3, r3, r2
+ 236 0162 9BB2     		uxth	r3, r3
+ 237 0164 0846     		mov	r0, r1
+ 238 0166 1946     		mov	r1, r3
+ 239 0168 FFF7FEFF 		bl	dynamixel_setPositionPacket
+ 240 016c 0346     		mov	r3, r0
+ 241 016e 1846     		mov	r0, r3
+ 242 0170 FFF7FEFF 		bl	sendPacketToDynamixel
+  86:.\main.c      ****             break;
+ 243              		.loc 1 86 0
+ 244 0174 E2E0     		b	.L2
+ 245              	.L11:
+  87:.\main.c      ****             
+  88:.\main.c      ****         case CAN_INSTRUCTION_ROTATE:
+  89:.\main.c      ****             
+  90:.\main.c      ****             // canPacket[1] & canPacket[2]:
+  91:.\main.c      ****             //      position of the motor
+  92:.\main.c      ****             
+  93:.\main.c      ****             sendPacketToDynamixel(dynamixel_setPositionPacket(motorType[MOTOR_TYPE_ROTATE], (uint16
+ 246              		.loc 1 93 0
+ 247 0176 764B     		ldr	r3, .L23+8
+ 248 0178 5978     		ldrb	r1, [r3, #1]	@ zero_extendqisi2
+ 249 017a 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 7
+
+
+ 250 017c 0233     		adds	r3, r3, #2
+ 251 017e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 252 0180 9BB2     		uxth	r3, r3
+ 253 0182 1B02     		lsls	r3, r3, #8
+ 254 0184 9AB2     		uxth	r2, r3
+ 255 0186 7B68     		ldr	r3, [r7, #4]
+ 256 0188 0133     		adds	r3, r3, #1
+ 257 018a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 258 018c 9BB2     		uxth	r3, r3
+ 259 018e 1344     		add	r3, r3, r2
+ 260 0190 9BB2     		uxth	r3, r3
+ 261 0192 0846     		mov	r0, r1
+ 262 0194 1946     		mov	r1, r3
+ 263 0196 FFF7FEFF 		bl	dynamixel_setPositionPacket
+ 264 019a 0346     		mov	r3, r0
+ 265 019c 1846     		mov	r0, r3
+ 266 019e FFF7FEFF 		bl	sendPacketToDynamixel
+  94:.\main.c      ****             break;
+ 267              		.loc 1 94 0
+ 268 01a2 CBE0     		b	.L2
+ 269              	.L7:
+  95:.\main.c      ****         
+  96:.\main.c      ****         case CAN_INSTRUCTION_SET_MOVING_SPEED:
+  97:.\main.c      ****             
+  98:.\main.c      ****             // canPacket[1]:
+  99:.\main.c      ****             //      ID of the motor
+ 100:.\main.c      ****             // canPacket[2] & canPacket[3]:
+ 101:.\main.c      ****             //      Moving speed of the motor (between 0 and 0x3ff)
+ 102:.\main.c      ****             
+ 103:.\main.c      ****             sendPacketToDynamixel(dynamixel_setMovingSpeedPacket(canPacket[1], (uint16)((canPacket[
+ 270              		.loc 1 103 0
+ 271 01a4 7B68     		ldr	r3, [r7, #4]
+ 272 01a6 0133     		adds	r3, r3, #1
+ 273 01a8 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 274 01aa 7B68     		ldr	r3, [r7, #4]
+ 275 01ac 0333     		adds	r3, r3, #3
+ 276 01ae 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 277 01b0 9BB2     		uxth	r3, r3
+ 278 01b2 1B02     		lsls	r3, r3, #8
+ 279 01b4 9AB2     		uxth	r2, r3
+ 280 01b6 7B68     		ldr	r3, [r7, #4]
+ 281 01b8 0233     		adds	r3, r3, #2
+ 282 01ba 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 283 01bc 9BB2     		uxth	r3, r3
+ 284 01be 1344     		add	r3, r3, r2
+ 285 01c0 9BB2     		uxth	r3, r3
+ 286 01c2 0846     		mov	r0, r1
+ 287 01c4 1946     		mov	r1, r3
+ 288 01c6 FFF7FEFF 		bl	dynamixel_setMovingSpeedPacket
+ 289 01ca 0346     		mov	r3, r0
+ 290 01cc 1846     		mov	r0, r3
+ 291 01ce FFF7FEFF 		bl	sendPacketToDynamixel
+ 104:.\main.c      ****             break;
+ 292              		.loc 1 104 0
+ 293 01d2 B3E0     		b	.L2
+ 294              	.L8:
+ 105:.\main.c      ****             
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 8
+
+
+ 106:.\main.c      ****         case CAN_INSTRUCTION_SET_TORQUE:
+ 107:.\main.c      ****             
+ 108:.\main.c      ****             // canPacket[1]:
+ 109:.\main.c      ****             //      ID of the motor
+ 110:.\main.c      ****             // canPacket[2] & canPacket[3]:
+ 111:.\main.c      ****             //      Torque of the motor (between 0 and 0x3ff)
+ 112:.\main.c      ****             
+ 113:.\main.c      ****             sendPacketToDynamixel(dynamixel_setTorquePacket(canPacket[1], (uint16)((canPacket[3]<<8
+ 295              		.loc 1 113 0
+ 296 01d4 7B68     		ldr	r3, [r7, #4]
+ 297 01d6 0133     		adds	r3, r3, #1
+ 298 01d8 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 299 01da 7B68     		ldr	r3, [r7, #4]
+ 300 01dc 0333     		adds	r3, r3, #3
+ 301 01de 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 302 01e0 9BB2     		uxth	r3, r3
+ 303 01e2 1B02     		lsls	r3, r3, #8
+ 304 01e4 9AB2     		uxth	r2, r3
+ 305 01e6 7B68     		ldr	r3, [r7, #4]
+ 306 01e8 0233     		adds	r3, r3, #2
+ 307 01ea 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 308 01ec 9BB2     		uxth	r3, r3
+ 309 01ee 1344     		add	r3, r3, r2
+ 310 01f0 9BB2     		uxth	r3, r3
+ 311 01f2 0846     		mov	r0, r1
+ 312 01f4 1946     		mov	r1, r3
+ 313 01f6 FFF7FEFF 		bl	dynamixel_setTorquePacket
+ 314 01fa 0346     		mov	r3, r0
+ 315 01fc 1846     		mov	r0, r3
+ 316 01fe FFF7FEFF 		bl	sendPacketToDynamixel
+ 114:.\main.c      ****             break;
+ 317              		.loc 1 114 0
+ 318 0202 9BE0     		b	.L2
+ 319              	.L9:
+ 115:.\main.c      ****             
+ 116:.\main.c      ****         case CAN_INSTRUCTION_SET_TORQUE_ENABLE:
+ 117:.\main.c      ****             
+ 118:.\main.c      ****             // canPacket[1]: 
+ 119:.\main.c      ****             //      ID of the motor
+ 120:.\main.c      ****             //
+ 121:.\main.c      ****             // canPacket[2]: 
+ 122:.\main.c      ****             //      0 means no torque
+ 123:.\main.c      ****             //      1 means apply torque
+ 124:.\main.c      ****             
+ 125:.\main.c      ****             sendPacketToDynamixel(dynamixel_setTorqueEnablePacket(canPacket[1], canPacket[2]));
+ 320              		.loc 1 125 0
+ 321 0204 7B68     		ldr	r3, [r7, #4]
+ 322 0206 0133     		adds	r3, r3, #1
+ 323 0208 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 324 020a 7B68     		ldr	r3, [r7, #4]
+ 325 020c 0233     		adds	r3, r3, #2
+ 326 020e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 327 0210 1046     		mov	r0, r2
+ 328 0212 1946     		mov	r1, r3
+ 329 0214 FFF7FEFF 		bl	dynamixel_setTorqueEnablePacket
+ 330 0218 0346     		mov	r3, r0
+ 331 021a 1846     		mov	r0, r3
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 9
+
+
+ 332 021c FFF7FEFF 		bl	sendPacketToDynamixel
+ 126:.\main.c      ****             break;
+ 333              		.loc 1 126 0
+ 334 0220 8CE0     		b	.L2
+ 335              	.L13:
+ 127:.\main.c      ****             
+ 128:.\main.c      ****         case CAN_INSTRUCTION_GET_DATA:
+ 129:.\main.c      **** 			
+ 130:.\main.c      **** 			// canPacket[1]:
+ 131:.\main.c      **** 			//		ID of the motor
+ 132:.\main.c      **** 		    // canPacket[2]: 
+ 133:.\main.c      **** 			//      address of the first data in the dynamixel table
+ 134:.\main.c      **** 			// canPacket[3]:
+ 135:.\main.c      **** 			//		number of byte to retreive (max of 4)
+ 136:.\main.c      **** 			
+ 137:.\main.c      **** 			treatingAddress = canPacket[2];
+ 336              		.loc 1 137 0
+ 337 0222 7B68     		ldr	r3, [r7, #4]
+ 338 0224 9A78     		ldrb	r2, [r3, #2]	@ zero_extendqisi2
+ 339 0226 4B4B     		ldr	r3, .L23+12
+ 340 0228 1A70     		strb	r2, [r3]
+ 138:.\main.c      **** 			sendPacketToDynamixel(dynamixel_getReadPacket(canPacket[1], canPacket[2], canPacket[3]));
+ 341              		.loc 1 138 0
+ 342 022a 7B68     		ldr	r3, [r7, #4]
+ 343 022c 0133     		adds	r3, r3, #1
+ 344 022e 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 345 0230 7B68     		ldr	r3, [r7, #4]
+ 346 0232 0233     		adds	r3, r3, #2
+ 347 0234 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 348 0236 7B68     		ldr	r3, [r7, #4]
+ 349 0238 0333     		adds	r3, r3, #3
+ 350 023a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 351 023c 0846     		mov	r0, r1
+ 352 023e 1146     		mov	r1, r2
+ 353 0240 1A46     		mov	r2, r3
+ 354 0242 FFF7FEFF 		bl	dynamixel_getReadPacket
+ 355 0246 0346     		mov	r3, r0
+ 356 0248 1846     		mov	r0, r3
+ 357 024a FFF7FEFF 		bl	sendPacketToDynamixel
+ 139:.\main.c      **** 			break;
+ 358              		.loc 1 139 0
+ 359 024e 75E0     		b	.L2
+ 360              	.L14:
+ 140:.\main.c      ****         
+ 141:.\main.c      ****         case CAN_INSTRUCTION_SET_DATA:
+ 142:.\main.c      ****             
+ 143:.\main.c      **** 		    // canPacket[1]: 
+ 144:.\main.c      **** 			//      ID of the motor
+ 145:.\main.c      **** 			// canPacket[2]:
+ 146:.\main.c      **** 			//		address of the first data in the dynamixel table
+ 147:.\main.c      **** 			// canPacket[3]:
+ 148:.\main.c      **** 			//		number of byte to retreive (max of 2)
+ 149:.\main.c      ****             // canPacket[4] & canPacket[5]:
+ 150:.\main.c      ****             //      data to push to the motor
+ 151:.\main.c      ****             
+ 152:.\main.c      ****             switch(canPacket[3]) 
+ 361              		.loc 1 152 0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 10
+
+
+ 362 0250 7B68     		ldr	r3, [r7, #4]
+ 363 0252 0333     		adds	r3, r3, #3
+ 364 0254 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 365 0256 012B     		cmp	r3, #1
+ 366 0258 02D0     		beq	.L20
+ 367 025a 022B     		cmp	r3, #2
+ 368 025c 13D0     		beq	.L21
+ 153:.\main.c      ****             {
+ 154:.\main.c      ****                 case 1:
+ 155:.\main.c      ****                     sendPacketToDynamixel(dynamixel_setByte(canPacket[1], canPacket[2], canPacket[4
+ 156:.\main.c      ****                     break;
+ 157:.\main.c      ****                 case 2:
+ 158:.\main.c      ****                     updateAngleLimitData(canPacket);
+ 159:.\main.c      ****                     sendPacketToDynamixel(dynamixel_set2Bytes(canPacket[1], canPacket[2], (canPacke
+ 160:.\main.c      ****                     break;
+ 161:.\main.c      ****             }
+ 162:.\main.c      ****             
+ 163:.\main.c      ****             break;
+ 369              		.loc 1 163 0
+ 370 025e 6DE0     		b	.L2
+ 371              	.L20:
+ 155:.\main.c      ****                     break;
+ 372              		.loc 1 155 0
+ 373 0260 7B68     		ldr	r3, [r7, #4]
+ 374 0262 0133     		adds	r3, r3, #1
+ 375 0264 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 376 0266 7B68     		ldr	r3, [r7, #4]
+ 377 0268 0233     		adds	r3, r3, #2
+ 378 026a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 379 026c 7B68     		ldr	r3, [r7, #4]
+ 380 026e 0433     		adds	r3, r3, #4
+ 381 0270 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 382 0272 0846     		mov	r0, r1
+ 383 0274 1146     		mov	r1, r2
+ 384 0276 1A46     		mov	r2, r3
+ 385 0278 FFF7FEFF 		bl	dynamixel_setByte
+ 386 027c 0346     		mov	r3, r0
+ 387 027e 1846     		mov	r0, r3
+ 388 0280 FFF7FEFF 		bl	sendPacketToDynamixel
+ 156:.\main.c      ****                 case 2:
+ 389              		.loc 1 156 0
+ 390 0284 1CE0     		b	.L19
+ 391              	.L21:
+ 158:.\main.c      ****                     sendPacketToDynamixel(dynamixel_set2Bytes(canPacket[1], canPacket[2], (canPacke
+ 392              		.loc 1 158 0
+ 393 0286 7868     		ldr	r0, [r7, #4]
+ 394 0288 FFF7FEFF 		bl	updateAngleLimitData
+ 159:.\main.c      ****                     break;
+ 395              		.loc 1 159 0
+ 396 028c 7B68     		ldr	r3, [r7, #4]
+ 397 028e 0133     		adds	r3, r3, #1
+ 398 0290 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 399 0292 7B68     		ldr	r3, [r7, #4]
+ 400 0294 0233     		adds	r3, r3, #2
+ 401 0296 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 402 0298 7B68     		ldr	r3, [r7, #4]
+ 403 029a 0533     		adds	r3, r3, #5
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 11
+
+
+ 404 029c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 405 029e 9BB2     		uxth	r3, r3
+ 406 02a0 1B02     		lsls	r3, r3, #8
+ 407 02a2 9AB2     		uxth	r2, r3
+ 408 02a4 7B68     		ldr	r3, [r7, #4]
+ 409 02a6 0433     		adds	r3, r3, #4
+ 410 02a8 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 411 02aa 9BB2     		uxth	r3, r3
+ 412 02ac 1344     		add	r3, r3, r2
+ 413 02ae 9BB2     		uxth	r3, r3
+ 414 02b0 1A46     		mov	r2, r3
+ 415 02b2 FFF7FEFF 		bl	dynamixel_set2Bytes
+ 416 02b6 0346     		mov	r3, r0
+ 417 02b8 1846     		mov	r0, r3
+ 418 02ba FFF7FEFF 		bl	sendPacketToDynamixel
+ 160:.\main.c      ****             }
+ 419              		.loc 1 160 0
+ 420 02be 00BF     		nop
+ 421              	.L19:
+ 422              		.loc 1 163 0
+ 423 02c0 3CE0     		b	.L2
+ 424              	.L15:
+ 164:.\main.c      ****             
+ 165:.\main.c      ****         case CAN_INSTRUCTION_CLOCK_4M:
+ 166:.\main.c      ****             
+ 167:.\main.c      ****             SETCLOCK_4MHZ;
+ 425              		.loc 1 167 0
+ 426 02c2 FFF7FEFF 		bl	ControlReg_Read
+ 427 02c6 0346     		mov	r3, r0
+ 428 02c8 43F00103 		orr	r3, r3, #1
+ 429 02cc DBB2     		uxtb	r3, r3
+ 430 02ce 1846     		mov	r0, r3
+ 431 02d0 FFF7FEFF 		bl	ControlReg_Write
+ 168:.\main.c      ****             break;
+ 432              		.loc 1 168 0
+ 433 02d4 32E0     		b	.L2
+ 434              	.L16:
+ 169:.\main.c      ****             
+ 170:.\main.c      ****         case CAN_INSTRUCTION_CLOCK_8M:
+ 171:.\main.c      ****             
+ 172:.\main.c      ****             SETCLOCK_8MHZ;
+ 435              		.loc 1 172 0
+ 436 02d6 FFF7FEFF 		bl	ControlReg_Read
+ 437 02da 0346     		mov	r3, r0
+ 438 02dc 23F00103 		bic	r3, r3, #1
+ 439 02e0 DBB2     		uxtb	r3, r3
+ 440 02e2 1846     		mov	r0, r3
+ 441 02e4 FFF7FEFF 		bl	ControlReg_Write
+ 173:.\main.c      ****             break;
+ 442              		.loc 1 173 0
+ 443 02e8 28E0     		b	.L2
+ 444              	.L17:
+ 174:.\main.c      ****             
+ 175:.\main.c      ****         case CAN_INSTRUCTION_GET_MOTOR_TYPE:
+ 176:.\main.c      ****             
+ 177:.\main.c      **** 		    // canPacket[1]: 
+ 178:.\main.c      **** 			//      ID of the motor
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 12
+
+
+ 179:.\main.c      **** 			
+ 180:.\main.c      ****             sendDataToCAN(0,CAN_HARDWARE_FILTER_ID, CAN_INSTRUCTION_GET_MOTOR_TYPE, canPacket[1], g
+ 445              		.loc 1 180 0
+ 446 02ea 7B68     		ldr	r3, [r7, #4]
+ 447 02ec 0133     		adds	r3, r3, #1
+ 448 02ee 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
+ 449 02f0 7B68     		ldr	r3, [r7, #4]
+ 450 02f2 0133     		adds	r3, r3, #1
+ 451 02f4 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 452 02f6 1846     		mov	r0, r3
+ 453 02f8 FFF7FEFF 		bl	getMotorType
+ 454 02fc 0346     		mov	r3, r0
+ 455 02fe 0093     		str	r3, [sp]
+ 456 0300 0023     		movs	r3, #0
+ 457 0302 0193     		str	r3, [sp, #4]
+ 458 0304 0023     		movs	r3, #0
+ 459 0306 0293     		str	r3, [sp, #8]
+ 460 0308 0023     		movs	r3, #0
+ 461 030a 0393     		str	r3, [sp, #12]
+ 462 030c 0020     		movs	r0, #0
+ 463 030e 3021     		movs	r1, #48
+ 464 0310 0D22     		movs	r2, #13
+ 465 0312 2346     		mov	r3, r4
+ 466 0314 FFF7FEFF 		bl	sendDataToCAN
+ 181:.\main.c      ****             break;
+ 467              		.loc 1 181 0
+ 468 0318 10E0     		b	.L2
+ 469              	.L18:
+ 182:.\main.c      ****             
+ 183:.\main.c      ****         case CAN_INSTRUCTION_SET_MOTOR_TYPE:
+ 184:.\main.c      ****             
+ 185:.\main.c      ****             // canPacket[1]: 
+ 186:.\main.c      **** 			//      ID of the motor
+ 187:.\main.c      ****             // canPacket[2]: 
+ 188:.\main.c      **** 			//      Motor type (0 to 4)
+ 189:.\main.c      ****             
+ 190:.\main.c      ****             eraseMotorType(canPacket[1]);
+ 470              		.loc 1 190 0
+ 471 031a 7B68     		ldr	r3, [r7, #4]
+ 472 031c 0133     		adds	r3, r3, #1
+ 473 031e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 474 0320 1846     		mov	r0, r3
+ 475 0322 FFF7FEFF 		bl	eraseMotorType
+ 191:.\main.c      ****             saveMotorType(canPacket[1], canPacket[2]);
+ 476              		.loc 1 191 0
+ 477 0326 7B68     		ldr	r3, [r7, #4]
+ 478 0328 0133     		adds	r3, r3, #1
+ 479 032a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 480 032c 7B68     		ldr	r3, [r7, #4]
+ 481 032e 0233     		adds	r3, r3, #2
+ 482 0330 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 483 0332 1046     		mov	r0, r2
+ 484 0334 1946     		mov	r1, r3
+ 485 0336 FFF7FEFF 		bl	saveMotorType
+ 192:.\main.c      ****             break;
+ 486              		.loc 1 192 0
+ 487 033a 00BF     		nop
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 13
+
+
+ 488              	.L2:
+ 193:.\main.c      ****             
+ 194:.\main.c      ****     }
+ 195:.\main.c      ****     return 0;
+ 489              		.loc 1 195 0
+ 490 033c 0023     		movs	r3, #0
+ 196:.\main.c      **** }
+ 491              		.loc 1 196 0
+ 492 033e 1846     		mov	r0, r3
+ 493 0340 1437     		adds	r7, r7, #20
+ 494              		.cfi_def_cfa_offset 12
+ 495 0342 BD46     		mov	sp, r7
+ 496              		.cfi_def_cfa_register 13
+ 497              		@ sp needed
+ 498 0344 90BD     		pop	{r4, r7, pc}
+ 499              	.L24:
+ 500 0346 00BF     		.align	2
+ 501              	.L23:
+ 502 0348 00000000 		.word	motorAngleLimits
+ 503 034c 1F85EB51 		.word	1374389535
+ 504 0350 00000000 		.word	motorType
+ 505 0354 00000000 		.word	treatingAddress
+ 506              		.cfi_endproc
+ 507              	.LFE56:
+ 508              		.size	treatCanMessage, .-treatCanMessage
+ 509              		.section	.text.CounterCanInterruptHandler,"ax",%progbits
+ 510              		.align	2
+ 511              		.global	CounterCanInterruptHandler
+ 512              		.thumb
+ 513              		.thumb_func
+ 514              		.type	CounterCanInterruptHandler, %function
+ 515              	CounterCanInterruptHandler:
+ 516              	.LFB57:
+ 197:.\main.c      **** 
+ 198:.\main.c      **** /*******************************************************************************
+ 199:.\main.c      **** * COUNTER CAN READER INTERRUPT ROUTINE
+ 200:.\main.c      **** ********************************************************************************/
+ 201:.\main.c      **** CY_ISR(CounterCanInterruptHandler)
+ 202:.\main.c      **** {
+ 517              		.loc 1 202 0
+ 518              		.cfi_startproc
+ 519              		@ args = 0, pretend = 0, frame = 0
+ 520              		@ frame_needed = 1, uses_anonymous_args = 0
+ 521              		@ link register save eliminated.
+ 522 0000 80B4     		push	{r7}
+ 523              		.cfi_def_cfa_offset 4
+ 524              		.cfi_offset 7, -4
+ 525 0002 00AF     		add	r7, sp, #0
+ 526              		.cfi_def_cfa_register 7
+ 203:.\main.c      **** 	/* Read Status register in order to clear the sticky Terminal Count (TC) bit 
+ 204:.\main.c      **** 	 * in the status register. 
+ 205:.\main.c      ****      */
+ 206:.\main.c      ****     Counter_CanReader_STATUS;
+ 527              		.loc 1 206 0
+ 528 0004 044B     		ldr	r3, .L26
+ 529 0006 1B78     		ldrb	r3, [r3]
+ 207:.\main.c      ****     readCanMessage = 1;
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 14
+
+
+ 530              		.loc 1 207 0
+ 531 0008 044B     		ldr	r3, .L26+4
+ 532 000a 0122     		movs	r2, #1
+ 533 000c 1A70     		strb	r2, [r3]
+ 208:.\main.c      **** }
+ 534              		.loc 1 208 0
+ 535 000e BD46     		mov	sp, r7
+ 536              		.cfi_def_cfa_register 13
+ 537              		@ sp needed
+ 538 0010 5DF8047B 		ldr	r7, [sp], #4
+ 539              		.cfi_restore 7
+ 540              		.cfi_def_cfa_offset 0
+ 541 0014 7047     		bx	lr
+ 542              	.L27:
+ 543 0016 00BF     		.align	2
+ 544              	.L26:
+ 545 0018 034F0040 		.word	1073762051
+ 546 001c 00000000 		.word	readCanMessage
+ 547              		.cfi_endproc
+ 548              	.LFE57:
+ 549              		.size	CounterCanInterruptHandler, .-CounterCanInterruptHandler
+ 550              		.section	.text.main,"ax",%progbits
+ 551              		.align	2
+ 552              		.global	main
+ 553              		.thumb
+ 554              		.thumb_func
+ 555              		.type	main, %function
+ 556              	main:
+ 557              	.LFB58:
+ 209:.\main.c      **** 
+ 210:.\main.c      **** 
+ 211:.\main.c      **** int main()
+ 212:.\main.c      **** {
+ 558              		.loc 1 212 0
+ 559              		.cfi_startproc
+ 560              		@ args = 0, pretend = 0, frame = 16
+ 561              		@ frame_needed = 1, uses_anonymous_args = 0
+ 562 0000 80B5     		push	{r7, lr}
+ 563              		.cfi_def_cfa_offset 8
+ 564              		.cfi_offset 7, -8
+ 565              		.cfi_offset 14, -4
+ 566 0002 84B0     		sub	sp, sp, #16
+ 567              		.cfi_def_cfa_offset 24
+ 568 0004 00AF     		add	r7, sp, #0
+ 569              		.cfi_def_cfa_register 7
+ 213:.\main.c      ****     init_eeprom();
+ 570              		.loc 1 213 0
+ 571 0006 FFF7FEFF 		bl	init_eeprom
+ 214:.\main.c      ****     readEeprom();
+ 572              		.loc 1 214 0
+ 573 000a FFF7FEFF 		bl	readEeprom
+ 215:.\main.c      ****     
+ 216:.\main.c      ****     init_uart_dynamixel();
+ 574              		.loc 1 216 0
+ 575 000e FFF7FEFF 		bl	init_uart_dynamixel
+ 217:.\main.c      ****     init_can_module();
+ 576              		.loc 1 217 0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 15
+
+
+ 577 0012 FFF7FEFF 		bl	init_can_module
+ 218:.\main.c      ****     Z_Axis_Init();
+ 578              		.loc 1 218 0
+ 579 0016 FFF7FEFF 		bl	Z_Axis_Init
+ 219:.\main.c      ****     
+ 220:.\main.c      ****     SETCLOCK_4MHZ;
+ 580              		.loc 1 220 0
+ 581 001a FFF7FEFF 		bl	ControlReg_Read
+ 582 001e 0346     		mov	r3, r0
+ 583 0020 43F00103 		orr	r3, r3, #1
+ 584 0024 DBB2     		uxtb	r3, r3
+ 585 0026 1846     		mov	r0, r3
+ 586 0028 FFF7FEFF 		bl	ControlReg_Write
+ 221:.\main.c      ****     CyGlobalIntEnable; // Enable Global Interrupts
+ 587              		.loc 1 221 0
+ 588              	@ 221 ".\main.c" 1
+ 589 002c 62B6     		CPSIE   i
+ 590              	@ 0 "" 2
+ 591              		.thumb
+ 592              	.L30:
+ 222:.\main.c      **** 
+ 223:.\main.c      **** 	for(;;){
+ 224:.\main.c      ****         
+ 225:.\main.c      ****         
+ 226:.\main.c      ****         //Verify if a message needs to be treated in the message received buffer.       
+ 227:.\main.c      ****         if(readCanMessage == 1 && messageToBeTreatedCount > 0)
+ 593              		.loc 1 227 0
+ 594 002e 0A4B     		ldr	r3, .L31
+ 595 0030 1B78     		ldrb	r3, [r3]
+ 596 0032 DBB2     		uxtb	r3, r3
+ 597 0034 012B     		cmp	r3, #1
+ 598 0036 0ED1     		bne	.L29
+ 599              		.loc 1 227 0 is_stmt 0 discriminator 1
+ 600 0038 084B     		ldr	r3, .L31+4
+ 601 003a 1B68     		ldr	r3, [r3]
+ 602 003c 002B     		cmp	r3, #0
+ 603 003e 0ADD     		ble	.L29
+ 604              	.LBB2:
+ 228:.\main.c      ****         {
+ 229:.\main.c      ****             readCanMessage = 0;
+ 605              		.loc 1 229 0 is_stmt 1
+ 606 0040 054B     		ldr	r3, .L31
+ 607 0042 0022     		movs	r2, #0
+ 608 0044 1A70     		strb	r2, [r3]
+ 230:.\main.c      ****             // Treat the last message received and echo it back on the CAN bus as an acknowledgemen
+ 231:.\main.c      ****             CAN_MSG msgToTreat = can_getReceivedMessage(); 
+ 609              		.loc 1 231 0
+ 610 0046 3B46     		mov	r3, r7
+ 611 0048 1846     		mov	r0, r3
+ 612 004a FFF7FEFF 		bl	can_getReceivedMessage
+ 232:.\main.c      ****             treatCanMessage(msgToTreat.msgBytes.byte);
+ 613              		.loc 1 232 0
+ 614 004e 3B46     		mov	r3, r7
+ 615 0050 1846     		mov	r0, r3
+ 616 0052 FFF7FEFF 		bl	treatCanMessage
+ 617              	.L29:
+ 618              	.LBE2:
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 16
+
+
+ 233:.\main.c      ****         }//*/
+ 234:.\main.c      ****     
+ 235:.\main.c      ****     }
+ 619              		.loc 1 235 0 discriminator 1
+ 620 0056 EAE7     		b	.L30
+ 621              	.L32:
+ 622              		.align	2
+ 623              	.L31:
+ 624 0058 00000000 		.word	readCanMessage
+ 625 005c 00000000 		.word	messageToBeTreatedCount
+ 626              		.cfi_endproc
+ 627              	.LFE58:
+ 628              		.size	main, .-main
+ 629              		.section	.text.init_can_module,"ax",%progbits
+ 630              		.align	2
+ 631              		.global	init_can_module
+ 632              		.thumb
+ 633              		.thumb_func
+ 634              		.type	init_can_module, %function
+ 635              	init_can_module:
+ 636              	.LFB59:
+ 236:.\main.c      **** }
+ 237:.\main.c      **** 
+ 238:.\main.c      **** 
+ 239:.\main.c      **** /******************************************************************************
+ 240:.\main.c      **** * HELPER FUNCTIONS
+ 241:.\main.c      **** *******************************************************************************/
+ 242:.\main.c      **** 
+ 243:.\main.c      **** void init_can_module()
+ 244:.\main.c      **** {
+ 637              		.loc 1 244 0
+ 638              		.cfi_startproc
+ 639              		@ args = 0, pretend = 0, frame = 0
+ 640              		@ frame_needed = 1, uses_anonymous_args = 0
+ 641 0000 80B5     		push	{r7, lr}
+ 642              		.cfi_def_cfa_offset 8
+ 643              		.cfi_offset 7, -8
+ 644              		.cfi_offset 14, -4
+ 645 0002 00AF     		add	r7, sp, #0
+ 646              		.cfi_def_cfa_register 7
+ 245:.\main.c      ****     // Initializing required components for CAN communication
+ 246:.\main.c      ****     CAN_1_Start();
+ 647              		.loc 1 246 0
+ 648 0004 FFF7FEFF 		bl	CAN_1_Start
+ 247:.\main.c      ****     CAN_1_GlobalIntEnable();
+ 649              		.loc 1 247 0
+ 650 0008 FFF7FEFF 		bl	CAN_1_GlobalIntEnable
+ 248:.\main.c      ****     CAN_Standby_Write(0);
+ 651              		.loc 1 248 0
+ 652 000c 0020     		movs	r0, #0
+ 653 000e FFF7FEFF 		bl	CAN_Standby_Write
+ 249:.\main.c      ****     
+ 250:.\main.c      ****     // CAN message are read every time the counter turns to zero
+ 251:.\main.c      ****     CanReaderISR_StartEx(CounterCanInterruptHandler);
+ 654              		.loc 1 251 0
+ 655 0012 0348     		ldr	r0, .L34
+ 656 0014 FFF7FEFF 		bl	CanReaderISR_StartEx
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 17
+
+
+ 252:.\main.c      ****     Counter_CanReader_Start();
+ 657              		.loc 1 252 0
+ 658 0018 FFF7FEFF 		bl	Counter_CanReader_Start
+ 253:.\main.c      **** }
+ 659              		.loc 1 253 0
+ 660 001c 80BD     		pop	{r7, pc}
+ 661              	.L35:
+ 662 001e 00BF     		.align	2
+ 663              	.L34:
+ 664 0020 00000000 		.word	CounterCanInterruptHandler
+ 665              		.cfi_endproc
+ 666              	.LFE59:
+ 667              		.size	init_can_module, .-init_can_module
+ 668              		.text
+ 669              	.Letext0:
+ 670              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 671              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 672              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 673              		.file 5 "Generated_Source\\PSoC5/CAN_1.h"
+ 674              		.file 6 ".\\CANCommunication.h"
+ 675              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
+ 676              		.file 8 ".\\gripperEeprom.h"
+ 677              		.section	.debug_info,"",%progbits
+ 678              	.Ldebug_info0:
+ 679 0000 8F020000 		.4byte	0x28f
+ 680 0004 0400     		.2byte	0x4
+ 681 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 682 000a 04       		.byte	0x4
+ 683 000b 01       		.uleb128 0x1
+ 684 000c 7B000000 		.4byte	.LASF36
+ 685 0010 01       		.byte	0x1
+ 686 0011 28010000 		.4byte	.LASF37
+ 687 0015 08000000 		.4byte	.LASF38
+ 688 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 689 001d 00000000 		.4byte	0
+ 690 0021 00000000 		.4byte	.Ldebug_line0
+ 691 0025 02       		.uleb128 0x2
+ 692 0026 01       		.byte	0x1
+ 693 0027 06       		.byte	0x6
+ 694 0028 D2020000 		.4byte	.LASF0
+ 695 002c 02       		.uleb128 0x2
+ 696 002d 01       		.byte	0x1
+ 697 002e 08       		.byte	0x8
+ 698 002f 37010000 		.4byte	.LASF1
+ 699 0033 02       		.uleb128 0x2
+ 700 0034 02       		.byte	0x2
+ 701 0035 05       		.byte	0x5
+ 702 0036 A1020000 		.4byte	.LASF2
+ 703 003a 02       		.uleb128 0x2
+ 704 003b 02       		.byte	0x2
+ 705 003c 07       		.byte	0x7
+ 706 003d 8D010000 		.4byte	.LASF3
+ 707 0041 03       		.uleb128 0x3
+ 708 0042 71000000 		.4byte	.LASF9
+ 709 0046 02       		.byte	0x2
+ 710 0047 3F       		.byte	0x3f
+ 711 0048 4C000000 		.4byte	0x4c
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 18
+
+
+ 712 004c 02       		.uleb128 0x2
+ 713 004d 04       		.byte	0x4
+ 714 004e 05       		.byte	0x5
+ 715 004f C9020000 		.4byte	.LASF4
+ 716 0053 02       		.uleb128 0x2
+ 717 0054 04       		.byte	0x4
+ 718 0055 07       		.byte	0x7
+ 719 0056 7B010000 		.4byte	.LASF5
+ 720 005a 02       		.uleb128 0x2
+ 721 005b 08       		.byte	0x8
+ 722 005c 05       		.byte	0x5
+ 723 005d 4C020000 		.4byte	.LASF6
+ 724 0061 02       		.uleb128 0x2
+ 725 0062 08       		.byte	0x8
+ 726 0063 07       		.byte	0x7
+ 727 0064 FD010000 		.4byte	.LASF7
+ 728 0068 04       		.uleb128 0x4
+ 729 0069 04       		.byte	0x4
+ 730 006a 05       		.byte	0x5
+ 731 006b 696E7400 		.ascii	"int\000"
+ 732 006f 02       		.uleb128 0x2
+ 733 0070 04       		.byte	0x4
+ 734 0071 07       		.byte	0x7
+ 735 0072 F0010000 		.4byte	.LASF8
+ 736 0076 03       		.uleb128 0x3
+ 737 0077 28020000 		.4byte	.LASF10
+ 738 007b 03       		.byte	0x3
+ 739 007c 2C       		.byte	0x2c
+ 740 007d 41000000 		.4byte	0x41
+ 741 0081 03       		.uleb128 0x3
+ 742 0082 AB020000 		.4byte	.LASF11
+ 743 0086 04       		.byte	0x4
+ 744 0087 A1       		.byte	0xa1
+ 745 0088 2C000000 		.4byte	0x2c
+ 746 008c 03       		.uleb128 0x3
+ 747 008d C6010000 		.4byte	.LASF12
+ 748 0091 04       		.byte	0x4
+ 749 0092 A2       		.byte	0xa2
+ 750 0093 3A000000 		.4byte	0x3a
+ 751 0097 03       		.uleb128 0x3
+ 752 0098 E2010000 		.4byte	.LASF13
+ 753 009c 04       		.byte	0x4
+ 754 009d A3       		.byte	0xa3
+ 755 009e 53000000 		.4byte	0x53
+ 756 00a2 02       		.uleb128 0x2
+ 757 00a3 04       		.byte	0x4
+ 758 00a4 04       		.byte	0x4
+ 759 00a5 31010000 		.4byte	.LASF14
+ 760 00a9 02       		.uleb128 0x2
+ 761 00aa 08       		.byte	0x8
+ 762 00ab 04       		.byte	0x4
+ 763 00ac BF010000 		.4byte	.LASF15
+ 764 00b0 02       		.uleb128 0x2
+ 765 00b1 01       		.byte	0x1
+ 766 00b2 08       		.byte	0x8
+ 767 00b3 64020000 		.4byte	.LASF16
+ 768 00b7 05       		.uleb128 0x5
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 19
+
+
+ 769 00b8 65010000 		.4byte	.LASF17
+ 770 00bc 04       		.byte	0x4
+ 771 00bd 4B01     		.2byte	0x14b
+ 772 00bf C3000000 		.4byte	0xc3
+ 773 00c3 06       		.uleb128 0x6
+ 774 00c4 81000000 		.4byte	0x81
+ 775 00c8 02       		.uleb128 0x2
+ 776 00c9 04       		.byte	0x4
+ 777 00ca 07       		.byte	0x7
+ 778 00cb 30020000 		.4byte	.LASF18
+ 779 00cf 07       		.uleb128 0x7
+ 780 00d0 08       		.byte	0x8
+ 781 00d1 05       		.byte	0x5
+ 782 00d2 6F       		.byte	0x6f
+ 783 00d3 E4000000 		.4byte	0xe4
+ 784 00d7 08       		.uleb128 0x8
+ 785 00d8 09010000 		.4byte	.LASF20
+ 786 00dc 05       		.byte	0x5
+ 787 00dd 71       		.byte	0x71
+ 788 00de E4000000 		.4byte	0xe4
+ 789 00e2 00       		.byte	0
+ 790 00e3 00       		.byte	0
+ 791 00e4 09       		.uleb128 0x9
+ 792 00e5 81000000 		.4byte	0x81
+ 793 00e9 F4000000 		.4byte	0xf4
+ 794 00ed 0A       		.uleb128 0xa
+ 795 00ee C8000000 		.4byte	0xc8
+ 796 00f2 07       		.byte	0x7
+ 797 00f3 00       		.byte	0
+ 798 00f4 03       		.uleb128 0x3
+ 799 00f5 69020000 		.4byte	.LASF19
+ 800 00f9 05       		.byte	0x5
+ 801 00fa 72       		.byte	0x72
+ 802 00fb CF000000 		.4byte	0xcf
+ 803 00ff 07       		.uleb128 0x7
+ 804 0100 10       		.byte	0x10
+ 805 0101 06       		.byte	0x6
+ 806 0102 29       		.byte	0x29
+ 807 0103 2C010000 		.4byte	0x12c
+ 808 0107 08       		.uleb128 0x8
+ 809 0108 98020000 		.4byte	.LASF21
+ 810 010c 06       		.byte	0x6
+ 811 010d 2E       		.byte	0x2e
+ 812 010e F4000000 		.4byte	0xf4
+ 813 0112 00       		.byte	0
+ 814 0113 0B       		.uleb128 0xb
+ 815 0114 444C4300 		.ascii	"DLC\000"
+ 816 0118 06       		.byte	0x6
+ 817 0119 2F       		.byte	0x2f
+ 818 011a 81000000 		.4byte	0x81
+ 819 011e 08       		.byte	0x8
+ 820 011f 08       		.uleb128 0x8
+ 821 0120 E9010000 		.4byte	.LASF22
+ 822 0124 06       		.byte	0x6
+ 823 0125 30       		.byte	0x30
+ 824 0126 97000000 		.4byte	0x97
+ 825 012a 0C       		.byte	0xc
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 20
+
+
+ 826 012b 00       		.byte	0
+ 827 012c 03       		.uleb128 0x3
+ 828 012d 00000000 		.4byte	.LASF23
+ 829 0131 06       		.byte	0x6
+ 830 0132 31       		.byte	0x31
+ 831 0133 FF000000 		.4byte	0xff
+ 832 0137 0C       		.uleb128 0xc
+ 833 0138 D2010000 		.4byte	.LASF39
+ 834 013c 01       		.byte	0x1
+ 835 013d 28       		.byte	0x28
+ 836 013e 81000000 		.4byte	0x81
+ 837 0142 00000000 		.4byte	.LFB56
+ 838 0146 58030000 		.4byte	.LFE56-.LFB56
+ 839 014a 01       		.uleb128 0x1
+ 840 014b 9C       		.byte	0x9c
+ 841 014c 7B010000 		.4byte	0x17b
+ 842 0150 0D       		.uleb128 0xd
+ 843 0151 7E020000 		.4byte	.LASF40
+ 844 0155 01       		.byte	0x1
+ 845 0156 28       		.byte	0x28
+ 846 0157 7B010000 		.4byte	0x17b
+ 847 015b 02       		.uleb128 0x2
+ 848 015c 91       		.byte	0x91
+ 849 015d 64       		.sleb128 -28
+ 850 015e 0E       		.uleb128 0xe
+ 851 015f 52010000 		.4byte	.LASF24
+ 852 0163 01       		.byte	0x1
+ 853 0164 2A       		.byte	0x2a
+ 854 0165 8C000000 		.4byte	0x8c
+ 855 0169 02       		.uleb128 0x2
+ 856 016a 91       		.byte	0x91
+ 857 016b 6E       		.sleb128 -18
+ 858 016c 0E       		.uleb128 0xe
+ 859 016d AD010000 		.4byte	.LASF25
+ 860 0171 01       		.byte	0x1
+ 861 0172 2B       		.byte	0x2b
+ 862 0173 8C000000 		.4byte	0x8c
+ 863 0177 02       		.uleb128 0x2
+ 864 0178 91       		.byte	0x91
+ 865 0179 6C       		.sleb128 -20
+ 866 017a 00       		.byte	0
+ 867 017b 0F       		.uleb128 0xf
+ 868 017c 04       		.byte	0x4
+ 869 017d 81000000 		.4byte	0x81
+ 870 0181 10       		.uleb128 0x10
+ 871 0182 56000000 		.4byte	.LASF41
+ 872 0186 01       		.byte	0x1
+ 873 0187 C9       		.byte	0xc9
+ 874 0188 00000000 		.4byte	.LFB57
+ 875 018c 20000000 		.4byte	.LFE57-.LFB57
+ 876 0190 01       		.uleb128 0x1
+ 877 0191 9C       		.byte	0x9c
+ 878 0192 11       		.uleb128 0x11
+ 879 0193 CD010000 		.4byte	.LASF42
+ 880 0197 01       		.byte	0x1
+ 881 0198 D3       		.byte	0xd3
+ 882 0199 68000000 		.4byte	0x68
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 21
+
+
+ 883 019d 00000000 		.4byte	.LFB58
+ 884 01a1 60000000 		.4byte	.LFE58-.LFB58
+ 885 01a5 01       		.uleb128 0x1
+ 886 01a6 9C       		.byte	0x9c
+ 887 01a7 C4010000 		.4byte	0x1c4
+ 888 01ab 12       		.uleb128 0x12
+ 889 01ac 40000000 		.4byte	.LBB2
+ 890 01b0 16000000 		.4byte	.LBE2-.LBB2
+ 891 01b4 0E       		.uleb128 0xe
+ 892 01b5 1D010000 		.4byte	.LASF26
+ 893 01b9 01       		.byte	0x1
+ 894 01ba E7       		.byte	0xe7
+ 895 01bb 2C010000 		.4byte	0x12c
+ 896 01bf 02       		.uleb128 0x2
+ 897 01c0 91       		.byte	0x91
+ 898 01c1 68       		.sleb128 -24
+ 899 01c2 00       		.byte	0
+ 900 01c3 00       		.byte	0
+ 901 01c4 13       		.uleb128 0x13
+ 902 01c5 88020000 		.4byte	.LASF43
+ 903 01c9 01       		.byte	0x1
+ 904 01ca F3       		.byte	0xf3
+ 905 01cb 00000000 		.4byte	.LFB59
+ 906 01cf 24000000 		.4byte	.LFE59-.LFB59
+ 907 01d3 01       		.uleb128 0x1
+ 908 01d4 9C       		.byte	0x9c
+ 909 01d5 14       		.uleb128 0x14
+ 910 01d6 A0010000 		.4byte	.LASF27
+ 911 01da 07       		.byte	0x7
+ 912 01db 1606     		.2byte	0x616
+ 913 01dd E1010000 		.4byte	0x1e1
+ 914 01e1 06       		.uleb128 0x6
+ 915 01e2 76000000 		.4byte	0x76
+ 916 01e6 15       		.uleb128 0x15
+ 917 01e7 14020000 		.4byte	.LASF28
+ 918 01eb 01       		.byte	0x1
+ 919 01ec 1E       		.byte	0x1e
+ 920 01ed 68000000 		.4byte	0x68
+ 921 01f1 05       		.uleb128 0x5
+ 922 01f2 03       		.byte	0x3
+ 923 01f3 00000000 		.4byte	msgToBeTreatedIndex
+ 924 01f7 15       		.uleb128 0x15
+ 925 01f8 39020000 		.4byte	.LASF29
+ 926 01fc 01       		.byte	0x1
+ 927 01fd 1F       		.byte	0x1f
+ 928 01fe 68000000 		.4byte	0x68
+ 929 0202 05       		.uleb128 0x5
+ 930 0203 03       		.byte	0x3
+ 931 0204 00000000 		.4byte	msgToBeStoredIndex
+ 932 0208 15       		.uleb128 0x15
+ 933 0209 B1020000 		.4byte	.LASF30
+ 934 020d 01       		.byte	0x1
+ 935 020e 1D       		.byte	0x1d
+ 936 020f 68000000 		.4byte	0x68
+ 937 0213 05       		.uleb128 0x5
+ 938 0214 03       		.byte	0x3
+ 939 0215 00000000 		.4byte	messageToBeTreatedCount
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 22
+
+
+ 940 0219 09       		.uleb128 0x9
+ 941 021a 2C010000 		.4byte	0x12c
+ 942 021e 29020000 		.4byte	0x229
+ 943 0222 0A       		.uleb128 0xa
+ 944 0223 C8000000 		.4byte	0xc8
+ 945 0227 31       		.byte	0x31
+ 946 0228 00       		.byte	0
+ 947 0229 15       		.uleb128 0x15
+ 948 022a 45010000 		.4byte	.LASF31
+ 949 022e 01       		.byte	0x1
+ 950 022f 20       		.byte	0x20
+ 951 0230 19020000 		.4byte	0x219
+ 952 0234 05       		.uleb128 0x5
+ 953 0235 03       		.byte	0x3
+ 954 0236 00000000 		.4byte	receivedMsgs
+ 955 023a 09       		.uleb128 0x9
+ 956 023b 8C000000 		.4byte	0x8c
+ 957 023f 4A020000 		.4byte	0x24a
+ 958 0243 0A       		.uleb128 0xa
+ 959 0244 C8000000 		.4byte	0xc8
+ 960 0248 03       		.byte	0x3
+ 961 0249 00       		.byte	0
+ 962 024a 16       		.uleb128 0x16
+ 963 024b 6A010000 		.4byte	.LASF32
+ 964 024f 08       		.byte	0x8
+ 965 0250 27       		.byte	0x27
+ 966 0251 3A020000 		.4byte	0x23a
+ 967 0255 09       		.uleb128 0x9
+ 968 0256 81000000 		.4byte	0x81
+ 969 025a 65020000 		.4byte	0x265
+ 970 025e 0A       		.uleb128 0xa
+ 971 025f C8000000 		.4byte	0xc8
+ 972 0263 04       		.byte	0x4
+ 973 0264 00       		.byte	0
+ 974 0265 16       		.uleb128 0x16
+ 975 0266 5A020000 		.4byte	.LASF33
+ 976 026a 08       		.byte	0x8
+ 977 026b 31       		.byte	0x31
+ 978 026c 55020000 		.4byte	0x255
+ 979 0270 15       		.uleb128 0x15
+ 980 0271 0E010000 		.4byte	.LASF34
+ 981 0275 01       		.byte	0x1
+ 982 0276 23       		.byte	0x23
+ 983 0277 C3000000 		.4byte	0xc3
+ 984 027b 05       		.uleb128 0x5
+ 985 027c 03       		.byte	0x3
+ 986 027d 00000000 		.4byte	readCanMessage
+ 987 0281 15       		.uleb128 0x15
+ 988 0282 DE020000 		.4byte	.LASF35
+ 989 0286 01       		.byte	0x1
+ 990 0287 24       		.byte	0x24
+ 991 0288 81000000 		.4byte	0x81
+ 992 028c 05       		.uleb128 0x5
+ 993 028d 03       		.byte	0x3
+ 994 028e 00000000 		.4byte	treatingAddress
+ 995 0292 00       		.byte	0
+ 996              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 23
+
+
+ 997              	.Ldebug_abbrev0:
+ 998 0000 01       		.uleb128 0x1
+ 999 0001 11       		.uleb128 0x11
+ 1000 0002 01       		.byte	0x1
+ 1001 0003 25       		.uleb128 0x25
+ 1002 0004 0E       		.uleb128 0xe
+ 1003 0005 13       		.uleb128 0x13
+ 1004 0006 0B       		.uleb128 0xb
+ 1005 0007 03       		.uleb128 0x3
+ 1006 0008 0E       		.uleb128 0xe
+ 1007 0009 1B       		.uleb128 0x1b
+ 1008 000a 0E       		.uleb128 0xe
+ 1009 000b 55       		.uleb128 0x55
+ 1010 000c 17       		.uleb128 0x17
+ 1011 000d 11       		.uleb128 0x11
+ 1012 000e 01       		.uleb128 0x1
+ 1013 000f 10       		.uleb128 0x10
+ 1014 0010 17       		.uleb128 0x17
+ 1015 0011 00       		.byte	0
+ 1016 0012 00       		.byte	0
+ 1017 0013 02       		.uleb128 0x2
+ 1018 0014 24       		.uleb128 0x24
+ 1019 0015 00       		.byte	0
+ 1020 0016 0B       		.uleb128 0xb
+ 1021 0017 0B       		.uleb128 0xb
+ 1022 0018 3E       		.uleb128 0x3e
+ 1023 0019 0B       		.uleb128 0xb
+ 1024 001a 03       		.uleb128 0x3
+ 1025 001b 0E       		.uleb128 0xe
+ 1026 001c 00       		.byte	0
+ 1027 001d 00       		.byte	0
+ 1028 001e 03       		.uleb128 0x3
+ 1029 001f 16       		.uleb128 0x16
+ 1030 0020 00       		.byte	0
+ 1031 0021 03       		.uleb128 0x3
+ 1032 0022 0E       		.uleb128 0xe
+ 1033 0023 3A       		.uleb128 0x3a
+ 1034 0024 0B       		.uleb128 0xb
+ 1035 0025 3B       		.uleb128 0x3b
+ 1036 0026 0B       		.uleb128 0xb
+ 1037 0027 49       		.uleb128 0x49
+ 1038 0028 13       		.uleb128 0x13
+ 1039 0029 00       		.byte	0
+ 1040 002a 00       		.byte	0
+ 1041 002b 04       		.uleb128 0x4
+ 1042 002c 24       		.uleb128 0x24
+ 1043 002d 00       		.byte	0
+ 1044 002e 0B       		.uleb128 0xb
+ 1045 002f 0B       		.uleb128 0xb
+ 1046 0030 3E       		.uleb128 0x3e
+ 1047 0031 0B       		.uleb128 0xb
+ 1048 0032 03       		.uleb128 0x3
+ 1049 0033 08       		.uleb128 0x8
+ 1050 0034 00       		.byte	0
+ 1051 0035 00       		.byte	0
+ 1052 0036 05       		.uleb128 0x5
+ 1053 0037 16       		.uleb128 0x16
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 24
+
+
+ 1054 0038 00       		.byte	0
+ 1055 0039 03       		.uleb128 0x3
+ 1056 003a 0E       		.uleb128 0xe
+ 1057 003b 3A       		.uleb128 0x3a
+ 1058 003c 0B       		.uleb128 0xb
+ 1059 003d 3B       		.uleb128 0x3b
+ 1060 003e 05       		.uleb128 0x5
+ 1061 003f 49       		.uleb128 0x49
+ 1062 0040 13       		.uleb128 0x13
+ 1063 0041 00       		.byte	0
+ 1064 0042 00       		.byte	0
+ 1065 0043 06       		.uleb128 0x6
+ 1066 0044 35       		.uleb128 0x35
+ 1067 0045 00       		.byte	0
+ 1068 0046 49       		.uleb128 0x49
+ 1069 0047 13       		.uleb128 0x13
+ 1070 0048 00       		.byte	0
+ 1071 0049 00       		.byte	0
+ 1072 004a 07       		.uleb128 0x7
+ 1073 004b 13       		.uleb128 0x13
+ 1074 004c 01       		.byte	0x1
+ 1075 004d 0B       		.uleb128 0xb
+ 1076 004e 0B       		.uleb128 0xb
+ 1077 004f 3A       		.uleb128 0x3a
+ 1078 0050 0B       		.uleb128 0xb
+ 1079 0051 3B       		.uleb128 0x3b
+ 1080 0052 0B       		.uleb128 0xb
+ 1081 0053 01       		.uleb128 0x1
+ 1082 0054 13       		.uleb128 0x13
+ 1083 0055 00       		.byte	0
+ 1084 0056 00       		.byte	0
+ 1085 0057 08       		.uleb128 0x8
+ 1086 0058 0D       		.uleb128 0xd
+ 1087 0059 00       		.byte	0
+ 1088 005a 03       		.uleb128 0x3
+ 1089 005b 0E       		.uleb128 0xe
+ 1090 005c 3A       		.uleb128 0x3a
+ 1091 005d 0B       		.uleb128 0xb
+ 1092 005e 3B       		.uleb128 0x3b
+ 1093 005f 0B       		.uleb128 0xb
+ 1094 0060 49       		.uleb128 0x49
+ 1095 0061 13       		.uleb128 0x13
+ 1096 0062 38       		.uleb128 0x38
+ 1097 0063 0B       		.uleb128 0xb
+ 1098 0064 00       		.byte	0
+ 1099 0065 00       		.byte	0
+ 1100 0066 09       		.uleb128 0x9
+ 1101 0067 01       		.uleb128 0x1
+ 1102 0068 01       		.byte	0x1
+ 1103 0069 49       		.uleb128 0x49
+ 1104 006a 13       		.uleb128 0x13
+ 1105 006b 01       		.uleb128 0x1
+ 1106 006c 13       		.uleb128 0x13
+ 1107 006d 00       		.byte	0
+ 1108 006e 00       		.byte	0
+ 1109 006f 0A       		.uleb128 0xa
+ 1110 0070 21       		.uleb128 0x21
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 25
+
+
+ 1111 0071 00       		.byte	0
+ 1112 0072 49       		.uleb128 0x49
+ 1113 0073 13       		.uleb128 0x13
+ 1114 0074 2F       		.uleb128 0x2f
+ 1115 0075 0B       		.uleb128 0xb
+ 1116 0076 00       		.byte	0
+ 1117 0077 00       		.byte	0
+ 1118 0078 0B       		.uleb128 0xb
+ 1119 0079 0D       		.uleb128 0xd
+ 1120 007a 00       		.byte	0
+ 1121 007b 03       		.uleb128 0x3
+ 1122 007c 08       		.uleb128 0x8
+ 1123 007d 3A       		.uleb128 0x3a
+ 1124 007e 0B       		.uleb128 0xb
+ 1125 007f 3B       		.uleb128 0x3b
+ 1126 0080 0B       		.uleb128 0xb
+ 1127 0081 49       		.uleb128 0x49
+ 1128 0082 13       		.uleb128 0x13
+ 1129 0083 38       		.uleb128 0x38
+ 1130 0084 0B       		.uleb128 0xb
+ 1131 0085 00       		.byte	0
+ 1132 0086 00       		.byte	0
+ 1133 0087 0C       		.uleb128 0xc
+ 1134 0088 2E       		.uleb128 0x2e
+ 1135 0089 01       		.byte	0x1
+ 1136 008a 3F       		.uleb128 0x3f
+ 1137 008b 19       		.uleb128 0x19
+ 1138 008c 03       		.uleb128 0x3
+ 1139 008d 0E       		.uleb128 0xe
+ 1140 008e 3A       		.uleb128 0x3a
+ 1141 008f 0B       		.uleb128 0xb
+ 1142 0090 3B       		.uleb128 0x3b
+ 1143 0091 0B       		.uleb128 0xb
+ 1144 0092 27       		.uleb128 0x27
+ 1145 0093 19       		.uleb128 0x19
+ 1146 0094 49       		.uleb128 0x49
+ 1147 0095 13       		.uleb128 0x13
+ 1148 0096 11       		.uleb128 0x11
+ 1149 0097 01       		.uleb128 0x1
+ 1150 0098 12       		.uleb128 0x12
+ 1151 0099 06       		.uleb128 0x6
+ 1152 009a 40       		.uleb128 0x40
+ 1153 009b 18       		.uleb128 0x18
+ 1154 009c 9642     		.uleb128 0x2116
+ 1155 009e 19       		.uleb128 0x19
+ 1156 009f 01       		.uleb128 0x1
+ 1157 00a0 13       		.uleb128 0x13
+ 1158 00a1 00       		.byte	0
+ 1159 00a2 00       		.byte	0
+ 1160 00a3 0D       		.uleb128 0xd
+ 1161 00a4 05       		.uleb128 0x5
+ 1162 00a5 00       		.byte	0
+ 1163 00a6 03       		.uleb128 0x3
+ 1164 00a7 0E       		.uleb128 0xe
+ 1165 00a8 3A       		.uleb128 0x3a
+ 1166 00a9 0B       		.uleb128 0xb
+ 1167 00aa 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 26
+
+
+ 1168 00ab 0B       		.uleb128 0xb
+ 1169 00ac 49       		.uleb128 0x49
+ 1170 00ad 13       		.uleb128 0x13
+ 1171 00ae 02       		.uleb128 0x2
+ 1172 00af 18       		.uleb128 0x18
+ 1173 00b0 00       		.byte	0
+ 1174 00b1 00       		.byte	0
+ 1175 00b2 0E       		.uleb128 0xe
+ 1176 00b3 34       		.uleb128 0x34
+ 1177 00b4 00       		.byte	0
+ 1178 00b5 03       		.uleb128 0x3
+ 1179 00b6 0E       		.uleb128 0xe
+ 1180 00b7 3A       		.uleb128 0x3a
+ 1181 00b8 0B       		.uleb128 0xb
+ 1182 00b9 3B       		.uleb128 0x3b
+ 1183 00ba 0B       		.uleb128 0xb
+ 1184 00bb 49       		.uleb128 0x49
+ 1185 00bc 13       		.uleb128 0x13
+ 1186 00bd 02       		.uleb128 0x2
+ 1187 00be 18       		.uleb128 0x18
+ 1188 00bf 00       		.byte	0
+ 1189 00c0 00       		.byte	0
+ 1190 00c1 0F       		.uleb128 0xf
+ 1191 00c2 0F       		.uleb128 0xf
+ 1192 00c3 00       		.byte	0
+ 1193 00c4 0B       		.uleb128 0xb
+ 1194 00c5 0B       		.uleb128 0xb
+ 1195 00c6 49       		.uleb128 0x49
+ 1196 00c7 13       		.uleb128 0x13
+ 1197 00c8 00       		.byte	0
+ 1198 00c9 00       		.byte	0
+ 1199 00ca 10       		.uleb128 0x10
+ 1200 00cb 2E       		.uleb128 0x2e
+ 1201 00cc 00       		.byte	0
+ 1202 00cd 3F       		.uleb128 0x3f
+ 1203 00ce 19       		.uleb128 0x19
+ 1204 00cf 03       		.uleb128 0x3
+ 1205 00d0 0E       		.uleb128 0xe
+ 1206 00d1 3A       		.uleb128 0x3a
+ 1207 00d2 0B       		.uleb128 0xb
+ 1208 00d3 3B       		.uleb128 0x3b
+ 1209 00d4 0B       		.uleb128 0xb
+ 1210 00d5 27       		.uleb128 0x27
+ 1211 00d6 19       		.uleb128 0x19
+ 1212 00d7 11       		.uleb128 0x11
+ 1213 00d8 01       		.uleb128 0x1
+ 1214 00d9 12       		.uleb128 0x12
+ 1215 00da 06       		.uleb128 0x6
+ 1216 00db 40       		.uleb128 0x40
+ 1217 00dc 18       		.uleb128 0x18
+ 1218 00dd 9742     		.uleb128 0x2117
+ 1219 00df 19       		.uleb128 0x19
+ 1220 00e0 00       		.byte	0
+ 1221 00e1 00       		.byte	0
+ 1222 00e2 11       		.uleb128 0x11
+ 1223 00e3 2E       		.uleb128 0x2e
+ 1224 00e4 01       		.byte	0x1
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 27
+
+
+ 1225 00e5 3F       		.uleb128 0x3f
+ 1226 00e6 19       		.uleb128 0x19
+ 1227 00e7 03       		.uleb128 0x3
+ 1228 00e8 0E       		.uleb128 0xe
+ 1229 00e9 3A       		.uleb128 0x3a
+ 1230 00ea 0B       		.uleb128 0xb
+ 1231 00eb 3B       		.uleb128 0x3b
+ 1232 00ec 0B       		.uleb128 0xb
+ 1233 00ed 49       		.uleb128 0x49
+ 1234 00ee 13       		.uleb128 0x13
+ 1235 00ef 11       		.uleb128 0x11
+ 1236 00f0 01       		.uleb128 0x1
+ 1237 00f1 12       		.uleb128 0x12
+ 1238 00f2 06       		.uleb128 0x6
+ 1239 00f3 40       		.uleb128 0x40
+ 1240 00f4 18       		.uleb128 0x18
+ 1241 00f5 9642     		.uleb128 0x2116
+ 1242 00f7 19       		.uleb128 0x19
+ 1243 00f8 01       		.uleb128 0x1
+ 1244 00f9 13       		.uleb128 0x13
+ 1245 00fa 00       		.byte	0
+ 1246 00fb 00       		.byte	0
+ 1247 00fc 12       		.uleb128 0x12
+ 1248 00fd 0B       		.uleb128 0xb
+ 1249 00fe 01       		.byte	0x1
+ 1250 00ff 11       		.uleb128 0x11
+ 1251 0100 01       		.uleb128 0x1
+ 1252 0101 12       		.uleb128 0x12
+ 1253 0102 06       		.uleb128 0x6
+ 1254 0103 00       		.byte	0
+ 1255 0104 00       		.byte	0
+ 1256 0105 13       		.uleb128 0x13
+ 1257 0106 2E       		.uleb128 0x2e
+ 1258 0107 00       		.byte	0
+ 1259 0108 3F       		.uleb128 0x3f
+ 1260 0109 19       		.uleb128 0x19
+ 1261 010a 03       		.uleb128 0x3
+ 1262 010b 0E       		.uleb128 0xe
+ 1263 010c 3A       		.uleb128 0x3a
+ 1264 010d 0B       		.uleb128 0xb
+ 1265 010e 3B       		.uleb128 0x3b
+ 1266 010f 0B       		.uleb128 0xb
+ 1267 0110 11       		.uleb128 0x11
+ 1268 0111 01       		.uleb128 0x1
+ 1269 0112 12       		.uleb128 0x12
+ 1270 0113 06       		.uleb128 0x6
+ 1271 0114 40       		.uleb128 0x40
+ 1272 0115 18       		.uleb128 0x18
+ 1273 0116 9642     		.uleb128 0x2116
+ 1274 0118 19       		.uleb128 0x19
+ 1275 0119 00       		.byte	0
+ 1276 011a 00       		.byte	0
+ 1277 011b 14       		.uleb128 0x14
+ 1278 011c 34       		.uleb128 0x34
+ 1279 011d 00       		.byte	0
+ 1280 011e 03       		.uleb128 0x3
+ 1281 011f 0E       		.uleb128 0xe
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 28
+
+
+ 1282 0120 3A       		.uleb128 0x3a
+ 1283 0121 0B       		.uleb128 0xb
+ 1284 0122 3B       		.uleb128 0x3b
+ 1285 0123 05       		.uleb128 0x5
+ 1286 0124 49       		.uleb128 0x49
+ 1287 0125 13       		.uleb128 0x13
+ 1288 0126 3F       		.uleb128 0x3f
+ 1289 0127 19       		.uleb128 0x19
+ 1290 0128 3C       		.uleb128 0x3c
+ 1291 0129 19       		.uleb128 0x19
+ 1292 012a 00       		.byte	0
+ 1293 012b 00       		.byte	0
+ 1294 012c 15       		.uleb128 0x15
+ 1295 012d 34       		.uleb128 0x34
+ 1296 012e 00       		.byte	0
+ 1297 012f 03       		.uleb128 0x3
+ 1298 0130 0E       		.uleb128 0xe
+ 1299 0131 3A       		.uleb128 0x3a
+ 1300 0132 0B       		.uleb128 0xb
+ 1301 0133 3B       		.uleb128 0x3b
+ 1302 0134 0B       		.uleb128 0xb
+ 1303 0135 49       		.uleb128 0x49
+ 1304 0136 13       		.uleb128 0x13
+ 1305 0137 3F       		.uleb128 0x3f
+ 1306 0138 19       		.uleb128 0x19
+ 1307 0139 02       		.uleb128 0x2
+ 1308 013a 18       		.uleb128 0x18
+ 1309 013b 00       		.byte	0
+ 1310 013c 00       		.byte	0
+ 1311 013d 16       		.uleb128 0x16
+ 1312 013e 34       		.uleb128 0x34
+ 1313 013f 00       		.byte	0
+ 1314 0140 03       		.uleb128 0x3
+ 1315 0141 0E       		.uleb128 0xe
+ 1316 0142 3A       		.uleb128 0x3a
+ 1317 0143 0B       		.uleb128 0xb
+ 1318 0144 3B       		.uleb128 0x3b
+ 1319 0145 0B       		.uleb128 0xb
+ 1320 0146 49       		.uleb128 0x49
+ 1321 0147 13       		.uleb128 0x13
+ 1322 0148 3F       		.uleb128 0x3f
+ 1323 0149 19       		.uleb128 0x19
+ 1324 014a 3C       		.uleb128 0x3c
+ 1325 014b 19       		.uleb128 0x19
+ 1326 014c 00       		.byte	0
+ 1327 014d 00       		.byte	0
+ 1328 014e 00       		.byte	0
+ 1329              		.section	.debug_aranges,"",%progbits
+ 1330 0000 34000000 		.4byte	0x34
+ 1331 0004 0200     		.2byte	0x2
+ 1332 0006 00000000 		.4byte	.Ldebug_info0
+ 1333 000a 04       		.byte	0x4
+ 1334 000b 00       		.byte	0
+ 1335 000c 0000     		.2byte	0
+ 1336 000e 0000     		.2byte	0
+ 1337 0010 00000000 		.4byte	.LFB56
+ 1338 0014 58030000 		.4byte	.LFE56-.LFB56
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 29
+
+
+ 1339 0018 00000000 		.4byte	.LFB57
+ 1340 001c 20000000 		.4byte	.LFE57-.LFB57
+ 1341 0020 00000000 		.4byte	.LFB58
+ 1342 0024 60000000 		.4byte	.LFE58-.LFB58
+ 1343 0028 00000000 		.4byte	.LFB59
+ 1344 002c 24000000 		.4byte	.LFE59-.LFB59
+ 1345 0030 00000000 		.4byte	0
+ 1346 0034 00000000 		.4byte	0
+ 1347              		.section	.debug_ranges,"",%progbits
+ 1348              	.Ldebug_ranges0:
+ 1349 0000 00000000 		.4byte	.LFB56
+ 1350 0004 58030000 		.4byte	.LFE56
+ 1351 0008 00000000 		.4byte	.LFB57
+ 1352 000c 20000000 		.4byte	.LFE57
+ 1353 0010 00000000 		.4byte	.LFB58
+ 1354 0014 60000000 		.4byte	.LFE58
+ 1355 0018 00000000 		.4byte	.LFB59
+ 1356 001c 24000000 		.4byte	.LFE59
+ 1357 0020 00000000 		.4byte	0
+ 1358 0024 00000000 		.4byte	0
+ 1359              		.section	.debug_line,"",%progbits
+ 1360              	.Ldebug_line0:
+ 1361 0000 34020000 		.section	.debug_str,"MS",%progbits,1
+ 1361      02008101 
+ 1361      00000201 
+ 1361      FB0E0D00 
+ 1361      01010101 
+ 1362              	.LASF23:
+ 1363 0000 43414E5F 		.ascii	"CAN_MSG\000"
+ 1363      4D534700 
+ 1364              	.LASF38:
+ 1365 0008 433A5C55 		.ascii	"C:\\Users\\plod1602\\Documents\\git\\module-gripper"
+ 1365      73657273 
+ 1365      5C706C6F 
+ 1365      64313630 
+ 1365      325C446F 
+ 1366 0036 2D70736F 		.ascii	"-psoc\\module-gripper-psoc.cydsn\000"
+ 1366      635C6D6F 
+ 1366      64756C65 
+ 1366      2D677269 
+ 1366      70706572 
+ 1367              	.LASF41:
+ 1368 0056 436F756E 		.ascii	"CounterCanInterruptHandler\000"
+ 1368      74657243 
+ 1368      616E496E 
+ 1368      74657272 
+ 1368      75707448 
+ 1369              	.LASF9:
+ 1370 0071 5F5F696E 		.ascii	"__int32_t\000"
+ 1370      7433325F 
+ 1370      7400
+ 1371              	.LASF36:
+ 1372 007b 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1372      4320342E 
+ 1372      392E3320 
+ 1372      32303135 
+ 1372      30333033 
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 30
+
+
+ 1373 00ae 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1373      20726576 
+ 1373      6973696F 
+ 1373      6E203232 
+ 1373      31323230 
+ 1374 00e1 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1374      66756E63 
+ 1374      74696F6E 
+ 1374      2D736563 
+ 1374      74696F6E 
+ 1375              	.LASF20:
+ 1376 0109 62797465 		.ascii	"byte\000"
+ 1376      00
+ 1377              	.LASF34:
+ 1378 010e 72656164 		.ascii	"readCanMessage\000"
+ 1378      43616E4D 
+ 1378      65737361 
+ 1378      676500
+ 1379              	.LASF26:
+ 1380 011d 6D736754 		.ascii	"msgToTreat\000"
+ 1380      6F547265 
+ 1380      617400
+ 1381              	.LASF37:
+ 1382 0128 2E5C6D61 		.ascii	".\\main.c\000"
+ 1382      696E2E63 
+ 1382      00
+ 1383              	.LASF14:
+ 1384 0131 666C6F61 		.ascii	"float\000"
+ 1384      7400
+ 1385              	.LASF1:
+ 1386 0137 756E7369 		.ascii	"unsigned char\000"
+ 1386      676E6564 
+ 1386      20636861 
+ 1386      7200
+ 1387              	.LASF31:
+ 1388 0145 72656365 		.ascii	"receivedMsgs\000"
+ 1388      69766564 
+ 1388      4D736773 
+ 1388      00
+ 1389              	.LASF24:
+ 1390 0152 72696768 		.ascii	"rightMotorPosition\000"
+ 1390      744D6F74 
+ 1390      6F72506F 
+ 1390      73697469 
+ 1390      6F6E00
+ 1391              	.LASF17:
+ 1392 0165 72656738 		.ascii	"reg8\000"
+ 1392      00
+ 1393              	.LASF32:
+ 1394 016a 6D6F746F 		.ascii	"motorAngleLimits\000"
+ 1394      72416E67 
+ 1394      6C654C69 
+ 1394      6D697473 
+ 1394      00
+ 1395              	.LASF5:
+ 1396 017b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1396      20756E73 
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 31
+
+
+ 1396      69676E65 
+ 1396      6420696E 
+ 1396      7400
+ 1397              	.LASF3:
+ 1398 018d 73686F72 		.ascii	"short unsigned int\000"
+ 1398      7420756E 
+ 1398      7369676E 
+ 1398      65642069 
+ 1398      6E7400
+ 1399              	.LASF27:
+ 1400 01a0 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1400      52784275 
+ 1400      66666572 
+ 1400      00
+ 1401              	.LASF25:
+ 1402 01ad 6C656674 		.ascii	"leftMotorPosition\000"
+ 1402      4D6F746F 
+ 1402      72506F73 
+ 1402      6974696F 
+ 1402      6E00
+ 1403              	.LASF15:
+ 1404 01bf 646F7562 		.ascii	"double\000"
+ 1404      6C6500
+ 1405              	.LASF12:
+ 1406 01c6 75696E74 		.ascii	"uint16\000"
+ 1406      313600
+ 1407              	.LASF42:
+ 1408 01cd 6D61696E 		.ascii	"main\000"
+ 1408      00
+ 1409              	.LASF39:
+ 1410 01d2 74726561 		.ascii	"treatCanMessage\000"
+ 1410      7443616E 
+ 1410      4D657373 
+ 1410      61676500 
+ 1411              	.LASF13:
+ 1412 01e2 75696E74 		.ascii	"uint32\000"
+ 1412      333200
+ 1413              	.LASF22:
+ 1414 01e9 43414E5F 		.ascii	"CAN_ID\000"
+ 1414      494400
+ 1415              	.LASF8:
+ 1416 01f0 756E7369 		.ascii	"unsigned int\000"
+ 1416      676E6564 
+ 1416      20696E74 
+ 1416      00
+ 1417              	.LASF7:
+ 1418 01fd 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1418      206C6F6E 
+ 1418      6720756E 
+ 1418      7369676E 
+ 1418      65642069 
+ 1419              	.LASF28:
+ 1420 0214 6D736754 		.ascii	"msgToBeTreatedIndex\000"
+ 1420      6F426554 
+ 1420      72656174 
+ 1420      6564496E 
+ 1420      64657800 
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 32
+
+
+ 1421              	.LASF10:
+ 1422 0228 696E7433 		.ascii	"int32_t\000"
+ 1422      325F7400 
+ 1423              	.LASF18:
+ 1424 0230 73697A65 		.ascii	"sizetype\000"
+ 1424      74797065 
+ 1424      00
+ 1425              	.LASF29:
+ 1426 0239 6D736754 		.ascii	"msgToBeStoredIndex\000"
+ 1426      6F426553 
+ 1426      746F7265 
+ 1426      64496E64 
+ 1426      657800
+ 1427              	.LASF6:
+ 1428 024c 6C6F6E67 		.ascii	"long long int\000"
+ 1428      206C6F6E 
+ 1428      6720696E 
+ 1428      7400
+ 1429              	.LASF33:
+ 1430 025a 6D6F746F 		.ascii	"motorType\000"
+ 1430      72547970 
+ 1430      6500
+ 1431              	.LASF16:
+ 1432 0264 63686172 		.ascii	"char\000"
+ 1432      00
+ 1433              	.LASF19:
+ 1434 0269 43414E5F 		.ascii	"CAN_1_DATA_BYTES_MSG\000"
+ 1434      315F4441 
+ 1434      54415F42 
+ 1434      59544553 
+ 1434      5F4D5347 
+ 1435              	.LASF40:
+ 1436 027e 63616E50 		.ascii	"canPacket\000"
+ 1436      61636B65 
+ 1436      7400
+ 1437              	.LASF43:
+ 1438 0288 696E6974 		.ascii	"init_can_module\000"
+ 1438      5F63616E 
+ 1438      5F6D6F64 
+ 1438      756C6500 
+ 1439              	.LASF21:
+ 1440 0298 6D736742 		.ascii	"msgBytes\000"
+ 1440      79746573 
+ 1440      00
+ 1441              	.LASF2:
+ 1442 02a1 73686F72 		.ascii	"short int\000"
+ 1442      7420696E 
+ 1442      7400
+ 1443              	.LASF11:
+ 1444 02ab 75696E74 		.ascii	"uint8\000"
+ 1444      3800
+ 1445              	.LASF30:
+ 1446 02b1 6D657373 		.ascii	"messageToBeTreatedCount\000"
+ 1446      61676554 
+ 1446      6F426554 
+ 1446      72656174 
+ 1446      6564436F 
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccg8l0Rh.s 			page 33
+
+
+ 1447              	.LASF4:
+ 1448 02c9 6C6F6E67 		.ascii	"long int\000"
+ 1448      20696E74 
+ 1448      00
+ 1449              	.LASF0:
+ 1450 02d2 7369676E 		.ascii	"signed char\000"
+ 1450      65642063 
+ 1450      68617200 
+ 1451              	.LASF35:
+ 1452 02de 74726561 		.ascii	"treatingAddress\000"
+ 1452      74696E67 
+ 1452      41646472 
+ 1452      65737300 
+ 1453              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

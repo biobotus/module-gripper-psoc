@@ -1,0 +1,1559 @@
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"dynamixelCom.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.comm	dynamixelReceivedBuffer,256,4
+  19              		.global	dynamixelbufferPos
+  20              		.bss
+  21              		.align	1
+  22              		.type	dynamixelbufferPos, %object
+  23              		.size	dynamixelbufferPos, 2
+  24              	dynamixelbufferPos:
+  25 0000 0000     		.space	2
+  26              		.global	dynamixelSendDataPos
+  27              		.align	1
+  28              		.type	dynamixelSendDataPos, %object
+  29              		.size	dynamixelSendDataPos, 2
+  30              	dynamixelSendDataPos:
+  31 0002 0000     		.space	2
+  32              		.comm	motorType,5,4
+  33              		.section	.text.init_uart_dynamixel,"ax",%progbits
+  34              		.align	2
+  35              		.global	init_uart_dynamixel
+  36              		.thumb
+  37              		.thumb_func
+  38              		.type	init_uart_dynamixel, %function
+  39              	init_uart_dynamixel:
+  40              	.LFB56:
+  41              		.file 1 ".\\dynamixelCom.c"
+   1:.\dynamixelCom.c **** 
+   2:.\dynamixelCom.c **** #include "DynamixelCom.h"
+   3:.\dynamixelCom.c **** 
+   4:.\dynamixelCom.c **** void sendDynamixelDataToComputer(uint8 *packet);
+   5:.\dynamixelCom.c **** 
+   6:.\dynamixelCom.c **** 
+   7:.\dynamixelCom.c **** // ------- VARIABLES RECEPTION DYNAMIXEL ---------
+   8:.\dynamixelCom.c **** volatile uint8 dynamixelReceivedBuffer[256];
+   9:.\dynamixelCom.c **** volatile int16 dynamixelbufferPos = 0;
+  10:.\dynamixelCom.c **** uint16 dynamixelSendDataPos = 0;
+  11:.\dynamixelCom.c **** extern uint8 treatingAddress;
+  12:.\dynamixelCom.c **** // ----------------------------
+  13:.\dynamixelCom.c **** 
+  14:.\dynamixelCom.c **** uint8 motorType[];
+  15:.\dynamixelCom.c **** 
+  16:.\dynamixelCom.c **** 
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 2
+
+
+  17:.\dynamixelCom.c **** void init_uart_dynamixel() 
+  18:.\dynamixelCom.c **** {
+  42              		.loc 1 18 0
+  43              		.cfi_startproc
+  44              		@ args = 0, pretend = 0, frame = 0
+  45              		@ frame_needed = 1, uses_anonymous_args = 0
+  46 0000 80B5     		push	{r7, lr}
+  47              		.cfi_def_cfa_offset 8
+  48              		.cfi_offset 7, -8
+  49              		.cfi_offset 14, -4
+  50 0002 00AF     		add	r7, sp, #0
+  51              		.cfi_def_cfa_register 7
+  19:.\dynamixelCom.c ****     UART2DYNAMIXEL_Start();
+  52              		.loc 1 19 0
+  53 0004 FFF7FEFF 		bl	UART2DYNAMIXEL_Start
+  20:.\dynamixelCom.c **** 	UART2DYNAMIXEL_ClearRxBuffer();
+  54              		.loc 1 20 0
+  55 0008 FFF7FEFF 		bl	UART2DYNAMIXEL_ClearRxBuffer
+  21:.\dynamixelCom.c **** 	UART2DYNAMIXEL_ClearTxBuffer();  
+  56              		.loc 1 21 0
+  57 000c FFF7FEFF 		bl	UART2DYNAMIXEL_ClearTxBuffer
+  22:.\dynamixelCom.c ****     isr_rx_interrupt_StartEx(isr_uart_rx_gripper);
+  58              		.loc 1 22 0
+  59 0010 0348     		ldr	r0, .L2
+  60 0012 FFF7FEFF 		bl	isr_rx_interrupt_StartEx
+  23:.\dynamixelCom.c ****     UART2DYNAMIXEL_EnableRxInt();
+  61              		.loc 1 23 0
+  62 0016 034B     		ldr	r3, .L2+4
+  63 0018 0822     		movs	r2, #8
+  64 001a 1A60     		str	r2, [r3]
+  24:.\dynamixelCom.c **** }
+  65              		.loc 1 24 0
+  66 001c 80BD     		pop	{r7, pc}
+  67              	.L3:
+  68 001e 00BF     		.align	2
+  69              	.L2:
+  70 0020 00000000 		.word	isr_uart_rx_gripper
+  71 0024 00E100E0 		.word	-536813312
+  72              		.cfi_endproc
+  73              	.LFE56:
+  74              		.size	init_uart_dynamixel, .-init_uart_dynamixel
+  75              		.section	.text.isr_uart_rx_gripper,"ax",%progbits
+  76              		.align	2
+  77              		.global	isr_uart_rx_gripper
+  78              		.thumb
+  79              		.thumb_func
+  80              		.type	isr_uart_rx_gripper, %function
+  81              	isr_uart_rx_gripper:
+  82              	.LFB57:
+  25:.\dynamixelCom.c **** 
+  26:.\dynamixelCom.c **** 
+  27:.\dynamixelCom.c **** // Interruption function for the RX UART (data sent by motors)
+  28:.\dynamixelCom.c **** CY_ISR(isr_uart_rx_gripper)
+  29:.\dynamixelCom.c **** {
+  83              		.loc 1 29 0
+  84              		.cfi_startproc
+  85              		@ args = 0, pretend = 0, frame = 16
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 3
+
+
+  86              		@ frame_needed = 1, uses_anonymous_args = 0
+  87 0000 90B5     		push	{r4, r7, lr}
+  88              		.cfi_def_cfa_offset 12
+  89              		.cfi_offset 4, -12
+  90              		.cfi_offset 7, -8
+  91              		.cfi_offset 14, -4
+  92 0002 85B0     		sub	sp, sp, #20
+  93              		.cfi_def_cfa_offset 32
+  94 0004 00AF     		add	r7, sp, #0
+  95              		.cfi_def_cfa_register 7
+  30:.\dynamixelCom.c ****     // read one byte
+  31:.\dynamixelCom.c ****     dynamixelbufferPos = (dynamixelbufferPos+1)%255;
+  96              		.loc 1 31 0
+  97 0006 2F4B     		ldr	r3, .L9
+  98 0008 1B88     		ldrh	r3, [r3]	@ movhi
+  99 000a 9BB2     		uxth	r3, r3
+ 100 000c 1BB2     		sxth	r3, r3
+ 101 000e 5A1C     		adds	r2, r3, #1
+ 102 0010 2D4B     		ldr	r3, .L9+4
+ 103 0012 82FB0301 		smull	r0, r1, r2, r3
+ 104 0016 5318     		adds	r3, r2, r1
+ 105 0018 D911     		asrs	r1, r3, #7
+ 106 001a D317     		asrs	r3, r2, #31
+ 107 001c C91A     		subs	r1, r1, r3
+ 108 001e 0B46     		mov	r3, r1
+ 109 0020 1B02     		lsls	r3, r3, #8
+ 110 0022 5B1A     		subs	r3, r3, r1
+ 111 0024 D11A     		subs	r1, r2, r3
+ 112 0026 8AB2     		uxth	r2, r1
+ 113 0028 264B     		ldr	r3, .L9
+ 114 002a 1A80     		strh	r2, [r3]	@ movhi
+  32:.\dynamixelCom.c ****     dynamixelReceivedBuffer[dynamixelbufferPos] = UART2DYNAMIXEL_GetByte();
+ 115              		.loc 1 32 0
+ 116 002c 254B     		ldr	r3, .L9
+ 117 002e 1B88     		ldrh	r3, [r3]	@ movhi
+ 118 0030 9BB2     		uxth	r3, r3
+ 119 0032 1CB2     		sxth	r4, r3
+ 120 0034 FFF7FEFF 		bl	UART2DYNAMIXEL_GetByte
+ 121 0038 0346     		mov	r3, r0
+ 122 003a DAB2     		uxtb	r2, r3
+ 123 003c 234B     		ldr	r3, .L9+8
+ 124 003e 1A55     		strb	r2, [r3, r4]
+  33:.\dynamixelCom.c ****     
+  34:.\dynamixelCom.c ****     if (dynamixelbufferPos > 2)
+ 125              		.loc 1 34 0
+ 126 0040 204B     		ldr	r3, .L9
+ 127 0042 1B88     		ldrh	r3, [r3]	@ movhi
+ 128 0044 9BB2     		uxth	r3, r3
+ 129 0046 1BB2     		sxth	r3, r3
+ 130 0048 022B     		cmp	r3, #2
+ 131 004a 25DD     		ble	.L5
+  35:.\dynamixelCom.c ****     {
+  36:.\dynamixelCom.c ****         if (!(dynamixelbufferPos < (3 + dynamixelReceivedBuffer[3])))
+ 132              		.loc 1 36 0
+ 133 004c 1D4B     		ldr	r3, .L9
+ 134 004e 1B88     		ldrh	r3, [r3]	@ movhi
+ 135 0050 9BB2     		uxth	r3, r3
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 4
+
+
+ 136 0052 1AB2     		sxth	r2, r3
+ 137 0054 1D4B     		ldr	r3, .L9+8
+ 138 0056 DB78     		ldrb	r3, [r3, #3]
+ 139 0058 DBB2     		uxtb	r3, r3
+ 140 005a 0333     		adds	r3, r3, #3
+ 141 005c 9A42     		cmp	r2, r3
+ 142 005e 2EDB     		blt	.L4
+ 143              	.LBB2:
+  37:.\dynamixelCom.c ****         {
+  38:.\dynamixelCom.c ****             while((UART2DYNAMIXEL_TXSTATUS_REG & UART2DYNAMIXEL_TX_STS_FIFO_FULL) != 0u)
+ 144              		.loc 1 38 0
+ 145 0060 00BF     		nop
+ 146              	.L7:
+ 147              		.loc 1 38 0 is_stmt 0 discriminator 1
+ 148 0062 1B4B     		ldr	r3, .L9+12
+ 149 0064 1B78     		ldrb	r3, [r3]
+ 150 0066 DBB2     		uxtb	r3, r3
+ 151 0068 03F00403 		and	r3, r3, #4
+ 152 006c 002B     		cmp	r3, #0
+ 153 006e F8D1     		bne	.L7
+  39:.\dynamixelCom.c ****             {
+  40:.\dynamixelCom.c ****                 // Wait for room in the FIFO 
+  41:.\dynamixelCom.c ****             }
+  42:.\dynamixelCom.c ****             
+  43:.\dynamixelCom.c ****             uint8 tmp[10];
+  44:.\dynamixelCom.c ****             memcpy ( &tmp, (const uint8*)dynamixelReceivedBuffer, 10 );
+ 154              		.loc 1 44 0 is_stmt 1
+ 155 0070 164A     		ldr	r2, .L9+8
+ 156 0072 3B1D     		adds	r3, r7, #4
+ 157 0074 1068     		ldr	r0, [r2]	@ unaligned
+ 158 0076 5168     		ldr	r1, [r2, #4]	@ unaligned
+ 159 0078 03C3     		stmia	r3!, {r0, r1}
+ 160 007a 1289     		ldrh	r2, [r2, #8]	@ unaligned
+ 161 007c 1A80     		strh	r2, [r3]	@ unaligned
+  45:.\dynamixelCom.c ****             
+  46:.\dynamixelCom.c ****             
+  47:.\dynamixelCom.c ****             // TODO: ERROR HANDLING
+  48:.\dynamixelCom.c ****             //if(dynamixelReceivedBuffer[dynamixelReceivedBuffer[3]+3] == dynamixelCalculateChecksu
+  49:.\dynamixelCom.c ****             
+  50:.\dynamixelCom.c ****             sendDynamixelDataToComputer(tmp);
+ 162              		.loc 1 50 0
+ 163 007e 3B1D     		adds	r3, r7, #4
+ 164 0080 1846     		mov	r0, r3
+ 165 0082 FFF7FEFF 		bl	sendDynamixelDataToComputer
+  51:.\dynamixelCom.c ****             
+  52:.\dynamixelCom.c ****             UART2DYNAMIXEL_ClearRxBuffer();
+ 166              		.loc 1 52 0
+ 167 0086 FFF7FEFF 		bl	UART2DYNAMIXEL_ClearRxBuffer
+  53:.\dynamixelCom.c ****             UART2DYNAMIXEL_ClearTxBuffer(); 
+ 168              		.loc 1 53 0
+ 169 008a FFF7FEFF 		bl	UART2DYNAMIXEL_ClearTxBuffer
+  54:.\dynamixelCom.c ****             dynamixelbufferPos = -1;
+ 170              		.loc 1 54 0
+ 171 008e 0D4B     		ldr	r3, .L9
+ 172 0090 4FF6FF72 		movw	r2, #65535
+ 173 0094 1A80     		strh	r2, [r3]	@ movhi
+ 174 0096 12E0     		b	.L4
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 5
+
+
+ 175              	.L5:
+ 176              	.LBE2:
+  55:.\dynamixelCom.c ****         }
+  56:.\dynamixelCom.c ****     } else if(dynamixelbufferPos < 2) {
+ 177              		.loc 1 56 0
+ 178 0098 0A4B     		ldr	r3, .L9
+ 179 009a 1B88     		ldrh	r3, [r3]	@ movhi
+ 180 009c 9BB2     		uxth	r3, r3
+ 181 009e 1BB2     		sxth	r3, r3
+ 182 00a0 012B     		cmp	r3, #1
+ 183 00a2 0CDC     		bgt	.L4
+  57:.\dynamixelCom.c ****         if (dynamixelReceivedBuffer[dynamixelbufferPos] != 0xff)
+ 184              		.loc 1 57 0
+ 185 00a4 074B     		ldr	r3, .L9
+ 186 00a6 1B88     		ldrh	r3, [r3]	@ movhi
+ 187 00a8 9BB2     		uxth	r3, r3
+ 188 00aa 1BB2     		sxth	r3, r3
+ 189 00ac 074A     		ldr	r2, .L9+8
+ 190 00ae D35C     		ldrb	r3, [r2, r3]
+ 191 00b0 DBB2     		uxtb	r3, r3
+ 192 00b2 FF2B     		cmp	r3, #255
+ 193 00b4 03D0     		beq	.L4
+  58:.\dynamixelCom.c ****         {
+  59:.\dynamixelCom.c ****             dynamixelbufferPos = -1;
+ 194              		.loc 1 59 0
+ 195 00b6 034B     		ldr	r3, .L9
+ 196 00b8 4FF6FF72 		movw	r2, #65535
+ 197 00bc 1A80     		strh	r2, [r3]	@ movhi
+ 198              	.L4:
+  60:.\dynamixelCom.c ****         }
+  61:.\dynamixelCom.c ****     }
+  62:.\dynamixelCom.c **** }
+ 199              		.loc 1 62 0
+ 200 00be 1437     		adds	r7, r7, #20
+ 201              		.cfi_def_cfa_offset 12
+ 202 00c0 BD46     		mov	sp, r7
+ 203              		.cfi_def_cfa_register 13
+ 204              		@ sp needed
+ 205 00c2 90BD     		pop	{r4, r7, pc}
+ 206              	.L10:
+ 207              		.align	2
+ 208              	.L9:
+ 209 00c4 00000000 		.word	dynamixelbufferPos
+ 210 00c8 81808080 		.word	-2139062143
+ 211 00cc 00000000 		.word	dynamixelReceivedBuffer
+ 212 00d0 6B650040 		.word	1073767787
+ 213              		.cfi_endproc
+ 214              	.LFE57:
+ 215              		.size	isr_uart_rx_gripper, .-isr_uart_rx_gripper
+ 216              		.section	.text.sendPacketToDynamixel,"ax",%progbits
+ 217              		.align	2
+ 218              		.global	sendPacketToDynamixel
+ 219              		.thumb
+ 220              		.thumb_func
+ 221              		.type	sendPacketToDynamixel, %function
+ 222              	sendPacketToDynamixel:
+ 223              	.LFB58:
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 6
+
+
+  63:.\dynamixelCom.c **** 
+  64:.\dynamixelCom.c **** 
+  65:.\dynamixelCom.c **** void sendPacketToDynamixel(uint8 *packet)
+  66:.\dynamixelCom.c **** {
+ 224              		.loc 1 66 0
+ 225              		.cfi_startproc
+ 226              		@ args = 0, pretend = 0, frame = 8
+ 227              		@ frame_needed = 1, uses_anonymous_args = 0
+ 228 0000 80B5     		push	{r7, lr}
+ 229              		.cfi_def_cfa_offset 8
+ 230              		.cfi_offset 7, -8
+ 231              		.cfi_offset 14, -4
+ 232 0002 82B0     		sub	sp, sp, #8
+ 233              		.cfi_def_cfa_offset 16
+ 234 0004 00AF     		add	r7, sp, #0
+ 235              		.cfi_def_cfa_register 7
+ 236 0006 7860     		str	r0, [r7, #4]
+  67:.\dynamixelCom.c ****     // send data to dynamixel
+  68:.\dynamixelCom.c ****     UART2DYNAMIXEL_PutArray(packet, 9);
+ 237              		.loc 1 68 0
+ 238 0008 7868     		ldr	r0, [r7, #4]
+ 239 000a 0921     		movs	r1, #9
+ 240 000c FFF7FEFF 		bl	UART2DYNAMIXEL_PutArray
+  69:.\dynamixelCom.c ****     while(UART2DYNAMIXEL_GetTxBufferSize() != 0) {};
+ 241              		.loc 1 69 0
+ 242 0010 00BF     		nop
+ 243              	.L12:
+ 244              		.loc 1 69 0 is_stmt 0 discriminator 1
+ 245 0012 FFF7FEFF 		bl	UART2DYNAMIXEL_GetTxBufferSize
+ 246 0016 0346     		mov	r3, r0
+ 247 0018 002B     		cmp	r3, #0
+ 248 001a FAD1     		bne	.L12
+  70:.\dynamixelCom.c ****     
+  71:.\dynamixelCom.c ****     free(packet);
+ 249              		.loc 1 71 0 is_stmt 1
+ 250 001c 7868     		ldr	r0, [r7, #4]
+ 251 001e FFF7FEFF 		bl	free
+  72:.\dynamixelCom.c **** }
+ 252              		.loc 1 72 0
+ 253 0022 0837     		adds	r7, r7, #8
+ 254              		.cfi_def_cfa_offset 8
+ 255 0024 BD46     		mov	sp, r7
+ 256              		.cfi_def_cfa_register 13
+ 257              		@ sp needed
+ 258 0026 80BD     		pop	{r7, pc}
+ 259              		.cfi_endproc
+ 260              	.LFE58:
+ 261              		.size	sendPacketToDynamixel, .-sendPacketToDynamixel
+ 262              		.section	.text.sendCanPacketToDynamixel,"ax",%progbits
+ 263              		.align	2
+ 264              		.global	sendCanPacketToDynamixel
+ 265              		.thumb
+ 266              		.thumb_func
+ 267              		.type	sendCanPacketToDynamixel, %function
+ 268              	sendCanPacketToDynamixel:
+ 269              	.LFB59:
+  73:.\dynamixelCom.c **** 
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 7
+
+
+  74:.\dynamixelCom.c **** 
+  75:.\dynamixelCom.c **** void sendCanPacketToDynamixel(uint8 *canPacket)
+  76:.\dynamixelCom.c **** {
+ 270              		.loc 1 76 0
+ 271              		.cfi_startproc
+ 272              		@ args = 0, pretend = 0, frame = 32
+ 273              		@ frame_needed = 1, uses_anonymous_args = 0
+ 274 0000 80B5     		push	{r7, lr}
+ 275              		.cfi_def_cfa_offset 8
+ 276              		.cfi_offset 7, -8
+ 277              		.cfi_offset 14, -4
+ 278 0002 88B0     		sub	sp, sp, #32
+ 279              		.cfi_def_cfa_offset 40
+ 280 0004 00AF     		add	r7, sp, #0
+ 281              		.cfi_def_cfa_register 7
+ 282 0006 7860     		str	r0, [r7, #4]
+  77:.\dynamixelCom.c ****     uint8 i;
+  78:.\dynamixelCom.c ****     uint8 packet[20];
+  79:.\dynamixelCom.c ****     
+  80:.\dynamixelCom.c ****     packet[0] = 0xff;
+ 283              		.loc 1 80 0
+ 284 0008 FF23     		movs	r3, #255
+ 285 000a 3B72     		strb	r3, [r7, #8]
+  81:.\dynamixelCom.c ****     packet[1] = 0xff;
+ 286              		.loc 1 81 0
+ 287 000c FF23     		movs	r3, #255
+ 288 000e 7B72     		strb	r3, [r7, #9]
+  82:.\dynamixelCom.c ****     packet[2] = canPacket[1]; // ID MOTEUR
+ 289              		.loc 1 82 0
+ 290 0010 7B68     		ldr	r3, [r7, #4]
+ 291 0012 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 292 0014 BB72     		strb	r3, [r7, #10]
+  83:.\dynamixelCom.c ****     packet[3] = canPacket[2]; // LENGTH
+ 293              		.loc 1 83 0
+ 294 0016 7B68     		ldr	r3, [r7, #4]
+ 295 0018 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 296 001a FB72     		strb	r3, [r7, #11]
+  84:.\dynamixelCom.c ****     for(i=0; i < packet[3]; i++) {
+ 297              		.loc 1 84 0
+ 298 001c 0023     		movs	r3, #0
+ 299 001e FB77     		strb	r3, [r7, #31]
+ 300 0020 0FE0     		b	.L14
+ 301              	.L15:
+  85:.\dynamixelCom.c ****        packet[4+i] = canPacket[3+i];
+ 302              		.loc 1 85 0 discriminator 3
+ 303 0022 FB7F     		ldrb	r3, [r7, #31]	@ zero_extendqisi2
+ 304 0024 0433     		adds	r3, r3, #4
+ 305 0026 FA7F     		ldrb	r2, [r7, #31]	@ zero_extendqisi2
+ 306 0028 0332     		adds	r2, r2, #3
+ 307 002a 1146     		mov	r1, r2
+ 308 002c 7A68     		ldr	r2, [r7, #4]
+ 309 002e 0A44     		add	r2, r2, r1
+ 310 0030 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 311 0032 07F12001 		add	r1, r7, #32
+ 312 0036 0B44     		add	r3, r3, r1
+ 313 0038 03F8182C 		strb	r2, [r3, #-24]
+  84:.\dynamixelCom.c ****     for(i=0; i < packet[3]; i++) {
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 8
+
+
+ 314              		.loc 1 84 0 discriminator 3
+ 315 003c FB7F     		ldrb	r3, [r7, #31]	@ zero_extendqisi2
+ 316 003e 0133     		adds	r3, r3, #1
+ 317 0040 FB77     		strb	r3, [r7, #31]
+ 318              	.L14:
+  84:.\dynamixelCom.c ****     for(i=0; i < packet[3]; i++) {
+ 319              		.loc 1 84 0 is_stmt 0 discriminator 1
+ 320 0042 FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
+ 321 0044 FA7F     		ldrb	r2, [r7, #31]	@ zero_extendqisi2
+ 322 0046 9A42     		cmp	r2, r3
+ 323 0048 EBD3     		bcc	.L15
+  86:.\dynamixelCom.c ****     }
+  87:.\dynamixelCom.c ****     
+  88:.\dynamixelCom.c ****     // send data to dynamixel
+  89:.\dynamixelCom.c ****     UART2DYNAMIXEL_PutArray(packet, 9);
+ 324              		.loc 1 89 0 is_stmt 1
+ 325 004a 07F10803 		add	r3, r7, #8
+ 326 004e 1846     		mov	r0, r3
+ 327 0050 0921     		movs	r1, #9
+ 328 0052 FFF7FEFF 		bl	UART2DYNAMIXEL_PutArray
+  90:.\dynamixelCom.c ****     while(UART2DYNAMIXEL_GetTxBufferSize() != 0) {};
+ 329              		.loc 1 90 0
+ 330 0056 00BF     		nop
+ 331              	.L16:
+ 332              		.loc 1 90 0 is_stmt 0 discriminator 1
+ 333 0058 FFF7FEFF 		bl	UART2DYNAMIXEL_GetTxBufferSize
+ 334 005c 0346     		mov	r3, r0
+ 335 005e 002B     		cmp	r3, #0
+ 336 0060 FAD1     		bne	.L16
+  91:.\dynamixelCom.c **** }
+ 337              		.loc 1 91 0 is_stmt 1
+ 338 0062 2037     		adds	r7, r7, #32
+ 339              		.cfi_def_cfa_offset 8
+ 340 0064 BD46     		mov	sp, r7
+ 341              		.cfi_def_cfa_register 13
+ 342              		@ sp needed
+ 343 0066 80BD     		pop	{r7, pc}
+ 344              		.cfi_endproc
+ 345              	.LFE59:
+ 346              		.size	sendCanPacketToDynamixel, .-sendCanPacketToDynamixel
+ 347              		.section	.text.sendDynamixelDataToComputer,"ax",%progbits
+ 348              		.align	2
+ 349              		.global	sendDynamixelDataToComputer
+ 350              		.thumb
+ 351              		.thumb_func
+ 352              		.type	sendDynamixelDataToComputer, %function
+ 353              	sendDynamixelDataToComputer:
+ 354              	.LFB60:
+  92:.\dynamixelCom.c **** 
+  93:.\dynamixelCom.c **** 
+  94:.\dynamixelCom.c **** void sendDynamixelDataToComputer(uint8 *packet) 
+  95:.\dynamixelCom.c **** {   
+ 355              		.loc 1 95 0
+ 356              		.cfi_startproc
+ 357              		@ args = 0, pretend = 0, frame = 32
+ 358              		@ frame_needed = 1, uses_anonymous_args = 0
+ 359 0000 80B5     		push	{r7, lr}
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 9
+
+
+ 360              		.cfi_def_cfa_offset 8
+ 361              		.cfi_offset 7, -8
+ 362              		.cfi_offset 14, -4
+ 363 0002 88B0     		sub	sp, sp, #32
+ 364              		.cfi_def_cfa_offset 40
+ 365 0004 00AF     		add	r7, sp, #0
+ 366              		.cfi_def_cfa_register 7
+ 367 0006 7860     		str	r0, [r7, #4]
+  96:.\dynamixelCom.c ****     CAN_MSG canMsg;
+  97:.\dynamixelCom.c ****     uint8 i;
+  98:.\dynamixelCom.c ****     
+  99:.\dynamixelCom.c ****     // index        :  0    1      2         3        4
+ 100:.\dynamixelCom.c ****     // packet format: [ff] [ff] [MotorID] [Length] [ERROR] [.. data]
+ 101:.\dynamixelCom.c **** 
+ 102:.\dynamixelCom.c ****     // index        :   0            1            2         3
+ 103:.\dynamixelCom.c ****     // can format   : [ERROR] [TreatingFunc] [MotorID] [.. data]
+ 104:.\dynamixelCom.c ****     
+ 105:.\dynamixelCom.c ****     // test
+ 106:.\dynamixelCom.c ****     // T: [0] [2] [4] [2] [0] [2] [F5] [0]
+ 107:.\dynamixelCom.c ****     // R: [0] [2] [4] [0] [C] [0] [ED] [0]
+ 108:.\dynamixelCom.c ****     //  
+ 109:.\dynamixelCom.c ****     
+ 110:.\dynamixelCom.c ****     canMsg.msgBytes.byte[0] = packet[4];
+ 368              		.loc 1 110 0
+ 369 0008 7B68     		ldr	r3, [r7, #4]
+ 370 000a 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 371 000c 3B73     		strb	r3, [r7, #12]
+ 111:.\dynamixelCom.c ****     canMsg.msgBytes.byte[1] = CAN_HARDWARE_FILTER_ID;
+ 372              		.loc 1 111 0
+ 373 000e 3023     		movs	r3, #48
+ 374 0010 7B73     		strb	r3, [r7, #13]
+ 112:.\dynamixelCom.c ****     canMsg.msgBytes.byte[2] = treatingAddress; // Treating function
+ 375              		.loc 1 112 0
+ 376 0012 174B     		ldr	r3, .L20
+ 377 0014 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 378 0016 BB73     		strb	r3, [r7, #14]
+ 113:.\dynamixelCom.c ****     canMsg.msgBytes.byte[3] = packet[2]; // ID MOTEUR
+ 379              		.loc 1 113 0
+ 380 0018 7B68     		ldr	r3, [r7, #4]
+ 381 001a 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 382 001c FB73     		strb	r3, [r7, #15]
+ 114:.\dynamixelCom.c ****     for(i=0; i < packet[3]-1; i++) {	// [data] [..] [data]
+ 383              		.loc 1 114 0
+ 384 001e 0023     		movs	r3, #0
+ 385 0020 FB77     		strb	r3, [r7, #31]
+ 386 0022 0FE0     		b	.L18
+ 387              	.L19:
+ 115:.\dynamixelCom.c ****        canMsg.msgBytes.byte[4+i] = packet[5+i];
+ 388              		.loc 1 115 0 discriminator 3
+ 389 0024 FB7F     		ldrb	r3, [r7, #31]	@ zero_extendqisi2
+ 390 0026 0433     		adds	r3, r3, #4
+ 391 0028 FA7F     		ldrb	r2, [r7, #31]	@ zero_extendqisi2
+ 392 002a 0532     		adds	r2, r2, #5
+ 393 002c 1146     		mov	r1, r2
+ 394 002e 7A68     		ldr	r2, [r7, #4]
+ 395 0030 0A44     		add	r2, r2, r1
+ 396 0032 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 10
+
+
+ 397 0034 07F12001 		add	r1, r7, #32
+ 398 0038 0B44     		add	r3, r3, r1
+ 399 003a 03F8142C 		strb	r2, [r3, #-20]
+ 114:.\dynamixelCom.c ****     for(i=0; i < packet[3]-1; i++) {	// [data] [..] [data]
+ 400              		.loc 1 114 0 discriminator 3
+ 401 003e FB7F     		ldrb	r3, [r7, #31]	@ zero_extendqisi2
+ 402 0040 0133     		adds	r3, r3, #1
+ 403 0042 FB77     		strb	r3, [r7, #31]
+ 404              	.L18:
+ 114:.\dynamixelCom.c ****     for(i=0; i < packet[3]-1; i++) {	// [data] [..] [data]
+ 405              		.loc 1 114 0 is_stmt 0 discriminator 1
+ 406 0044 FA7F     		ldrb	r2, [r7, #31]	@ zero_extendqisi2
+ 407 0046 7B68     		ldr	r3, [r7, #4]
+ 408 0048 0333     		adds	r3, r3, #3
+ 409 004a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 410 004c 013B     		subs	r3, r3, #1
+ 411 004e 9A42     		cmp	r2, r3
+ 412 0050 E8DB     		blt	.L19
+ 116:.\dynamixelCom.c ****     }
+ 117:.\dynamixelCom.c ****     i += 3;
+ 413              		.loc 1 117 0 is_stmt 1
+ 414 0052 FB7F     		ldrb	r3, [r7, #31]
+ 415 0054 0333     		adds	r3, r3, #3
+ 416 0056 FB77     		strb	r3, [r7, #31]
+ 118:.\dynamixelCom.c ****     canMsg.DLC = i; // number of bytes to send
+ 417              		.loc 1 118 0
+ 418 0058 FB7F     		ldrb	r3, [r7, #31]
+ 419 005a 3B75     		strb	r3, [r7, #20]
+ 119:.\dynamixelCom.c ****     
+ 120:.\dynamixelCom.c ****     can_sendMessage(&canMsg, CAN_COMPUTER_ID);
+ 420              		.loc 1 120 0
+ 421 005c 07F10C03 		add	r3, r7, #12
+ 422 0060 1846     		mov	r0, r3
+ 423 0062 FF21     		movs	r1, #255
+ 424 0064 FFF7FEFF 		bl	can_sendMessage
+ 121:.\dynamixelCom.c **** }
+ 425              		.loc 1 121 0
+ 426 0068 2037     		adds	r7, r7, #32
+ 427              		.cfi_def_cfa_offset 8
+ 428 006a BD46     		mov	sp, r7
+ 429              		.cfi_def_cfa_register 13
+ 430              		@ sp needed
+ 431 006c 80BD     		pop	{r7, pc}
+ 432              	.L21:
+ 433 006e 00BF     		.align	2
+ 434              	.L20:
+ 435 0070 00000000 		.word	treatingAddress
+ 436              		.cfi_endproc
+ 437              	.LFE60:
+ 438              		.size	sendDynamixelDataToComputer, .-sendDynamixelDataToComputer
+ 439              		.text
+ 440              	.Letext0:
+ 441              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 442              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 443              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 444              		.file 5 "Generated_Source\\PSoC5/CAN_1.h"
+ 445              		.file 6 ".\\CANCommunication.h"
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 11
+
+
+ 446              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
+ 447              		.section	.debug_info,"",%progbits
+ 448              	.Ldebug_info0:
+ 449 0000 DF020000 		.4byte	0x2df
+ 450 0004 0400     		.2byte	0x4
+ 451 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 452 000a 04       		.byte	0x4
+ 453 000b 01       		.uleb128 0x1
+ 454 000c 88000000 		.4byte	.LASF39
+ 455 0010 01       		.byte	0x1
+ 456 0011 85010000 		.4byte	.LASF40
+ 457 0015 30000000 		.4byte	.LASF41
+ 458 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 459 001d 00000000 		.4byte	0
+ 460 0021 00000000 		.4byte	.Ldebug_line0
+ 461 0025 02       		.uleb128 0x2
+ 462 0026 01       		.byte	0x1
+ 463 0027 06       		.byte	0x6
+ 464 0028 B6020000 		.4byte	.LASF0
+ 465 002c 02       		.uleb128 0x2
+ 466 002d 01       		.byte	0x1
+ 467 002e 08       		.byte	0x8
+ 468 002f 3A010000 		.4byte	.LASF1
+ 469 0033 02       		.uleb128 0x2
+ 470 0034 02       		.byte	0x2
+ 471 0035 05       		.byte	0x5
+ 472 0036 96020000 		.4byte	.LASF2
+ 473 003a 02       		.uleb128 0x2
+ 474 003b 02       		.byte	0x2
+ 475 003c 07       		.byte	0x7
+ 476 003d 65010000 		.4byte	.LASF3
+ 477 0041 03       		.uleb128 0x3
+ 478 0042 7E000000 		.4byte	.LASF9
+ 479 0046 02       		.byte	0x2
+ 480 0047 3F       		.byte	0x3f
+ 481 0048 4C000000 		.4byte	0x4c
+ 482 004c 02       		.uleb128 0x2
+ 483 004d 04       		.byte	0x4
+ 484 004e 05       		.byte	0x5
+ 485 004f AD020000 		.4byte	.LASF4
+ 486 0053 02       		.uleb128 0x2
+ 487 0054 04       		.byte	0x4
+ 488 0055 07       		.byte	0x7
+ 489 0056 53010000 		.4byte	.LASF5
+ 490 005a 02       		.uleb128 0x2
+ 491 005b 08       		.byte	0x8
+ 492 005c 05       		.byte	0x5
+ 493 005d 00000000 		.4byte	.LASF6
+ 494 0061 02       		.uleb128 0x2
+ 495 0062 08       		.byte	0x8
+ 496 0063 07       		.byte	0x7
+ 497 0064 F6010000 		.4byte	.LASF7
+ 498 0068 04       		.uleb128 0x4
+ 499 0069 04       		.byte	0x4
+ 500 006a 05       		.byte	0x5
+ 501 006b 696E7400 		.ascii	"int\000"
+ 502 006f 02       		.uleb128 0x2
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 12
+
+
+ 503 0070 04       		.byte	0x4
+ 504 0071 07       		.byte	0x7
+ 505 0072 E9010000 		.4byte	.LASF8
+ 506 0076 03       		.uleb128 0x3
+ 507 0077 3B020000 		.4byte	.LASF10
+ 508 007b 03       		.byte	0x3
+ 509 007c 2C       		.byte	0x2c
+ 510 007d 41000000 		.4byte	0x41
+ 511 0081 03       		.uleb128 0x3
+ 512 0082 A0020000 		.4byte	.LASF11
+ 513 0086 04       		.byte	0x4
+ 514 0087 A1       		.byte	0xa1
+ 515 0088 2C000000 		.4byte	0x2c
+ 516 008c 03       		.uleb128 0x3
+ 517 008d B8010000 		.4byte	.LASF12
+ 518 0091 04       		.byte	0x4
+ 519 0092 A2       		.byte	0xa2
+ 520 0093 3A000000 		.4byte	0x3a
+ 521 0097 03       		.uleb128 0x3
+ 522 0098 DB010000 		.4byte	.LASF13
+ 523 009c 04       		.byte	0x4
+ 524 009d A3       		.byte	0xa3
+ 525 009e 53000000 		.4byte	0x53
+ 526 00a2 03       		.uleb128 0x3
+ 527 00a3 4D010000 		.4byte	.LASF14
+ 528 00a7 04       		.byte	0x4
+ 529 00a8 A5       		.byte	0xa5
+ 530 00a9 33000000 		.4byte	0x33
+ 531 00ad 02       		.uleb128 0x2
+ 532 00ae 04       		.byte	0x4
+ 533 00af 04       		.byte	0x4
+ 534 00b0 1B010000 		.4byte	.LASF15
+ 535 00b4 02       		.uleb128 0x2
+ 536 00b5 08       		.byte	0x8
+ 537 00b6 04       		.byte	0x4
+ 538 00b7 96010000 		.4byte	.LASF16
+ 539 00bb 02       		.uleb128 0x2
+ 540 00bc 01       		.byte	0x1
+ 541 00bd 08       		.byte	0x8
+ 542 00be 69020000 		.4byte	.LASF17
+ 543 00c2 05       		.uleb128 0x5
+ 544 00c3 48010000 		.4byte	.LASF18
+ 545 00c7 04       		.byte	0x4
+ 546 00c8 4B01     		.2byte	0x14b
+ 547 00ca CE000000 		.4byte	0xce
+ 548 00ce 06       		.uleb128 0x6
+ 549 00cf 81000000 		.4byte	0x81
+ 550 00d3 05       		.uleb128 0x5
+ 551 00d4 0E000000 		.4byte	.LASF19
+ 552 00d8 04       		.byte	0x4
+ 553 00d9 4D01     		.2byte	0x14d
+ 554 00db DF000000 		.4byte	0xdf
+ 555 00df 06       		.uleb128 0x6
+ 556 00e0 97000000 		.4byte	0x97
+ 557 00e4 02       		.uleb128 0x2
+ 558 00e5 04       		.byte	0x4
+ 559 00e6 07       		.byte	0x7
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 13
+
+
+ 560 00e7 43020000 		.4byte	.LASF20
+ 561 00eb 07       		.uleb128 0x7
+ 562 00ec 08       		.byte	0x8
+ 563 00ed 05       		.byte	0x5
+ 564 00ee 6F       		.byte	0x6f
+ 565 00ef 00010000 		.4byte	0x100
+ 566 00f3 08       		.uleb128 0x8
+ 567 00f4 16010000 		.4byte	.LASF22
+ 568 00f8 05       		.byte	0x5
+ 569 00f9 71       		.byte	0x71
+ 570 00fa 00010000 		.4byte	0x100
+ 571 00fe 00       		.byte	0
+ 572 00ff 00       		.byte	0
+ 573 0100 09       		.uleb128 0x9
+ 574 0101 81000000 		.4byte	0x81
+ 575 0105 10010000 		.4byte	0x110
+ 576 0109 0A       		.uleb128 0xa
+ 577 010a E4000000 		.4byte	0xe4
+ 578 010e 07       		.byte	0x7
+ 579 010f 00       		.byte	0
+ 580 0110 03       		.uleb128 0x3
+ 581 0111 6E020000 		.4byte	.LASF21
+ 582 0115 05       		.byte	0x5
+ 583 0116 72       		.byte	0x72
+ 584 0117 EB000000 		.4byte	0xeb
+ 585 011b 07       		.uleb128 0x7
+ 586 011c 10       		.byte	0x10
+ 587 011d 06       		.byte	0x6
+ 588 011e 29       		.byte	0x29
+ 589 011f 48010000 		.4byte	0x148
+ 590 0123 08       		.uleb128 0x8
+ 591 0124 8D020000 		.4byte	.LASF23
+ 592 0128 06       		.byte	0x6
+ 593 0129 2E       		.byte	0x2e
+ 594 012a 10010000 		.4byte	0x110
+ 595 012e 00       		.byte	0
+ 596 012f 0B       		.uleb128 0xb
+ 597 0130 444C4300 		.ascii	"DLC\000"
+ 598 0134 06       		.byte	0x6
+ 599 0135 2F       		.byte	0x2f
+ 600 0136 81000000 		.4byte	0x81
+ 601 013a 08       		.byte	0x8
+ 602 013b 08       		.uleb128 0x8
+ 603 013c E2010000 		.4byte	.LASF24
+ 604 0140 06       		.byte	0x6
+ 605 0141 30       		.byte	0x30
+ 606 0142 97000000 		.4byte	0x97
+ 607 0146 0C       		.byte	0xc
+ 608 0147 00       		.byte	0
+ 609 0148 03       		.uleb128 0x3
+ 610 0149 14000000 		.4byte	.LASF25
+ 611 014d 06       		.byte	0x6
+ 612 014e 31       		.byte	0x31
+ 613 014f 1B010000 		.4byte	0x11b
+ 614 0153 0C       		.uleb128 0xc
+ 615 0154 9D010000 		.4byte	.LASF42
+ 616 0158 01       		.byte	0x1
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 14
+
+
+ 617 0159 11       		.byte	0x11
+ 618 015a 00000000 		.4byte	.LFB56
+ 619 015e 28000000 		.4byte	.LFE56-.LFB56
+ 620 0162 01       		.uleb128 0x1
+ 621 0163 9C       		.byte	0x9c
+ 622 0164 0D       		.uleb128 0xd
+ 623 0165 1C000000 		.4byte	.LASF26
+ 624 0169 01       		.byte	0x1
+ 625 016a 1C       		.byte	0x1c
+ 626 016b 00000000 		.4byte	.LFB57
+ 627 016f D4000000 		.4byte	.LFE57-.LFB57
+ 628 0173 01       		.uleb128 0x1
+ 629 0174 9C       		.byte	0x9c
+ 630 0175 92010000 		.4byte	0x192
+ 631 0179 0E       		.uleb128 0xe
+ 632 017a 60000000 		.4byte	.LBB2
+ 633 017e 38000000 		.4byte	.LBE2-.LBB2
+ 634 0182 0F       		.uleb128 0xf
+ 635 0183 746D7000 		.ascii	"tmp\000"
+ 636 0187 01       		.byte	0x1
+ 637 0188 2B       		.byte	0x2b
+ 638 0189 92010000 		.4byte	0x192
+ 639 018d 02       		.uleb128 0x2
+ 640 018e 91       		.byte	0x91
+ 641 018f 64       		.sleb128 -28
+ 642 0190 00       		.byte	0
+ 643 0191 00       		.byte	0
+ 644 0192 09       		.uleb128 0x9
+ 645 0193 81000000 		.4byte	0x81
+ 646 0197 A2010000 		.4byte	0x1a2
+ 647 019b 0A       		.uleb128 0xa
+ 648 019c E4000000 		.4byte	0xe4
+ 649 01a0 09       		.byte	0x9
+ 650 01a1 00       		.byte	0
+ 651 01a2 0D       		.uleb128 0xd
+ 652 01a3 25020000 		.4byte	.LASF27
+ 653 01a7 01       		.byte	0x1
+ 654 01a8 41       		.byte	0x41
+ 655 01a9 00000000 		.4byte	.LFB58
+ 656 01ad 28000000 		.4byte	.LFE58-.LFB58
+ 657 01b1 01       		.uleb128 0x1
+ 658 01b2 9C       		.byte	0x9c
+ 659 01b3 C6010000 		.4byte	0x1c6
+ 660 01b7 10       		.uleb128 0x10
+ 661 01b8 B1010000 		.4byte	.LASF29
+ 662 01bc 01       		.byte	0x1
+ 663 01bd 41       		.byte	0x41
+ 664 01be C6010000 		.4byte	0x1c6
+ 665 01c2 02       		.uleb128 0x2
+ 666 01c3 91       		.byte	0x91
+ 667 01c4 74       		.sleb128 -12
+ 668 01c5 00       		.byte	0
+ 669 01c6 11       		.uleb128 0x11
+ 670 01c7 04       		.byte	0x4
+ 671 01c8 81000000 		.4byte	0x81
+ 672 01cc 0D       		.uleb128 0xd
+ 673 01cd 21010000 		.4byte	.LASF28
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 15
+
+
+ 674 01d1 01       		.byte	0x1
+ 675 01d2 4B       		.byte	0x4b
+ 676 01d3 00000000 		.4byte	.LFB59
+ 677 01d7 68000000 		.4byte	.LFE59-.LFB59
+ 678 01db 01       		.uleb128 0x1
+ 679 01dc 9C       		.byte	0x9c
+ 680 01dd 0A020000 		.4byte	0x20a
+ 681 01e1 10       		.uleb128 0x10
+ 682 01e2 83020000 		.4byte	.LASF30
+ 683 01e6 01       		.byte	0x1
+ 684 01e7 4B       		.byte	0x4b
+ 685 01e8 C6010000 		.4byte	0x1c6
+ 686 01ec 02       		.uleb128 0x2
+ 687 01ed 91       		.byte	0x91
+ 688 01ee 5C       		.sleb128 -36
+ 689 01ef 0F       		.uleb128 0xf
+ 690 01f0 6900     		.ascii	"i\000"
+ 691 01f2 01       		.byte	0x1
+ 692 01f3 4D       		.byte	0x4d
+ 693 01f4 81000000 		.4byte	0x81
+ 694 01f8 02       		.uleb128 0x2
+ 695 01f9 91       		.byte	0x91
+ 696 01fa 77       		.sleb128 -9
+ 697 01fb 12       		.uleb128 0x12
+ 698 01fc B1010000 		.4byte	.LASF29
+ 699 0200 01       		.byte	0x1
+ 700 0201 4E       		.byte	0x4e
+ 701 0202 0A020000 		.4byte	0x20a
+ 702 0206 02       		.uleb128 0x2
+ 703 0207 91       		.byte	0x91
+ 704 0208 60       		.sleb128 -32
+ 705 0209 00       		.byte	0
+ 706 020a 09       		.uleb128 0x9
+ 707 020b 81000000 		.4byte	0x81
+ 708 020f 1A020000 		.4byte	0x21a
+ 709 0213 0A       		.uleb128 0xa
+ 710 0214 E4000000 		.4byte	0xe4
+ 711 0218 13       		.byte	0x13
+ 712 0219 00       		.byte	0
+ 713 021a 0D       		.uleb128 0xd
+ 714 021b BF010000 		.4byte	.LASF31
+ 715 021f 01       		.byte	0x1
+ 716 0220 5E       		.byte	0x5e
+ 717 0221 00000000 		.4byte	.LFB60
+ 718 0225 74000000 		.4byte	.LFE60-.LFB60
+ 719 0229 01       		.uleb128 0x1
+ 720 022a 9C       		.byte	0x9c
+ 721 022b 58020000 		.4byte	0x258
+ 722 022f 10       		.uleb128 0x10
+ 723 0230 B1010000 		.4byte	.LASF29
+ 724 0234 01       		.byte	0x1
+ 725 0235 5E       		.byte	0x5e
+ 726 0236 C6010000 		.4byte	0x1c6
+ 727 023a 02       		.uleb128 0x2
+ 728 023b 91       		.byte	0x91
+ 729 023c 5C       		.sleb128 -36
+ 730 023d 12       		.uleb128 0x12
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 16
+
+
+ 731 023e A6020000 		.4byte	.LASF32
+ 732 0242 01       		.byte	0x1
+ 733 0243 60       		.byte	0x60
+ 734 0244 48010000 		.4byte	0x148
+ 735 0248 02       		.uleb128 0x2
+ 736 0249 91       		.byte	0x91
+ 737 024a 64       		.sleb128 -28
+ 738 024b 0F       		.uleb128 0xf
+ 739 024c 6900     		.ascii	"i\000"
+ 740 024e 01       		.byte	0x1
+ 741 024f 61       		.byte	0x61
+ 742 0250 81000000 		.4byte	0x81
+ 743 0254 02       		.uleb128 0x2
+ 744 0255 91       		.byte	0x91
+ 745 0256 77       		.sleb128 -9
+ 746 0257 00       		.byte	0
+ 747 0258 13       		.uleb128 0x13
+ 748 0259 78010000 		.4byte	.LASF33
+ 749 025d 07       		.byte	0x7
+ 750 025e 1606     		.2byte	0x616
+ 751 0260 64020000 		.4byte	0x264
+ 752 0264 06       		.uleb128 0x6
+ 753 0265 76000000 		.4byte	0x76
+ 754 0269 09       		.uleb128 0x9
+ 755 026a 81000000 		.4byte	0x81
+ 756 026e 79020000 		.4byte	0x279
+ 757 0272 0A       		.uleb128 0xa
+ 758 0273 E4000000 		.4byte	0xe4
+ 759 0277 04       		.byte	0x4
+ 760 0278 00       		.byte	0
+ 761 0279 14       		.uleb128 0x14
+ 762 027a 5F020000 		.4byte	.LASF34
+ 763 027e 01       		.byte	0x1
+ 764 027f 0E       		.byte	0xe
+ 765 0280 69020000 		.4byte	0x269
+ 766 0284 05       		.uleb128 0x5
+ 767 0285 03       		.byte	0x3
+ 768 0286 00000000 		.4byte	motorType
+ 769 028a 09       		.uleb128 0x9
+ 770 028b 81000000 		.4byte	0x81
+ 771 028f 9A020000 		.4byte	0x29a
+ 772 0293 0A       		.uleb128 0xa
+ 773 0294 E4000000 		.4byte	0xe4
+ 774 0298 FF       		.byte	0xff
+ 775 0299 00       		.byte	0
+ 776 029a 14       		.uleb128 0x14
+ 777 029b 0D020000 		.4byte	.LASF35
+ 778 029f 01       		.byte	0x1
+ 779 02a0 08       		.byte	0x8
+ 780 02a1 AB020000 		.4byte	0x2ab
+ 781 02a5 05       		.uleb128 0x5
+ 782 02a6 03       		.byte	0x3
+ 783 02a7 00000000 		.4byte	dynamixelReceivedBuffer
+ 784 02ab 06       		.uleb128 0x6
+ 785 02ac 8A020000 		.4byte	0x28a
+ 786 02b0 14       		.uleb128 0x14
+ 787 02b1 4C020000 		.4byte	.LASF36
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 17
+
+
+ 788 02b5 01       		.byte	0x1
+ 789 02b6 09       		.byte	0x9
+ 790 02b7 C1020000 		.4byte	0x2c1
+ 791 02bb 05       		.uleb128 0x5
+ 792 02bc 03       		.byte	0x3
+ 793 02bd 00000000 		.4byte	dynamixelbufferPos
+ 794 02c1 06       		.uleb128 0x6
+ 795 02c2 A2000000 		.4byte	0xa2
+ 796 02c6 14       		.uleb128 0x14
+ 797 02c7 C2020000 		.4byte	.LASF37
+ 798 02cb 01       		.byte	0x1
+ 799 02cc 0A       		.byte	0xa
+ 800 02cd 8C000000 		.4byte	0x8c
+ 801 02d1 05       		.uleb128 0x5
+ 802 02d2 03       		.byte	0x3
+ 803 02d3 00000000 		.4byte	dynamixelSendDataPos
+ 804 02d7 15       		.uleb128 0x15
+ 805 02d8 D7020000 		.4byte	.LASF38
+ 806 02dc 01       		.byte	0x1
+ 807 02dd 0B       		.byte	0xb
+ 808 02de 81000000 		.4byte	0x81
+ 809 02e2 00       		.byte	0
+ 810              		.section	.debug_abbrev,"",%progbits
+ 811              	.Ldebug_abbrev0:
+ 812 0000 01       		.uleb128 0x1
+ 813 0001 11       		.uleb128 0x11
+ 814 0002 01       		.byte	0x1
+ 815 0003 25       		.uleb128 0x25
+ 816 0004 0E       		.uleb128 0xe
+ 817 0005 13       		.uleb128 0x13
+ 818 0006 0B       		.uleb128 0xb
+ 819 0007 03       		.uleb128 0x3
+ 820 0008 0E       		.uleb128 0xe
+ 821 0009 1B       		.uleb128 0x1b
+ 822 000a 0E       		.uleb128 0xe
+ 823 000b 55       		.uleb128 0x55
+ 824 000c 17       		.uleb128 0x17
+ 825 000d 11       		.uleb128 0x11
+ 826 000e 01       		.uleb128 0x1
+ 827 000f 10       		.uleb128 0x10
+ 828 0010 17       		.uleb128 0x17
+ 829 0011 00       		.byte	0
+ 830 0012 00       		.byte	0
+ 831 0013 02       		.uleb128 0x2
+ 832 0014 24       		.uleb128 0x24
+ 833 0015 00       		.byte	0
+ 834 0016 0B       		.uleb128 0xb
+ 835 0017 0B       		.uleb128 0xb
+ 836 0018 3E       		.uleb128 0x3e
+ 837 0019 0B       		.uleb128 0xb
+ 838 001a 03       		.uleb128 0x3
+ 839 001b 0E       		.uleb128 0xe
+ 840 001c 00       		.byte	0
+ 841 001d 00       		.byte	0
+ 842 001e 03       		.uleb128 0x3
+ 843 001f 16       		.uleb128 0x16
+ 844 0020 00       		.byte	0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 18
+
+
+ 845 0021 03       		.uleb128 0x3
+ 846 0022 0E       		.uleb128 0xe
+ 847 0023 3A       		.uleb128 0x3a
+ 848 0024 0B       		.uleb128 0xb
+ 849 0025 3B       		.uleb128 0x3b
+ 850 0026 0B       		.uleb128 0xb
+ 851 0027 49       		.uleb128 0x49
+ 852 0028 13       		.uleb128 0x13
+ 853 0029 00       		.byte	0
+ 854 002a 00       		.byte	0
+ 855 002b 04       		.uleb128 0x4
+ 856 002c 24       		.uleb128 0x24
+ 857 002d 00       		.byte	0
+ 858 002e 0B       		.uleb128 0xb
+ 859 002f 0B       		.uleb128 0xb
+ 860 0030 3E       		.uleb128 0x3e
+ 861 0031 0B       		.uleb128 0xb
+ 862 0032 03       		.uleb128 0x3
+ 863 0033 08       		.uleb128 0x8
+ 864 0034 00       		.byte	0
+ 865 0035 00       		.byte	0
+ 866 0036 05       		.uleb128 0x5
+ 867 0037 16       		.uleb128 0x16
+ 868 0038 00       		.byte	0
+ 869 0039 03       		.uleb128 0x3
+ 870 003a 0E       		.uleb128 0xe
+ 871 003b 3A       		.uleb128 0x3a
+ 872 003c 0B       		.uleb128 0xb
+ 873 003d 3B       		.uleb128 0x3b
+ 874 003e 05       		.uleb128 0x5
+ 875 003f 49       		.uleb128 0x49
+ 876 0040 13       		.uleb128 0x13
+ 877 0041 00       		.byte	0
+ 878 0042 00       		.byte	0
+ 879 0043 06       		.uleb128 0x6
+ 880 0044 35       		.uleb128 0x35
+ 881 0045 00       		.byte	0
+ 882 0046 49       		.uleb128 0x49
+ 883 0047 13       		.uleb128 0x13
+ 884 0048 00       		.byte	0
+ 885 0049 00       		.byte	0
+ 886 004a 07       		.uleb128 0x7
+ 887 004b 13       		.uleb128 0x13
+ 888 004c 01       		.byte	0x1
+ 889 004d 0B       		.uleb128 0xb
+ 890 004e 0B       		.uleb128 0xb
+ 891 004f 3A       		.uleb128 0x3a
+ 892 0050 0B       		.uleb128 0xb
+ 893 0051 3B       		.uleb128 0x3b
+ 894 0052 0B       		.uleb128 0xb
+ 895 0053 01       		.uleb128 0x1
+ 896 0054 13       		.uleb128 0x13
+ 897 0055 00       		.byte	0
+ 898 0056 00       		.byte	0
+ 899 0057 08       		.uleb128 0x8
+ 900 0058 0D       		.uleb128 0xd
+ 901 0059 00       		.byte	0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 19
+
+
+ 902 005a 03       		.uleb128 0x3
+ 903 005b 0E       		.uleb128 0xe
+ 904 005c 3A       		.uleb128 0x3a
+ 905 005d 0B       		.uleb128 0xb
+ 906 005e 3B       		.uleb128 0x3b
+ 907 005f 0B       		.uleb128 0xb
+ 908 0060 49       		.uleb128 0x49
+ 909 0061 13       		.uleb128 0x13
+ 910 0062 38       		.uleb128 0x38
+ 911 0063 0B       		.uleb128 0xb
+ 912 0064 00       		.byte	0
+ 913 0065 00       		.byte	0
+ 914 0066 09       		.uleb128 0x9
+ 915 0067 01       		.uleb128 0x1
+ 916 0068 01       		.byte	0x1
+ 917 0069 49       		.uleb128 0x49
+ 918 006a 13       		.uleb128 0x13
+ 919 006b 01       		.uleb128 0x1
+ 920 006c 13       		.uleb128 0x13
+ 921 006d 00       		.byte	0
+ 922 006e 00       		.byte	0
+ 923 006f 0A       		.uleb128 0xa
+ 924 0070 21       		.uleb128 0x21
+ 925 0071 00       		.byte	0
+ 926 0072 49       		.uleb128 0x49
+ 927 0073 13       		.uleb128 0x13
+ 928 0074 2F       		.uleb128 0x2f
+ 929 0075 0B       		.uleb128 0xb
+ 930 0076 00       		.byte	0
+ 931 0077 00       		.byte	0
+ 932 0078 0B       		.uleb128 0xb
+ 933 0079 0D       		.uleb128 0xd
+ 934 007a 00       		.byte	0
+ 935 007b 03       		.uleb128 0x3
+ 936 007c 08       		.uleb128 0x8
+ 937 007d 3A       		.uleb128 0x3a
+ 938 007e 0B       		.uleb128 0xb
+ 939 007f 3B       		.uleb128 0x3b
+ 940 0080 0B       		.uleb128 0xb
+ 941 0081 49       		.uleb128 0x49
+ 942 0082 13       		.uleb128 0x13
+ 943 0083 38       		.uleb128 0x38
+ 944 0084 0B       		.uleb128 0xb
+ 945 0085 00       		.byte	0
+ 946 0086 00       		.byte	0
+ 947 0087 0C       		.uleb128 0xc
+ 948 0088 2E       		.uleb128 0x2e
+ 949 0089 00       		.byte	0
+ 950 008a 3F       		.uleb128 0x3f
+ 951 008b 19       		.uleb128 0x19
+ 952 008c 03       		.uleb128 0x3
+ 953 008d 0E       		.uleb128 0xe
+ 954 008e 3A       		.uleb128 0x3a
+ 955 008f 0B       		.uleb128 0xb
+ 956 0090 3B       		.uleb128 0x3b
+ 957 0091 0B       		.uleb128 0xb
+ 958 0092 11       		.uleb128 0x11
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 20
+
+
+ 959 0093 01       		.uleb128 0x1
+ 960 0094 12       		.uleb128 0x12
+ 961 0095 06       		.uleb128 0x6
+ 962 0096 40       		.uleb128 0x40
+ 963 0097 18       		.uleb128 0x18
+ 964 0098 9642     		.uleb128 0x2116
+ 965 009a 19       		.uleb128 0x19
+ 966 009b 00       		.byte	0
+ 967 009c 00       		.byte	0
+ 968 009d 0D       		.uleb128 0xd
+ 969 009e 2E       		.uleb128 0x2e
+ 970 009f 01       		.byte	0x1
+ 971 00a0 3F       		.uleb128 0x3f
+ 972 00a1 19       		.uleb128 0x19
+ 973 00a2 03       		.uleb128 0x3
+ 974 00a3 0E       		.uleb128 0xe
+ 975 00a4 3A       		.uleb128 0x3a
+ 976 00a5 0B       		.uleb128 0xb
+ 977 00a6 3B       		.uleb128 0x3b
+ 978 00a7 0B       		.uleb128 0xb
+ 979 00a8 27       		.uleb128 0x27
+ 980 00a9 19       		.uleb128 0x19
+ 981 00aa 11       		.uleb128 0x11
+ 982 00ab 01       		.uleb128 0x1
+ 983 00ac 12       		.uleb128 0x12
+ 984 00ad 06       		.uleb128 0x6
+ 985 00ae 40       		.uleb128 0x40
+ 986 00af 18       		.uleb128 0x18
+ 987 00b0 9642     		.uleb128 0x2116
+ 988 00b2 19       		.uleb128 0x19
+ 989 00b3 01       		.uleb128 0x1
+ 990 00b4 13       		.uleb128 0x13
+ 991 00b5 00       		.byte	0
+ 992 00b6 00       		.byte	0
+ 993 00b7 0E       		.uleb128 0xe
+ 994 00b8 0B       		.uleb128 0xb
+ 995 00b9 01       		.byte	0x1
+ 996 00ba 11       		.uleb128 0x11
+ 997 00bb 01       		.uleb128 0x1
+ 998 00bc 12       		.uleb128 0x12
+ 999 00bd 06       		.uleb128 0x6
+ 1000 00be 00       		.byte	0
+ 1001 00bf 00       		.byte	0
+ 1002 00c0 0F       		.uleb128 0xf
+ 1003 00c1 34       		.uleb128 0x34
+ 1004 00c2 00       		.byte	0
+ 1005 00c3 03       		.uleb128 0x3
+ 1006 00c4 08       		.uleb128 0x8
+ 1007 00c5 3A       		.uleb128 0x3a
+ 1008 00c6 0B       		.uleb128 0xb
+ 1009 00c7 3B       		.uleb128 0x3b
+ 1010 00c8 0B       		.uleb128 0xb
+ 1011 00c9 49       		.uleb128 0x49
+ 1012 00ca 13       		.uleb128 0x13
+ 1013 00cb 02       		.uleb128 0x2
+ 1014 00cc 18       		.uleb128 0x18
+ 1015 00cd 00       		.byte	0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 21
+
+
+ 1016 00ce 00       		.byte	0
+ 1017 00cf 10       		.uleb128 0x10
+ 1018 00d0 05       		.uleb128 0x5
+ 1019 00d1 00       		.byte	0
+ 1020 00d2 03       		.uleb128 0x3
+ 1021 00d3 0E       		.uleb128 0xe
+ 1022 00d4 3A       		.uleb128 0x3a
+ 1023 00d5 0B       		.uleb128 0xb
+ 1024 00d6 3B       		.uleb128 0x3b
+ 1025 00d7 0B       		.uleb128 0xb
+ 1026 00d8 49       		.uleb128 0x49
+ 1027 00d9 13       		.uleb128 0x13
+ 1028 00da 02       		.uleb128 0x2
+ 1029 00db 18       		.uleb128 0x18
+ 1030 00dc 00       		.byte	0
+ 1031 00dd 00       		.byte	0
+ 1032 00de 11       		.uleb128 0x11
+ 1033 00df 0F       		.uleb128 0xf
+ 1034 00e0 00       		.byte	0
+ 1035 00e1 0B       		.uleb128 0xb
+ 1036 00e2 0B       		.uleb128 0xb
+ 1037 00e3 49       		.uleb128 0x49
+ 1038 00e4 13       		.uleb128 0x13
+ 1039 00e5 00       		.byte	0
+ 1040 00e6 00       		.byte	0
+ 1041 00e7 12       		.uleb128 0x12
+ 1042 00e8 34       		.uleb128 0x34
+ 1043 00e9 00       		.byte	0
+ 1044 00ea 03       		.uleb128 0x3
+ 1045 00eb 0E       		.uleb128 0xe
+ 1046 00ec 3A       		.uleb128 0x3a
+ 1047 00ed 0B       		.uleb128 0xb
+ 1048 00ee 3B       		.uleb128 0x3b
+ 1049 00ef 0B       		.uleb128 0xb
+ 1050 00f0 49       		.uleb128 0x49
+ 1051 00f1 13       		.uleb128 0x13
+ 1052 00f2 02       		.uleb128 0x2
+ 1053 00f3 18       		.uleb128 0x18
+ 1054 00f4 00       		.byte	0
+ 1055 00f5 00       		.byte	0
+ 1056 00f6 13       		.uleb128 0x13
+ 1057 00f7 34       		.uleb128 0x34
+ 1058 00f8 00       		.byte	0
+ 1059 00f9 03       		.uleb128 0x3
+ 1060 00fa 0E       		.uleb128 0xe
+ 1061 00fb 3A       		.uleb128 0x3a
+ 1062 00fc 0B       		.uleb128 0xb
+ 1063 00fd 3B       		.uleb128 0x3b
+ 1064 00fe 05       		.uleb128 0x5
+ 1065 00ff 49       		.uleb128 0x49
+ 1066 0100 13       		.uleb128 0x13
+ 1067 0101 3F       		.uleb128 0x3f
+ 1068 0102 19       		.uleb128 0x19
+ 1069 0103 3C       		.uleb128 0x3c
+ 1070 0104 19       		.uleb128 0x19
+ 1071 0105 00       		.byte	0
+ 1072 0106 00       		.byte	0
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 22
+
+
+ 1073 0107 14       		.uleb128 0x14
+ 1074 0108 34       		.uleb128 0x34
+ 1075 0109 00       		.byte	0
+ 1076 010a 03       		.uleb128 0x3
+ 1077 010b 0E       		.uleb128 0xe
+ 1078 010c 3A       		.uleb128 0x3a
+ 1079 010d 0B       		.uleb128 0xb
+ 1080 010e 3B       		.uleb128 0x3b
+ 1081 010f 0B       		.uleb128 0xb
+ 1082 0110 49       		.uleb128 0x49
+ 1083 0111 13       		.uleb128 0x13
+ 1084 0112 3F       		.uleb128 0x3f
+ 1085 0113 19       		.uleb128 0x19
+ 1086 0114 02       		.uleb128 0x2
+ 1087 0115 18       		.uleb128 0x18
+ 1088 0116 00       		.byte	0
+ 1089 0117 00       		.byte	0
+ 1090 0118 15       		.uleb128 0x15
+ 1091 0119 34       		.uleb128 0x34
+ 1092 011a 00       		.byte	0
+ 1093 011b 03       		.uleb128 0x3
+ 1094 011c 0E       		.uleb128 0xe
+ 1095 011d 3A       		.uleb128 0x3a
+ 1096 011e 0B       		.uleb128 0xb
+ 1097 011f 3B       		.uleb128 0x3b
+ 1098 0120 0B       		.uleb128 0xb
+ 1099 0121 49       		.uleb128 0x49
+ 1100 0122 13       		.uleb128 0x13
+ 1101 0123 3F       		.uleb128 0x3f
+ 1102 0124 19       		.uleb128 0x19
+ 1103 0125 3C       		.uleb128 0x3c
+ 1104 0126 19       		.uleb128 0x19
+ 1105 0127 00       		.byte	0
+ 1106 0128 00       		.byte	0
+ 1107 0129 00       		.byte	0
+ 1108              		.section	.debug_aranges,"",%progbits
+ 1109 0000 3C000000 		.4byte	0x3c
+ 1110 0004 0200     		.2byte	0x2
+ 1111 0006 00000000 		.4byte	.Ldebug_info0
+ 1112 000a 04       		.byte	0x4
+ 1113 000b 00       		.byte	0
+ 1114 000c 0000     		.2byte	0
+ 1115 000e 0000     		.2byte	0
+ 1116 0010 00000000 		.4byte	.LFB56
+ 1117 0014 28000000 		.4byte	.LFE56-.LFB56
+ 1118 0018 00000000 		.4byte	.LFB57
+ 1119 001c D4000000 		.4byte	.LFE57-.LFB57
+ 1120 0020 00000000 		.4byte	.LFB58
+ 1121 0024 28000000 		.4byte	.LFE58-.LFB58
+ 1122 0028 00000000 		.4byte	.LFB59
+ 1123 002c 68000000 		.4byte	.LFE59-.LFB59
+ 1124 0030 00000000 		.4byte	.LFB60
+ 1125 0034 74000000 		.4byte	.LFE60-.LFB60
+ 1126 0038 00000000 		.4byte	0
+ 1127 003c 00000000 		.4byte	0
+ 1128              		.section	.debug_ranges,"",%progbits
+ 1129              	.Ldebug_ranges0:
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 23
+
+
+ 1130 0000 00000000 		.4byte	.LFB56
+ 1131 0004 28000000 		.4byte	.LFE56
+ 1132 0008 00000000 		.4byte	.LFB57
+ 1133 000c D4000000 		.4byte	.LFE57
+ 1134 0010 00000000 		.4byte	.LFB58
+ 1135 0014 28000000 		.4byte	.LFE58
+ 1136 0018 00000000 		.4byte	.LFB59
+ 1137 001c 68000000 		.4byte	.LFE59
+ 1138 0020 00000000 		.4byte	.LFB60
+ 1139 0024 74000000 		.4byte	.LFE60
+ 1140 0028 00000000 		.4byte	0
+ 1141 002c 00000000 		.4byte	0
+ 1142              		.section	.debug_line,"",%progbits
+ 1143              	.Ldebug_line0:
+ 1144 0000 2B020000 		.section	.debug_str,"MS",%progbits,1
+ 1144      02007401 
+ 1144      00000201 
+ 1144      FB0E0D00 
+ 1144      01010101 
+ 1145              	.LASF6:
+ 1146 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1146      206C6F6E 
+ 1146      6720696E 
+ 1146      7400
+ 1147              	.LASF19:
+ 1148 000e 72656733 		.ascii	"reg32\000"
+ 1148      3200
+ 1149              	.LASF25:
+ 1150 0014 43414E5F 		.ascii	"CAN_MSG\000"
+ 1150      4D534700 
+ 1151              	.LASF26:
+ 1152 001c 6973725F 		.ascii	"isr_uart_rx_gripper\000"
+ 1152      75617274 
+ 1152      5F72785F 
+ 1152      67726970 
+ 1152      70657200 
+ 1153              	.LASF41:
+ 1154 0030 433A5C55 		.ascii	"C:\\Users\\plod1602\\Documents\\git\\module-gripper"
+ 1154      73657273 
+ 1154      5C706C6F 
+ 1154      64313630 
+ 1154      325C446F 
+ 1155 005e 2D70736F 		.ascii	"-psoc\\module-gripper-psoc.cydsn\000"
+ 1155      635C6D6F 
+ 1155      64756C65 
+ 1155      2D677269 
+ 1155      70706572 
+ 1156              	.LASF9:
+ 1157 007e 5F5F696E 		.ascii	"__int32_t\000"
+ 1157      7433325F 
+ 1157      7400
+ 1158              	.LASF39:
+ 1159 0088 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1159      4320342E 
+ 1159      392E3320 
+ 1159      32303135 
+ 1159      30333033 
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 24
+
+
+ 1160 00bb 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1160      20726576 
+ 1160      6973696F 
+ 1160      6E203232 
+ 1160      31323230 
+ 1161 00ee 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1161      66756E63 
+ 1161      74696F6E 
+ 1161      2D736563 
+ 1161      74696F6E 
+ 1162              	.LASF22:
+ 1163 0116 62797465 		.ascii	"byte\000"
+ 1163      00
+ 1164              	.LASF15:
+ 1165 011b 666C6F61 		.ascii	"float\000"
+ 1165      7400
+ 1166              	.LASF28:
+ 1167 0121 73656E64 		.ascii	"sendCanPacketToDynamixel\000"
+ 1167      43616E50 
+ 1167      61636B65 
+ 1167      74546F44 
+ 1167      796E616D 
+ 1168              	.LASF1:
+ 1169 013a 756E7369 		.ascii	"unsigned char\000"
+ 1169      676E6564 
+ 1169      20636861 
+ 1169      7200
+ 1170              	.LASF18:
+ 1171 0148 72656738 		.ascii	"reg8\000"
+ 1171      00
+ 1172              	.LASF14:
+ 1173 014d 696E7431 		.ascii	"int16\000"
+ 1173      3600
+ 1174              	.LASF5:
+ 1175 0153 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1175      20756E73 
+ 1175      69676E65 
+ 1175      6420696E 
+ 1175      7400
+ 1176              	.LASF3:
+ 1177 0165 73686F72 		.ascii	"short unsigned int\000"
+ 1177      7420756E 
+ 1177      7369676E 
+ 1177      65642069 
+ 1177      6E7400
+ 1178              	.LASF33:
+ 1179 0178 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1179      52784275 
+ 1179      66666572 
+ 1179      00
+ 1180              	.LASF40:
+ 1181 0185 2E5C6479 		.ascii	".\\dynamixelCom.c\000"
+ 1181      6E616D69 
+ 1181      78656C43 
+ 1181      6F6D2E63 
+ 1181      00
+ 1182              	.LASF16:
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 25
+
+
+ 1183 0196 646F7562 		.ascii	"double\000"
+ 1183      6C6500
+ 1184              	.LASF42:
+ 1185 019d 696E6974 		.ascii	"init_uart_dynamixel\000"
+ 1185      5F756172 
+ 1185      745F6479 
+ 1185      6E616D69 
+ 1185      78656C00 
+ 1186              	.LASF29:
+ 1187 01b1 7061636B 		.ascii	"packet\000"
+ 1187      657400
+ 1188              	.LASF12:
+ 1189 01b8 75696E74 		.ascii	"uint16\000"
+ 1189      313600
+ 1190              	.LASF31:
+ 1191 01bf 73656E64 		.ascii	"sendDynamixelDataToComputer\000"
+ 1191      44796E61 
+ 1191      6D697865 
+ 1191      6C446174 
+ 1191      61546F43 
+ 1192              	.LASF13:
+ 1193 01db 75696E74 		.ascii	"uint32\000"
+ 1193      333200
+ 1194              	.LASF24:
+ 1195 01e2 43414E5F 		.ascii	"CAN_ID\000"
+ 1195      494400
+ 1196              	.LASF8:
+ 1197 01e9 756E7369 		.ascii	"unsigned int\000"
+ 1197      676E6564 
+ 1197      20696E74 
+ 1197      00
+ 1198              	.LASF7:
+ 1199 01f6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1199      206C6F6E 
+ 1199      6720756E 
+ 1199      7369676E 
+ 1199      65642069 
+ 1200              	.LASF35:
+ 1201 020d 64796E61 		.ascii	"dynamixelReceivedBuffer\000"
+ 1201      6D697865 
+ 1201      6C526563 
+ 1201      65697665 
+ 1201      64427566 
+ 1202              	.LASF27:
+ 1203 0225 73656E64 		.ascii	"sendPacketToDynamixel\000"
+ 1203      5061636B 
+ 1203      6574546F 
+ 1203      44796E61 
+ 1203      6D697865 
+ 1204              	.LASF10:
+ 1205 023b 696E7433 		.ascii	"int32_t\000"
+ 1205      325F7400 
+ 1206              	.LASF20:
+ 1207 0243 73697A65 		.ascii	"sizetype\000"
+ 1207      74797065 
+ 1207      00
+ 1208              	.LASF36:
+ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIA5tD2.s 			page 26
+
+
+ 1209 024c 64796E61 		.ascii	"dynamixelbufferPos\000"
+ 1209      6D697865 
+ 1209      6C627566 
+ 1209      66657250 
+ 1209      6F7300
+ 1210              	.LASF34:
+ 1211 025f 6D6F746F 		.ascii	"motorType\000"
+ 1211      72547970 
+ 1211      6500
+ 1212              	.LASF17:
+ 1213 0269 63686172 		.ascii	"char\000"
+ 1213      00
+ 1214              	.LASF21:
+ 1215 026e 43414E5F 		.ascii	"CAN_1_DATA_BYTES_MSG\000"
+ 1215      315F4441 
+ 1215      54415F42 
+ 1215      59544553 
+ 1215      5F4D5347 
+ 1216              	.LASF30:
+ 1217 0283 63616E50 		.ascii	"canPacket\000"
+ 1217      61636B65 
+ 1217      7400
+ 1218              	.LASF23:
+ 1219 028d 6D736742 		.ascii	"msgBytes\000"
+ 1219      79746573 
+ 1219      00
+ 1220              	.LASF2:
+ 1221 0296 73686F72 		.ascii	"short int\000"
+ 1221      7420696E 
+ 1221      7400
+ 1222              	.LASF11:
+ 1223 02a0 75696E74 		.ascii	"uint8\000"
+ 1223      3800
+ 1224              	.LASF32:
+ 1225 02a6 63616E4D 		.ascii	"canMsg\000"
+ 1225      736700
+ 1226              	.LASF4:
+ 1227 02ad 6C6F6E67 		.ascii	"long int\000"
+ 1227      20696E74 
+ 1227      00
+ 1228              	.LASF0:
+ 1229 02b6 7369676E 		.ascii	"signed char\000"
+ 1229      65642063 
+ 1229      68617200 
+ 1230              	.LASF37:
+ 1231 02c2 64796E61 		.ascii	"dynamixelSendDataPos\000"
+ 1231      6D697865 
+ 1231      6C53656E 
+ 1231      64446174 
+ 1231      61506F73 
+ 1232              	.LASF38:
+ 1233 02d7 74726561 		.ascii	"treatingAddress\000"
+ 1233      74696E67 
+ 1233      41646472 
+ 1233      65737300 
+ 1234              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
