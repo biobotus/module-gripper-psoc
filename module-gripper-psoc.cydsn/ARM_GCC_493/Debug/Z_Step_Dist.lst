@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
   23:.\Generated_Source\PSoC5/Z_Step_Dist.c **** 
   24:.\Generated_Source\PSoC5/Z_Step_Dist.c **** /*******************************************************************************
   25:.\Generated_Source\PSoC5/Z_Step_Dist.c **** * Function Name: Z_Step_Dist_Init
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 2
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 2
 
 
   26:.\Generated_Source\PSoC5/Z_Step_Dist.c **** ********************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
   68:.\Generated_Source\PSoC5/Z_Step_Dist.c ****             /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
   69:.\Generated_Source\PSoC5/Z_Step_Dist.c ****             Z_Step_Dist_RT1 &= ((uint8)(~Z_Step_Dist_RT1_MASK));
   70:.\Generated_Source\PSoC5/Z_Step_Dist.c ****             Z_Step_Dist_RT1 |= Z_Step_Dist_SYNC;     
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 3
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 3
 
 
   71:.\Generated_Source\PSoC5/Z_Step_Dist.c ****                     
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
   69              		.loc 1 100 0
   70 0034 4FF0FF30 		mov	r0, #-1
   71 0038 FFF7FEFF 		bl	Z_Step_Dist_WritePeriod
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 4
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 4
 
 
  101:.\Generated_Source\PSoC5/Z_Step_Dist.c ****         #if (!(Z_Step_Dist_UsingFixedFunction && (CY_PSOC5A)))
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  103              		.cfi_def_cfa_register 13
  104              		@ sp needed
  105 0076 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 5
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 5
 
 
  106              	.L3:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  152:.\Generated_Source\PSoC5/Z_Step_Dist.c ****     /* If Fixed Function then make sure Mode is set correctly */
  153:.\Generated_Source\PSoC5/Z_Step_Dist.c ****     /* else make sure reset is clear */
  154:.\Generated_Source\PSoC5/Z_Step_Dist.c ****     #if(!Z_Step_Dist_ControlRegRemoved || Z_Step_Dist_UsingFixedFunction)
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 6
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 6
 
 
  155:.\Generated_Source\PSoC5/Z_Step_Dist.c ****         Z_Step_Dist_CONTROL |= Z_Step_Dist_CTRL_ENABLE;                
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  178:.\Generated_Source\PSoC5/Z_Step_Dist.c **** void Z_Step_Dist_Start(void) 
  179:.\Generated_Source\PSoC5/Z_Step_Dist.c **** {
  163              		.loc 1 179 0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 7
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 7
 
 
  164              		.cfi_startproc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  194:.\Generated_Source\PSoC5/Z_Step_Dist.c **** ********************************************************************************
  195:.\Generated_Source\PSoC5/Z_Step_Dist.c **** * Summary:
  196:.\Generated_Source\PSoC5/Z_Step_Dist.c **** * Halts the counter, but does not change any modes or disable interrupts.
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 8
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 8
 
 
  197:.\Generated_Source\PSoC5/Z_Step_Dist.c **** *
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  234              		.cfi_endproc
  235              	.LFE3:
  236              		.size	Z_Step_Dist_Stop, .-Z_Step_Dist_Stop
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 9
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 9
 
 
  237              		.section	.text.Z_Step_Dist_SetInterruptMode,"ax",%progbits
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  271              		.cfi_def_cfa_offset 0
  272 0018 7047     		bx	lr
  273              	.L16:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 10
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 10
 
 
  274 001a 00BF     		.align	2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  304 000c BD46     		mov	sp, r7
  305              		.cfi_def_cfa_register 13
  306              		@ sp needed
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 11
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 11
 
 
  307 000e 5DF8047B 		ldr	r7, [sp], #4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  286:.\Generated_Source\PSoC5/Z_Step_Dist.c **** }
  340              		.loc 1 286 0
  341 000a 1846     		mov	r0, r3
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 12
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 12
 
 
  342 000c BD46     		mov	sp, r7
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  377 0008 FB71     		strb	r3, [r7, #7]
  306:.\Generated_Source\PSoC5/Z_Step_Dist.c ****     Z_Step_Dist_CONTROL = control;
  378              		.loc 1 306 0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 13
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 13
 
 
  379 000a 044A     		ldr	r2, .L26
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  411              		@ link register save eliminated.
  412 0000 80B4     		push	{r7}
  413              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 14
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 14
 
 
  414              		.cfi_offset 7, -4
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  348:.\Generated_Source\PSoC5/Z_Step_Dist.c **** * if the counter is enabled or running.
  349:.\Generated_Source\PSoC5/Z_Step_Dist.c **** *
  350:.\Generated_Source\PSoC5/Z_Step_Dist.c **** * Parameters:  
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 15
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 15
 
 
  351:.\Generated_Source\PSoC5/Z_Step_Dist.c **** *  void:  
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  479              		.cfi_endproc
  480              	.LFE9:
  481              		.size	Z_Step_Dist_ReadCounter, .-Z_Step_Dist_ReadCounter
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 16
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 16
 
 
  482              		.section	.text.Z_Step_Dist_ReadCapture,"ax",%progbits
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  513 0012 00BF     		.align	2
  514              	.L37:
  515 0014 42640040 		.word	1073767490
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 17
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 17
 
 
  516              		.cfi_endproc
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  545 000e 0C37     		adds	r7, r7, #12
  546              		.cfi_def_cfa_offset 4
  547 0010 BD46     		mov	sp, r7
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 18
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 18
 
 
  548              		.cfi_def_cfa_register 13
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  581 0006 1B68     		ldr	r3, [r3]
  444:.\Generated_Source\PSoC5/Z_Step_Dist.c ****     #endif /* (Z_Step_Dist_UsingFixedFunction) */
  445:.\Generated_Source\PSoC5/Z_Step_Dist.c **** }
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 19
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 19
 
 
  582              		.loc 1 445 0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  614 0002 83B0     		sub	sp, sp, #12
  615              		.cfi_def_cfa_offset 16
  616 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 20
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 20
 
 
  617              		.cfi_def_cfa_register 7
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  648              		.loc 1 490 0
  649              		.cfi_startproc
  650              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 21
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 21
 
 
  651              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  511:.\Generated_Source\PSoC5/Z_Step_Dist.c ****     /* Clear the compare mode bits in the control register */
  512:.\Generated_Source\PSoC5/Z_Step_Dist.c ****     Z_Step_Dist_CONTROL &= ((uint8)(~Z_Step_Dist_CTRL_CMPMODE_MASK));
  513:.\Generated_Source\PSoC5/Z_Step_Dist.c ****     
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 22
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 22
 
 
  514:.\Generated_Source\PSoC5/Z_Step_Dist.c ****     /* Write the new setting */
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  693 0002 00AF     		add	r7, sp, #0
  694              		.cfi_def_cfa_register 7
  560:.\Generated_Source\PSoC5/Z_Step_Dist.c **** 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 23
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 23
 
 
  561:.\Generated_Source\PSoC5/Z_Step_Dist.c ****     while(0u != (Z_Step_Dist_ReadStatusRegister() & Z_Step_Dist_STATUS_FIFONEMP))
@@ -1355,48 +1355,48 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  719 0006 00000000 		.4byte	.Ldebug_abbrev0
  720 000a 04       		.byte	0x4
  721 000b 01       		.uleb128 0x1
- 722 000c B0010000 		.4byte	.LASF40
+ 722 000c 62010000 		.4byte	.LASF40
  723 0010 01       		.byte	0x1
- 724 0011 78010000 		.4byte	.LASF41
- 725 0015 1E000000 		.4byte	.LASF42
+ 724 0011 2A010000 		.4byte	.LASF41
+ 725 0015 C5020000 		.4byte	.LASF42
  726 0019 00000000 		.4byte	.Ldebug_ranges0+0
  727 001d 00000000 		.4byte	0
  728 0021 00000000 		.4byte	.Ldebug_line0
  729 0025 02       		.uleb128 0x2
  730 0026 01       		.byte	0x1
  731 0027 06       		.byte	0x6
- 732 0028 6C030000 		.4byte	.LASF0
+ 732 0028 6D030000 		.4byte	.LASF0
  733 002c 02       		.uleb128 0x2
  734 002d 01       		.byte	0x1
  735 002e 08       		.byte	0x8
- 736 002f D4000000 		.4byte	.LASF1
+ 736 002f 86000000 		.4byte	.LASF1
  737 0033 02       		.uleb128 0x2
  738 0034 02       		.byte	0x2
  739 0035 05       		.byte	0x5
- 740 0036 25030000 		.4byte	.LASF2
+ 740 0036 26030000 		.4byte	.LASF2
  741 003a 02       		.uleb128 0x2
  742 003b 02       		.byte	0x2
  743 003c 07       		.byte	0x7
- 744 003d 84000000 		.4byte	.LASF3
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 24
+ 744 003d 36000000 		.4byte	.LASF3
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 24
 
 
  745 0041 02       		.uleb128 0x2
  746 0042 04       		.byte	0x4
  747 0043 05       		.byte	0x5
- 748 0044 63030000 		.4byte	.LASF4
+ 748 0044 64030000 		.4byte	.LASF4
  749 0048 02       		.uleb128 0x2
  750 0049 04       		.byte	0x4
  751 004a 07       		.byte	0x7
- 752 004b 07010000 		.4byte	.LASF5
+ 752 004b B9000000 		.4byte	.LASF5
  753 004f 02       		.uleb128 0x2
  754 0050 08       		.byte	0x8
  755 0051 05       		.byte	0x5
- 756 0052 E8020000 		.4byte	.LASF6
+ 756 0052 9A020000 		.4byte	.LASF6
  757 0056 02       		.uleb128 0x2
  758 0057 08       		.byte	0x8
  759 0058 07       		.byte	0x7
- 760 0059 A6020000 		.4byte	.LASF7
+ 760 0059 58020000 		.4byte	.LASF7
  761 005d 03       		.uleb128 0x3
  762 005e 04       		.byte	0x4
  763 005f 05       		.byte	0x5
@@ -1404,31 +1404,31 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  765 0064 02       		.uleb128 0x2
  766 0065 04       		.byte	0x4
  767 0066 07       		.byte	0x7
- 768 0067 6D020000 		.4byte	.LASF8
+ 768 0067 1F020000 		.4byte	.LASF8
  769 006b 04       		.uleb128 0x4
- 770 006c 19010000 		.4byte	.LASF9
+ 770 006c CB000000 		.4byte	.LASF9
  771 0070 02       		.byte	0x2
  772 0071 A1       		.byte	0xa1
  773 0072 2C000000 		.4byte	0x2c
  774 0076 04       		.uleb128 0x4
- 775 0077 66020000 		.4byte	.LASF10
+ 775 0077 18020000 		.4byte	.LASF10
  776 007b 02       		.byte	0x2
  777 007c A3       		.byte	0xa3
  778 007d 48000000 		.4byte	0x48
  779 0081 02       		.uleb128 0x2
  780 0082 04       		.byte	0x4
  781 0083 04       		.byte	0x4
- 782 0084 C6000000 		.4byte	.LASF11
+ 782 0084 78000000 		.4byte	.LASF11
  783 0088 02       		.uleb128 0x2
  784 0089 08       		.byte	0x8
  785 008a 04       		.byte	0x4
- 786 008b 3E020000 		.4byte	.LASF12
+ 786 008b F0010000 		.4byte	.LASF12
  787 008f 02       		.uleb128 0x2
  788 0090 01       		.byte	0x1
  789 0091 08       		.byte	0x8
- 790 0092 0E030000 		.4byte	.LASF13
+ 790 0092 C0020000 		.4byte	.LASF13
  791 0096 05       		.uleb128 0x5
- 792 0097 E2000000 		.4byte	.LASF14
+ 792 0097 94000000 		.4byte	.LASF14
  793 009b 02       		.byte	0x2
  794 009c 4B01     		.2byte	0x14b
  795 009e A2000000 		.4byte	0xa2
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  799 00a8 00000000 		.4byte	.LASF15
  800 00ac 02       		.byte	0x2
  801 00ad 4D01     		.2byte	0x14d
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 25
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 25
 
 
  802 00af B3000000 		.4byte	0xb3
@@ -1447,9 +1447,9 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  805 00b8 02       		.uleb128 0x2
  806 00b9 04       		.byte	0x4
  807 00ba 07       		.byte	0x7
- 808 00bb DF020000 		.4byte	.LASF16
+ 808 00bb 91020000 		.4byte	.LASF16
  809 00bf 07       		.uleb128 0x7
- 810 00c0 6C000000 		.4byte	.LASF22
+ 810 00c0 1E000000 		.4byte	.LASF22
  811 00c4 01       		.byte	0x1
  812 00c5 25       		.byte	0x25
  813 00c6 00000000 		.4byte	.LFB0
@@ -1458,7 +1458,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  816 00cf 9C       		.byte	0x9c
  817 00d0 F1000000 		.4byte	0xf1
  818 00d4 08       		.uleb128 0x8
- 819 00d5 DA020000 		.4byte	.LASF17
+ 819 00d5 8C020000 		.4byte	.LASF17
  820 00d9 01       		.byte	0x1
  821 00da 28       		.byte	0x28
  822 00db 6B000000 		.4byte	0x6b
@@ -1466,7 +1466,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  824 00e0 91       		.byte	0x91
  825 00e1 77       		.sleb128 -9
  826 00e2 08       		.uleb128 0x8
- 827 00e3 48030000 		.4byte	.LASF18
+ 827 00e3 49030000 		.4byte	.LASF18
  828 00e7 01       		.byte	0x1
  829 00e8 2D       		.byte	0x2d
  830 00e9 6B000000 		.4byte	0x6b
@@ -1475,7 +1475,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  833 00ef 76       		.sleb128 -10
  834 00f0 00       		.byte	0
  835 00f1 09       		.uleb128 0x9
- 836 00f2 36010000 		.4byte	.LASF19
+ 836 00f2 E8000000 		.4byte	.LASF19
  837 00f6 01       		.byte	0x1
  838 00f7 8F       		.byte	0x8f
  839 00f8 00000000 		.4byte	.LFB1
@@ -1483,7 +1483,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  841 0100 01       		.uleb128 0x1
  842 0101 9C       		.byte	0x9c
  843 0102 0A       		.uleb128 0xa
- 844 0103 13030000 		.4byte	.LASF20
+ 844 0103 14030000 		.4byte	.LASF20
  845 0107 01       		.byte	0x1
  846 0108 B2       		.byte	0xb2
  847 0109 00000000 		.4byte	.LFB2
@@ -1491,18 +1491,18 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  849 0111 01       		.uleb128 0x1
  850 0112 9C       		.byte	0x9c
  851 0113 09       		.uleb128 0x9
- 852 0114 9F010000 		.4byte	.LASF21
+ 852 0114 51010000 		.4byte	.LASF21
  853 0118 01       		.byte	0x1
  854 0119 D0       		.byte	0xd0
  855 011a 00000000 		.4byte	.LFB3
  856 011e 20000000 		.4byte	.LFE3-.LFB3
  857 0122 01       		.uleb128 0x1
  858 0123 9C       		.byte	0x9c
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 26
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 26
 
 
  859 0124 0B       		.uleb128 0xb
- 860 0125 BD020000 		.4byte	.LASF23
+ 860 0125 6F020000 		.4byte	.LASF23
  861 0129 01       		.byte	0x1
  862 012a ED       		.byte	0xed
  863 012b 00000000 		.4byte	.LFB4
@@ -1511,7 +1511,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  866 0134 9C       		.byte	0x9c
  867 0135 48010000 		.4byte	0x148
  868 0139 0C       		.uleb128 0xc
- 869 013a 27010000 		.4byte	.LASF27
+ 869 013a D9000000 		.4byte	.LASF27
  870 013e 01       		.byte	0x1
  871 013f ED       		.byte	0xed
  872 0140 6B000000 		.4byte	0x6b
@@ -1520,7 +1520,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  875 0146 77       		.sleb128 -9
  876 0147 00       		.byte	0
  877 0148 0D       		.uleb128 0xd
- 878 0149 80030000 		.4byte	.LASF24
+ 878 0149 81030000 		.4byte	.LASF24
  879 014d 01       		.byte	0x1
  880 014e 0501     		.2byte	0x105
  881 0150 6B000000 		.4byte	0x6b
@@ -1529,7 +1529,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  884 015c 01       		.uleb128 0x1
  885 015d 9C       		.byte	0x9c
  886 015e 0D       		.uleb128 0xd
- 887 015f E7000000 		.4byte	.LASF25
+ 887 015f 99000000 		.4byte	.LASF25
  888 0163 01       		.byte	0x1
  889 0164 1B01     		.2byte	0x11b
  890 0166 6B000000 		.4byte	0x6b
@@ -1538,7 +1538,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  893 0172 01       		.uleb128 0x1
  894 0173 9C       		.byte	0x9c
  895 0174 0E       		.uleb128 0xe
- 896 0175 45020000 		.4byte	.LASF26
+ 896 0175 F7010000 		.4byte	.LASF26
  897 0179 01       		.byte	0x1
  898 017a 3001     		.2byte	0x130
  899 017c 00000000 		.4byte	.LFB7
@@ -1547,7 +1547,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  902 0185 9C       		.byte	0x9c
  903 0186 9A010000 		.4byte	0x19a
  904 018a 0F       		.uleb128 0xf
- 905 018b 1F010000 		.4byte	.LASF28
+ 905 018b D1000000 		.4byte	.LASF28
  906 018f 01       		.byte	0x1
  907 0190 3001     		.2byte	0x130
  908 0192 6B000000 		.4byte	0x6b
@@ -1556,9 +1556,9 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  911 0198 77       		.sleb128 -9
  912 0199 00       		.byte	0
  913 019a 0E       		.uleb128 0xe
- 914 019b 97000000 		.4byte	.LASF29
+ 914 019b 49000000 		.4byte	.LASF29
  915 019f 01       		.byte	0x1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 27
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 27
 
 
  916 01a0 4601     		.2byte	0x146
@@ -1568,7 +1568,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  920 01ab 9C       		.byte	0x9c
  921 01ac C0010000 		.4byte	0x1c0
  922 01b0 0F       		.uleb128 0xf
- 923 01b1 CC000000 		.4byte	.LASF30
+ 923 01b1 7E000000 		.4byte	.LASF30
  924 01b5 01       		.byte	0x1
  925 01b6 4601     		.2byte	0x146
  926 01b8 76000000 		.4byte	0x76
@@ -1577,7 +1577,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  929 01be 74       		.sleb128 -12
  930 01bf 00       		.byte	0
  931 01c0 0D       		.uleb128 0xd
- 932 01c1 49010000 		.4byte	.LASF31
+ 932 01c1 FB000000 		.4byte	.LASF31
  933 01c5 01       		.byte	0x1
  934 01c6 6501     		.2byte	0x165
  935 01c8 76000000 		.4byte	0x76
@@ -1586,7 +1586,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  938 01d4 01       		.uleb128 0x1
  939 01d5 9C       		.byte	0x9c
  940 01d6 0D       		.uleb128 0xd
- 941 01d7 F6020000 		.4byte	.LASF32
+ 941 01d7 A8020000 		.4byte	.LASF32
  942 01db 01       		.byte	0x1
  943 01dc 8601     		.2byte	0x186
  944 01de 76000000 		.4byte	0x76
@@ -1595,7 +1595,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  947 01ea 01       		.uleb128 0x1
  948 01eb 9C       		.byte	0x9c
  949 01ec 0E       		.uleb128 0xe
- 950 01ed 8E020000 		.4byte	.LASF33
+ 950 01ed 40020000 		.4byte	.LASF33
  951 01f1 01       		.byte	0x1
  952 01f2 9F01     		.2byte	0x19f
  953 01f4 00000000 		.4byte	.LFB11
@@ -1604,7 +1604,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  956 01fd 9C       		.byte	0x9c
  957 01fe 12020000 		.4byte	0x212
  958 0202 0F       		.uleb128 0xf
- 959 0203 7D000000 		.4byte	.LASF34
+ 959 0203 2F000000 		.4byte	.LASF34
  960 0207 01       		.byte	0x1
  961 0208 9F01     		.2byte	0x19f
  962 020a 76000000 		.4byte	0x76
@@ -1613,19 +1613,19 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  965 0210 74       		.sleb128 -12
  966 0211 00       		.byte	0
  967 0212 0D       		.uleb128 0xd
- 968 0213 61010000 		.4byte	.LASF35
+ 968 0213 13010000 		.4byte	.LASF35
  969 0217 01       		.byte	0x1
  970 0218 B601     		.2byte	0x1b6
  971 021a 76000000 		.4byte	0x76
  972 021e 00000000 		.4byte	.LFB12
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 28
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 28
 
 
  973 0222 18000000 		.4byte	.LFE12-.LFB12
  974 0226 01       		.uleb128 0x1
  975 0227 9C       		.byte	0x9c
  976 0228 0E       		.uleb128 0xe
- 977 0229 2F030000 		.4byte	.LASF36
+ 977 0229 30030000 		.4byte	.LASF36
  978 022d 01       		.byte	0x1
  979 022e D101     		.2byte	0x1d1
  980 0230 00000000 		.4byte	.LFB13
@@ -1634,7 +1634,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  983 0239 9C       		.byte	0x9c
  984 023a 4E020000 		.4byte	0x24e
  985 023e 0F       		.uleb128 0xf
- 986 023f 78030000 		.4byte	.LASF37
+ 986 023f 79030000 		.4byte	.LASF37
  987 0243 01       		.byte	0x1
  988 0244 D101     		.2byte	0x1d1
  989 0246 76000000 		.4byte	0x76
@@ -1652,7 +1652,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  1001 0262 01       		.uleb128 0x1
  1002 0263 9C       		.byte	0x9c
  1003 0264 10       		.uleb128 0x10
- 1004 0265 B0000000 		.4byte	.LASF39
+ 1004 0265 62000000 		.4byte	.LASF39
  1005 0269 01       		.byte	0x1
  1006 026a 2E02     		.2byte	0x22e
  1007 026c 00000000 		.4byte	.LFB15
@@ -1660,7 +1660,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  1009 0274 01       		.uleb128 0x1
  1010 0275 9C       		.byte	0x9c
  1011 0276 11       		.uleb128 0x11
- 1012 0277 7A020000 		.4byte	.LASF43
+ 1012 0277 2C020000 		.4byte	.LASF43
  1013 027b 01       		.byte	0x1
  1014 027c 15       		.byte	0x15
  1015 027d 6B000000 		.4byte	0x6b
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  1027 0005 13       		.uleb128 0x13
  1028 0006 0B       		.uleb128 0xb
  1029 0007 03       		.uleb128 0x3
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 29
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 29
 
 
  1030 0008 0E       		.uleb128 0xe
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  1084 003e 05       		.uleb128 0x5
  1085 003f 49       		.uleb128 0x49
  1086 0040 13       		.uleb128 0x13
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 30
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 30
 
 
  1087 0041 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  1141 0078 03       		.uleb128 0x3
  1142 0079 0E       		.uleb128 0xe
  1143 007a 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 31
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 31
 
 
  1144 007b 0B       		.uleb128 0xb
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  1198 00b3 06       		.uleb128 0x6
  1199 00b4 40       		.uleb128 0x40
  1200 00b5 18       		.uleb128 0x18
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 32
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 32
 
 
  1201 00b6 9742     		.uleb128 0x2117
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  1255 00ee 0B       		.uleb128 0xb
  1256 00ef 3B       		.uleb128 0x3b
  1257 00f0 05       		.uleb128 0x5
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 33
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 33
 
 
  1258 00f1 27       		.uleb128 0x27
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  1312 0129 00       		.byte	0
  1313 012a 03       		.uleb128 0x3
  1314 012b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 34
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 34
 
 
  1315 012c 3A       		.uleb128 0x3a
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  1369 0094 00000000 		.4byte	0
  1370              		.section	.debug_ranges,"",%progbits
  1371              	.Ldebug_ranges0:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 35
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 35
 
 
  1372 0000 00000000 		.4byte	.LFB0
@@ -2091,236 +2091,236 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 1
  1412      6973745F 
  1412      52656164 
  1412      436F6D70 
- 1413              	.LASF42:
- 1414 001e 433A5C55 		.ascii	"C:\\Users\\plod1602\\Documents\\git\\module-gripper"
- 1414      73657273 
- 1414      5C706C6F 
- 1414      64313630 
- 1414      325C446F 
- 1415 004c 2D70736F 		.ascii	"-psoc\\module-gripper-psoc.cydsn\000"
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 36
+ 1413              	.LASF22:
+ 1414 001e 5A5F5374 		.ascii	"Z_Step_Dist_Init\000"
+ 1414      65705F44 
+ 1414      6973745F 
+ 1414      496E6974 
+ 1414      00
+ 1415              	.LASF34:
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 36
 
 
- 1415      635C6D6F 
- 1415      64756C65 
- 1415      2D677269 
- 1415      70706572 
- 1416              	.LASF22:
- 1417 006c 5A5F5374 		.ascii	"Z_Step_Dist_Init\000"
- 1417      65705F44 
- 1417      6973745F 
- 1417      496E6974 
- 1417      00
- 1418              	.LASF34:
- 1419 007d 70657269 		.ascii	"period\000"
- 1419      6F6400
- 1420              	.LASF3:
- 1421 0084 73686F72 		.ascii	"short unsigned int\000"
- 1421      7420756E 
- 1421      7369676E 
- 1421      65642069 
- 1421      6E7400
- 1422              	.LASF29:
- 1423 0097 5A5F5374 		.ascii	"Z_Step_Dist_WriteCounter\000"
- 1423      65705F44 
- 1423      6973745F 
- 1423      57726974 
- 1423      65436F75 
- 1424              	.LASF39:
- 1425 00b0 5A5F5374 		.ascii	"Z_Step_Dist_ClearFIFO\000"
- 1425      65705F44 
- 1425      6973745F 
- 1425      436C6561 
- 1425      72464946 
- 1426              	.LASF11:
- 1427 00c6 666C6F61 		.ascii	"float\000"
- 1427      7400
- 1428              	.LASF30:
- 1429 00cc 636F756E 		.ascii	"counter\000"
- 1429      74657200 
- 1430              	.LASF1:
- 1431 00d4 756E7369 		.ascii	"unsigned char\000"
- 1431      676E6564 
- 1431      20636861 
- 1431      7200
- 1432              	.LASF14:
- 1433 00e2 72656738 		.ascii	"reg8\000"
- 1433      00
- 1434              	.LASF25:
- 1435 00e7 5A5F5374 		.ascii	"Z_Step_Dist_ReadControlRegister\000"
- 1435      65705F44 
- 1435      6973745F 
- 1435      52656164 
- 1435      436F6E74 
- 1436              	.LASF5:
- 1437 0107 6C6F6E67 		.ascii	"long unsigned int\000"
- 1437      20756E73 
- 1437      69676E65 
- 1437      6420696E 
- 1437      7400
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 37
+ 1416 002f 70657269 		.ascii	"period\000"
+ 1416      6F6400
+ 1417              	.LASF3:
+ 1418 0036 73686F72 		.ascii	"short unsigned int\000"
+ 1418      7420756E 
+ 1418      7369676E 
+ 1418      65642069 
+ 1418      6E7400
+ 1419              	.LASF29:
+ 1420 0049 5A5F5374 		.ascii	"Z_Step_Dist_WriteCounter\000"
+ 1420      65705F44 
+ 1420      6973745F 
+ 1420      57726974 
+ 1420      65436F75 
+ 1421              	.LASF39:
+ 1422 0062 5A5F5374 		.ascii	"Z_Step_Dist_ClearFIFO\000"
+ 1422      65705F44 
+ 1422      6973745F 
+ 1422      436C6561 
+ 1422      72464946 
+ 1423              	.LASF11:
+ 1424 0078 666C6F61 		.ascii	"float\000"
+ 1424      7400
+ 1425              	.LASF30:
+ 1426 007e 636F756E 		.ascii	"counter\000"
+ 1426      74657200 
+ 1427              	.LASF1:
+ 1428 0086 756E7369 		.ascii	"unsigned char\000"
+ 1428      676E6564 
+ 1428      20636861 
+ 1428      7200
+ 1429              	.LASF14:
+ 1430 0094 72656738 		.ascii	"reg8\000"
+ 1430      00
+ 1431              	.LASF25:
+ 1432 0099 5A5F5374 		.ascii	"Z_Step_Dist_ReadControlRegister\000"
+ 1432      65705F44 
+ 1432      6973745F 
+ 1432      52656164 
+ 1432      436F6E74 
+ 1433              	.LASF5:
+ 1434 00b9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1434      20756E73 
+ 1434      69676E65 
+ 1434      6420696E 
+ 1434      7400
+ 1435              	.LASF9:
+ 1436 00cb 75696E74 		.ascii	"uint8\000"
+ 1436      3800
+ 1437              	.LASF28:
+ 1438 00d1 636F6E74 		.ascii	"control\000"
+ 1438      726F6C00 
+ 1439              	.LASF27:
+ 1440 00d9 696E7465 		.ascii	"interruptsMask\000"
+ 1440      72727570 
+ 1440      74734D61 
+ 1440      736B00
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 37
 
 
- 1438              	.LASF9:
- 1439 0119 75696E74 		.ascii	"uint8\000"
- 1439      3800
- 1440              	.LASF28:
- 1441 011f 636F6E74 		.ascii	"control\000"
- 1441      726F6C00 
- 1442              	.LASF27:
- 1443 0127 696E7465 		.ascii	"interruptsMask\000"
- 1443      72727570 
- 1443      74734D61 
- 1443      736B00
- 1444              	.LASF19:
- 1445 0136 5A5F5374 		.ascii	"Z_Step_Dist_Enable\000"
- 1445      65705F44 
- 1445      6973745F 
- 1445      456E6162 
- 1445      6C6500
- 1446              	.LASF31:
- 1447 0149 5A5F5374 		.ascii	"Z_Step_Dist_ReadCounter\000"
- 1447      65705F44 
- 1447      6973745F 
- 1447      52656164 
- 1447      436F756E 
- 1448              	.LASF35:
- 1449 0161 5A5F5374 		.ascii	"Z_Step_Dist_ReadPeriod\000"
- 1449      65705F44 
- 1449      6973745F 
- 1449      52656164 
- 1449      50657269 
- 1450              	.LASF41:
- 1451 0178 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Z_Step_Dist.c\000"
- 1451      6E657261 
- 1451      7465645F 
- 1451      536F7572 
- 1451      63655C50 
- 1452              	.LASF21:
- 1453 019f 5A5F5374 		.ascii	"Z_Step_Dist_Stop\000"
- 1453      65705F44 
- 1453      6973745F 
- 1453      53746F70 
- 1453      00
- 1454              	.LASF40:
- 1455 01b0 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 1455      4320342E 
- 1455      392E3320 
- 1455      32303135 
- 1455      30333033 
- 1456 01e3 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 1456      20726576 
- 1456      6973696F 
- 1456      6E203232 
- 1456      31323230 
- 1457 0216 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 1457      66756E63 
- 1457      74696F6E 
- 1457      2D736563 
- 1457      74696F6E 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 38
+ 1441              	.LASF19:
+ 1442 00e8 5A5F5374 		.ascii	"Z_Step_Dist_Enable\000"
+ 1442      65705F44 
+ 1442      6973745F 
+ 1442      456E6162 
+ 1442      6C6500
+ 1443              	.LASF31:
+ 1444 00fb 5A5F5374 		.ascii	"Z_Step_Dist_ReadCounter\000"
+ 1444      65705F44 
+ 1444      6973745F 
+ 1444      52656164 
+ 1444      436F756E 
+ 1445              	.LASF35:
+ 1446 0113 5A5F5374 		.ascii	"Z_Step_Dist_ReadPeriod\000"
+ 1446      65705F44 
+ 1446      6973745F 
+ 1446      52656164 
+ 1446      50657269 
+ 1447              	.LASF41:
+ 1448 012a 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Z_Step_Dist.c\000"
+ 1448      6E657261 
+ 1448      7465645F 
+ 1448      536F7572 
+ 1448      63655C50 
+ 1449              	.LASF21:
+ 1450 0151 5A5F5374 		.ascii	"Z_Step_Dist_Stop\000"
+ 1450      65705F44 
+ 1450      6973745F 
+ 1450      53746F70 
+ 1450      00
+ 1451              	.LASF40:
+ 1452 0162 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1452      4320342E 
+ 1452      392E3320 
+ 1452      32303135 
+ 1452      30333033 
+ 1453 0195 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1453      20726576 
+ 1453      6973696F 
+ 1453      6E203232 
+ 1453      31323230 
+ 1454 01c8 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1454      66756E63 
+ 1454      74696F6E 
+ 1454      2D736563 
+ 1454      74696F6E 
+ 1455              	.LASF12:
+ 1456 01f0 646F7562 		.ascii	"double\000"
+ 1456      6C6500
+ 1457              	.LASF26:
+ 1458 01f7 5A5F5374 		.ascii	"Z_Step_Dist_WriteControlRegister\000"
+ 1458      65705F44 
+ 1458      6973745F 
+ 1458      57726974 
+ 1458      65436F6E 
+ 1459              	.LASF10:
+ 1460 0218 75696E74 		.ascii	"uint32\000"
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 38
 
 
- 1458              	.LASF12:
- 1459 023e 646F7562 		.ascii	"double\000"
- 1459      6C6500
- 1460              	.LASF26:
- 1461 0245 5A5F5374 		.ascii	"Z_Step_Dist_WriteControlRegister\000"
- 1461      65705F44 
- 1461      6973745F 
- 1461      57726974 
- 1461      65436F6E 
- 1462              	.LASF10:
- 1463 0266 75696E74 		.ascii	"uint32\000"
- 1463      333200
- 1464              	.LASF8:
- 1465 026d 756E7369 		.ascii	"unsigned int\000"
- 1465      676E6564 
- 1465      20696E74 
- 1465      00
- 1466              	.LASF43:
- 1467 027a 5A5F5374 		.ascii	"Z_Step_Dist_initVar\000"
- 1467      65705F44 
- 1467      6973745F 
- 1467      696E6974 
- 1467      56617200 
- 1468              	.LASF33:
- 1469 028e 5A5F5374 		.ascii	"Z_Step_Dist_WritePeriod\000"
- 1469      65705F44 
- 1469      6973745F 
- 1469      57726974 
- 1469      65506572 
- 1470              	.LASF7:
- 1471 02a6 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1471      206C6F6E 
- 1471      6720756E 
- 1471      7369676E 
- 1471      65642069 
- 1472              	.LASF23:
- 1473 02bd 5A5F5374 		.ascii	"Z_Step_Dist_SetInterruptMode\000"
- 1473      65705F44 
- 1473      6973745F 
- 1473      53657449 
- 1473      6E746572 
- 1474              	.LASF17:
- 1475 02da 6374726C 		.ascii	"ctrl\000"
- 1475      00
- 1476              	.LASF16:
- 1477 02df 73697A65 		.ascii	"sizetype\000"
- 1477      74797065 
- 1477      00
- 1478              	.LASF6:
- 1479 02e8 6C6F6E67 		.ascii	"long long int\000"
- 1479      206C6F6E 
- 1479      6720696E 
- 1479      7400
- 1480              	.LASF32:
- 1481 02f6 5A5F5374 		.ascii	"Z_Step_Dist_ReadCapture\000"
- 1481      65705F44 
- 1481      6973745F 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cc4xPLjp.s 			page 39
+ 1460      333200
+ 1461              	.LASF8:
+ 1462 021f 756E7369 		.ascii	"unsigned int\000"
+ 1462      676E6564 
+ 1462      20696E74 
+ 1462      00
+ 1463              	.LASF43:
+ 1464 022c 5A5F5374 		.ascii	"Z_Step_Dist_initVar\000"
+ 1464      65705F44 
+ 1464      6973745F 
+ 1464      696E6974 
+ 1464      56617200 
+ 1465              	.LASF33:
+ 1466 0240 5A5F5374 		.ascii	"Z_Step_Dist_WritePeriod\000"
+ 1466      65705F44 
+ 1466      6973745F 
+ 1466      57726974 
+ 1466      65506572 
+ 1467              	.LASF7:
+ 1468 0258 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1468      206C6F6E 
+ 1468      6720756E 
+ 1468      7369676E 
+ 1468      65642069 
+ 1469              	.LASF23:
+ 1470 026f 5A5F5374 		.ascii	"Z_Step_Dist_SetInterruptMode\000"
+ 1470      65705F44 
+ 1470      6973745F 
+ 1470      53657449 
+ 1470      6E746572 
+ 1471              	.LASF17:
+ 1472 028c 6374726C 		.ascii	"ctrl\000"
+ 1472      00
+ 1473              	.LASF16:
+ 1474 0291 73697A65 		.ascii	"sizetype\000"
+ 1474      74797065 
+ 1474      00
+ 1475              	.LASF6:
+ 1476 029a 6C6F6E67 		.ascii	"long long int\000"
+ 1476      206C6F6E 
+ 1476      6720696E 
+ 1476      7400
+ 1477              	.LASF32:
+ 1478 02a8 5A5F5374 		.ascii	"Z_Step_Dist_ReadCapture\000"
+ 1478      65705F44 
+ 1478      6973745F 
+ 1478      52656164 
+ 1478      43617074 
+ 1479              	.LASF13:
+ 1480 02c0 63686172 		.ascii	"char\000"
+ 1480      00
+ 1481              	.LASF42:
+ 1482 02c5 433A5C55 		.ascii	"C:\\Users\\Guillaume\\Documents\\Projects\\Biobot\\"
+ 1482      73657273 
+ 1482      5C477569 
+ 1482      6C6C6175 
+ 1482      6D655C44 
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccIXbHV8.s 			page 39
 
 
- 1481      52656164 
- 1481      43617074 
- 1482              	.LASF13:
- 1483 030e 63686172 		.ascii	"char\000"
- 1483      00
+ 1483 02f2 47726970 		.ascii	"Gripper\\module-gripper-psoc.cydsn\000"
+ 1483      7065725C 
+ 1483      6D6F6475 
+ 1483      6C652D67 
+ 1483      72697070 
  1484              	.LASF20:
- 1485 0313 5A5F5374 		.ascii	"Z_Step_Dist_Start\000"
+ 1485 0314 5A5F5374 		.ascii	"Z_Step_Dist_Start\000"
  1485      65705F44 
  1485      6973745F 
  1485      53746172 
  1485      7400
  1486              	.LASF2:
- 1487 0325 73686F72 		.ascii	"short int\000"
+ 1487 0326 73686F72 		.ascii	"short int\000"
  1487      7420696E 
  1487      7400
  1488              	.LASF36:
- 1489 032f 5A5F5374 		.ascii	"Z_Step_Dist_WriteCompare\000"
+ 1489 0330 5A5F5374 		.ascii	"Z_Step_Dist_WriteCompare\000"
  1489      65705F44 
  1489      6973745F 
  1489      57726974 
  1489      65436F6D 
  1490              	.LASF18:
- 1491 0348 5A5F5374 		.ascii	"Z_Step_Dist_interruptState\000"
+ 1491 0349 5A5F5374 		.ascii	"Z_Step_Dist_interruptState\000"
  1491      65705F44 
  1491      6973745F 
  1491      696E7465 
  1491      72727570 
  1492              	.LASF4:
- 1493 0363 6C6F6E67 		.ascii	"long int\000"
+ 1493 0364 6C6F6E67 		.ascii	"long int\000"
  1493      20696E74 
  1493      00
  1494              	.LASF0:
- 1495 036c 7369676E 		.ascii	"signed char\000"
+ 1495 036d 7369676E 		.ascii	"signed char\000"
  1495      65642063 
  1495      68617200 
  1496              	.LASF37:
- 1497 0378 636F6D70 		.ascii	"compare\000"
+ 1497 0379 636F6D70 		.ascii	"compare\000"
  1497      61726500 
  1498              	.LASF24:
- 1499 0380 5A5F5374 		.ascii	"Z_Step_Dist_ReadStatusRegister\000"
+ 1499 0381 5A5F5374 		.ascii	"Z_Step_Dist_ReadStatusRegister\000"
  1499      65705F44 
  1499      6973745F 
  1499      52656164 

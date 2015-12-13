@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
   45              		.cfi_def_cfa_offset 8
   46              		.cfi_offset 7, -8
   47              		.cfi_offset 14, -4
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 2
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 2
 
 
   48 0002 00AF     		add	r7, sp, #0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
   41:.\gripperEeprom.c **** 
   42:.\gripperEeprom.c **** 
   43:.\gripperEeprom.c **** void readEeprom() 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 3
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 3
 
 
   44:.\gripperEeprom.c **** {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  115              		.loc 1 52 0
  116 0048 0620     		movs	r0, #6
  117 004a FFF7FEFF 		bl	EEPROM_ReadByte
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 4
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 4
 
 
  118 004e 0346     		mov	r3, r0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  163 00a2 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
  164 00a4 1B02     		lsls	r3, r3, #8
  165 00a6 9AB2     		uxth	r2, r3
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 5
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 5
 
 
  166 00a8 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  215              	eraseMotorType:
  216              	.LFB58:
   67:.\gripperEeprom.c **** 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 6
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 6
 
 
   68:.\gripperEeprom.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  262              	.L7:
  263 0038 00000000 		.word	motorType
  264              		.cfi_endproc
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 7
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 7
 
 
  265              	.LFE58:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
   85:.\gripperEeprom.c ****                 EEPROM_WriteByte(motorID, EEPROM_ADDR_GRIPPER_ROTATE_MOTOR_ID);
  311              		.loc 1 85 0
  312 0034 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 8
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 8
 
 
  313 0036 1846     		mov	r0, r3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  353              		.cfi_def_cfa_register 13
  354              		@ sp needed
  355 0070 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 9
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 9
 
 
  356              	.L18:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  401 0020 DBB2     		uxtb	r3, r3
  402 0022 06E0     		b	.L22
  403              	.L21:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 10
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 10
 
 
  104:.\gripperEeprom.c ****     {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  448              		.cfi_offset 7, -8
  449              		.cfi_offset 14, -4
  450 0002 82B0     		sub	sp, sp, #8
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 11
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 11
 
 
  451              		.cfi_def_cfa_offset 16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  497 0054 1846     		mov	r0, r3
  498 0056 0A21     		movs	r1, #10
  499 0058 FFF7FEFF 		bl	EEPROM_WriteByte
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 12
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 12
 
 
  500 005c 70E0     		b	.L26
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  545 00ac 264B     		ldr	r3, .L32
  546 00ae DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
  547 00b0 9A42     		cmp	r2, r3
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 13
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 13
 
 
  548 00b2 45D1     		bne	.L26
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  143:.\gripperEeprom.c ****             motorAngleLimits[MOTOR_RIGHT_ANGLE_CCW] = (packet[5]<<8) + packet[4];
  593              		.loc 1 143 0
  594 0104 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 14
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 14
 
 
  595 0106 0533     		adds	r3, r3, #5
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  644              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
  645              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
  646              		.section	.debug_info,"",%progbits
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 15
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 15
 
 
  647              	.Ldebug_info0:
@@ -847,50 +847,50 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  650 0006 00000000 		.4byte	.Ldebug_abbrev0
  651 000a 04       		.byte	0x4
  652 000b 01       		.uleb128 0x1
- 653 000c 75000000 		.4byte	.LASF27
+ 653 000c 27000000 		.4byte	.LASF27
  654 0010 01       		.byte	0x1
- 655 0011 C1010000 		.4byte	.LASF28
- 656 0015 0C000000 		.4byte	.LASF29
+ 655 0011 73010000 		.4byte	.LASF28
+ 656 0015 BE010000 		.4byte	.LASF29
  657 0019 00000000 		.4byte	.Ldebug_ranges0+0
  658 001d 00000000 		.4byte	0
  659 0021 00000000 		.4byte	.Ldebug_line0
  660 0025 02       		.uleb128 0x2
  661 0026 01       		.byte	0x1
  662 0027 06       		.byte	0x6
- 663 0028 38020000 		.4byte	.LASF0
+ 663 0028 39020000 		.4byte	.LASF0
  664 002c 02       		.uleb128 0x2
  665 002d 01       		.byte	0x1
  666 002e 08       		.byte	0x8
- 667 002f 1E010000 		.4byte	.LASF1
+ 667 002f D0000000 		.4byte	.LASF1
  668 0033 02       		.uleb128 0x2
  669 0034 02       		.byte	0x2
  670 0035 05       		.byte	0x5
- 671 0036 76010000 		.4byte	.LASF2
+ 671 0036 28010000 		.4byte	.LASF2
  672 003a 02       		.uleb128 0x2
  673 003b 02       		.byte	0x2
  674 003c 07       		.byte	0x7
- 675 003d 44010000 		.4byte	.LASF3
+ 675 003d F6000000 		.4byte	.LASF3
  676 0041 03       		.uleb128 0x3
- 677 0042 6B000000 		.4byte	.LASF9
+ 677 0042 1D000000 		.4byte	.LASF9
  678 0046 02       		.byte	0x2
  679 0047 3F       		.byte	0x3f
  680 0048 4C000000 		.4byte	0x4c
  681 004c 02       		.uleb128 0x2
  682 004d 04       		.byte	0x4
  683 004e 05       		.byte	0x5
- 684 004f 2F020000 		.4byte	.LASF4
+ 684 004f 30020000 		.4byte	.LASF4
  685 0053 02       		.uleb128 0x2
  686 0054 04       		.byte	0x4
  687 0055 07       		.byte	0x7
- 688 0056 32010000 		.4byte	.LASF5
+ 688 0056 E4000000 		.4byte	.LASF5
  689 005a 02       		.uleb128 0x2
  690 005b 08       		.byte	0x8
  691 005c 05       		.byte	0x5
- 692 005d E4010000 		.4byte	.LASF6
+ 692 005d 96010000 		.4byte	.LASF6
  693 0061 02       		.uleb128 0x2
  694 0062 08       		.byte	0x8
  695 0063 07       		.byte	0x7
- 696 0064 AA010000 		.4byte	.LASF7
+ 696 0064 5C010000 		.4byte	.LASF7
  697 0068 04       		.uleb128 0x4
  698 0069 04       		.byte	0x4
  699 006a 05       		.byte	0x5
@@ -898,46 +898,46 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  701 006f 02       		.uleb128 0x2
  702 0070 04       		.byte	0x4
  703 0071 07       		.byte	0x7
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 16
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 16
 
 
- 704 0072 9D010000 		.4byte	.LASF8
+ 704 0072 4F010000 		.4byte	.LASF8
  705 0076 03       		.uleb128 0x3
- 706 0077 D3010000 		.4byte	.LASF10
+ 706 0077 85010000 		.4byte	.LASF10
  707 007b 03       		.byte	0x3
  708 007c 2C       		.byte	0x2c
  709 007d 41000000 		.4byte	0x41
  710 0081 03       		.uleb128 0x3
- 711 0082 06020000 		.4byte	.LASF11
+ 711 0082 B8010000 		.4byte	.LASF11
  712 0086 04       		.byte	0x4
  713 0087 A1       		.byte	0xa1
  714 0088 2C000000 		.4byte	0x2c
  715 008c 03       		.uleb128 0x3
- 716 008d 87010000 		.4byte	.LASF12
+ 716 008d 39010000 		.4byte	.LASF12
  717 0091 04       		.byte	0x4
  718 0092 A2       		.byte	0xa2
  719 0093 3A000000 		.4byte	0x3a
  720 0097 03       		.uleb128 0x3
- 721 0098 2C010000 		.4byte	.LASF13
+ 721 0098 DE000000 		.4byte	.LASF13
  722 009c 04       		.byte	0x4
  723 009d A5       		.byte	0xa5
  724 009e 33000000 		.4byte	0x33
  725 00a2 02       		.uleb128 0x2
  726 00a3 04       		.byte	0x4
  727 00a4 04       		.byte	0x4
- 728 00a5 18010000 		.4byte	.LASF14
+ 728 00a5 CA000000 		.4byte	.LASF14
  729 00a9 02       		.uleb128 0x2
  730 00aa 08       		.byte	0x8
  731 00ab 04       		.byte	0x4
- 732 00ac 6F010000 		.4byte	.LASF15
+ 732 00ac 21010000 		.4byte	.LASF15
  733 00b0 02       		.uleb128 0x2
  734 00b1 01       		.byte	0x1
  735 00b2 08       		.byte	0x8
- 736 00b3 FC010000 		.4byte	.LASF16
+ 736 00b3 AE010000 		.4byte	.LASF16
  737 00b7 02       		.uleb128 0x2
  738 00b8 04       		.byte	0x4
  739 00b9 07       		.byte	0x7
- 740 00ba DB010000 		.4byte	.LASF17
+ 740 00ba 8D010000 		.4byte	.LASF17
  741 00be 05       		.uleb128 0x5
  742 00bf 00000000 		.4byte	.LASF30
  743 00c3 01       		.byte	0x1
@@ -947,7 +947,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  747 00cd 01       		.uleb128 0x1
  748 00ce 9C       		.byte	0x9c
  749 00cf 06       		.uleb128 0x6
- 750 00d0 64010000 		.4byte	.LASF31
+ 750 00d0 16010000 		.4byte	.LASF31
  751 00d4 01       		.byte	0x1
  752 00d5 2B       		.byte	0x2b
  753 00d6 00000000 		.4byte	.LFB57
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  758 00e4 07       		.uleb128 0x7
  759 00e5 4C00     		.ascii	"L\000"
  760 00e7 01       		.byte	0x1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 17
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 17
 
 
  761 00e8 2D       		.byte	0x2d
@@ -976,7 +976,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  773 00fb 76       		.sleb128 -10
  774 00fc 00       		.byte	0
  775 00fd 08       		.uleb128 0x8
- 776 00fe 8E010000 		.4byte	.LASF19
+ 776 00fe 40010000 		.4byte	.LASF19
  777 0102 01       		.byte	0x1
  778 0103 45       		.byte	0x45
  779 0104 00000000 		.4byte	.LFB58
@@ -985,7 +985,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  782 010d 9C       		.byte	0x9c
  783 010e 2F010000 		.4byte	0x12f
  784 0112 09       		.uleb128 0x9
- 785 0113 10010000 		.4byte	.LASF21
+ 785 0113 C2000000 		.4byte	.LASF21
  786 0117 01       		.byte	0x1
  787 0118 45       		.byte	0x45
  788 0119 81000000 		.4byte	0x81
@@ -993,7 +993,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  790 011e 91       		.byte	0x91
  791 011f 6F       		.sleb128 -17
  792 0120 0A       		.uleb128 0xa
- 793 0121 01020000 		.4byte	.LASF18
+ 793 0121 B3010000 		.4byte	.LASF18
  794 0125 01       		.byte	0x1
  795 0126 47       		.byte	0x47
  796 0127 81000000 		.4byte	0x81
@@ -1002,7 +1002,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  799 012d 77       		.sleb128 -9
  800 012e 00       		.byte	0
  801 012f 08       		.uleb128 0x8
- 802 0130 21020000 		.4byte	.LASF20
+ 802 0130 22020000 		.4byte	.LASF20
  803 0134 01       		.byte	0x1
  804 0135 4E       		.byte	0x4e
  805 0136 00000000 		.4byte	.LFB59
@@ -1011,18 +1011,18 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  808 013f 9C       		.byte	0x9c
  809 0140 61010000 		.4byte	0x161
  810 0144 09       		.uleb128 0x9
- 811 0145 10010000 		.4byte	.LASF21
+ 811 0145 C2000000 		.4byte	.LASF21
  812 0149 01       		.byte	0x1
  813 014a 4E       		.byte	0x4e
  814 014b 81000000 		.4byte	0x81
  815 014f 02       		.uleb128 0x2
  816 0150 91       		.byte	0x91
  817 0151 77       		.sleb128 -9
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 18
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 18
 
 
  818 0152 09       		.uleb128 0x9
- 819 0153 01020000 		.4byte	.LASF18
+ 819 0153 B3010000 		.4byte	.LASF18
  820 0157 01       		.byte	0x1
  821 0158 4E       		.byte	0x4e
  822 0159 81000000 		.4byte	0x81
@@ -1031,7 +1031,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  825 015f 76       		.sleb128 -10
  826 0160 00       		.byte	0
  827 0161 0B       		.uleb128 0xb
- 828 0162 03010000 		.4byte	.LASF32
+ 828 0162 B5000000 		.4byte	.LASF32
  829 0166 01       		.byte	0x1
  830 0167 65       		.byte	0x65
  831 0168 81000000 		.4byte	0x81
@@ -1041,7 +1041,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  835 0175 9C       		.byte	0x9c
  836 0176 97010000 		.4byte	0x197
  837 017a 09       		.uleb128 0x9
- 838 017b 10010000 		.4byte	.LASF21
+ 838 017b C2000000 		.4byte	.LASF21
  839 017f 01       		.byte	0x1
  840 0180 65       		.byte	0x65
  841 0181 81000000 		.4byte	0x81
@@ -1049,7 +1049,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  843 0186 91       		.byte	0x91
  844 0187 6F       		.sleb128 -17
  845 0188 0A       		.uleb128 0xa
- 846 0189 01020000 		.4byte	.LASF18
+ 846 0189 B3010000 		.4byte	.LASF18
  847 018d 01       		.byte	0x1
  848 018e 67       		.byte	0x67
  849 018f 68000000 		.4byte	0x68
@@ -1058,7 +1058,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  852 0195 74       		.sleb128 -12
  853 0196 00       		.byte	0
  854 0197 08       		.uleb128 0x8
- 855 0198 0C020000 		.4byte	.LASF22
+ 855 0198 0D020000 		.4byte	.LASF22
  856 019c 01       		.byte	0x1
  857 019d 73       		.byte	0x73
  858 019e 00000000 		.4byte	.LFB61
@@ -1067,7 +1067,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  861 01a7 9C       		.byte	0x9c
  862 01a8 BB010000 		.4byte	0x1bb
  863 01ac 09       		.uleb128 0x9
- 864 01ad 80010000 		.4byte	.LASF23
+ 864 01ad 32010000 		.4byte	.LASF23
  865 01b1 01       		.byte	0x1
  866 01b2 73       		.byte	0x73
  867 01b3 BB010000 		.4byte	0x1bb
@@ -1078,11 +1078,11 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  872 01bb 0C       		.uleb128 0xc
  873 01bc 04       		.byte	0x4
  874 01bd 81000000 		.4byte	0x81
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 19
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 19
 
 
  875 01c1 0D       		.uleb128 0xd
- 876 01c2 57010000 		.4byte	.LASF24
+ 876 01c2 09010000 		.4byte	.LASF24
  877 01c6 05       		.byte	0x5
  878 01c7 1606     		.2byte	0x616
  879 01c9 CD010000 		.4byte	0x1cd
@@ -1096,7 +1096,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  887 01e0 03       		.byte	0x3
  888 01e1 00       		.byte	0
  889 01e2 11       		.uleb128 0x11
- 890 01e3 5A000000 		.4byte	.LASF25
+ 890 01e3 0C000000 		.4byte	.LASF25
  891 01e7 01       		.byte	0x1
  892 01e8 05       		.byte	0x5
  893 01e9 D2010000 		.4byte	0x1d2
@@ -1111,7 +1111,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  902 0201 04       		.byte	0x4
  903 0202 00       		.byte	0
  904 0203 11       		.uleb128 0x11
- 905 0204 F2010000 		.4byte	.LASF26
+ 905 0204 A4010000 		.4byte	.LASF26
  906 0208 01       		.byte	0x1
  907 0209 04       		.byte	0x4
  908 020a F3010000 		.4byte	0x1f3
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  929 000e 01       		.uleb128 0x1
  930 000f 10       		.uleb128 0x10
  931 0010 17       		.uleb128 0x17
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 20
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 20
 
 
  932 0011 00       		.byte	0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  986 0047 9642     		.uleb128 0x2116
  987 0049 19       		.uleb128 0x19
  988 004a 00       		.byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 21
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 21
 
 
  989 004b 00       		.byte	0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  1043 0082 12       		.uleb128 0x12
  1044 0083 06       		.uleb128 0x6
  1045 0084 40       		.uleb128 0x40
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 22
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 22
 
 
  1046 0085 18       		.uleb128 0x18
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  1100 00bc 12       		.uleb128 0x12
  1101 00bd 06       		.uleb128 0x6
  1102 00be 40       		.uleb128 0x40
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 23
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 23
 
 
  1103 00bf 18       		.uleb128 0x18
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  1157 00f6 2F       		.uleb128 0x2f
  1158 00f7 0B       		.uleb128 0xb
  1159 00f8 00       		.byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 24
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 24
 
 
  1160 00f9 00       		.byte	0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  1214 002c 50010000 		.4byte	.LFE61
  1215 0030 00000000 		.4byte	0
  1216 0034 00000000 		.4byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 25
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 25
 
 
  1217              		.section	.debug_line,"",%progbits
@@ -1452,166 +1452,166 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 1
  1221 0000 696E6974 		.ascii	"init_eeprom\000"
  1221      5F656570 
  1221      726F6D00 
- 1222              	.LASF29:
- 1223 000c 433A5C55 		.ascii	"C:\\Users\\plod1602\\Documents\\git\\module-gripper"
- 1223      73657273 
- 1223      5C706C6F 
- 1223      64313630 
- 1223      325C446F 
- 1224 003a 2D70736F 		.ascii	"-psoc\\module-gripper-psoc.cydsn\000"
- 1224      635C6D6F 
- 1224      64756C65 
- 1224      2D677269 
- 1224      70706572 
- 1225              	.LASF25:
- 1226 005a 6D6F746F 		.ascii	"motorAngleLimits\000"
- 1226      72416E67 
- 1226      6C654C69 
- 1226      6D697473 
- 1226      00
- 1227              	.LASF9:
- 1228 006b 5F5F696E 		.ascii	"__int32_t\000"
- 1228      7433325F 
- 1228      7400
- 1229              	.LASF27:
- 1230 0075 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 1230      4320342E 
- 1230      392E3320 
- 1230      32303135 
- 1230      30333033 
- 1231 00a8 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 1231      20726576 
- 1231      6973696F 
- 1231      6E203232 
- 1231      31323230 
- 1232 00db 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 1232      66756E63 
- 1232      74696F6E 
- 1232      2D736563 
- 1232      74696F6E 
- 1233              	.LASF32:
- 1234 0103 6765744D 		.ascii	"getMotorType\000"
- 1234      6F746F72 
- 1234      54797065 
- 1234      00
- 1235              	.LASF21:
- 1236 0110 6D6F746F 		.ascii	"motorID\000"
- 1236      72494400 
- 1237              	.LASF14:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 26
+ 1222              	.LASF25:
+ 1223 000c 6D6F746F 		.ascii	"motorAngleLimits\000"
+ 1223      72416E67 
+ 1223      6C654C69 
+ 1223      6D697473 
+ 1223      00
+ 1224              	.LASF9:
+ 1225 001d 5F5F696E 		.ascii	"__int32_t\000"
+ 1225      7433325F 
+ 1225      7400
+ 1226              	.LASF27:
+ 1227 0027 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1227      4320342E 
+ 1227      392E3320 
+ 1227      32303135 
+ 1227      30333033 
+ 1228 005a 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1228      20726576 
+ 1228      6973696F 
+ 1228      6E203232 
+ 1228      31323230 
+ 1229 008d 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1229      66756E63 
+ 1229      74696F6E 
+ 1229      2D736563 
+ 1229      74696F6E 
+ 1230              	.LASF32:
+ 1231 00b5 6765744D 		.ascii	"getMotorType\000"
+ 1231      6F746F72 
+ 1231      54797065 
+ 1231      00
+ 1232              	.LASF21:
+ 1233 00c2 6D6F746F 		.ascii	"motorID\000"
+ 1233      72494400 
+ 1234              	.LASF14:
+ 1235 00ca 666C6F61 		.ascii	"float\000"
+ 1235      7400
+ 1236              	.LASF1:
+ 1237 00d0 756E7369 		.ascii	"unsigned char\000"
+ 1237      676E6564 
+ 1237      20636861 
+ 1237      7200
+ 1238              	.LASF13:
+ 1239 00de 696E7431 		.ascii	"int16\000"
+ 1239      3600
+ 1240              	.LASF5:
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 26
 
 
- 1238 0118 666C6F61 		.ascii	"float\000"
- 1238      7400
- 1239              	.LASF1:
- 1240 011e 756E7369 		.ascii	"unsigned char\000"
- 1240      676E6564 
- 1240      20636861 
- 1240      7200
- 1241              	.LASF13:
- 1242 012c 696E7431 		.ascii	"int16\000"
- 1242      3600
- 1243              	.LASF5:
- 1244 0132 6C6F6E67 		.ascii	"long unsigned int\000"
- 1244      20756E73 
- 1244      69676E65 
- 1244      6420696E 
- 1244      7400
- 1245              	.LASF3:
- 1246 0144 73686F72 		.ascii	"short unsigned int\000"
- 1246      7420756E 
- 1246      7369676E 
- 1246      65642069 
- 1246      6E7400
- 1247              	.LASF24:
- 1248 0157 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1248      52784275 
- 1248      66666572 
- 1248      00
- 1249              	.LASF31:
- 1250 0164 72656164 		.ascii	"readEeprom\000"
- 1250      45657072 
- 1250      6F6D00
- 1251              	.LASF15:
- 1252 016f 646F7562 		.ascii	"double\000"
- 1252      6C6500
- 1253              	.LASF2:
- 1254 0176 73686F72 		.ascii	"short int\000"
- 1254      7420696E 
- 1254      7400
- 1255              	.LASF23:
- 1256 0180 7061636B 		.ascii	"packet\000"
- 1256      657400
- 1257              	.LASF12:
- 1258 0187 75696E74 		.ascii	"uint16\000"
- 1258      313600
- 1259              	.LASF19:
- 1260 018e 65726173 		.ascii	"eraseMotorType\000"
- 1260      654D6F74 
- 1260      6F725479 
- 1260      706500
- 1261              	.LASF8:
- 1262 019d 756E7369 		.ascii	"unsigned int\000"
- 1262      676E6564 
- 1262      20696E74 
- 1262      00
- 1263              	.LASF7:
- 1264 01aa 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1264      206C6F6E 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccroEvLM.s 			page 27
+ 1241 00e4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1241      20756E73 
+ 1241      69676E65 
+ 1241      6420696E 
+ 1241      7400
+ 1242              	.LASF3:
+ 1243 00f6 73686F72 		.ascii	"short unsigned int\000"
+ 1243      7420756E 
+ 1243      7369676E 
+ 1243      65642069 
+ 1243      6E7400
+ 1244              	.LASF24:
+ 1245 0109 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1245      52784275 
+ 1245      66666572 
+ 1245      00
+ 1246              	.LASF31:
+ 1247 0116 72656164 		.ascii	"readEeprom\000"
+ 1247      45657072 
+ 1247      6F6D00
+ 1248              	.LASF15:
+ 1249 0121 646F7562 		.ascii	"double\000"
+ 1249      6C6500
+ 1250              	.LASF2:
+ 1251 0128 73686F72 		.ascii	"short int\000"
+ 1251      7420696E 
+ 1251      7400
+ 1252              	.LASF23:
+ 1253 0132 7061636B 		.ascii	"packet\000"
+ 1253      657400
+ 1254              	.LASF12:
+ 1255 0139 75696E74 		.ascii	"uint16\000"
+ 1255      313600
+ 1256              	.LASF19:
+ 1257 0140 65726173 		.ascii	"eraseMotorType\000"
+ 1257      654D6F74 
+ 1257      6F725479 
+ 1257      706500
+ 1258              	.LASF8:
+ 1259 014f 756E7369 		.ascii	"unsigned int\000"
+ 1259      676E6564 
+ 1259      20696E74 
+ 1259      00
+ 1260              	.LASF7:
+ 1261 015c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1261      206C6F6E 
+ 1261      6720756E 
+ 1261      7369676E 
+ 1261      65642069 
+ 1262              	.LASF28:
+ 1263 0173 2E5C6772 		.ascii	".\\gripperEeprom.c\000"
+ 1263      69707065 
+ 1263      72456570 
+ 1263      726F6D2E 
+ 1263      6300
+ 1264              	.LASF10:
+ 1265 0185 696E7433 		.ascii	"int32_t\000"
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cckvfdHc.s 			page 27
 
 
- 1264      6720756E 
- 1264      7369676E 
- 1264      65642069 
- 1265              	.LASF28:
- 1266 01c1 2E5C6772 		.ascii	".\\gripperEeprom.c\000"
- 1266      69707065 
- 1266      72456570 
- 1266      726F6D2E 
- 1266      6300
- 1267              	.LASF10:
- 1268 01d3 696E7433 		.ascii	"int32_t\000"
- 1268      325F7400 
- 1269              	.LASF17:
- 1270 01db 73697A65 		.ascii	"sizetype\000"
- 1270      74797065 
- 1270      00
- 1271              	.LASF6:
- 1272 01e4 6C6F6E67 		.ascii	"long long int\000"
- 1272      206C6F6E 
- 1272      6720696E 
- 1272      7400
- 1273              	.LASF26:
- 1274 01f2 6D6F746F 		.ascii	"motorType\000"
- 1274      72547970 
- 1274      6500
- 1275              	.LASF16:
- 1276 01fc 63686172 		.ascii	"char\000"
- 1276      00
- 1277              	.LASF18:
- 1278 0201 74797065 		.ascii	"type\000"
- 1278      00
- 1279              	.LASF11:
- 1280 0206 75696E74 		.ascii	"uint8\000"
- 1280      3800
+ 1265      325F7400 
+ 1266              	.LASF17:
+ 1267 018d 73697A65 		.ascii	"sizetype\000"
+ 1267      74797065 
+ 1267      00
+ 1268              	.LASF6:
+ 1269 0196 6C6F6E67 		.ascii	"long long int\000"
+ 1269      206C6F6E 
+ 1269      6720696E 
+ 1269      7400
+ 1270              	.LASF26:
+ 1271 01a4 6D6F746F 		.ascii	"motorType\000"
+ 1271      72547970 
+ 1271      6500
+ 1272              	.LASF16:
+ 1273 01ae 63686172 		.ascii	"char\000"
+ 1273      00
+ 1274              	.LASF18:
+ 1275 01b3 74797065 		.ascii	"type\000"
+ 1275      00
+ 1276              	.LASF11:
+ 1277 01b8 75696E74 		.ascii	"uint8\000"
+ 1277      3800
+ 1278              	.LASF29:
+ 1279 01be 433A5C55 		.ascii	"C:\\Users\\Guillaume\\Documents\\Projects\\Biobot\\"
+ 1279      73657273 
+ 1279      5C477569 
+ 1279      6C6C6175 
+ 1279      6D655C44 
+ 1280 01eb 47726970 		.ascii	"Gripper\\module-gripper-psoc.cydsn\000"
+ 1280      7065725C 
+ 1280      6D6F6475 
+ 1280      6C652D67 
+ 1280      72697070 
  1281              	.LASF22:
- 1282 020c 75706461 		.ascii	"updateAngleLimitData\000"
+ 1282 020d 75706461 		.ascii	"updateAngleLimitData\000"
  1282      7465416E 
  1282      676C654C 
  1282      696D6974 
  1282      44617461 
  1283              	.LASF20:
- 1284 0221 73617665 		.ascii	"saveMotorType\000"
+ 1284 0222 73617665 		.ascii	"saveMotorType\000"
  1284      4D6F746F 
  1284      72547970 
  1284      6500
  1285              	.LASF4:
- 1286 022f 6C6F6E67 		.ascii	"long int\000"
+ 1286 0230 6C6F6E67 		.ascii	"long int\000"
  1286      20696E74 
  1286      00
  1287              	.LASF0:
- 1288 0238 7369676E 		.ascii	"signed char\000"
+ 1288 0239 7369676E 		.ascii	"signed char\000"
  1288      65642063 
  1288      68617200 
  1289              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

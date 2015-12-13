@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
   23:.\Generated_Source\PSoC5/Z_Axis_Power.c **** #if (CY_PSOC5A)
   24:.\Generated_Source\PSoC5/Z_Axis_Power.c **** #include <CyLib.h>
   25:.\Generated_Source\PSoC5/Z_Axis_Power.c **** #endif /* CY_PSOC5A */
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 2
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 2
 
 
   26:.\Generated_Source\PSoC5/Z_Axis_Power.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
   49 000c 0022     		movs	r2, #0
   50 000e 1A70     		strb	r2, [r3]
   64:.\Generated_Source\PSoC5/Z_Axis_Power.c ****     #endif /* (Z_Axis_Power_DEFAULT_DATA_SRC != 0 ) */
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 3
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 3
 
 
   65:.\Generated_Source\PSoC5/Z_Axis_Power.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
   95:.\Generated_Source\PSoC5/Z_Axis_Power.c **** *******************************************************************************/
   96:.\Generated_Source\PSoC5/Z_Axis_Power.c **** void Z_Axis_Power_Enable(void) 
   97:.\Generated_Source\PSoC5/Z_Axis_Power.c **** {
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 4
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 4
 
 
   75              		.loc 1 97 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  116              		.size	Z_Axis_Power_Enable, .-Z_Axis_Power_Enable
  117              		.section	.text.Z_Axis_Power_Start,"ax",%progbits
  118              		.align	2
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 5
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 5
 
 
  119              		.global	Z_Axis_Power_Start
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  144 0012 0122     		movs	r2, #1
  145 0014 1A70     		strb	r2, [r3]
  146              	.L8:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 6
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 6
 
 
  140:.\Generated_Source\PSoC5/Z_Axis_Power.c ****     }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  171              		@ args = 0, pretend = 0, frame = 0
  172              		@ frame_needed = 1, uses_anonymous_args = 0
  173              		@ link register save eliminated.
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 7
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 7
 
 
  174 0000 80B4     		push	{r7}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  216              		.type	Z_Axis_Power_SetSpeed, %function
  217              	Z_Axis_Power_SetSpeed:
  218              	.LFB4:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 8
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 8
 
 
  182:.\Generated_Source\PSoC5/Z_Axis_Power.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  248 0028 DBB2     		uxtb	r3, r3
  249 002a 1343     		orrs	r3, r3, r2
  250 002c DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 9
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 9
 
 
  251 002e 0B70     		strb	r3, [r1]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  282              		.cfi_def_cfa_offset 8
  283              		.cfi_offset 7, -8
  284              		.cfi_offset 14, -4
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 10
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 10
 
 
  285 0002 82B0     		sub	sp, sp, #8
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  235:.\Generated_Source\PSoC5/Z_Axis_Power.c **** 
  236:.\Generated_Source\PSoC5/Z_Axis_Power.c **** /*******************************************************************************
  237:.\Generated_Source\PSoC5/Z_Axis_Power.c **** * Function Name: Z_Axis_Power_SetValue
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 11
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 11
 
 
  238:.\Generated_Source\PSoC5/Z_Axis_Power.c **** ********************************************************************************
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  357              		@ sp needed
  358 0014 5DF8047B 		ldr	r7, [sp], #4
  359              		.cfi_restore 7
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 12
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 12
 
 
  360              		.cfi_def_cfa_offset 0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  389              		.loc 1 293 0
  390 0006 0B4B     		ldr	r3, .L24
  391 0008 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 13
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 13
 
 
  392 000a DBB2     		uxtb	r3, r3
@@ -765,48 +765,48 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  431 0006 00000000 		.4byte	.Ldebug_abbrev0
  432 000a 04       		.byte	0x4
  433 000b 01       		.uleb128 0x1
- 434 000c 74000000 		.4byte	.LASF25
+ 434 000c 26000000 		.4byte	.LASF25
  435 0010 01       		.byte	0x1
- 436 0011 17010000 		.4byte	.LASF26
- 437 0015 12000000 		.4byte	.LASF27
+ 436 0011 C9000000 		.4byte	.LASF26
+ 437 0015 10020000 		.4byte	.LASF27
  438 0019 00000000 		.4byte	.Ldebug_ranges0+0
  439 001d 00000000 		.4byte	0
  440 0021 00000000 		.4byte	.Ldebug_line0
  441 0025 02       		.uleb128 0x2
  442 0026 01       		.byte	0x1
  443 0027 06       		.byte	0x6
- 444 0028 67020000 		.4byte	.LASF0
+ 444 0028 68020000 		.4byte	.LASF0
  445 002c 02       		.uleb128 0x2
  446 002d 01       		.byte	0x1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 14
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 14
 
 
  447 002e 08       		.byte	0x8
- 448 002f 5B010000 		.4byte	.LASF1
+ 448 002f 0D010000 		.4byte	.LASF1
  449 0033 02       		.uleb128 0x2
  450 0034 02       		.byte	0x2
  451 0035 05       		.byte	0x5
- 452 0036 4E020000 		.4byte	.LASF2
+ 452 0036 00020000 		.4byte	.LASF2
  453 003a 02       		.uleb128 0x2
  454 003b 02       		.byte	0x2
  455 003c 07       		.byte	0x7
- 456 003d 80010000 		.4byte	.LASF3
+ 456 003d 32010000 		.4byte	.LASF3
  457 0041 02       		.uleb128 0x2
  458 0042 04       		.byte	0x4
  459 0043 05       		.byte	0x5
- 460 0044 5E020000 		.4byte	.LASF4
+ 460 0044 5F020000 		.4byte	.LASF4
  461 0048 02       		.uleb128 0x2
  462 0049 04       		.byte	0x4
  463 004a 07       		.byte	0x7
- 464 004b 6E010000 		.4byte	.LASF5
+ 464 004b 20010000 		.4byte	.LASF5
  465 004f 02       		.uleb128 0x2
  466 0050 08       		.byte	0x8
  467 0051 05       		.byte	0x5
- 468 0052 1F020000 		.4byte	.LASF6
+ 468 0052 D1010000 		.4byte	.LASF6
  469 0056 02       		.uleb128 0x2
  470 0057 08       		.byte	0x8
  471 0058 07       		.byte	0x7
- 472 0059 FD010000 		.4byte	.LASF7
+ 472 0059 AF010000 		.4byte	.LASF7
  473 005d 03       		.uleb128 0x3
  474 005e 04       		.byte	0x4
  475 005f 05       		.byte	0x5
@@ -814,31 +814,31 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  477 0064 02       		.uleb128 0x2
  478 0065 04       		.byte	0x4
  479 0066 07       		.byte	0x7
- 480 0067 F0010000 		.4byte	.LASF8
+ 480 0067 A2010000 		.4byte	.LASF8
  481 006b 04       		.uleb128 0x4
- 482 006c 58020000 		.4byte	.LASF12
+ 482 006c 0A020000 		.4byte	.LASF12
  483 0070 02       		.byte	0x2
  484 0071 A1       		.byte	0xa1
  485 0072 2C000000 		.4byte	0x2c
  486 0076 02       		.uleb128 0x2
  487 0077 04       		.byte	0x4
  488 0078 04       		.byte	0x4
- 489 0079 55010000 		.4byte	.LASF9
+ 489 0079 07010000 		.4byte	.LASF9
  490 007d 02       		.uleb128 0x2
  491 007e 08       		.byte	0x8
  492 007f 04       		.byte	0x4
- 493 0080 C0010000 		.4byte	.LASF10
+ 493 0080 72010000 		.4byte	.LASF10
  494 0084 02       		.uleb128 0x2
  495 0085 01       		.byte	0x1
  496 0086 08       		.byte	0x8
- 497 0087 2D020000 		.4byte	.LASF11
+ 497 0087 DF010000 		.4byte	.LASF11
  498 008b 05       		.uleb128 0x5
- 499 008c 69010000 		.4byte	.LASF13
+ 499 008c 1B010000 		.4byte	.LASF13
  500 0090 02       		.byte	0x2
  501 0091 4B01     		.2byte	0x14b
  502 0093 97000000 		.4byte	0x97
  503 0097 06       		.uleb128 0x6
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 15
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 15
 
 
  504 0098 6B000000 		.4byte	0x6b
@@ -851,7 +851,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  511 00ab 01       		.uleb128 0x1
  512 00ac 9C       		.byte	0x9c
  513 00ad 08       		.uleb128 0x8
- 514 00ae 60000000 		.4byte	.LASF15
+ 514 00ae 12000000 		.4byte	.LASF15
  515 00b2 01       		.byte	0x1
  516 00b3 60       		.byte	0x60
  517 00b4 00000000 		.4byte	.LFB1
@@ -859,7 +859,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  519 00bc 01       		.uleb128 0x1
  520 00bd 9C       		.byte	0x9c
  521 00be 07       		.uleb128 0x7
- 522 00bf C7010000 		.4byte	.LASF16
+ 522 00bf 79010000 		.4byte	.LASF16
  523 00c3 01       		.byte	0x1
  524 00c4 85       		.byte	0x85
  525 00c5 00000000 		.4byte	.LFB2
@@ -867,7 +867,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  527 00cd 01       		.uleb128 0x1
  528 00ce 9C       		.byte	0x9c
  529 00cf 08       		.uleb128 0x8
- 530 00d0 93010000 		.4byte	.LASF17
+ 530 00d0 45010000 		.4byte	.LASF17
  531 00d4 01       		.byte	0x1
  532 00d5 A8       		.byte	0xa8
  533 00d6 00000000 		.4byte	.LFB3
@@ -875,7 +875,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  535 00de 01       		.uleb128 0x1
  536 00df 9C       		.byte	0x9c
  537 00e0 09       		.uleb128 0x9
- 538 00e1 38020000 		.4byte	.LASF18
+ 538 00e1 EA010000 		.4byte	.LASF18
  539 00e5 01       		.byte	0x1
  540 00e6 CA       		.byte	0xca
  541 00e7 00000000 		.4byte	.LFB4
@@ -884,7 +884,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  544 00f0 9C       		.byte	0x9c
  545 00f1 04010000 		.4byte	0x104
  546 00f5 0A       		.uleb128 0xa
- 547 00f6 19020000 		.4byte	.LASF20
+ 547 00f6 CB010000 		.4byte	.LASF20
  548 00fa 01       		.byte	0x1
  549 00fb CA       		.byte	0xca
  550 00fc 6B000000 		.4byte	0x6b
@@ -893,19 +893,19 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  553 0102 77       		.sleb128 -9
  554 0103 00       		.byte	0
  555 0104 0B       		.uleb128 0xb
- 556 0105 DA010000 		.4byte	.LASF19
+ 556 0105 8C010000 		.4byte	.LASF19
  557 0109 01       		.byte	0x1
  558 010a E4       		.byte	0xe4
  559 010b 00000000 		.4byte	.LFB5
  560 010f 40000000 		.4byte	.LFE5-.LFB5
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 16
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 16
 
 
  561 0113 01       		.uleb128 0x1
  562 0114 9C       		.byte	0x9c
  563 0115 28010000 		.4byte	0x128
  564 0119 0A       		.uleb128 0xa
- 565 011a BA010000 		.4byte	.LASF21
+ 565 011a 6C010000 		.4byte	.LASF21
  566 011e 01       		.byte	0x1
  567 011f E4       		.byte	0xe4
  568 0120 6B000000 		.4byte	0x6b
@@ -914,7 +914,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  571 0126 77       		.sleb128 -9
  572 0127 00       		.byte	0
  573 0128 09       		.uleb128 0x9
- 574 0129 3F010000 		.4byte	.LASF22
+ 574 0129 F1000000 		.4byte	.LASF22
  575 012d 01       		.byte	0x1
  576 012e FE       		.byte	0xfe
  577 012f 00000000 		.4byte	.LFB6
@@ -923,7 +923,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  580 0138 9C       		.byte	0x9c
  581 0139 4C010000 		.4byte	0x14c
  582 013d 0A       		.uleb128 0xa
- 583 013e 32020000 		.4byte	.LASF23
+ 583 013e E4010000 		.4byte	.LASF23
  584 0142 01       		.byte	0x1
  585 0143 FE       		.byte	0xfe
  586 0144 6B000000 		.4byte	0x6b
@@ -932,7 +932,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  589 014a 77       		.sleb128 -9
  590 014b 00       		.byte	0
  591 014c 0C       		.uleb128 0xc
- 592 014d A5010000 		.4byte	.LASF24
+ 592 014d 57010000 		.4byte	.LASF24
  593 0151 01       		.byte	0x1
  594 0152 2101     		.2byte	0x121
  595 0154 00000000 		.4byte	.LFB7
@@ -941,7 +941,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  598 015d 9C       		.byte	0x9c
  599 015e 72010000 		.4byte	0x172
  600 0162 0D       		.uleb128 0xd
- 601 0163 14020000 		.4byte	.LASF28
+ 601 0163 C6010000 		.4byte	.LASF28
  602 0167 01       		.byte	0x1
  603 0168 2301     		.2byte	0x123
  604 016a 6B000000 		.4byte	0x6b
@@ -950,7 +950,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  607 0170 77       		.sleb128 -9
  608 0171 00       		.byte	0
  609 0172 0E       		.uleb128 0xe
- 610 0173 02010000 		.4byte	.LASF29
+ 610 0173 B4000000 		.4byte	.LASF29
  611 0177 01       		.byte	0x1
  612 0178 1B       		.byte	0x1b
  613 0179 6B000000 		.4byte	0x6b
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  615 017e 03       		.byte	0x3
  616 017f 00000000 		.4byte	Z_Axis_Power_initVar
  617 0183 00       		.byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 17
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 17
 
 
  618              		.section	.debug_abbrev,"",%progbits
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  672 0034 00       		.byte	0
  673 0035 00       		.byte	0
  674 0036 05       		.uleb128 0x5
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 18
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 18
 
 
  675 0037 16       		.uleb128 0x16
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  729 006e 19       		.uleb128 0x19
  730 006f 11       		.uleb128 0x11
  731 0070 01       		.uleb128 0x1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 19
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 19
 
 
  732 0071 12       		.uleb128 0x12
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  786 00a9 0E       		.uleb128 0xe
  787 00aa 3A       		.uleb128 0x3a
  788 00ab 0B       		.uleb128 0xb
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 20
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 20
 
 
  789 00ac 3B       		.uleb128 0x3b
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  843 00e4 00       		.byte	0
  844 00e5 00       		.byte	0
  845 00e6 0E       		.uleb128 0xe
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 21
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 21
 
 
  846 00e7 34       		.uleb128 0x34
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  900 0024 40000000 		.4byte	.LFE4
  901 0028 00000000 		.4byte	.LFB5
  902 002c 40000000 		.4byte	.LFE5
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 22
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 22
 
 
  903 0030 00000000 		.4byte	.LFB6
@@ -1280,165 +1280,165 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 1
  913      6F776572 
  913      5F496E69 
  913      7400
- 914              	.LASF27:
- 915 0012 433A5C55 		.ascii	"C:\\Users\\plod1602\\Documents\\git\\module-gripper"
- 915      73657273 
- 915      5C706C6F 
- 915      64313630 
- 915      325C446F 
- 916 0040 2D70736F 		.ascii	"-psoc\\module-gripper-psoc.cydsn\000"
- 916      635C6D6F 
- 916      64756C65 
- 916      2D677269 
- 916      70706572 
- 917              	.LASF15:
- 918 0060 5A5F4178 		.ascii	"Z_Axis_Power_Enable\000"
- 918      69735F50 
- 918      6F776572 
- 918      5F456E61 
- 918      626C6500 
- 919              	.LASF25:
- 920 0074 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 920      4320342E 
- 920      392E3320 
- 920      32303135 
- 920      30333033 
- 921 00a7 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 921      20726576 
- 921      6973696F 
- 921      6E203232 
- 921      31323230 
- 922 00da 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 922      66756E63 
- 922      74696F6E 
- 922      2D736563 
- 922      74696F6E 
- 923              	.LASF29:
- 924 0102 5A5F4178 		.ascii	"Z_Axis_Power_initVar\000"
- 924      69735F50 
- 924      6F776572 
- 924      5F696E69 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 23
+ 914              	.LASF15:
+ 915 0012 5A5F4178 		.ascii	"Z_Axis_Power_Enable\000"
+ 915      69735F50 
+ 915      6F776572 
+ 915      5F456E61 
+ 915      626C6500 
+ 916              	.LASF25:
+ 917 0026 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 917      4320342E 
+ 917      392E3320 
+ 917      32303135 
+ 917      30333033 
+ 918 0059 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 918      20726576 
+ 918      6973696F 
+ 918      6E203232 
+ 918      31323230 
+ 919 008c 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 919      66756E63 
+ 919      74696F6E 
+ 919      2D736563 
+ 919      74696F6E 
+ 920              	.LASF29:
+ 921 00b4 5A5F4178 		.ascii	"Z_Axis_Power_initVar\000"
+ 921      69735F50 
+ 921      6F776572 
+ 921      5F696E69 
+ 921      74566172 
+ 922              	.LASF26:
+ 923 00c9 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Z_Axis_Power.c\000"
+ 923      6E657261 
+ 923      7465645F 
+ 923      536F7572 
+ 923      63655C50 
+ 924              	.LASF22:
+ 925 00f1 5A5F4178 		.ascii	"Z_Axis_Power_SetValue\000"
+ 925      69735F50 
+ 925      6F776572 
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 23
 
 
- 924      74566172 
- 925              	.LASF26:
- 926 0117 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Z_Axis_Power.c\000"
- 926      6E657261 
- 926      7465645F 
- 926      536F7572 
- 926      63655C50 
- 927              	.LASF22:
- 928 013f 5A5F4178 		.ascii	"Z_Axis_Power_SetValue\000"
- 928      69735F50 
- 928      6F776572 
- 928      5F536574 
- 928      56616C75 
- 929              	.LASF9:
- 930 0155 666C6F61 		.ascii	"float\000"
- 930      7400
- 931              	.LASF1:
- 932 015b 756E7369 		.ascii	"unsigned char\000"
- 932      676E6564 
- 932      20636861 
- 932      7200
- 933              	.LASF13:
- 934 0169 72656738 		.ascii	"reg8\000"
- 934      00
- 935              	.LASF5:
- 936 016e 6C6F6E67 		.ascii	"long unsigned int\000"
- 936      20756E73 
- 936      69676E65 
- 936      6420696E 
- 936      7400
- 937              	.LASF3:
- 938 0180 73686F72 		.ascii	"short unsigned int\000"
- 938      7420756E 
- 938      7369676E 
- 938      65642069 
- 938      6E7400
- 939              	.LASF17:
- 940 0193 5A5F4178 		.ascii	"Z_Axis_Power_Stop\000"
- 940      69735F50 
- 940      6F776572 
- 940      5F53746F 
- 940      7000
- 941              	.LASF24:
- 942 01a5 5A5F4178 		.ascii	"Z_Axis_Power_DacTrim\000"
- 942      69735F50 
- 942      6F776572 
- 942      5F446163 
- 942      5472696D 
- 943              	.LASF21:
- 944 01ba 72616E67 		.ascii	"range\000"
- 944      6500
- 945              	.LASF10:
- 946 01c0 646F7562 		.ascii	"double\000"
- 946      6C6500
- 947              	.LASF16:
- 948 01c7 5A5F4178 		.ascii	"Z_Axis_Power_Start\000"
- 948      69735F50 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 24
+ 925      5F536574 
+ 925      56616C75 
+ 926              	.LASF9:
+ 927 0107 666C6F61 		.ascii	"float\000"
+ 927      7400
+ 928              	.LASF1:
+ 929 010d 756E7369 		.ascii	"unsigned char\000"
+ 929      676E6564 
+ 929      20636861 
+ 929      7200
+ 930              	.LASF13:
+ 931 011b 72656738 		.ascii	"reg8\000"
+ 931      00
+ 932              	.LASF5:
+ 933 0120 6C6F6E67 		.ascii	"long unsigned int\000"
+ 933      20756E73 
+ 933      69676E65 
+ 933      6420696E 
+ 933      7400
+ 934              	.LASF3:
+ 935 0132 73686F72 		.ascii	"short unsigned int\000"
+ 935      7420756E 
+ 935      7369676E 
+ 935      65642069 
+ 935      6E7400
+ 936              	.LASF17:
+ 937 0145 5A5F4178 		.ascii	"Z_Axis_Power_Stop\000"
+ 937      69735F50 
+ 937      6F776572 
+ 937      5F53746F 
+ 937      7000
+ 938              	.LASF24:
+ 939 0157 5A5F4178 		.ascii	"Z_Axis_Power_DacTrim\000"
+ 939      69735F50 
+ 939      6F776572 
+ 939      5F446163 
+ 939      5472696D 
+ 940              	.LASF21:
+ 941 016c 72616E67 		.ascii	"range\000"
+ 941      6500
+ 942              	.LASF10:
+ 943 0172 646F7562 		.ascii	"double\000"
+ 943      6C6500
+ 944              	.LASF16:
+ 945 0179 5A5F4178 		.ascii	"Z_Axis_Power_Start\000"
+ 945      69735F50 
+ 945      6F776572 
+ 945      5F537461 
+ 945      727400
+ 946              	.LASF19:
+ 947 018c 5A5F4178 		.ascii	"Z_Axis_Power_SetRange\000"
+ 947      69735F50 
+ 947      6F776572 
+ 947      5F536574 
+ 947      52616E67 
+ 948              	.LASF8:
+ 949 01a2 756E7369 		.ascii	"unsigned int\000"
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 24
 
 
- 948      6F776572 
- 948      5F537461 
- 948      727400
- 949              	.LASF19:
- 950 01da 5A5F4178 		.ascii	"Z_Axis_Power_SetRange\000"
- 950      69735F50 
- 950      6F776572 
- 950      5F536574 
- 950      52616E67 
- 951              	.LASF8:
- 952 01f0 756E7369 		.ascii	"unsigned int\000"
- 952      676E6564 
- 952      20696E74 
- 952      00
- 953              	.LASF7:
- 954 01fd 6C6F6E67 		.ascii	"long long unsigned int\000"
- 954      206C6F6E 
- 954      6720756E 
- 954      7369676E 
- 954      65642069 
- 955              	.LASF28:
- 956 0214 6D6F6465 		.ascii	"mode\000"
- 956      00
- 957              	.LASF20:
- 958 0219 73706565 		.ascii	"speed\000"
- 958      6400
- 959              	.LASF6:
- 960 021f 6C6F6E67 		.ascii	"long long int\000"
- 960      206C6F6E 
- 960      6720696E 
- 960      7400
- 961              	.LASF11:
- 962 022d 63686172 		.ascii	"char\000"
- 962      00
- 963              	.LASF23:
- 964 0232 76616C75 		.ascii	"value\000"
- 964      6500
- 965              	.LASF18:
- 966 0238 5A5F4178 		.ascii	"Z_Axis_Power_SetSpeed\000"
- 966      69735F50 
- 966      6F776572 
- 966      5F536574 
- 966      53706565 
- 967              	.LASF2:
- 968 024e 73686F72 		.ascii	"short int\000"
- 968      7420696E 
- 968      7400
- 969              	.LASF12:
- 970 0258 75696E74 		.ascii	"uint8\000"
- 970      3800
+ 949      676E6564 
+ 949      20696E74 
+ 949      00
+ 950              	.LASF7:
+ 951 01af 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 951      206C6F6E 
+ 951      6720756E 
+ 951      7369676E 
+ 951      65642069 
+ 952              	.LASF28:
+ 953 01c6 6D6F6465 		.ascii	"mode\000"
+ 953      00
+ 954              	.LASF20:
+ 955 01cb 73706565 		.ascii	"speed\000"
+ 955      6400
+ 956              	.LASF6:
+ 957 01d1 6C6F6E67 		.ascii	"long long int\000"
+ 957      206C6F6E 
+ 957      6720696E 
+ 957      7400
+ 958              	.LASF11:
+ 959 01df 63686172 		.ascii	"char\000"
+ 959      00
+ 960              	.LASF23:
+ 961 01e4 76616C75 		.ascii	"value\000"
+ 961      6500
+ 962              	.LASF18:
+ 963 01ea 5A5F4178 		.ascii	"Z_Axis_Power_SetSpeed\000"
+ 963      69735F50 
+ 963      6F776572 
+ 963      5F536574 
+ 963      53706565 
+ 964              	.LASF2:
+ 965 0200 73686F72 		.ascii	"short int\000"
+ 965      7420696E 
+ 965      7400
+ 966              	.LASF12:
+ 967 020a 75696E74 		.ascii	"uint8\000"
+ 967      3800
+ 968              	.LASF27:
+ 969 0210 433A5C55 		.ascii	"C:\\Users\\Guillaume\\Documents\\Projects\\Biobot\\"
+ 969      73657273 
+ 969      5C477569 
+ 969      6C6C6175 
+ 969      6D655C44 
+ 970 023d 47726970 		.ascii	"Gripper\\module-gripper-psoc.cydsn\000"
+ 970      7065725C 
+ 970      6D6F6475 
+ 970      6C652D67 
+ 970      72697070 
  971              	.LASF4:
- 972 025e 6C6F6E67 		.ascii	"long int\000"
+ 972 025f 6C6F6E67 		.ascii	"long int\000"
  972      20696E74 
  972      00
  973              	.LASF0:
- 974 0267 7369676E 		.ascii	"signed char\000"
+ 974 0268 7369676E 		.ascii	"signed char\000"
  974      65642063 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\cchpt9d8.s 			page 25
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccywbYtO.s 			page 25
 
 
  974      68617200 

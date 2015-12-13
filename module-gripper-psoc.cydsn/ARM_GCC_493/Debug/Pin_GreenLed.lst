@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
   29:.\Generated_Source\PSoC5/Pin_GreenLed.c **** * Summary:
   30:.\Generated_Source\PSoC5/Pin_GreenLed.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/Pin_GreenLed.c **** *
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 2
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/Pin_GreenLed.c **** * Parameters:  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
   69 0036 00BF     		.align	2
   70              	.L2:
   71 0038 C0510040 		.word	1073762752
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 3
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 3
 
 
   72              		.cfi_endproc
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
   98 000a 0A4B     		ldr	r3, .L5
   99 000c 094A     		ldr	r2, .L5
  100 000e 1278     		ldrb	r2, [r2]
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 4
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 4
 
 
  101 0010 D2B2     		uxtb	r2, r2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
   90:.\Generated_Source\PSoC5/Pin_GreenLed.c **** *  Macro Pin_GreenLed_ReadPS calls this function. 
   91:.\Generated_Source\PSoC5/Pin_GreenLed.c **** *  
   92:.\Generated_Source\PSoC5/Pin_GreenLed.c **** *******************************************************************************/
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 5
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 5
 
 
   93:.\Generated_Source\PSoC5/Pin_GreenLed.c **** uint8 Pin_GreenLed_Read(void) 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  106:.\Generated_Source\PSoC5/Pin_GreenLed.c **** * Parameters:  
  107:.\Generated_Source\PSoC5/Pin_GreenLed.c **** *  None 
  108:.\Generated_Source\PSoC5/Pin_GreenLed.c **** *
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 6
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 6
 
 
  109:.\Generated_Source\PSoC5/Pin_GreenLed.c **** * Return: 
@@ -352,48 +352,48 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  218 0006 00000000 		.4byte	.Ldebug_abbrev0
  219 000a 04       		.byte	0x4
  220 000b 01       		.uleb128 0x1
- 221 000c 8C000000 		.4byte	.LASF20
+ 221 000c 3E000000 		.4byte	.LASF20
  222 0010 01       		.byte	0x1
- 223 0011 9C010000 		.4byte	.LASF21
- 224 0015 2D000000 		.4byte	.LASF22
+ 223 0011 4E010000 		.4byte	.LASF21
+ 224 0015 9E010000 		.4byte	.LASF22
  225 0019 00000000 		.4byte	.Ldebug_ranges0+0
  226 001d 00000000 		.4byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 7
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 7
 
 
  227 0021 00000000 		.4byte	.Ldebug_line0
  228 0025 02       		.uleb128 0x2
  229 0026 01       		.byte	0x1
  230 0027 06       		.byte	0x6
- 231 0028 07020000 		.4byte	.LASF0
+ 231 0028 08020000 		.4byte	.LASF0
  232 002c 02       		.uleb128 0x2
  233 002d 01       		.byte	0x1
  234 002e 08       		.byte	0x8
- 235 002f 20010000 		.4byte	.LASF1
+ 235 002f D2000000 		.4byte	.LASF1
  236 0033 02       		.uleb128 0x2
  237 0034 02       		.byte	0x2
  238 0035 05       		.byte	0x5
- 239 0036 DC010000 		.4byte	.LASF2
+ 239 0036 8E010000 		.4byte	.LASF2
  240 003a 02       		.uleb128 0x2
  241 003b 02       		.byte	0x2
  242 003c 07       		.byte	0x7
- 243 003d 45010000 		.4byte	.LASF3
+ 243 003d F7000000 		.4byte	.LASF3
  244 0041 02       		.uleb128 0x2
  245 0042 04       		.byte	0x4
  246 0043 05       		.byte	0x5
- 247 0044 FE010000 		.4byte	.LASF4
+ 247 0044 FF010000 		.4byte	.LASF4
  248 0048 02       		.uleb128 0x2
  249 0049 04       		.byte	0x4
  250 004a 07       		.byte	0x7
- 251 004b 33010000 		.4byte	.LASF5
+ 251 004b E5000000 		.4byte	.LASF5
  252 004f 02       		.uleb128 0x2
  253 0050 08       		.byte	0x8
  254 0051 05       		.byte	0x5
- 255 0052 C9010000 		.4byte	.LASF6
+ 255 0052 7B010000 		.4byte	.LASF6
  256 0056 02       		.uleb128 0x2
  257 0057 08       		.byte	0x8
  258 0058 07       		.byte	0x7
- 259 0059 85010000 		.4byte	.LASF7
+ 259 0059 37010000 		.4byte	.LASF7
  260 005d 03       		.uleb128 0x3
  261 005e 04       		.byte	0x4
  262 005f 05       		.byte	0x5
@@ -401,29 +401,29 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  264 0064 02       		.uleb128 0x2
  265 0065 04       		.byte	0x4
  266 0066 07       		.byte	0x7
- 267 0067 5F010000 		.4byte	.LASF8
+ 267 0067 11010000 		.4byte	.LASF8
  268 006b 04       		.uleb128 0x4
- 269 006c E6010000 		.4byte	.LASF12
+ 269 006c 98010000 		.4byte	.LASF12
  270 0070 02       		.byte	0x2
  271 0071 A1       		.byte	0xa1
  272 0072 2C000000 		.4byte	0x2c
  273 0076 02       		.uleb128 0x2
  274 0077 04       		.byte	0x4
  275 0078 04       		.byte	0x4
- 276 0079 1A010000 		.4byte	.LASF9
+ 276 0079 CC000000 		.4byte	.LASF9
  277 007d 02       		.uleb128 0x2
  278 007e 08       		.byte	0x8
  279 007f 04       		.byte	0x4
- 280 0080 58010000 		.4byte	.LASF10
+ 280 0080 0A010000 		.4byte	.LASF10
  281 0084 02       		.uleb128 0x2
  282 0085 01       		.byte	0x1
  283 0086 08       		.byte	0x8
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 8
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 8
 
 
- 284 0087 D7010000 		.4byte	.LASF11
+ 284 0087 89010000 		.4byte	.LASF11
  285 008b 05       		.uleb128 0x5
- 286 008c 2E010000 		.4byte	.LASF13
+ 286 008c E0000000 		.4byte	.LASF13
  287 0090 02       		.byte	0x2
  288 0091 4B01     		.2byte	0x14b
  289 0093 97000000 		.4byte	0x97
@@ -439,7 +439,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  299 00ac 9C       		.byte	0x9c
  300 00ad CE000000 		.4byte	0xce
  301 00b1 08       		.uleb128 0x8
- 302 00b2 7B000000 		.4byte	.LASF16
+ 302 00b2 2D000000 		.4byte	.LASF16
  303 00b6 01       		.byte	0x1
  304 00b7 27       		.byte	0x27
  305 00b8 6B000000 		.4byte	0x6b
@@ -447,7 +447,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  307 00bd 91       		.byte	0x91
  308 00be 6F       		.sleb128 -17
  309 00bf 09       		.uleb128 0x9
- 310 00c0 81000000 		.4byte	.LASF23
+ 310 00c0 33000000 		.4byte	.LASF23
  311 00c4 01       		.byte	0x1
  312 00c5 29       		.byte	0x29
  313 00c6 6B000000 		.4byte	0x6b
@@ -465,7 +465,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  325 00de 9C       		.byte	0x9c
  326 00df F2000000 		.4byte	0xf2
  327 00e3 08       		.uleb128 0x8
- 328 00e4 C4010000 		.4byte	.LASF17
+ 328 00e4 76010000 		.4byte	.LASF17
  329 00e8 01       		.byte	0x1
  330 00e9 45       		.byte	0x45
  331 00ea 6B000000 		.4byte	0x6b
@@ -474,11 +474,11 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  334 00f0 77       		.sleb128 -9
  335 00f1 00       		.byte	0
  336 00f2 0A       		.uleb128 0xa
- 337 00f3 EC010000 		.4byte	.LASF18
+ 337 00f3 ED010000 		.4byte	.LASF18
  338 00f7 01       		.byte	0x1
  339 00f8 5D       		.byte	0x5d
  340 00f9 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 9
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 9
 
 
  341 00fd 00000000 		.4byte	.LFB2
@@ -486,7 +486,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  343 0105 01       		.uleb128 0x1
  344 0106 9C       		.byte	0x9c
  345 0107 0A       		.uleb128 0xa
- 346 0108 6C010000 		.4byte	.LASF19
+ 346 0108 1E010000 		.4byte	.LASF19
  347 010c 01       		.byte	0x1
  348 010d 71       		.byte	0x71
  349 010e 6B000000 		.4byte	0x6b
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  395 0026 08       		.uleb128 0x8
  396 0027 00       		.byte	0
  397 0028 00       		.byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 10
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 10
 
 
  398 0029 04       		.uleb128 0x4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  452 0060 01       		.uleb128 0x1
  453 0061 13       		.uleb128 0x13
  454 0062 00       		.byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 11
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 11
 
 
  455 0063 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  509 009a 00       		.byte	0
  510 009b 00       		.byte	0
  511 009c 00       		.byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 12
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 12
 
 
  512              		.section	.debug_aranges,"",%progbits
@@ -710,125 +710,125 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 1
  548      6E4C6564 
  548      5F577269 
  548      746500
- 549              	.LASF22:
- 550 002d 433A5C55 		.ascii	"C:\\Users\\plod1602\\Documents\\git\\module-gripper"
- 550      73657273 
- 550      5C706C6F 
- 550      64313630 
- 550      325C446F 
- 551 005b 2D70736F 		.ascii	"-psoc\\module-gripper-psoc.cydsn\000"
- 551      635C6D6F 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 13
+ 549              	.LASF16:
+ 550 002d 76616C75 		.ascii	"value\000"
+ 550      6500
+ 551              	.LASF23:
+ 552 0033 73746174 		.ascii	"staticBits\000"
+ 552      69634269 
+ 552      747300
+ 553              	.LASF20:
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 13
 
 
- 551      64756C65 
- 551      2D677269 
- 551      70706572 
- 552              	.LASF16:
- 553 007b 76616C75 		.ascii	"value\000"
- 553      6500
- 554              	.LASF23:
- 555 0081 73746174 		.ascii	"staticBits\000"
- 555      69634269 
- 555      747300
- 556              	.LASF20:
- 557 008c 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 557      4320342E 
- 557      392E3320 
- 557      32303135 
- 557      30333033 
- 558 00bf 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 558      20726576 
- 558      6973696F 
- 558      6E203232 
- 558      31323230 
- 559 00f2 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 559      66756E63 
- 559      74696F6E 
- 559      2D736563 
- 559      74696F6E 
- 560              	.LASF9:
- 561 011a 666C6F61 		.ascii	"float\000"
- 561      7400
- 562              	.LASF1:
- 563 0120 756E7369 		.ascii	"unsigned char\000"
- 563      676E6564 
- 563      20636861 
- 563      7200
- 564              	.LASF13:
- 565 012e 72656738 		.ascii	"reg8\000"
- 565      00
- 566              	.LASF5:
- 567 0133 6C6F6E67 		.ascii	"long unsigned int\000"
- 567      20756E73 
- 567      69676E65 
- 567      6420696E 
- 567      7400
- 568              	.LASF3:
- 569 0145 73686F72 		.ascii	"short unsigned int\000"
- 569      7420756E 
- 569      7369676E 
- 569      65642069 
- 569      6E7400
- 570              	.LASF10:
- 571 0158 646F7562 		.ascii	"double\000"
- 571      6C6500
- 572              	.LASF8:
- 573 015f 756E7369 		.ascii	"unsigned int\000"
- 573      676E6564 
- 573      20696E74 
- 573      00
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccSUNnwg.s 			page 14
+ 554 003e 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 554      4320342E 
+ 554      392E3320 
+ 554      32303135 
+ 554      30333033 
+ 555 0071 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 555      20726576 
+ 555      6973696F 
+ 555      6E203232 
+ 555      31323230 
+ 556 00a4 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 556      66756E63 
+ 556      74696F6E 
+ 556      2D736563 
+ 556      74696F6E 
+ 557              	.LASF9:
+ 558 00cc 666C6F61 		.ascii	"float\000"
+ 558      7400
+ 559              	.LASF1:
+ 560 00d2 756E7369 		.ascii	"unsigned char\000"
+ 560      676E6564 
+ 560      20636861 
+ 560      7200
+ 561              	.LASF13:
+ 562 00e0 72656738 		.ascii	"reg8\000"
+ 562      00
+ 563              	.LASF5:
+ 564 00e5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 564      20756E73 
+ 564      69676E65 
+ 564      6420696E 
+ 564      7400
+ 565              	.LASF3:
+ 566 00f7 73686F72 		.ascii	"short unsigned int\000"
+ 566      7420756E 
+ 566      7369676E 
+ 566      65642069 
+ 566      6E7400
+ 567              	.LASF10:
+ 568 010a 646F7562 		.ascii	"double\000"
+ 568      6C6500
+ 569              	.LASF8:
+ 570 0111 756E7369 		.ascii	"unsigned int\000"
+ 570      676E6564 
+ 570      20696E74 
+ 570      00
+ 571              	.LASF19:
+ 572 011e 50696E5F 		.ascii	"Pin_GreenLed_ReadDataReg\000"
+ 572      47726565 
+ 572      6E4C6564 
+ 572      5F526561 
+ 572      64446174 
+ 573              	.LASF7:
+ 574 0137 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 574      206C6F6E 
+ 574      6720756E 
+ 574      7369676E 
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\cctQL3Bz.s 			page 14
 
 
- 574              	.LASF19:
- 575 016c 50696E5F 		.ascii	"Pin_GreenLed_ReadDataReg\000"
- 575      47726565 
- 575      6E4C6564 
- 575      5F526561 
- 575      64446174 
- 576              	.LASF7:
- 577 0185 6C6F6E67 		.ascii	"long long unsigned int\000"
- 577      206C6F6E 
- 577      6720756E 
- 577      7369676E 
- 577      65642069 
- 578              	.LASF21:
- 579 019c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Pin_GreenLed.c\000"
- 579      6E657261 
- 579      7465645F 
- 579      536F7572 
- 579      63655C50 
- 580              	.LASF17:
- 581 01c4 6D6F6465 		.ascii	"mode\000"
- 581      00
- 582              	.LASF6:
- 583 01c9 6C6F6E67 		.ascii	"long long int\000"
- 583      206C6F6E 
- 583      6720696E 
- 583      7400
- 584              	.LASF11:
- 585 01d7 63686172 		.ascii	"char\000"
- 585      00
- 586              	.LASF2:
- 587 01dc 73686F72 		.ascii	"short int\000"
- 587      7420696E 
- 587      7400
- 588              	.LASF12:
- 589 01e6 75696E74 		.ascii	"uint8\000"
- 589      3800
+ 574      65642069 
+ 575              	.LASF21:
+ 576 014e 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Pin_GreenLed.c\000"
+ 576      6E657261 
+ 576      7465645F 
+ 576      536F7572 
+ 576      63655C50 
+ 577              	.LASF17:
+ 578 0176 6D6F6465 		.ascii	"mode\000"
+ 578      00
+ 579              	.LASF6:
+ 580 017b 6C6F6E67 		.ascii	"long long int\000"
+ 580      206C6F6E 
+ 580      6720696E 
+ 580      7400
+ 581              	.LASF11:
+ 582 0189 63686172 		.ascii	"char\000"
+ 582      00
+ 583              	.LASF2:
+ 584 018e 73686F72 		.ascii	"short int\000"
+ 584      7420696E 
+ 584      7400
+ 585              	.LASF12:
+ 586 0198 75696E74 		.ascii	"uint8\000"
+ 586      3800
+ 587              	.LASF22:
+ 588 019e 433A5C55 		.ascii	"C:\\Users\\Guillaume\\Documents\\Projects\\Biobot\\"
+ 588      73657273 
+ 588      5C477569 
+ 588      6C6C6175 
+ 588      6D655C44 
+ 589 01cb 47726970 		.ascii	"Gripper\\module-gripper-psoc.cydsn\000"
+ 589      7065725C 
+ 589      6D6F6475 
+ 589      6C652D67 
+ 589      72697070 
  590              	.LASF18:
- 591 01ec 50696E5F 		.ascii	"Pin_GreenLed_Read\000"
+ 591 01ed 50696E5F 		.ascii	"Pin_GreenLed_Read\000"
  591      47726565 
  591      6E4C6564 
  591      5F526561 
  591      6400
  592              	.LASF4:
- 593 01fe 6C6F6E67 		.ascii	"long int\000"
+ 593 01ff 6C6F6E67 		.ascii	"long int\000"
  593      20696E74 
  593      00
  594              	.LASF0:
- 595 0207 7369676E 		.ascii	"signed char\000"
+ 595 0208 7369676E 		.ascii	"signed char\000"
  595      65642063 
  595      68617200 
  596              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

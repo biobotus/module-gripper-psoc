@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
   23:.\Generated_Source\PSoC5/CAN_1.c **** 
   24:.\Generated_Source\PSoC5/CAN_1.c **** 
   25:.\Generated_Source\PSoC5/CAN_1.c **** /*******************************************************************************
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 2
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 2
 
 
   26:.\Generated_Source\PSoC5/CAN_1.c **** * FUNCTION NAME:   CAN_1_RxTxBuffersConfig
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
   68:.\Generated_Source\PSoC5/CAN_1.c ****     };
   69:.\Generated_Source\PSoC5/CAN_1.c **** 
   70:.\Generated_Source\PSoC5/CAN_1.c ****     static const CAN_1_TX_CFG CYCODE CAN_1_TXConfigStruct[] =
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 3
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 3
 
 
   71:.\Generated_Source\PSoC5/CAN_1.c ****     {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
   75 0032 0133     		adds	r3, r3, #1
   76 0034 BB71     		strb	r3, [r7, #6]
   77              	.L2:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 4
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 4
 
 
   86:.\Generated_Source\PSoC5/CAN_1.c ****     {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  115 0068 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
  116 006a 0F2B     		cmp	r3, #15
  117 006c ECD9     		bls	.L9
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 5
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 5
 
 
  118              	.L6:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  133:.\Generated_Source\PSoC5/CAN_1.c **** *  data from the mailboxes.
  134:.\Generated_Source\PSoC5/CAN_1.c **** *  Enable power to the CAN Core.
  135:.\Generated_Source\PSoC5/CAN_1.c **** *
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 6
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 6
 
 
  136:.\Generated_Source\PSoC5/CAN_1.c **** *******************************************************************************/
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  184 0038 DBB2     		uxtb	r3, r3
  185 003a 1370     		strb	r3, [r2]
  151:.\Generated_Source\PSoC5/CAN_1.c ****         CyExitCriticalSection(enableInterrupts);
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 7
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 7
 
 
  186              		.loc 1 151 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  172:.\Generated_Source\PSoC5/CAN_1.c ****         }
  173:.\Generated_Source\PSoC5/CAN_1.c ****     #endif /* CY_PSOC3 || CY_PSOC5 */
  174:.\Generated_Source\PSoC5/CAN_1.c ****         if (timeout != 0u)
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 8
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 8
 
 
  218              		.loc 1 174 0 is_stmt 1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  253 00b4 002B     		cmp	r3, #0
  254 00b6 0DD1     		bne	.L18
  194:.\Generated_Source\PSoC5/CAN_1.c ****                                 CAN_1_CFG_REG_TSEG2, CAN_1_CFG_REG_SJW,
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 9
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 9
 
 
  195:.\Generated_Source\PSoC5/CAN_1.c ****                                 CAN_1_SAMPLING_MODE) == CYRET_SUCCESS)
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  218:.\Generated_Source\PSoC5/CAN_1.c ****                         #if (CY_PSOC3 || CY_PSOC5)
  219:.\Generated_Source\PSoC5/CAN_1.c ****                             CAN_1_CMD_REG.byte[0u] = CAN_1_INITIAL_MODE;
  286              		.loc 1 219 0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 10
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 10
 
 
  287 00f2 0A4B     		ldr	r3, .L20+8
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  326              		.thumb_func
  327              		.type	CAN_1_Enable, %function
  328              	CAN_1_Enable:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 11
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 11
 
 
  329              	.LFB2:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  352              		.loc 1 265 0
  353 0018 1D4A     		ldr	r2, .L28
  354 001a 1D4B     		ldr	r3, .L28
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 12
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 12
 
 
  355 001c 1B78     		ldrb	r3, [r3]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  390              	.L25:
  285:.\Generated_Source\PSoC5/CAN_1.c ****     {
  286:.\Generated_Source\PSoC5/CAN_1.c ****         timeout--;
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 13
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 13
 
 
  391              		.loc 1 286 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  434              	.LFE2:
  435              		.size	CAN_1_Enable, .-CAN_1_Enable
  436              		.section	.text.CAN_1_Start,"ax",%progbits
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 14
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 14
 
 
  437              		.align	2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  459              		.loc 1 327 0
  460 000a 0B4B     		ldr	r3, .L34
  461 000c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 15
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 15
 
 
  462 000e 002B     		cmp	r3, #0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  504              		.type	CAN_1_Stop, %function
  505              	CAN_1_Stop:
  506              	.LFB4:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 16
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 16
 
 
  340:.\Generated_Source\PSoC5/CAN_1.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  376:.\Generated_Source\PSoC5/CAN_1.c ****     CY_SET_REG32(CAN_1_CMD_PTR, (CY_GET_REG32(CAN_1_CMD_PTR) &
  525              		.loc 1 376 0
  526 0010 1C4A     		ldr	r2, .L42
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 17
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 17
 
 
  527 0012 1C4B     		ldr	r3, .L42
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  561              		.loc 1 394 0
  562 0048 FFF7FEFF 		bl	CyEnterCriticalSection
  563 004c 0346     		mov	r3, r0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 18
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 18
 
 
  564 004e BB70     		strb	r3, [r7, #2]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  605              		.size	CAN_1_Stop, .-CAN_1_Stop
  606              		.section	.text.CAN_1_GlobalIntEnable,"ax",%progbits
  607              		.align	2
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 19
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 19
 
 
  608              		.global	CAN_1_GlobalIntEnable
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  433:.\Generated_Source\PSoC5/CAN_1.c **** 
  434:.\Generated_Source\PSoC5/CAN_1.c ****         /* Verify that bit is set */
  435:.\Generated_Source\PSoC5/CAN_1.c ****         if ((CAN_1_INT_EN_REG.byte[0u] & CAN_1_GLOBAL_INT_MASK) != 0u)
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 20
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 20
 
 
  637              		.loc 1 435 0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  451:.\Generated_Source\PSoC5/CAN_1.c **** 
  452:.\Generated_Source\PSoC5/CAN_1.c **** /*******************************************************************************
  453:.\Generated_Source\PSoC5/CAN_1.c **** * FUNCTION NAME:   CAN_1_GlobalIntDisable
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 21
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 21
 
 
  454:.\Generated_Source\PSoC5/CAN_1.c **** ********************************************************************************
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  478:.\Generated_Source\PSoC5/CAN_1.c ****         {
  479:.\Generated_Source\PSoC5/CAN_1.c ****             result = CYRET_SUCCESS;
  706              		.loc 1 479 0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 22
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 22
 
 
  707 0028 0023     		movs	r3, #0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  503:.\Generated_Source\PSoC5/CAN_1.c **** * Parameters:
  504:.\Generated_Source\PSoC5/CAN_1.c **** *  bitrate: PreScaler value.
  505:.\Generated_Source\PSoC5/CAN_1.c **** *   Value           Description
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 23
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 23
 
 
  506:.\Generated_Source\PSoC5/CAN_1.c **** *    0               One time quantum equals 1 clock cycle
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  531:.\Generated_Source\PSoC5/CAN_1.c ****             /* Verify that prescaler is set */
  532:.\Generated_Source\PSoC5/CAN_1.c ****             if (CY_GET_REG16((reg16 *) (&CAN_1_CFG_REG.byte[2u])) == bitrate)
  767              		.loc 1 532 0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 24
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 24
 
 
  768 0020 074B     		ldr	r3, .L57
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  803              		.type	CAN_1_SetArbiter, %function
  804              	CAN_1_SetArbiter:
  805              	.LFB8:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 25
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 25
 
 
  552:.\Generated_Source\PSoC5/CAN_1.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  829 0016 144B     		ldr	r3, .L64
  830 0018 5B78     		ldrb	r3, [r3, #1]
  831 001a DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 26
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 26
 
 
  832 001c 23F01003 		bic	r3, r3, #16
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  603:.\Generated_Source\PSoC5/CAN_1.c ****             CAN_1_CFG_REG &= (uint32) (~CAN_1_ARBITRATION_MASK);
  604:.\Generated_Source\PSoC5/CAN_1.c **** 
  605:.\Generated_Source\PSoC5/CAN_1.c ****             /* Verify that bit is cleared */
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 27
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 27
 
 
  606:.\Generated_Source\PSoC5/CAN_1.c ****             if ((CAN_1_CFG_REG & CAN_1_ARBITRATION_MASK) == 0u)
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  632:.\Generated_Source\PSoC5/CAN_1.c **** *  This function configures: Time segment 1, Time segment 2, Sampling Mode
  633:.\Generated_Source\PSoC5/CAN_1.c **** *  and Synchronization Jump Width.
  634:.\Generated_Source\PSoC5/CAN_1.c **** *
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 28
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 28
 
 
  635:.\Generated_Source\PSoC5/CAN_1.c **** * Parameters:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  924 0024 012B     		cmp	r3, #1
  925 0026 4CD9     		bls	.L67
  926              		.loc 1 658 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 29
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 29
 
 
  927 0028 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  671:.\Generated_Source\PSoC5/CAN_1.c ****                     cfgTemp &= (uint8) (~CAN_1_CFG_REG_TSEG1_MASK);
  969              		.loc 1 671 0
  970 0066 BB7B     		ldrb	r3, [r7, #14]
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 30
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 30
 
 
  971 0068 23F00F03 		bic	r3, r3, #15
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1008              		.loc 1 686 0
  1009 00a2 1343     		orrs	r3, r3, r2
  1010 00a4 DAB2     		uxtb	r2, r3
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 31
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 31
 
 
  1011 00a6 BB7B     		ldrb	r3, [r7, #14]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  724:.\Generated_Source\PSoC5/CAN_1.c ****                         CAN_1_CFG_REG = (CAN_1_CFG_REG &
  725:.\Generated_Source\PSoC5/CAN_1.c ****                         (uint32) (~((uint32) (CAN_1_CFG_REG_TSEG2_MASK | CAN_1_CFG_REG_SJW_MASK |
  726:.\Generated_Source\PSoC5/CAN_1.c ****                         CAN_1_SAMPLE_MODE_MASK)))) | cfgTemp;
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 32
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 32
 
 
  727:.\Generated_Source\PSoC5/CAN_1.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  752:.\Generated_Source\PSoC5/CAN_1.c **** * Parameters:
  753:.\Generated_Source\PSoC5/CAN_1.c **** *  reset: Reset Type.
  754:.\Generated_Source\PSoC5/CAN_1.c **** *   Define                             Description
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 33
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 33
 
 
  755:.\Generated_Source\PSoC5/CAN_1.c **** *    CAN_1_MANUAL_RESTART    After Bus-Off, CAN must be restarted
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1087              		.loc 1 779 0
  1088 0024 104B     		ldr	r3, .L79
  1089 0026 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 34
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 34
 
 
  1090 0028 DBB2     		uxtb	r3, r3
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  806:.\Generated_Source\PSoC5/CAN_1.c ****         {
  807:.\Generated_Source\PSoC5/CAN_1.c ****             CAN_1_CFG_REG |= CAN_1_RESET_MASK;
  808:.\Generated_Source\PSoC5/CAN_1.c **** 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 35
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 35
 
 
  809:.\Generated_Source\PSoC5/CAN_1.c ****             /* Verify that bit is set */
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  835:.\Generated_Source\PSoC5/CAN_1.c **** *
  836:.\Generated_Source\PSoC5/CAN_1.c **** * Return:
  837:.\Generated_Source\PSoC5/CAN_1.c **** *  The indication whether the register is written and verified.
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 36
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 36
 
 
  838:.\Generated_Source\PSoC5/CAN_1.c **** *   Define                             Description
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  856:.\Generated_Source\PSoC5/CAN_1.c ****                 result = CYRET_SUCCESS;
  1182              		.loc 1 856 0
  1183 0032 0023     		movs	r3, #0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 37
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 37
 
 
  1184 0034 FB73     		strb	r3, [r7, #15]
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  889:.\Generated_Source\PSoC5/CAN_1.c ****             {
  890:.\Generated_Source\PSoC5/CAN_1.c ****                 result = CYRET_SUCCESS;
  891:.\Generated_Source\PSoC5/CAN_1.c ****             }
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 38
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 38
 
 
  892:.\Generated_Source\PSoC5/CAN_1.c ****         }
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  918:.\Generated_Source\PSoC5/CAN_1.c **** *                                        transactions are internally routed
  919:.\Generated_Source\PSoC5/CAN_1.c **** *                                        back to the receiver logic and
  920:.\Generated_Source\PSoC5/CAN_1.c **** *                                        processed by the controller in this
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 39
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 39
 
 
  921:.\Generated_Source\PSoC5/CAN_1.c **** *                                        mode. Not available for PSoC3/5.
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1261              		.loc 1 947 0 is_stmt 0 discriminator 1
  1262 0020 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  1263 0022 012B     		cmp	r3, #1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 40
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 40
 
 
  1264 0024 01D1     		bne	.L90
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  964:.\Generated_Source\PSoC5/CAN_1.c ****         {
  965:.\Generated_Source\PSoC5/CAN_1.c ****             result = CYRET_SUCCESS;
  1300              		.loc 1 965 0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 41
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 41
 
 
  1301 0058 0023     		movs	r3, #0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1338              		.loc 1 982 0
  1339 0092 FB68     		ldr	r3, [r7, #12]
  1340 0094 013B     		subs	r3, r3, #1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 42
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 42
 
 
  1341 0096 FB60     		str	r3, [r7, #12]
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
 1013:.\Generated_Source\PSoC5/CAN_1.c ****                 {
 1014:.\Generated_Source\PSoC5/CAN_1.c ****                     /* Set CAN Operation Mode */
 1015:.\Generated_Source\PSoC5/CAN_1.c ****                     CAN_1_CMD_REG |= opMode;
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 43
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 43
 
 
 1016:.\Generated_Source\PSoC5/CAN_1.c ****                 }
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
 1042:.\Generated_Source\PSoC5/CAN_1.c **** * Return:
 1043:.\Generated_Source\PSoC5/CAN_1.c **** *  The indication whether the register is written and verified.
 1044:.\Generated_Source\PSoC5/CAN_1.c **** *   Define                             Description
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 44
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 44
 
 
 1045:.\Generated_Source\PSoC5/CAN_1.c **** *    CYRET_SUCCESS                      The function passed successfully
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1426 002c 03F01F03 		and	r3, r3, #31
  1427 0030 002B     		cmp	r3, #0
  1428 0032 19D1     		bne	.L105
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 45
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 45
 
 
 1063:.\Generated_Source\PSoC5/CAN_1.c ****         {
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1459 0068 0C4B     		ldr	r3, .L108
  1460 006a 4FF48032 		mov	r2, #65536
  1461 006e 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 46
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 46
 
 
 1087:.\Generated_Source\PSoC5/CAN_1.c **** 
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1499              	.LFE13:
  1500              		.size	CAN_1_RXRegisterInit, .-CAN_1_RXRegisterInit
  1501              		.section	.text.CAN_1_SetIrqMask,"ax",%progbits
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 47
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 47
 
 
  1502              		.align	2
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1516              		.cfi_offset 7, -4
  1517 0002 85B0     		sub	sp, sp, #20
  1518              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 48
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 48
 
 
  1519 0004 00AF     		add	r7, sp, #0
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1549              		@ sp needed
  1550 002c 5DF8047B 		ldr	r7, [sp], #4
  1551              		.cfi_restore 7
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 49
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 49
 
 
  1552              		.cfi_def_cfa_offset 0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1584 000e 002B     		cmp	r3, #0
  1585 0010 01D0     		beq	.L116
  1586              		.loc 1 1189 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 50
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 50
 
 
  1587 0012 0123     		movs	r3, #1
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
 1214:.\Generated_Source\PSoC5/CAN_1.c **** *******************************************************************************/
 1215:.\Generated_Source\PSoC5/CAN_1.c **** uint8 CAN_1_GetRXErrorFlag(void) 
 1216:.\Generated_Source\PSoC5/CAN_1.c **** {
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 51
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 51
 
 
  1617              		.loc 1 1216 0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1660              		.thumb
  1661              		.thumb_func
  1662              		.type	CAN_1_GetTXErrorCount, %function
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 52
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 52
 
 
  1663              	CAN_1_GetTXErrorCount:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1691 0014 0CA00040 		.word	1073782796
  1692              		.cfi_endproc
  1693              	.LFE17:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 53
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 53
 
 
  1694              		.size	CAN_1_GetTXErrorCount, .-CAN_1_GetTXErrorCount
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1721              		@ sp needed
  1722 000e 5DF8047B 		ldr	r7, [sp], #4
  1723              		.cfi_restore 7
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 54
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 54
 
 
  1724              		.cfi_def_cfa_offset 0
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
 1302:.\Generated_Source\PSoC5/CAN_1.c ****     #else  /* CY_PSOC4 */
 1303:.\Generated_Source\PSoC5/CAN_1.c ****         /* Get error state of receiver */
 1304:.\Generated_Source\PSoC5/CAN_1.c ****         return ((uint8) ((CAN_1_ERR_SR_REG >> CAN_1_TWO_BYTE_OFFSET) &
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 55
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 55
 
 
 1305:.\Generated_Source\PSoC5/CAN_1.c ****                 CAN_1_ERROR_STATE_MASK));
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1785              		@ link register save eliminated.
  1786 0000 80B4     		push	{r7}
  1787              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 56
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 56
 
 
  1788              		.cfi_offset 7, -4
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1831 004c 9268     		ldr	r2, [r2, #8]
  1832 004e 1A60     		str	r2, [r3]
 1341:.\Generated_Source\PSoC5/CAN_1.c ****         if (CY_GET_REG32((reg32 *) (&CAN_1_RX[rxConfig->rxmailbox].rxamr)) == rxConfig->rxamr)
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 57
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 57
 
 
  1833              		.loc 1 1341 0
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1879 00a4 5A01     		lsls	r2, r3, #5
  1880 00a6 104B     		ldr	r3, .L142
  1881 00a8 1344     		add	r3, r3, r2
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 58
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 58
 
 
  1882 00aa 1833     		adds	r3, r3, #24
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  1922              	.L143:
  1923              		.align	2
  1924              	.L142:
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 59
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 59
 
 
  1925 00e8 A0A00040 		.word	1073782944
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
 1390:.\Generated_Source\PSoC5/CAN_1.c ****     /* Write TX CMD Register */
 1391:.\Generated_Source\PSoC5/CAN_1.c ****     CY_SET_REG32(CAN_1_TX_CMD_PTR(txConfig->txmailbox), (txConfig->txcmd | CAN_1_TX_WPN_SET));
  1953              		.loc 1 1391 0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 60
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 60
 
 
  1954 000c 7B68     		ldr	r3, [r7, #4]
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2001 0068 9B68     		ldr	r3, [r3, #8]
  2002 006a 9A42     		cmp	r2, r3
  2003 006c 01D1     		bne	.L145
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 61
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 61
 
 
 1398:.\Generated_Source\PSoC5/CAN_1.c ****         {
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2051 0031 000000   		.space	3
  2052 0034 08008800 		.word	8912904
  2053 0038 00000000 		.word	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 62
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 62
 
 
  2054 003c 05       		.byte	5
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2108 00d8 00000000 		.word	0
  2109 00dc 00000000 		.word	0
  2110 00e0 08       		.byte	8
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 63
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 63
 
 
  2111 00e1 000000   		.space	3
@@ -3771,44 +3771,44 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2158 0006 00000000 		.4byte	.Ldebug_abbrev0
  2159 000a 04       		.byte	0x4
  2160 000b 01       		.uleb128 0x1
- 2161 000c E0020000 		.4byte	.LASF80
+ 2161 000c 92020000 		.4byte	.LASF80
  2162 0010 01       		.byte	0x1
- 2163 0011 1C040000 		.4byte	.LASF81
- 2164 0015 52000000 		.4byte	.LASF82
+ 2163 0011 CE030000 		.4byte	.LASF81
+ 2164 0015 88040000 		.4byte	.LASF82
  2165 0019 00000000 		.4byte	.Ldebug_ranges0+0
  2166 001d 00000000 		.4byte	0
  2167 0021 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 64
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 64
 
 
  2168 0025 02       		.uleb128 0x2
  2169 0026 01       		.byte	0x1
  2170 0027 06       		.byte	0x6
- 2171 0028 F4000000 		.4byte	.LASF0
+ 2171 0028 AC000000 		.4byte	.LASF0
  2172 002c 02       		.uleb128 0x2
  2173 002d 01       		.byte	0x1
  2174 002e 08       		.byte	0x8
- 2175 002f B1030000 		.4byte	.LASF1
+ 2175 002f 63030000 		.4byte	.LASF1
  2176 0033 02       		.uleb128 0x2
  2177 0034 02       		.byte	0x2
  2178 0035 05       		.byte	0x5
- 2179 0036 BF030000 		.4byte	.LASF2
+ 2179 0036 71030000 		.4byte	.LASF2
  2180 003a 02       		.uleb128 0x2
  2181 003b 02       		.byte	0x2
  2182 003c 07       		.byte	0x7
- 2183 003d 20020000 		.4byte	.LASF3
+ 2183 003d D8010000 		.4byte	.LASF3
  2184 0041 02       		.uleb128 0x2
  2185 0042 04       		.byte	0x4
  2186 0043 05       		.byte	0x5
- 2187 0044 54010000 		.4byte	.LASF4
+ 2187 0044 0C010000 		.4byte	.LASF4
  2188 0048 02       		.uleb128 0x2
  2189 0049 04       		.byte	0x4
  2190 004a 07       		.byte	0x7
- 2191 004b F9010000 		.4byte	.LASF5
+ 2191 004b B1010000 		.4byte	.LASF5
  2192 004f 02       		.uleb128 0x2
  2193 0050 08       		.byte	0x8
  2194 0051 05       		.byte	0x5
- 2195 0052 E6000000 		.4byte	.LASF6
+ 2195 0052 9E000000 		.4byte	.LASF6
  2196 0056 02       		.uleb128 0x2
  2197 0057 08       		.byte	0x8
  2198 0058 07       		.byte	0x7
@@ -3820,9 +3820,9 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2204 0064 02       		.uleb128 0x2
  2205 0065 04       		.byte	0x4
  2206 0066 07       		.byte	0x7
- 2207 0067 C8010000 		.4byte	.LASF8
+ 2207 0067 80010000 		.4byte	.LASF8
  2208 006b 04       		.uleb128 0x4
- 2209 006c 8F010000 		.4byte	.LASF9
+ 2209 006c 47010000 		.4byte	.LASF9
  2210 0070 02       		.byte	0x2
  2211 0071 A1       		.byte	0xa1
  2212 0072 2C000000 		.4byte	0x2c
@@ -3832,41 +3832,41 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2216 007c A2       		.byte	0xa2
  2217 007d 3A000000 		.4byte	0x3a
  2218 0081 04       		.uleb128 0x4
- 2219 0082 A2010000 		.4byte	.LASF11
+ 2219 0082 5A010000 		.4byte	.LASF11
  2220 0086 02       		.byte	0x2
  2221 0087 A3       		.byte	0xa3
  2222 0088 48000000 		.4byte	0x48
  2223 008c 02       		.uleb128 0x2
  2224 008d 04       		.byte	0x4
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 65
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 65
 
 
  2225 008e 04       		.byte	0x4
- 2226 008f 6E030000 		.4byte	.LASF12
+ 2226 008f 20030000 		.4byte	.LASF12
  2227 0093 02       		.uleb128 0x2
  2228 0094 08       		.byte	0x8
  2229 0095 04       		.byte	0x4
- 2230 0096 9B010000 		.4byte	.LASF13
+ 2230 0096 53010000 		.4byte	.LASF13
  2231 009a 02       		.uleb128 0x2
  2232 009b 01       		.byte	0x1
  2233 009c 08       		.byte	0x8
- 2234 009d D4030000 		.4byte	.LASF14
+ 2234 009d 86030000 		.4byte	.LASF14
  2235 00a1 05       		.uleb128 0x5
- 2236 00a2 9F030000 		.4byte	.LASF15
+ 2236 00a2 51030000 		.4byte	.LASF15
  2237 00a6 02       		.byte	0x2
  2238 00a7 4B01     		.2byte	0x14b
  2239 00a9 AD000000 		.4byte	0xad
  2240 00ad 06       		.uleb128 0x6
  2241 00ae 6B000000 		.4byte	0x6b
  2242 00b2 05       		.uleb128 0x5
- 2243 00b3 89010000 		.4byte	.LASF16
+ 2243 00b3 41010000 		.4byte	.LASF16
  2244 00b7 02       		.byte	0x2
  2245 00b8 4C01     		.2byte	0x14c
  2246 00ba BE000000 		.4byte	0xbe
  2247 00be 06       		.uleb128 0x6
  2248 00bf 76000000 		.4byte	0x76
  2249 00c3 05       		.uleb128 0x5
- 2250 00c4 78020000 		.4byte	.LASF17
+ 2250 00c4 30020000 		.4byte	.LASF17
  2251 00c8 02       		.byte	0x2
  2252 00c9 4D01     		.2byte	0x14d
  2253 00cb CF000000 		.4byte	0xcf
@@ -3875,14 +3875,14 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2256 00d4 02       		.uleb128 0x2
  2257 00d5 04       		.byte	0x4
  2258 00d6 07       		.byte	0x7
- 2259 00d7 98020000 		.4byte	.LASF18
+ 2259 00d7 50020000 		.4byte	.LASF18
  2260 00db 07       		.uleb128 0x7
  2261 00dc 08       		.byte	0x8
  2262 00dd 03       		.byte	0x3
  2263 00de 75       		.byte	0x75
  2264 00df F0000000 		.4byte	0xf0
  2265 00e3 08       		.uleb128 0x8
- 2266 00e4 A9010000 		.4byte	.LASF20
+ 2266 00e4 61010000 		.4byte	.LASF20
  2267 00e8 03       		.byte	0x3
  2268 00e9 77       		.byte	0x77
  2269 00ea 00010000 		.4byte	0x100
@@ -3898,10 +3898,10 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2279 0100 06       		.uleb128 0x6
  2280 0101 F0000000 		.4byte	0xf0
  2281 0105 04       		.uleb128 0x4
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 66
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 66
 
 
- 2282 0106 B4020000 		.4byte	.LASF19
+ 2282 0106 6C020000 		.4byte	.LASF19
  2283 010a 03       		.byte	0x3
  2284 010b 78       		.byte	0x78
  2285 010c DB000000 		.4byte	0xdb
@@ -3911,7 +3911,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2289 0113 7B       		.byte	0x7b
  2290 0114 25010000 		.4byte	0x125
  2291 0118 08       		.uleb128 0x8
- 2292 0119 A9010000 		.4byte	.LASF20
+ 2292 0119 61010000 		.4byte	.LASF20
  2293 011d 03       		.byte	0x3
  2294 011e 7D       		.byte	0x7d
  2295 011f 35010000 		.4byte	0x135
@@ -3927,7 +3927,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2305 0135 06       		.uleb128 0x6
  2306 0136 25010000 		.4byte	0x125
  2307 013a 04       		.uleb128 0x4
- 2308 013b 57020000 		.4byte	.LASF21
+ 2308 013b 0F020000 		.4byte	.LASF21
  2309 013f 03       		.byte	0x3
  2310 0140 7E       		.byte	0x7e
  2311 0141 10010000 		.4byte	0x110
@@ -3937,35 +3937,35 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2315 0148 8F       		.byte	0x8f
  2316 0149 7E010000 		.4byte	0x17e
  2317 014d 08       		.uleb128 0x8
- 2318 014e 8E020000 		.4byte	.LASF22
+ 2318 014e 46020000 		.4byte	.LASF22
  2319 0152 03       		.byte	0x3
  2320 0153 91       		.byte	0x91
  2321 0154 6B000000 		.4byte	0x6b
  2322 0158 00       		.byte	0
  2323 0159 08       		.uleb128 0x8
- 2324 015a 4D040000 		.4byte	.LASF23
+ 2324 015a FF030000 		.4byte	.LASF23
  2325 015e 03       		.byte	0x3
  2326 015f 92       		.byte	0x92
  2327 0160 81000000 		.4byte	0x81
  2328 0164 04       		.byte	0x4
  2329 0165 08       		.uleb128 0x8
- 2330 0166 95010000 		.4byte	.LASF24
+ 2330 0166 4D010000 		.4byte	.LASF24
  2331 016a 03       		.byte	0x3
  2332 016b 93       		.byte	0x93
  2333 016c 81000000 		.4byte	0x81
  2334 0170 08       		.byte	0x8
  2335 0171 08       		.uleb128 0x8
- 2336 0172 98040000 		.4byte	.LASF25
+ 2336 0172 4A040000 		.4byte	.LASF25
  2337 0176 03       		.byte	0x3
  2338 0177 94       		.byte	0x94
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 67
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 67
 
 
  2339 0178 81000000 		.4byte	0x81
  2340 017c 0C       		.byte	0xc
  2341 017d 00       		.byte	0
  2342 017e 04       		.uleb128 0x4
- 2343 017f 13020000 		.4byte	.LASF26
+ 2343 017f CB010000 		.4byte	.LASF26
  2344 0183 03       		.byte	0x3
  2345 0184 95       		.byte	0x95
  2346 0185 45010000 		.4byte	0x145
@@ -3975,26 +3975,26 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2350 018c 98       		.byte	0x98
  2351 018d B6010000 		.4byte	0x1b6
  2352 0191 08       		.uleb128 0x8
- 2353 0192 00040000 		.4byte	.LASF27
+ 2353 0192 B2030000 		.4byte	.LASF27
  2354 0196 03       		.byte	0x3
  2355 0197 9A       		.byte	0x9a
  2356 0198 6B000000 		.4byte	0x6b
  2357 019c 00       		.byte	0
  2358 019d 08       		.uleb128 0x8
- 2359 019e D5020000 		.4byte	.LASF28
+ 2359 019e 52000000 		.4byte	.LASF28
  2360 01a2 03       		.byte	0x3
  2361 01a3 9B       		.byte	0x9b
  2362 01a4 81000000 		.4byte	0x81
  2363 01a8 04       		.byte	0x4
  2364 01a9 08       		.uleb128 0x8
- 2365 01aa 7E040000 		.4byte	.LASF29
+ 2365 01aa 30040000 		.4byte	.LASF29
  2366 01ae 03       		.byte	0x3
  2367 01af 9C       		.byte	0x9c
  2368 01b0 81000000 		.4byte	0x81
  2369 01b4 08       		.byte	0x8
  2370 01b5 00       		.byte	0
  2371 01b6 04       		.uleb128 0x4
- 2372 01b7 9E040000 		.4byte	.LASF30
+ 2372 01b7 50040000 		.4byte	.LASF30
  2373 01bb 03       		.byte	0x3
  2374 01bc 9D       		.byte	0x9d
  2375 01bd 89010000 		.4byte	0x189
@@ -4004,53 +4004,53 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2379 01c4 A0       		.byte	0xa0
  2380 01c5 1E020000 		.4byte	0x21e
  2381 01c9 08       		.uleb128 0x8
- 2382 01ca 4D040000 		.4byte	.LASF23
+ 2382 01ca FF030000 		.4byte	.LASF23
  2383 01ce 03       		.byte	0x3
  2384 01cf A2       		.byte	0xa2
  2385 01d0 3A010000 		.4byte	0x13a
  2386 01d4 00       		.byte	0
  2387 01d5 08       		.uleb128 0x8
- 2388 01d6 DB020000 		.4byte	.LASF31
+ 2388 01d6 8D020000 		.4byte	.LASF31
  2389 01da 03       		.byte	0x3
  2390 01db A3       		.byte	0xa3
  2391 01dc 3A010000 		.4byte	0x13a
  2392 01e0 04       		.byte	0x4
  2393 01e1 08       		.uleb128 0x8
- 2394 01e2 6D010000 		.4byte	.LASF32
+ 2394 01e2 25010000 		.4byte	.LASF32
  2395 01e6 03       		.byte	0x3
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 68
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 68
 
 
  2396 01e7 A4       		.byte	0xa4
  2397 01e8 05010000 		.4byte	0x105
  2398 01ec 08       		.byte	0x8
  2399 01ed 08       		.uleb128 0x8
- 2400 01ee 95010000 		.4byte	.LASF24
+ 2400 01ee 4D010000 		.4byte	.LASF24
  2401 01f2 03       		.byte	0x3
  2402 01f3 A5       		.byte	0xa5
  2403 01f4 3A010000 		.4byte	0x13a
  2404 01f8 10       		.byte	0x10
  2405 01f9 08       		.uleb128 0x8
- 2406 01fa 98040000 		.4byte	.LASF25
+ 2406 01fa 4A040000 		.4byte	.LASF25
  2407 01fe 03       		.byte	0x3
  2408 01ff A6       		.byte	0xa6
  2409 0200 3A010000 		.4byte	0x13a
  2410 0204 14       		.byte	0x14
  2411 0205 08       		.uleb128 0x8
- 2412 0206 C2000000 		.4byte	.LASF33
+ 2412 0206 7A000000 		.4byte	.LASF33
  2413 020a 03       		.byte	0x3
  2414 020b A7       		.byte	0xa7
  2415 020c 3A010000 		.4byte	0x13a
  2416 0210 18       		.byte	0x18
  2417 0211 08       		.uleb128 0x8
- 2418 0212 B3040000 		.4byte	.LASF34
+ 2418 0212 65040000 		.4byte	.LASF34
  2419 0216 03       		.byte	0x3
  2420 0217 A8       		.byte	0xa8
  2421 0218 3A010000 		.4byte	0x13a
  2422 021c 1C       		.byte	0x1c
  2423 021d 00       		.byte	0
  2424 021e 04       		.uleb128 0x4
- 2425 021f C5020000 		.4byte	.LASF35
+ 2425 021f 7D020000 		.4byte	.LASF35
  2426 0223 03       		.byte	0x3
  2427 0224 A9       		.byte	0xa9
  2428 0225 C1010000 		.4byte	0x1c1
@@ -4060,29 +4060,29 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2432 022c AC       		.byte	0xac
  2433 022d 56020000 		.4byte	0x256
  2434 0231 08       		.uleb128 0x8
- 2435 0232 D5020000 		.4byte	.LASF28
+ 2435 0232 52000000 		.4byte	.LASF28
  2436 0236 03       		.byte	0x3
  2437 0237 AE       		.byte	0xae
  2438 0238 3A010000 		.4byte	0x13a
  2439 023c 00       		.byte	0
  2440 023d 08       		.uleb128 0x8
- 2441 023e 7E040000 		.4byte	.LASF29
+ 2441 023e 30040000 		.4byte	.LASF29
  2442 0242 03       		.byte	0x3
  2443 0243 AF       		.byte	0xaf
  2444 0244 3A010000 		.4byte	0x13a
  2445 0248 04       		.byte	0x4
  2446 0249 08       		.uleb128 0x8
- 2447 024a 50020000 		.4byte	.LASF36
+ 2447 024a 08020000 		.4byte	.LASF36
  2448 024e 03       		.byte	0x3
  2449 024f B0       		.byte	0xb0
  2450 0250 05010000 		.4byte	0x105
  2451 0254 08       		.byte	0x8
  2452 0255 00       		.byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 69
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 69
 
 
  2453 0256 04       		.uleb128 0x4
- 2454 0257 3D040000 		.4byte	.LASF37
+ 2454 0257 EF030000 		.4byte	.LASF37
  2455 025b 03       		.byte	0x3
  2456 025c B1       		.byte	0xb1
  2457 025d 29020000 		.4byte	0x229
@@ -4097,7 +4097,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2466 0275 9C       		.byte	0x9c
  2467 0276 B7020000 		.4byte	0x2b7
  2468 027a 0C       		.uleb128 0xc
- 2469 027b 8A030000 		.4byte	.LASF38
+ 2469 027b 3C030000 		.4byte	.LASF38
  2470 027f 01       		.byte	0x1
  2471 0280 32       		.byte	0x32
  2472 0281 C7020000 		.4byte	0x2c7
@@ -4105,7 +4105,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2474 0286 03       		.byte	0x3
  2475 0287 60000000 		.4byte	CAN_1_RXConfigStruct.4917
  2476 028b 0C       		.uleb128 0xc
- 2477 028c B3010000 		.4byte	.LASF39
+ 2477 028c 6B010000 		.4byte	.LASF39
  2478 0290 01       		.byte	0x1
  2479 0291 46       		.byte	0x46
  2480 0292 DC020000 		.4byte	0x2dc
@@ -4113,7 +4113,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2482 0297 03       		.byte	0x3
  2483 0298 00000000 		.4byte	CAN_1_TXConfigStruct.4918
  2484 029c 0C       		.uleb128 0xc
- 2485 029d BA040000 		.4byte	.LASF40
+ 2485 029d 6C040000 		.4byte	.LASF40
  2486 02a1 01       		.byte	0x1
  2487 02a2 52       		.byte	0x52
  2488 02a3 6B000000 		.4byte	0x6b
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2507 02c6 00       		.byte	0
  2508 02c7 0E       		.uleb128 0xe
  2509 02c8 B7020000 		.4byte	0x2b7
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 70
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 70
 
 
  2510 02cc 09       		.uleb128 0x9
@@ -4151,7 +4151,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2517 02dc 0E       		.uleb128 0xe
  2518 02dd CC020000 		.4byte	0x2cc
  2519 02e1 0B       		.uleb128 0xb
- 2520 02e2 B7000000 		.4byte	.LASF42
+ 2520 02e2 6F000000 		.4byte	.LASF42
  2521 02e6 01       		.byte	0x1
  2522 02e7 89       		.byte	0x89
  2523 02e8 6B000000 		.4byte	0x6b
@@ -4161,7 +4161,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2527 02f5 9C       		.byte	0x9c
  2528 02f6 33030000 		.4byte	0x333
  2529 02fa 0C       		.uleb128 0xc
- 2530 02fb 0B020000 		.4byte	.LASF43
+ 2530 02fb C3010000 		.4byte	.LASF43
  2531 02ff 01       		.byte	0x1
  2532 0300 8B       		.byte	0x8b
  2533 0301 81000000 		.4byte	0x81
@@ -4169,7 +4169,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2535 0306 91       		.byte	0x91
  2536 0307 74       		.sleb128 -12
  2537 0308 0C       		.uleb128 0xc
- 2538 0309 BA040000 		.4byte	.LASF40
+ 2538 0309 6C040000 		.4byte	.LASF40
  2539 030d 01       		.byte	0x1
  2540 030e 8C       		.byte	0x8c
  2541 030f 6B000000 		.4byte	0x6b
@@ -4177,7 +4177,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2543 0314 91       		.byte	0x91
  2544 0315 73       		.sleb128 -13
  2545 0316 0C       		.uleb128 0xc
- 2546 0317 F4030000 		.4byte	.LASF44
+ 2546 0317 A6030000 		.4byte	.LASF44
  2547 031b 01       		.byte	0x1
  2548 031c 8D       		.byte	0x8d
  2549 031d 6B000000 		.4byte	0x6b
@@ -4185,7 +4185,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2551 0322 91       		.byte	0x91
  2552 0323 72       		.sleb128 -14
  2553 0324 0C       		.uleb128 0xc
- 2554 0325 6D040000 		.4byte	.LASF45
+ 2554 0325 1F040000 		.4byte	.LASF45
  2555 0329 01       		.byte	0x1
  2556 032a 90       		.byte	0x90
  2557 032b 6B000000 		.4byte	0x6b
@@ -4194,11 +4194,11 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2560 0331 71       		.sleb128 -15
  2561 0332 00       		.byte	0
  2562 0333 0B       		.uleb128 0xb
- 2563 0334 A4030000 		.4byte	.LASF46
+ 2563 0334 56030000 		.4byte	.LASF46
  2564 0338 01       		.byte	0x1
  2565 0339 FE       		.byte	0xfe
  2566 033a 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 71
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 71
 
 
  2567 033e 00000000 		.4byte	.LFB2
@@ -4207,7 +4207,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2570 0347 9C       		.byte	0x9c
  2571 0348 7A030000 		.4byte	0x37a
  2572 034c 0F       		.uleb128 0xf
- 2573 034d 0B020000 		.4byte	.LASF43
+ 2573 034d C3010000 		.4byte	.LASF43
  2574 0351 01       		.byte	0x1
  2575 0352 0001     		.2byte	0x100
  2576 0354 81000000 		.4byte	0x81
@@ -4215,7 +4215,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2578 0359 91       		.byte	0x91
  2579 035a 74       		.sleb128 -12
  2580 035b 0F       		.uleb128 0xf
- 2581 035c BA040000 		.4byte	.LASF40
+ 2581 035c 6C040000 		.4byte	.LASF40
  2582 0360 01       		.byte	0x1
  2583 0361 0101     		.2byte	0x101
  2584 0363 6B000000 		.4byte	0x6b
@@ -4223,7 +4223,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2586 0368 91       		.byte	0x91
  2587 0369 73       		.sleb128 -13
  2588 036a 0F       		.uleb128 0xf
- 2589 036b 6D040000 		.4byte	.LASF45
+ 2589 036b 1F040000 		.4byte	.LASF45
  2590 036f 01       		.byte	0x1
  2591 0370 0401     		.2byte	0x104
  2592 0372 6B000000 		.4byte	0x6b
@@ -4232,7 +4232,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2595 0378 72       		.sleb128 -14
  2596 0379 00       		.byte	0
  2597 037a 10       		.uleb128 0x10
- 2598 037b 1B010000 		.4byte	.LASF47
+ 2598 037b D3000000 		.4byte	.LASF47
  2599 037f 01       		.byte	0x1
  2600 0380 4301     		.2byte	0x143
  2601 0382 6B000000 		.4byte	0x6b
@@ -4242,7 +4242,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2605 038f 9C       		.byte	0x9c
  2606 0390 A4030000 		.4byte	0x3a4
  2607 0394 0F       		.uleb128 0xf
- 2608 0395 BA040000 		.4byte	.LASF40
+ 2608 0395 6C040000 		.4byte	.LASF40
  2609 0399 01       		.byte	0x1
  2610 039a 4501     		.2byte	0x145
  2611 039c 6B000000 		.4byte	0x6b
@@ -4251,20 +4251,20 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2614 03a2 77       		.sleb128 -9
  2615 03a3 00       		.byte	0
  2616 03a4 10       		.uleb128 0x10
- 2617 03a5 C9030000 		.4byte	.LASF48
+ 2617 03a5 7B030000 		.4byte	.LASF48
  2618 03a9 01       		.byte	0x1
  2619 03aa 6E01     		.2byte	0x16e
  2620 03ac 6B000000 		.4byte	0x6b
  2621 03b0 00000000 		.4byte	.LFB4
  2622 03b4 94000000 		.4byte	.LFE4-.LFB4
  2623 03b8 01       		.uleb128 0x1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 72
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 72
 
 
  2624 03b9 9C       		.byte	0x9c
  2625 03ba EC030000 		.4byte	0x3ec
  2626 03be 0F       		.uleb128 0xf
- 2627 03bf 0B020000 		.4byte	.LASF43
+ 2627 03bf C3010000 		.4byte	.LASF43
  2628 03c3 01       		.byte	0x1
  2629 03c4 7001     		.2byte	0x170
  2630 03c6 81000000 		.4byte	0x81
@@ -4272,7 +4272,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2632 03cb 91       		.byte	0x91
  2633 03cc 74       		.sleb128 -12
  2634 03cd 0F       		.uleb128 0xf
- 2635 03ce BA040000 		.4byte	.LASF40
+ 2635 03ce 6C040000 		.4byte	.LASF40
  2636 03d2 01       		.byte	0x1
  2637 03d3 7101     		.2byte	0x171
  2638 03d5 6B000000 		.4byte	0x6b
@@ -4280,7 +4280,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2640 03da 91       		.byte	0x91
  2641 03db 73       		.sleb128 -13
  2642 03dc 0F       		.uleb128 0xf
- 2643 03dd 6D040000 		.4byte	.LASF45
+ 2643 03dd 1F040000 		.4byte	.LASF45
  2644 03e1 01       		.byte	0x1
  2645 03e2 7401     		.2byte	0x174
  2646 03e4 6B000000 		.4byte	0x6b
@@ -4289,7 +4289,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2649 03ea 72       		.sleb128 -14
  2650 03eb 00       		.byte	0
  2651 03ec 11       		.uleb128 0x11
- 2652 03ed 3A020000 		.4byte	.LASF49
+ 2652 03ed F2010000 		.4byte	.LASF49
  2653 03f1 01       		.byte	0x1
  2654 03f2 AB01     		.2byte	0x1ab
  2655 03f4 6B000000 		.4byte	0x6b
@@ -4299,7 +4299,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2659 0401 9C       		.byte	0x9c
  2660 0402 16040000 		.4byte	0x416
  2661 0406 0F       		.uleb128 0xf
- 2662 0407 BA040000 		.4byte	.LASF40
+ 2662 0407 6C040000 		.4byte	.LASF40
  2663 040b 01       		.byte	0x1
  2664 040c AD01     		.2byte	0x1ad
  2665 040e 6B000000 		.4byte	0x6b
@@ -4308,7 +4308,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2668 0414 77       		.sleb128 -9
  2669 0415 00       		.byte	0
  2670 0416 11       		.uleb128 0x11
- 2671 0417 27010000 		.4byte	.LASF50
+ 2671 0417 DF000000 		.4byte	.LASF50
  2672 041b 01       		.byte	0x1
  2673 041c D501     		.2byte	0x1d5
  2674 041e 6B000000 		.4byte	0x6b
@@ -4318,10 +4318,10 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2678 042b 9C       		.byte	0x9c
  2679 042c 40040000 		.4byte	0x440
  2680 0430 0F       		.uleb128 0xf
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 73
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 73
 
 
- 2681 0431 BA040000 		.4byte	.LASF40
+ 2681 0431 6C040000 		.4byte	.LASF40
  2682 0435 01       		.byte	0x1
  2683 0436 D701     		.2byte	0x1d7
  2684 0438 6B000000 		.4byte	0x6b
@@ -4330,7 +4330,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2687 043e 77       		.sleb128 -9
  2688 043f 00       		.byte	0
  2689 0440 11       		.uleb128 0x11
- 2690 0441 A1020000 		.4byte	.LASF51
+ 2690 0441 59020000 		.4byte	.LASF51
  2691 0445 01       		.byte	0x1
  2692 0446 0702     		.2byte	0x207
  2693 0448 6B000000 		.4byte	0x6b
@@ -4340,7 +4340,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2697 0455 9C       		.byte	0x9c
  2698 0456 79040000 		.4byte	0x479
  2699 045a 12       		.uleb128 0x12
- 2700 045b DE000000 		.4byte	.LASF53
+ 2700 045b 96000000 		.4byte	.LASF53
  2701 045f 01       		.byte	0x1
  2702 0460 0702     		.2byte	0x207
  2703 0462 76000000 		.4byte	0x76
@@ -4348,7 +4348,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2705 0467 91       		.byte	0x91
  2706 0468 6E       		.sleb128 -18
  2707 0469 0F       		.uleb128 0xf
- 2708 046a BA040000 		.4byte	.LASF40
+ 2708 046a 6C040000 		.4byte	.LASF40
  2709 046e 01       		.byte	0x1
  2710 046f 0902     		.2byte	0x209
  2711 0471 6B000000 		.4byte	0x6b
@@ -4357,7 +4357,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2714 0477 77       		.sleb128 -9
  2715 0478 00       		.byte	0
  2716 0479 11       		.uleb128 0x11
- 2717 047a 5C040000 		.4byte	.LASF52
+ 2717 047a 0E040000 		.4byte	.LASF52
  2718 047e 01       		.byte	0x1
  2719 047f 3F02     		.2byte	0x23f
  2720 0481 6B000000 		.4byte	0x6b
@@ -4367,7 +4367,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2724 048e 9C       		.byte	0x9c
  2725 048f B2040000 		.4byte	0x4b2
  2726 0493 12       		.uleb128 0x12
- 2727 0494 AB040000 		.4byte	.LASF54
+ 2727 0494 5D040000 		.4byte	.LASF54
  2728 0498 01       		.byte	0x1
  2729 0499 3F02     		.2byte	0x23f
  2730 049b 6B000000 		.4byte	0x6b
@@ -4375,10 +4375,10 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2732 04a0 91       		.byte	0x91
  2733 04a1 6F       		.sleb128 -17
  2734 04a2 0F       		.uleb128 0xf
- 2735 04a3 BA040000 		.4byte	.LASF40
+ 2735 04a3 6C040000 		.4byte	.LASF40
  2736 04a7 01       		.byte	0x1
  2737 04a8 4102     		.2byte	0x241
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 74
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 74
 
 
  2738 04aa 6B000000 		.4byte	0x6b
@@ -4387,7 +4387,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2741 04b0 77       		.sleb128 -9
  2742 04b1 00       		.byte	0
  2743 04b2 11       		.uleb128 0x11
- 2744 04b3 D9030000 		.4byte	.LASF55
+ 2744 04b3 8B030000 		.4byte	.LASF55
  2745 04b7 01       		.byte	0x1
  2746 04b8 8C02     		.2byte	0x28c
  2747 04ba 6B000000 		.4byte	0x6b
@@ -4397,7 +4397,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2751 04c7 9C       		.byte	0x9c
  2752 04c8 26050000 		.4byte	0x526
  2753 04cc 12       		.uleb128 0x12
- 2754 04cd 0A040000 		.4byte	.LASF56
+ 2754 04cd BC030000 		.4byte	.LASF56
  2755 04d1 01       		.byte	0x1
  2756 04d2 8C02     		.2byte	0x28c
  2757 04d4 6B000000 		.4byte	0x6b
@@ -4405,7 +4405,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2759 04d9 91       		.byte	0x91
  2760 04da 6F       		.sleb128 -17
  2761 04db 12       		.uleb128 0x12
- 2762 04dc 13040000 		.4byte	.LASF57
+ 2762 04dc C5030000 		.4byte	.LASF57
  2763 04e0 01       		.byte	0x1
  2764 04e1 8C02     		.2byte	0x28c
  2765 04e3 6B000000 		.4byte	0x6b
@@ -4429,7 +4429,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2783 0505 91       		.byte	0x91
  2784 0506 6C       		.sleb128 -20
  2785 0507 0F       		.uleb128 0xf
- 2786 0508 BA040000 		.4byte	.LASF40
+ 2786 0508 6C040000 		.4byte	.LASF40
  2787 050c 01       		.byte	0x1
  2788 050d 8F02     		.2byte	0x28f
  2789 050f 6B000000 		.4byte	0x6b
@@ -4437,8 +4437,8 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2791 0514 91       		.byte	0x91
  2792 0515 77       		.sleb128 -9
  2793 0516 0F       		.uleb128 0xf
- 2794 0517 86020000 		.4byte	.LASF58
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 75
+ 2794 0517 3E020000 		.4byte	.LASF58
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 75
 
 
  2795 051b 01       		.byte	0x1
@@ -4449,7 +4449,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2800 0524 76       		.sleb128 -10
  2801 0525 00       		.byte	0
  2802 0526 11       		.uleb128 0x11
- 2803 0527 74010000 		.4byte	.LASF59
+ 2803 0527 2C010000 		.4byte	.LASF59
  2804 052b 01       		.byte	0x1
  2805 052c 0103     		.2byte	0x301
  2806 052e 6B000000 		.4byte	0x6b
@@ -4467,7 +4467,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2818 054d 91       		.byte	0x91
  2819 054e 6F       		.sleb128 -17
  2820 054f 0F       		.uleb128 0xf
- 2821 0550 BA040000 		.4byte	.LASF40
+ 2821 0550 6C040000 		.4byte	.LASF40
  2822 0554 01       		.byte	0x1
  2823 0555 0303     		.2byte	0x303
  2824 0557 6B000000 		.4byte	0x6b
@@ -4476,7 +4476,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2827 055d 77       		.sleb128 -9
  2828 055e 00       		.byte	0
  2829 055f 11       		.uleb128 0x11
- 2830 0560 D5010000 		.4byte	.LASF61
+ 2830 0560 8D010000 		.4byte	.LASF61
  2831 0564 01       		.byte	0x1
  2832 0565 4B03     		.2byte	0x34b
  2833 0567 6B000000 		.4byte	0x6b
@@ -4494,11 +4494,11 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2845 0586 91       		.byte	0x91
  2846 0587 6F       		.sleb128 -17
  2847 0588 0F       		.uleb128 0xf
- 2848 0589 BA040000 		.4byte	.LASF40
+ 2848 0589 6C040000 		.4byte	.LASF40
  2849 058d 01       		.byte	0x1
  2850 058e 4D03     		.2byte	0x34d
  2851 0590 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 76
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 76
 
 
  2852 0594 02       		.uleb128 0x2
@@ -4506,7 +4506,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2854 0596 77       		.sleb128 -9
  2855 0597 00       		.byte	0
  2856 0598 11       		.uleb128 0x11
- 2857 0599 5D010000 		.4byte	.LASF63
+ 2857 0599 15010000 		.4byte	.LASF63
  2858 059d 01       		.byte	0x1
  2859 059e AA03     		.2byte	0x3aa
  2860 05a0 6B000000 		.4byte	0x6b
@@ -4516,7 +4516,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2864 05ad 9C       		.byte	0x9c
  2865 05ae EF050000 		.4byte	0x5ef
  2866 05b2 12       		.uleb128 0x12
- 2867 05b3 33020000 		.4byte	.LASF64
+ 2867 05b3 EB010000 		.4byte	.LASF64
  2868 05b7 01       		.byte	0x1
  2869 05b8 AA03     		.2byte	0x3aa
  2870 05ba 6B000000 		.4byte	0x6b
@@ -4524,7 +4524,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2872 05bf 91       		.byte	0x91
  2873 05c0 6F       		.sleb128 -17
  2874 05c1 0F       		.uleb128 0xf
- 2875 05c2 0B020000 		.4byte	.LASF43
+ 2875 05c2 C3010000 		.4byte	.LASF43
  2876 05c6 01       		.byte	0x1
  2877 05c7 AD03     		.2byte	0x3ad
  2878 05c9 81000000 		.4byte	0x81
@@ -4532,7 +4532,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2880 05ce 91       		.byte	0x91
  2881 05cf 74       		.sleb128 -12
  2882 05d0 0F       		.uleb128 0xf
- 2883 05d1 BA040000 		.4byte	.LASF40
+ 2883 05d1 6C040000 		.4byte	.LASF40
  2884 05d5 01       		.byte	0x1
  2885 05d6 AF03     		.2byte	0x3af
  2886 05d8 6B000000 		.4byte	0x6b
@@ -4540,7 +4540,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2888 05dd 91       		.byte	0x91
  2889 05de 73       		.sleb128 -13
  2890 05df 0F       		.uleb128 0xf
- 2891 05e0 12010000 		.4byte	.LASF65
+ 2891 05e0 CA000000 		.4byte	.LASF65
  2892 05e4 01       		.byte	0x1
  2893 05e5 B003     		.2byte	0x3b0
  2894 05e7 6B000000 		.4byte	0x6b
@@ -4549,7 +4549,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2897 05ed 72       		.sleb128 -14
  2898 05ee 00       		.byte	0
  2899 05ef 11       		.uleb128 0x11
- 2900 05f0 C9000000 		.4byte	.LASF66
+ 2900 05f0 81000000 		.4byte	.LASF66
  2901 05f4 01       		.byte	0x1
  2902 05f5 1A04     		.2byte	0x41a
  2903 05f7 6B000000 		.4byte	0x6b
@@ -4558,11 +4558,11 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2906 0603 01       		.uleb128 0x1
  2907 0604 9C       		.byte	0x9c
  2908 0605 37060000 		.4byte	0x637
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 77
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 77
 
 
  2909 0609 12       		.uleb128 0x12
- 2910 060a 7E020000 		.4byte	.LASF67
+ 2910 060a 36020000 		.4byte	.LASF67
  2911 060e 01       		.byte	0x1
  2912 060f 1A04     		.2byte	0x41a
  2913 0611 37060000 		.4byte	0x637
@@ -4570,7 +4570,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2915 0616 91       		.byte	0x91
  2916 0617 6C       		.sleb128 -20
  2917 0618 12       		.uleb128 0x12
- 2918 0619 ED030000 		.4byte	.LASF68
+ 2918 0619 9F030000 		.4byte	.LASF68
  2919 061d 01       		.byte	0x1
  2920 061e 1A04     		.2byte	0x41a
  2921 0620 81000000 		.4byte	0x81
@@ -4578,7 +4578,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2923 0625 91       		.byte	0x91
  2924 0626 68       		.sleb128 -24
  2925 0627 0F       		.uleb128 0xf
- 2926 0628 BA040000 		.4byte	.LASF40
+ 2926 0628 6C040000 		.4byte	.LASF40
  2927 062c 01       		.byte	0x1
  2928 062d 1D04     		.2byte	0x41d
  2929 062f 6B000000 		.4byte	0x6b
@@ -4600,7 +4600,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2945 0652 9C       		.byte	0x9c
  2946 0653 76060000 		.4byte	0x676
  2947 0657 12       		.uleb128 0x12
- 2948 0658 AE010000 		.4byte	.LASF70
+ 2948 0658 66010000 		.4byte	.LASF70
  2949 065c 01       		.byte	0x1
  2950 065d 7604     		.2byte	0x476
  2951 065f 76000000 		.4byte	0x76
@@ -4608,7 +4608,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2953 0664 91       		.byte	0x91
  2954 0665 6E       		.sleb128 -18
  2955 0666 0F       		.uleb128 0xf
- 2956 0667 BA040000 		.4byte	.LASF40
+ 2956 0667 6C040000 		.4byte	.LASF40
  2957 066b 01       		.byte	0x1
  2958 066c 7804     		.2byte	0x478
  2959 066e 6B000000 		.4byte	0x6b
@@ -4617,8 +4617,8 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2962 0674 77       		.sleb128 -9
  2963 0675 00       		.byte	0
  2964 0676 15       		.uleb128 0x15
- 2965 0677 83040000 		.4byte	.LASF71
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 78
+ 2965 0677 35040000 		.4byte	.LASF71
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 78
 
 
  2966 067b 01       		.byte	0x1
@@ -4629,7 +4629,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2971 068a 01       		.uleb128 0x1
  2972 068b 9C       		.byte	0x9c
  2973 068c 15       		.uleb128 0x15
- 2974 068d C1040000 		.4byte	.LASF72
+ 2974 068d 73040000 		.4byte	.LASF72
  2975 0691 01       		.byte	0x1
  2976 0692 BF04     		.2byte	0x4bf
  2977 0694 6B000000 		.4byte	0x6b
@@ -4638,7 +4638,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2980 06a0 01       		.uleb128 0x1
  2981 06a1 9C       		.byte	0x9c
  2982 06a2 15       		.uleb128 0x15
- 2983 06a3 74030000 		.4byte	.LASF73
+ 2983 06a3 26030000 		.4byte	.LASF73
  2984 06a7 01       		.byte	0x1
  2985 06a8 DC04     		.2byte	0x4dc
  2986 06aa 6B000000 		.4byte	0x6b
@@ -4647,7 +4647,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2989 06b6 01       		.uleb128 0x1
  2990 06b7 9C       		.byte	0x9c
  2991 06b8 15       		.uleb128 0x15
- 2992 06b9 3E010000 		.4byte	.LASF74
+ 2992 06b9 F6000000 		.4byte	.LASF74
  2993 06bd 01       		.byte	0x1
  2994 06be F604     		.2byte	0x4f6
  2995 06c0 6B000000 		.4byte	0x6b
@@ -4656,7 +4656,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  2998 06cc 01       		.uleb128 0x1
  2999 06cd 9C       		.byte	0x9c
  3000 06ce 15       		.uleb128 0x15
- 3001 06cf 64020000 		.4byte	.LASF75
+ 3001 06cf 1C020000 		.4byte	.LASF75
  3002 06d3 01       		.byte	0x1
  3003 06d4 1105     		.2byte	0x511
  3004 06d6 6B000000 		.4byte	0x6b
@@ -4665,7 +4665,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3007 06e2 01       		.uleb128 0x1
  3008 06e3 9C       		.byte	0x9c
  3009 06e4 11       		.uleb128 0x11
- 3010 06e5 00010000 		.4byte	.LASF76
+ 3010 06e5 B8000000 		.4byte	.LASF76
  3011 06e9 01       		.byte	0x1
  3012 06ea 3005     		.2byte	0x530
  3013 06ec 6B000000 		.4byte	0x6b
@@ -4675,10 +4675,10 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3017 06f9 9C       		.byte	0x9c
  3018 06fa 1D070000 		.4byte	0x71d
  3019 06fe 12       		.uleb128 0x12
- 3020 06ff AE000000 		.4byte	.LASF77
+ 3020 06ff 66000000 		.4byte	.LASF77
  3021 0703 01       		.byte	0x1
  3022 0704 3005     		.2byte	0x530
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 79
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 79
 
 
  3023 0706 1D070000 		.4byte	0x71d
@@ -4686,7 +4686,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3025 070b 91       		.byte	0x91
  3026 070c 6C       		.sleb128 -20
  3027 070d 0F       		.uleb128 0xf
- 3028 070e BA040000 		.4byte	.LASF40
+ 3028 070e 6C040000 		.4byte	.LASF40
  3029 0712 01       		.byte	0x1
  3030 0713 3305     		.2byte	0x533
  3031 0715 6B000000 		.4byte	0x6b
@@ -4700,7 +4700,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3039 0723 0E       		.uleb128 0xe
  3040 0724 7E010000 		.4byte	0x17e
  3041 0728 11       		.uleb128 0x11
- 3042 0729 E7010000 		.4byte	.LASF78
+ 3042 0729 9F010000 		.4byte	.LASF78
  3043 072d 01       		.byte	0x1
  3044 072e 6905     		.2byte	0x569
  3045 0730 6B000000 		.4byte	0x6b
@@ -4710,7 +4710,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3049 073d 9C       		.byte	0x9c
  3050 073e 61070000 		.4byte	0x761
  3051 0742 12       		.uleb128 0x12
- 3052 0743 53040000 		.4byte	.LASF79
+ 3052 0743 05040000 		.4byte	.LASF79
  3053 0747 01       		.byte	0x1
  3054 0748 6905     		.2byte	0x569
  3055 074a 61070000 		.4byte	0x761
@@ -4718,7 +4718,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3057 074f 91       		.byte	0x91
  3058 0750 6C       		.sleb128 -20
  3059 0751 0F       		.uleb128 0xf
- 3060 0752 BA040000 		.4byte	.LASF40
+ 3060 0752 6C040000 		.4byte	.LASF40
  3061 0756 01       		.byte	0x1
  3062 0757 6C05     		.2byte	0x56c
  3063 0759 6B000000 		.4byte	0x6b
@@ -4732,13 +4732,13 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3071 0767 0E       		.uleb128 0xe
  3072 0768 B6010000 		.4byte	0x1b6
  3073 076c 16       		.uleb128 0x16
- 3074 076d A0000000 		.4byte	.LASF83
+ 3074 076d 58000000 		.4byte	.LASF83
  3075 0771 01       		.byte	0x1
  3076 0772 16       		.byte	0x16
  3077 0773 6B000000 		.4byte	0x6b
  3078 0777 05       		.uleb128 0x5
  3079 0778 03       		.byte	0x3
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 80
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 80
 
 
  3080 0779 00000000 		.4byte	CAN_1_initVar
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3134 0032 49       		.uleb128 0x49
  3135 0033 13       		.uleb128 0x13
  3136 0034 00       		.byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 81
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 81
 
 
  3137 0035 00       		.byte	0
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3191 006b 01       		.uleb128 0x1
  3192 006c 13       		.uleb128 0x13
  3193 006d 00       		.byte	0
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 82
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 82
 
 
  3194 006e 00       		.byte	0
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3248 00a5 00       		.byte	0
  3249 00a6 03       		.uleb128 0x3
  3250 00a7 08       		.uleb128 0x8
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 83
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 83
 
 
  3251 00a8 3A       		.uleb128 0x3a
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3305 00df 19       		.uleb128 0x19
  3306 00e0 01       		.uleb128 0x1
  3307 00e1 13       		.uleb128 0x13
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 84
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 84
 
 
  3308 00e2 00       		.byte	0
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3362 0119 13       		.uleb128 0x13
  3363 011a 02       		.uleb128 0x2
  3364 011b 18       		.uleb128 0x18
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 85
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 85
 
 
  3365 011c 00       		.byte	0
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3419              		.section	.debug_aranges,"",%progbits
  3420 0000 C4000000 		.4byte	0xc4
  3421 0004 0200     		.2byte	0x2
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 86
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 86
 
 
  3422 0006 00000000 		.4byte	.Ldebug_info0
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3476 0004 80000000 		.4byte	.LFE0
  3477 0008 00000000 		.4byte	.LFB1
  3478 000c 28010000 		.4byte	.LFE1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 87
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 87
 
 
  3479 0010 00000000 		.4byte	.LFB2
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3527      7400
  3528              	.LASF62:
  3529 000d 65646765 		.ascii	"edge\000"
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 88
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 88
 
 
  3529      00
@@ -5240,380 +5240,380 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 1
  3535      6720756E 
  3535      7369676E 
  3535      65642069 
- 3536              	.LASF82:
- 3537 0052 433A5C55 		.ascii	"C:\\Users\\plod1602\\Documents\\git\\module-gripper"
- 3537      73657273 
- 3537      5C706C6F 
- 3537      64313630 
- 3537      325C446F 
- 3538 0080 2D70736F 		.ascii	"-psoc\\module-gripper-psoc.cydsn\000"
- 3538      635C6D6F 
- 3538      64756C65 
- 3538      2D677269 
- 3538      70706572 
- 3539              	.LASF83:
- 3540 00a0 43414E5F 		.ascii	"CAN_1_initVar\000"
- 3540      315F696E 
- 3540      69745661 
- 3540      7200
- 3541              	.LASF77:
- 3542 00ae 7278436F 		.ascii	"rxConfig\000"
- 3542      6E666967 
- 3542      00
- 3543              	.LASF42:
- 3544 00b7 43414E5F 		.ascii	"CAN_1_Init\000"
- 3544      315F496E 
- 3544      697400
- 3545              	.LASF33:
- 3546 00c2 7278616D 		.ascii	"rxamrd\000"
- 3546      726400
- 3547              	.LASF66:
- 3548 00c9 43414E5F 		.ascii	"CAN_1_RXRegisterInit\000"
- 3548      315F5258 
- 3548      52656769 
- 3548      73746572 
- 3548      496E6974 
- 3549              	.LASF53:
- 3550 00de 62697472 		.ascii	"bitrate\000"
- 3550      61746500 
- 3551              	.LASF6:
- 3552 00e6 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 89
+ 3536              	.LASF28:
+ 3537 0052 7478636D 		.ascii	"txcmd\000"
+ 3537      6400
+ 3538              	.LASF83:
+ 3539 0058 43414E5F 		.ascii	"CAN_1_initVar\000"
+ 3539      315F696E 
+ 3539      69745661 
+ 3539      7200
+ 3540              	.LASF77:
+ 3541 0066 7278436F 		.ascii	"rxConfig\000"
+ 3541      6E666967 
+ 3541      00
+ 3542              	.LASF42:
+ 3543 006f 43414E5F 		.ascii	"CAN_1_Init\000"
+ 3543      315F496E 
+ 3543      697400
+ 3544              	.LASF33:
+ 3545 007a 7278616D 		.ascii	"rxamrd\000"
+ 3545      726400
+ 3546              	.LASF66:
+ 3547 0081 43414E5F 		.ascii	"CAN_1_RXRegisterInit\000"
+ 3547      315F5258 
+ 3547      52656769 
+ 3547      73746572 
+ 3547      496E6974 
+ 3548              	.LASF53:
+ 3549 0096 62697472 		.ascii	"bitrate\000"
+ 3549      61746500 
+ 3550              	.LASF6:
+ 3551 009e 6C6F6E67 		.ascii	"long long int\000"
+ 3551      206C6F6E 
+ 3551      6720696E 
+ 3551      7400
+ 3552              	.LASF0:
+ 3553 00ac 7369676E 		.ascii	"signed char\000"
+ 3553      65642063 
+ 3553      68617200 
+ 3554              	.LASF76:
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 89
 
 
- 3552      206C6F6E 
- 3552      6720696E 
- 3552      7400
- 3553              	.LASF0:
- 3554 00f4 7369676E 		.ascii	"signed char\000"
- 3554      65642063 
- 3554      68617200 
- 3555              	.LASF76:
- 3556 0100 43414E5F 		.ascii	"CAN_1_RxBufConfig\000"
- 3556      315F5278 
- 3556      42756643 
- 3556      6F6E6669 
- 3556      6700
- 3557              	.LASF65:
- 3558 0112 72756E53 		.ascii	"runState\000"
- 3558      74617465 
- 3558      00
- 3559              	.LASF47:
- 3560 011b 43414E5F 		.ascii	"CAN_1_Start\000"
- 3560      315F5374 
- 3560      61727400 
- 3561              	.LASF50:
- 3562 0127 43414E5F 		.ascii	"CAN_1_GlobalIntDisable\000"
- 3562      315F476C 
- 3562      6F62616C 
- 3562      496E7444 
- 3562      69736162 
- 3563              	.LASF74:
- 3564 013e 43414E5F 		.ascii	"CAN_1_GetRXErrorCount\000"
- 3564      315F4765 
- 3564      74525845 
- 3564      72726F72 
- 3564      436F756E 
- 3565              	.LASF4:
- 3566 0154 6C6F6E67 		.ascii	"long int\000"
- 3566      20696E74 
- 3566      00
- 3567              	.LASF63:
- 3568 015d 43414E5F 		.ascii	"CAN_1_SetOpMode\000"
- 3568      315F5365 
- 3568      744F704D 
- 3568      6F646500 
- 3569              	.LASF32:
- 3570 016d 72786461 		.ascii	"rxdata\000"
- 3570      746100
- 3571              	.LASF59:
- 3572 0174 43414E5F 		.ascii	"CAN_1_SetRestartType\000"
- 3572      315F5365 
- 3572      74526573 
- 3572      74617274 
- 3572      54797065 
- 3573              	.LASF16:
- 3574 0189 72656731 		.ascii	"reg16\000"
- 3574      3600
- 3575              	.LASF9:
- 3576 018f 75696E74 		.ascii	"uint8\000"
- 3576      3800
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 90
+ 3555 00b8 43414E5F 		.ascii	"CAN_1_RxBufConfig\000"
+ 3555      315F5278 
+ 3555      42756643 
+ 3555      6F6E6669 
+ 3555      6700
+ 3556              	.LASF65:
+ 3557 00ca 72756E53 		.ascii	"runState\000"
+ 3557      74617465 
+ 3557      00
+ 3558              	.LASF47:
+ 3559 00d3 43414E5F 		.ascii	"CAN_1_Start\000"
+ 3559      315F5374 
+ 3559      61727400 
+ 3560              	.LASF50:
+ 3561 00df 43414E5F 		.ascii	"CAN_1_GlobalIntDisable\000"
+ 3561      315F476C 
+ 3561      6F62616C 
+ 3561      496E7444 
+ 3561      69736162 
+ 3562              	.LASF74:
+ 3563 00f6 43414E5F 		.ascii	"CAN_1_GetRXErrorCount\000"
+ 3563      315F4765 
+ 3563      74525845 
+ 3563      72726F72 
+ 3563      436F756E 
+ 3564              	.LASF4:
+ 3565 010c 6C6F6E67 		.ascii	"long int\000"
+ 3565      20696E74 
+ 3565      00
+ 3566              	.LASF63:
+ 3567 0115 43414E5F 		.ascii	"CAN_1_SetOpMode\000"
+ 3567      315F5365 
+ 3567      744F704D 
+ 3567      6F646500 
+ 3568              	.LASF32:
+ 3569 0125 72786461 		.ascii	"rxdata\000"
+ 3569      746100
+ 3570              	.LASF59:
+ 3571 012c 43414E5F 		.ascii	"CAN_1_SetRestartType\000"
+ 3571      315F5365 
+ 3571      74526573 
+ 3571      74617274 
+ 3571      54797065 
+ 3572              	.LASF16:
+ 3573 0141 72656731 		.ascii	"reg16\000"
+ 3573      3600
+ 3574              	.LASF9:
+ 3575 0147 75696E74 		.ascii	"uint8\000"
+ 3575      3800
+ 3576              	.LASF24:
+ 3577 014d 7278616D 		.ascii	"rxamr\000"
+ 3577      7200
+ 3578              	.LASF13:
+ 3579 0153 646F7562 		.ascii	"double\000"
+ 3579      6C6500
+ 3580              	.LASF11:
+ 3581 015a 75696E74 		.ascii	"uint32\000"
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 90
 
 
- 3577              	.LASF24:
- 3578 0195 7278616D 		.ascii	"rxamr\000"
- 3578      7200
- 3579              	.LASF13:
- 3580 019b 646F7562 		.ascii	"double\000"
- 3580      6C6500
- 3581              	.LASF11:
- 3582 01a2 75696E74 		.ascii	"uint32\000"
- 3582      333200
- 3583              	.LASF20:
- 3584 01a9 62797465 		.ascii	"byte\000"
- 3584      00
- 3585              	.LASF70:
- 3586 01ae 6D61736B 		.ascii	"mask\000"
- 3586      00
- 3587              	.LASF39:
- 3588 01b3 43414E5F 		.ascii	"CAN_1_TXConfigStruct\000"
- 3588      315F5458 
- 3588      436F6E66 
- 3588      69675374 
- 3588      72756374 
- 3589              	.LASF8:
- 3590 01c8 756E7369 		.ascii	"unsigned int\000"
- 3590      676E6564 
- 3590      20696E74 
- 3590      00
- 3591              	.LASF61:
- 3592 01d5 43414E5F 		.ascii	"CAN_1_SetEdgeMode\000"
- 3592      315F5365 
- 3592      74456467 
- 3592      654D6F64 
- 3592      6500
- 3593              	.LASF78:
- 3594 01e7 43414E5F 		.ascii	"CAN_1_TxBufConfig\000"
- 3594      315F5478 
- 3594      42756643 
- 3594      6F6E6669 
- 3594      6700
- 3595              	.LASF5:
- 3596 01f9 6C6F6E67 		.ascii	"long unsigned int\000"
- 3596      20756E73 
- 3596      69676E65 
- 3596      6420696E 
- 3596      7400
- 3597              	.LASF43:
- 3598 020b 74696D65 		.ascii	"timeout\000"
- 3598      6F757400 
- 3599              	.LASF26:
- 3600 0213 43414E5F 		.ascii	"CAN_1_RX_CFG\000"
- 3600      315F5258 
- 3600      5F434647 
- 3600      00
- 3601              	.LASF3:
- 3602 0220 73686F72 		.ascii	"short unsigned int\000"
- 3602      7420756E 
- 3602      7369676E 
- 3602      65642069 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 91
+ 3581      333200
+ 3582              	.LASF20:
+ 3583 0161 62797465 		.ascii	"byte\000"
+ 3583      00
+ 3584              	.LASF70:
+ 3585 0166 6D61736B 		.ascii	"mask\000"
+ 3585      00
+ 3586              	.LASF39:
+ 3587 016b 43414E5F 		.ascii	"CAN_1_TXConfigStruct\000"
+ 3587      315F5458 
+ 3587      436F6E66 
+ 3587      69675374 
+ 3587      72756374 
+ 3588              	.LASF8:
+ 3589 0180 756E7369 		.ascii	"unsigned int\000"
+ 3589      676E6564 
+ 3589      20696E74 
+ 3589      00
+ 3590              	.LASF61:
+ 3591 018d 43414E5F 		.ascii	"CAN_1_SetEdgeMode\000"
+ 3591      315F5365 
+ 3591      74456467 
+ 3591      654D6F64 
+ 3591      6500
+ 3592              	.LASF78:
+ 3593 019f 43414E5F 		.ascii	"CAN_1_TxBufConfig\000"
+ 3593      315F5478 
+ 3593      42756643 
+ 3593      6F6E6669 
+ 3593      6700
+ 3594              	.LASF5:
+ 3595 01b1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3595      20756E73 
+ 3595      69676E65 
+ 3595      6420696E 
+ 3595      7400
+ 3596              	.LASF43:
+ 3597 01c3 74696D65 		.ascii	"timeout\000"
+ 3597      6F757400 
+ 3598              	.LASF26:
+ 3599 01cb 43414E5F 		.ascii	"CAN_1_RX_CFG\000"
+ 3599      315F5258 
+ 3599      5F434647 
+ 3599      00
+ 3600              	.LASF3:
+ 3601 01d8 73686F72 		.ascii	"short unsigned int\000"
+ 3601      7420756E 
+ 3601      7369676E 
+ 3601      65642069 
+ 3601      6E7400
+ 3602              	.LASF64:
+ 3603 01eb 6F704D6F 		.ascii	"opMode\000"
+ 3603      646500
+ 3604              	.LASF49:
+ 3605 01f2 43414E5F 		.ascii	"CAN_1_GlobalIntEnable\000"
+ 3605      315F476C 
+ 3605      6F62616C 
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 91
 
 
- 3602      6E7400
- 3603              	.LASF64:
- 3604 0233 6F704D6F 		.ascii	"opMode\000"
- 3604      646500
- 3605              	.LASF49:
- 3606 023a 43414E5F 		.ascii	"CAN_1_GlobalIntEnable\000"
- 3606      315F476C 
- 3606      6F62616C 
- 3606      496E7445 
- 3606      6E61626C 
- 3607              	.LASF36:
- 3608 0250 74786461 		.ascii	"txdata\000"
- 3608      746100
- 3609              	.LASF21:
- 3610 0257 43414E5F 		.ascii	"CAN_1_REG_32\000"
- 3610      315F5245 
- 3610      475F3332 
- 3610      00
- 3611              	.LASF75:
- 3612 0264 43414E5F 		.ascii	"CAN_1_GetErrorState\000"
- 3612      315F4765 
- 3612      74457272 
- 3612      6F725374 
- 3612      61746500 
- 3613              	.LASF17:
- 3614 0278 72656733 		.ascii	"reg32\000"
- 3614      3200
- 3615              	.LASF67:
- 3616 027e 72656741 		.ascii	"regAddr\000"
- 3616      64647200 
- 3617              	.LASF58:
- 3618 0286 63666754 		.ascii	"cfgTemp\000"
- 3618      656D7000 
- 3619              	.LASF22:
- 3620 028e 72786D61 		.ascii	"rxmailbox\000"
- 3620      696C626F 
- 3620      7800
- 3621              	.LASF18:
- 3622 0298 73697A65 		.ascii	"sizetype\000"
- 3622      74797065 
- 3622      00
- 3623              	.LASF51:
- 3624 02a1 43414E5F 		.ascii	"CAN_1_SetPreScaler\000"
- 3624      315F5365 
- 3624      74507265 
- 3624      5363616C 
- 3624      657200
- 3625              	.LASF19:
- 3626 02b4 43414E5F 		.ascii	"CAN_1_DATA_BYTES\000"
- 3626      315F4441 
- 3626      54415F42 
- 3626      59544553 
- 3626      00
- 3627              	.LASF35:
- 3628 02c5 43414E5F 		.ascii	"CAN_1_RX_STRUCT\000"
- 3628      315F5258 
- 3628      5F535452 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 92
+ 3605      496E7445 
+ 3605      6E61626C 
+ 3606              	.LASF36:
+ 3607 0208 74786461 		.ascii	"txdata\000"
+ 3607      746100
+ 3608              	.LASF21:
+ 3609 020f 43414E5F 		.ascii	"CAN_1_REG_32\000"
+ 3609      315F5245 
+ 3609      475F3332 
+ 3609      00
+ 3610              	.LASF75:
+ 3611 021c 43414E5F 		.ascii	"CAN_1_GetErrorState\000"
+ 3611      315F4765 
+ 3611      74457272 
+ 3611      6F725374 
+ 3611      61746500 
+ 3612              	.LASF17:
+ 3613 0230 72656733 		.ascii	"reg32\000"
+ 3613      3200
+ 3614              	.LASF67:
+ 3615 0236 72656741 		.ascii	"regAddr\000"
+ 3615      64647200 
+ 3616              	.LASF58:
+ 3617 023e 63666754 		.ascii	"cfgTemp\000"
+ 3617      656D7000 
+ 3618              	.LASF22:
+ 3619 0246 72786D61 		.ascii	"rxmailbox\000"
+ 3619      696C626F 
+ 3619      7800
+ 3620              	.LASF18:
+ 3621 0250 73697A65 		.ascii	"sizetype\000"
+ 3621      74797065 
+ 3621      00
+ 3622              	.LASF51:
+ 3623 0259 43414E5F 		.ascii	"CAN_1_SetPreScaler\000"
+ 3623      315F5365 
+ 3623      74507265 
+ 3623      5363616C 
+ 3623      657200
+ 3624              	.LASF19:
+ 3625 026c 43414E5F 		.ascii	"CAN_1_DATA_BYTES\000"
+ 3625      315F4441 
+ 3625      54415F42 
+ 3625      59544553 
+ 3625      00
+ 3626              	.LASF35:
+ 3627 027d 43414E5F 		.ascii	"CAN_1_RX_STRUCT\000"
+ 3627      315F5258 
+ 3627      5F535452 
+ 3627      55435400 
+ 3628              	.LASF31:
+ 3629 028d 72786964 		.ascii	"rxid\000"
+ 3629      00
+ 3630              	.LASF80:
+ 3631 0292 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 3631      4320342E 
+ 3631      392E3320 
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 92
 
 
- 3628      55435400 
- 3629              	.LASF28:
- 3630 02d5 7478636D 		.ascii	"txcmd\000"
- 3630      6400
- 3631              	.LASF31:
- 3632 02db 72786964 		.ascii	"rxid\000"
- 3632      00
- 3633              	.LASF80:
- 3634 02e0 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 3634      4320342E 
- 3634      392E3320 
- 3634      32303135 
- 3634      30333033 
- 3635 0313 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 3635      20726576 
- 3635      6973696F 
- 3635      6E203232 
- 3635      31323230 
- 3636 0346 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 3636      66756E63 
- 3636      74696F6E 
- 3636      2D736563 
- 3636      74696F6E 
- 3637              	.LASF12:
- 3638 036e 666C6F61 		.ascii	"float\000"
- 3638      7400
- 3639              	.LASF73:
- 3640 0374 43414E5F 		.ascii	"CAN_1_GetTXErrorCount\000"
- 3640      315F4765 
- 3640      74545845 
- 3640      72726F72 
- 3640      436F756E 
- 3641              	.LASF38:
- 3642 038a 43414E5F 		.ascii	"CAN_1_RXConfigStruct\000"
- 3642      315F5258 
- 3642      436F6E66 
- 3642      69675374 
- 3642      72756374 
- 3643              	.LASF15:
- 3644 039f 72656738 		.ascii	"reg8\000"
- 3644      00
- 3645              	.LASF46:
- 3646 03a4 43414E5F 		.ascii	"CAN_1_Enable\000"
- 3646      315F456E 
- 3646      61626C65 
- 3646      00
- 3647              	.LASF1:
- 3648 03b1 756E7369 		.ascii	"unsigned char\000"
- 3648      676E6564 
- 3648      20636861 
- 3648      7200
- 3649              	.LASF2:
- 3650 03bf 73686F72 		.ascii	"short int\000"
- 3650      7420696E 
- 3650      7400
- 3651              	.LASF48:
- 3652 03c9 43414E5F 		.ascii	"CAN_1_Stop\000"
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 93
+ 3631      32303135 
+ 3631      30333033 
+ 3632 02c5 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 3632      20726576 
+ 3632      6973696F 
+ 3632      6E203232 
+ 3632      31323230 
+ 3633 02f8 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 3633      66756E63 
+ 3633      74696F6E 
+ 3633      2D736563 
+ 3633      74696F6E 
+ 3634              	.LASF12:
+ 3635 0320 666C6F61 		.ascii	"float\000"
+ 3635      7400
+ 3636              	.LASF73:
+ 3637 0326 43414E5F 		.ascii	"CAN_1_GetTXErrorCount\000"
+ 3637      315F4765 
+ 3637      74545845 
+ 3637      72726F72 
+ 3637      436F756E 
+ 3638              	.LASF38:
+ 3639 033c 43414E5F 		.ascii	"CAN_1_RXConfigStruct\000"
+ 3639      315F5258 
+ 3639      436F6E66 
+ 3639      69675374 
+ 3639      72756374 
+ 3640              	.LASF15:
+ 3641 0351 72656738 		.ascii	"reg8\000"
+ 3641      00
+ 3642              	.LASF46:
+ 3643 0356 43414E5F 		.ascii	"CAN_1_Enable\000"
+ 3643      315F456E 
+ 3643      61626C65 
+ 3643      00
+ 3644              	.LASF1:
+ 3645 0363 756E7369 		.ascii	"unsigned char\000"
+ 3645      676E6564 
+ 3645      20636861 
+ 3645      7200
+ 3646              	.LASF2:
+ 3647 0371 73686F72 		.ascii	"short int\000"
+ 3647      7420696E 
+ 3647      7400
+ 3648              	.LASF48:
+ 3649 037b 43414E5F 		.ascii	"CAN_1_Stop\000"
+ 3649      315F5374 
+ 3649      6F7000
+ 3650              	.LASF14:
+ 3651 0386 63686172 		.ascii	"char\000"
+ 3651      00
+ 3652              	.LASF55:
+ 3653 038b 43414E5F 		.ascii	"CAN_1_SetTsegSample\000"
+ 3653      315F5365 
+ 3653      74547365 
+ 3653      6753616D 
+ 3653      706C6500 
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 93
 
 
- 3652      315F5374 
- 3652      6F7000
- 3653              	.LASF14:
- 3654 03d4 63686172 		.ascii	"char\000"
- 3654      00
- 3655              	.LASF55:
- 3656 03d9 43414E5F 		.ascii	"CAN_1_SetTsegSample\000"
- 3656      315F5365 
- 3656      74547365 
- 3656      6753616D 
- 3656      706C6500 
- 3657              	.LASF68:
- 3658 03ed 636F6E66 		.ascii	"config\000"
- 3658      696700
- 3659              	.LASF44:
- 3660 03f4 6C6F6361 		.ascii	"localResult\000"
- 3660      6C526573 
- 3660      756C7400 
- 3661              	.LASF27:
- 3662 0400 74786D61 		.ascii	"txmailbox\000"
- 3662      696C626F 
- 3662      7800
- 3663              	.LASF56:
- 3664 040a 63666754 		.ascii	"cfgTseg1\000"
- 3664      73656731 
- 3664      00
- 3665              	.LASF57:
- 3666 0413 63666754 		.ascii	"cfgTseg2\000"
- 3666      73656732 
- 3666      00
- 3667              	.LASF81:
- 3668 041c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\CAN_1.c\000"
- 3668      6E657261 
- 3668      7465645F 
- 3668      536F7572 
- 3668      63655C50 
- 3669              	.LASF37:
- 3670 043d 43414E5F 		.ascii	"CAN_1_TX_STRUCT\000"
- 3670      315F5458 
- 3670      5F535452 
- 3670      55435400 
- 3671              	.LASF23:
- 3672 044d 7278636D 		.ascii	"rxcmd\000"
- 3672      6400
- 3673              	.LASF79:
- 3674 0453 7478436F 		.ascii	"txConfig\000"
- 3674      6E666967 
- 3674      00
- 3675              	.LASF52:
- 3676 045c 43414E5F 		.ascii	"CAN_1_SetArbiter\000"
- 3676      315F5365 
- 3676      74417262 
- 3676      69746572 
- 3676      00
- 3677              	.LASF45:
- 3678 046d 656E6162 		.ascii	"enableInterrupts\000"
- 3678      6C65496E 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccLBraVE.s 			page 94
+ 3654              	.LASF68:
+ 3655 039f 636F6E66 		.ascii	"config\000"
+ 3655      696700
+ 3656              	.LASF44:
+ 3657 03a6 6C6F6361 		.ascii	"localResult\000"
+ 3657      6C526573 
+ 3657      756C7400 
+ 3658              	.LASF27:
+ 3659 03b2 74786D61 		.ascii	"txmailbox\000"
+ 3659      696C626F 
+ 3659      7800
+ 3660              	.LASF56:
+ 3661 03bc 63666754 		.ascii	"cfgTseg1\000"
+ 3661      73656731 
+ 3661      00
+ 3662              	.LASF57:
+ 3663 03c5 63666754 		.ascii	"cfgTseg2\000"
+ 3663      73656732 
+ 3663      00
+ 3664              	.LASF81:
+ 3665 03ce 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\CAN_1.c\000"
+ 3665      6E657261 
+ 3665      7465645F 
+ 3665      536F7572 
+ 3665      63655C50 
+ 3666              	.LASF37:
+ 3667 03ef 43414E5F 		.ascii	"CAN_1_TX_STRUCT\000"
+ 3667      315F5458 
+ 3667      5F535452 
+ 3667      55435400 
+ 3668              	.LASF23:
+ 3669 03ff 7278636D 		.ascii	"rxcmd\000"
+ 3669      6400
+ 3670              	.LASF79:
+ 3671 0405 7478436F 		.ascii	"txConfig\000"
+ 3671      6E666967 
+ 3671      00
+ 3672              	.LASF52:
+ 3673 040e 43414E5F 		.ascii	"CAN_1_SetArbiter\000"
+ 3673      315F5365 
+ 3673      74417262 
+ 3673      69746572 
+ 3673      00
+ 3674              	.LASF45:
+ 3675 041f 656E6162 		.ascii	"enableInterrupts\000"
+ 3675      6C65496E 
+ 3675      74657272 
+ 3675      75707473 
+ 3675      00
+ 3676              	.LASF29:
+ 3677 0430 74786964 		.ascii	"txid\000"
+ 3677      00
+ 3678              	.LASF71:
+ 3679 0435 43414E5F 		.ascii	"CAN_1_GetTXErrorFlag\000"
+ 3679      315F4765 
+ 3679      74545845 
+ 3679      72726F72 
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccwmL0Ba.s 			page 94
 
 
- 3678      74657272 
- 3678      75707473 
- 3678      00
- 3679              	.LASF29:
- 3680 047e 74786964 		.ascii	"txid\000"
- 3680      00
- 3681              	.LASF71:
- 3682 0483 43414E5F 		.ascii	"CAN_1_GetTXErrorFlag\000"
- 3682      315F4765 
- 3682      74545845 
- 3682      72726F72 
- 3682      466C6167 
- 3683              	.LASF25:
- 3684 0498 72786163 		.ascii	"rxacr\000"
- 3684      7200
- 3685              	.LASF30:
- 3686 049e 43414E5F 		.ascii	"CAN_1_TX_CFG\000"
- 3686      315F5458 
- 3686      5F434647 
- 3686      00
- 3687              	.LASF54:
- 3688 04ab 61726269 		.ascii	"arbiter\000"
- 3688      74657200 
- 3689              	.LASF34:
- 3690 04b3 72786163 		.ascii	"rxacrd\000"
- 3690      726400
- 3691              	.LASF40:
- 3692 04ba 72657375 		.ascii	"result\000"
- 3692      6C7400
- 3693              	.LASF72:
- 3694 04c1 43414E5F 		.ascii	"CAN_1_GetRXErrorFlag\000"
- 3694      315F4765 
- 3694      74525845 
- 3694      72726F72 
- 3694      466C6167 
+ 3679      466C6167 
+ 3680              	.LASF25:
+ 3681 044a 72786163 		.ascii	"rxacr\000"
+ 3681      7200
+ 3682              	.LASF30:
+ 3683 0450 43414E5F 		.ascii	"CAN_1_TX_CFG\000"
+ 3683      315F5458 
+ 3683      5F434647 
+ 3683      00
+ 3684              	.LASF54:
+ 3685 045d 61726269 		.ascii	"arbiter\000"
+ 3685      74657200 
+ 3686              	.LASF34:
+ 3687 0465 72786163 		.ascii	"rxacrd\000"
+ 3687      726400
+ 3688              	.LASF40:
+ 3689 046c 72657375 		.ascii	"result\000"
+ 3689      6C7400
+ 3690              	.LASF72:
+ 3691 0473 43414E5F 		.ascii	"CAN_1_GetRXErrorFlag\000"
+ 3691      315F4765 
+ 3691      74525845 
+ 3691      72726F72 
+ 3691      466C6167 
+ 3692              	.LASF82:
+ 3693 0488 433A5C55 		.ascii	"C:\\Users\\Guillaume\\Documents\\Projects\\Biobot\\"
+ 3693      73657273 
+ 3693      5C477569 
+ 3693      6C6C6175 
+ 3693      6D655C44 
+ 3694 04b5 47726970 		.ascii	"Gripper\\module-gripper-psoc.cydsn\000"
+ 3694      7065725C 
+ 3694      6D6F6475 
+ 3694      6C652D67 
+ 3694      72697070 
  3695              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

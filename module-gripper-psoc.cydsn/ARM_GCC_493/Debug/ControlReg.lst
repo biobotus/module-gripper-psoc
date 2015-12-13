@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccPrRp0R.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
   29:.\Generated_Source\PSoC5/ControlReg.c **** *
   30:.\Generated_Source\PSoC5/ControlReg.c **** * Parameters:
   31:.\Generated_Source\PSoC5/ControlReg.c **** *  control:  The value to be assigned to the Control Register.
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 2
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccPrRp0R.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/ControlReg.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
   43:.\Generated_Source\PSoC5/ControlReg.c **** /*******************************************************************************
   44:.\Generated_Source\PSoC5/ControlReg.c **** * Function Name: ControlReg_Read
   45:.\Generated_Source\PSoC5/ControlReg.c **** ********************************************************************************
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 3
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccPrRp0R.s 			page 3
 
 
   46:.\Generated_Source\PSoC5/ControlReg.c **** *
@@ -176,48 +176,48 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
  107 0006 00000000 		.4byte	.Ldebug_abbrev0
  108 000a 04       		.byte	0x4
  109 000b 01       		.uleb128 0x1
- 110 000c 4E000000 		.4byte	.LASF14
+ 110 000c 00000000 		.4byte	.LASF14
  111 0010 01       		.byte	0x1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 4
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccPrRp0R.s 			page 4
 
 
- 112 0011 A6010000 		.4byte	.LASF15
- 113 0015 00000000 		.4byte	.LASF16
+ 112 0011 A7010000 		.4byte	.LASF15
+ 113 0015 32010000 		.4byte	.LASF16
  114 0019 00000000 		.4byte	.Ldebug_ranges0+0
  115 001d 00000000 		.4byte	0
  116 0021 00000000 		.4byte	.Ldebug_line0
  117 0025 02       		.uleb128 0x2
  118 0026 01       		.byte	0x1
  119 0027 06       		.byte	0x6
- 120 0028 9A010000 		.4byte	.LASF0
+ 120 0028 9B010000 		.4byte	.LASF0
  121 002c 02       		.uleb128 0x2
  122 002d 01       		.byte	0x1
  123 002e 08       		.byte	0x8
- 124 002f F2000000 		.4byte	.LASF1
+ 124 002f A4000000 		.4byte	.LASF1
  125 0033 02       		.uleb128 0x2
  126 0034 02       		.byte	0x2
  127 0035 05       		.byte	0x5
- 128 0036 70010000 		.4byte	.LASF2
+ 128 0036 22010000 		.4byte	.LASF2
  129 003a 02       		.uleb128 0x2
  130 003b 02       		.byte	0x2
  131 003c 07       		.byte	0x7
- 132 003d 17010000 		.4byte	.LASF3
+ 132 003d C9000000 		.4byte	.LASF3
  133 0041 02       		.uleb128 0x2
  134 0042 04       		.byte	0x4
  135 0043 05       		.byte	0x5
- 136 0044 91010000 		.4byte	.LASF4
+ 136 0044 92010000 		.4byte	.LASF4
  137 0048 02       		.uleb128 0x2
  138 0049 04       		.byte	0x4
  139 004a 07       		.byte	0x7
- 140 004b 05010000 		.4byte	.LASF5
+ 140 004b B7000000 		.4byte	.LASF5
  141 004f 02       		.uleb128 0x2
  142 0050 08       		.byte	0x8
  143 0051 05       		.byte	0x5
- 144 0052 5D010000 		.4byte	.LASF6
+ 144 0052 0F010000 		.4byte	.LASF6
  145 0056 02       		.uleb128 0x2
  146 0057 08       		.byte	0x8
  147 0058 07       		.byte	0x7
- 148 0059 46010000 		.4byte	.LASF7
+ 148 0059 F8000000 		.4byte	.LASF7
  149 005d 03       		.uleb128 0x3
  150 005e 04       		.byte	0x4
  151 005f 05       		.byte	0x5
@@ -225,36 +225,36 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
  153 0064 02       		.uleb128 0x2
  154 0065 04       		.byte	0x4
  155 0066 07       		.byte	0x7
- 156 0067 39010000 		.4byte	.LASF8
+ 156 0067 EB000000 		.4byte	.LASF8
  157 006b 04       		.uleb128 0x4
- 158 006c 7A010000 		.4byte	.LASF12
+ 158 006c 2C010000 		.4byte	.LASF12
  159 0070 02       		.byte	0x2
  160 0071 A1       		.byte	0xa1
  161 0072 2C000000 		.4byte	0x2c
  162 0076 02       		.uleb128 0x2
  163 0077 04       		.byte	0x4
  164 0078 04       		.byte	0x4
- 165 0079 EC000000 		.4byte	.LASF9
+ 165 0079 9E000000 		.4byte	.LASF9
  166 007d 02       		.uleb128 0x2
  167 007e 08       		.byte	0x8
  168 007f 04       		.byte	0x4
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 5
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccPrRp0R.s 			page 5
 
 
- 169 0080 32010000 		.4byte	.LASF10
+ 169 0080 E4000000 		.4byte	.LASF10
  170 0084 02       		.uleb128 0x2
  171 0085 01       		.byte	0x1
  172 0086 08       		.byte	0x8
- 173 0087 6B010000 		.4byte	.LASF11
+ 173 0087 1D010000 		.4byte	.LASF11
  174 008b 05       		.uleb128 0x5
- 175 008c 00010000 		.4byte	.LASF13
+ 175 008c B2000000 		.4byte	.LASF13
  176 0090 02       		.byte	0x2
  177 0091 4B01     		.2byte	0x14b
  178 0093 97000000 		.4byte	0x97
  179 0097 06       		.uleb128 0x6
  180 0098 6B000000 		.4byte	0x6b
  181 009c 07       		.uleb128 0x7
- 182 009d 80010000 		.4byte	.LASF17
+ 182 009d 81010000 		.4byte	.LASF17
  183 00a1 01       		.byte	0x1
  184 00a2 25       		.byte	0x25
  185 00a3 00000000 		.4byte	.LFB0
@@ -263,7 +263,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
  188 00ac 9C       		.byte	0x9c
  189 00ad C0000000 		.4byte	0xc0
  190 00b1 08       		.uleb128 0x8
- 191 00b2 2A010000 		.4byte	.LASF18
+ 191 00b2 DC000000 		.4byte	.LASF18
  192 00b6 01       		.byte	0x1
  193 00b7 25       		.byte	0x25
  194 00b8 6B000000 		.4byte	0x6b
@@ -272,7 +272,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
  197 00be 77       		.sleb128 -9
  198 00bf 00       		.byte	0
  199 00c0 09       		.uleb128 0x9
- 200 00c1 DC000000 		.4byte	.LASF19
+ 200 00c1 8E000000 		.4byte	.LASF19
  201 00c5 01       		.byte	0x1
  202 00c6 39       		.byte	0x39
  203 00c7 6B000000 		.4byte	0x6b
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
  223 000c 17       		.uleb128 0x17
  224 000d 11       		.uleb128 0x11
  225 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 6
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccPrRp0R.s 			page 6
 
 
  226 000f 10       		.uleb128 0x10
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
  280 0045 00       		.byte	0
  281 0046 49       		.uleb128 0x49
  282 0047 13       		.uleb128 0x13
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 7
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccPrRp0R.s 			page 7
 
 
  283 0048 00       		.byte	0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
  337 007f 19       		.uleb128 0x19
  338 0080 49       		.uleb128 0x49
  339 0081 13       		.uleb128 0x13
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 8
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccPrRp0R.s 			page 8
 
 
  340 0082 11       		.uleb128 0x11
@@ -461,115 +461,115 @@ ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 1
  375      00000201 
  375      FB0E0D00 
  375      01010101 
- 376              	.LASF16:
- 377 0000 433A5C55 		.ascii	"C:\\Users\\plod1602\\Documents\\git\\module-gripper"
- 377      73657273 
- 377      5C706C6F 
- 377      64313630 
- 377      325C446F 
- 378 002e 2D70736F 		.ascii	"-psoc\\module-gripper-psoc.cydsn\000"
- 378      635C6D6F 
- 378      64756C65 
- 378      2D677269 
- 378      70706572 
- 379              	.LASF14:
- 380 004e 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 380      4320342E 
- 380      392E3320 
- 380      32303135 
- 380      30333033 
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 9
+ 376              	.LASF14:
+ 377 0000 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 377      4320342E 
+ 377      392E3320 
+ 377      32303135 
+ 377      30333033 
+ 378 0033 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 378      20726576 
+ 378      6973696F 
+ 378      6E203232 
+ 378      31323230 
+ 379 0066 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 379      66756E63 
+ 379      74696F6E 
+ 379      2D736563 
+ 379      74696F6E 
+ 380              	.LASF19:
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccPrRp0R.s 			page 9
 
 
- 381 0081 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 381      20726576 
- 381      6973696F 
- 381      6E203232 
- 381      31323230 
- 382 00b4 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 382      66756E63 
- 382      74696F6E 
- 382      2D736563 
- 382      74696F6E 
- 383              	.LASF19:
- 384 00dc 436F6E74 		.ascii	"ControlReg_Read\000"
- 384      726F6C52 
- 384      65675F52 
- 384      65616400 
- 385              	.LASF9:
- 386 00ec 666C6F61 		.ascii	"float\000"
- 386      7400
- 387              	.LASF1:
- 388 00f2 756E7369 		.ascii	"unsigned char\000"
- 388      676E6564 
- 388      20636861 
- 388      7200
- 389              	.LASF13:
- 390 0100 72656738 		.ascii	"reg8\000"
- 390      00
- 391              	.LASF5:
- 392 0105 6C6F6E67 		.ascii	"long unsigned int\000"
- 392      20756E73 
- 392      69676E65 
- 392      6420696E 
- 392      7400
- 393              	.LASF3:
- 394 0117 73686F72 		.ascii	"short unsigned int\000"
- 394      7420756E 
- 394      7369676E 
- 394      65642069 
- 394      6E7400
- 395              	.LASF18:
- 396 012a 636F6E74 		.ascii	"control\000"
- 396      726F6C00 
- 397              	.LASF10:
- 398 0132 646F7562 		.ascii	"double\000"
- 398      6C6500
- 399              	.LASF8:
- 400 0139 756E7369 		.ascii	"unsigned int\000"
- 400      676E6564 
- 400      20696E74 
- 400      00
- 401              	.LASF7:
- 402 0146 6C6F6E67 		.ascii	"long long unsigned int\000"
- 402      206C6F6E 
- 402      6720756E 
- 402      7369676E 
- 402      65642069 
- 403              	.LASF6:
- 404 015d 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\plod1602\AppData\Local\Temp\ccIHh6EM.s 			page 10
+ 381 008e 436F6E74 		.ascii	"ControlReg_Read\000"
+ 381      726F6C52 
+ 381      65675F52 
+ 381      65616400 
+ 382              	.LASF9:
+ 383 009e 666C6F61 		.ascii	"float\000"
+ 383      7400
+ 384              	.LASF1:
+ 385 00a4 756E7369 		.ascii	"unsigned char\000"
+ 385      676E6564 
+ 385      20636861 
+ 385      7200
+ 386              	.LASF13:
+ 387 00b2 72656738 		.ascii	"reg8\000"
+ 387      00
+ 388              	.LASF5:
+ 389 00b7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 389      20756E73 
+ 389      69676E65 
+ 389      6420696E 
+ 389      7400
+ 390              	.LASF3:
+ 391 00c9 73686F72 		.ascii	"short unsigned int\000"
+ 391      7420756E 
+ 391      7369676E 
+ 391      65642069 
+ 391      6E7400
+ 392              	.LASF18:
+ 393 00dc 636F6E74 		.ascii	"control\000"
+ 393      726F6C00 
+ 394              	.LASF10:
+ 395 00e4 646F7562 		.ascii	"double\000"
+ 395      6C6500
+ 396              	.LASF8:
+ 397 00eb 756E7369 		.ascii	"unsigned int\000"
+ 397      676E6564 
+ 397      20696E74 
+ 397      00
+ 398              	.LASF7:
+ 399 00f8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 399      206C6F6E 
+ 399      6720756E 
+ 399      7369676E 
+ 399      65642069 
+ 400              	.LASF6:
+ 401 010f 6C6F6E67 		.ascii	"long long int\000"
+ 401      206C6F6E 
+ 401      6720696E 
+ 401      7400
+ 402              	.LASF11:
+ 403 011d 63686172 		.ascii	"char\000"
+ 403      00
+ 404              	.LASF2:
+ 405 0122 73686F72 		.ascii	"short int\000"
+ 405      7420696E 
+ 405      7400
+ 406              	.LASF12:
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccPrRp0R.s 			page 10
 
 
- 404      206C6F6E 
- 404      6720696E 
- 404      7400
- 405              	.LASF11:
- 406 016b 63686172 		.ascii	"char\000"
- 406      00
- 407              	.LASF2:
- 408 0170 73686F72 		.ascii	"short int\000"
- 408      7420696E 
- 408      7400
- 409              	.LASF12:
- 410 017a 75696E74 		.ascii	"uint8\000"
- 410      3800
+ 407 012c 75696E74 		.ascii	"uint8\000"
+ 407      3800
+ 408              	.LASF16:
+ 409 0132 433A5C55 		.ascii	"C:\\Users\\Guillaume\\Documents\\Projects\\Biobot\\"
+ 409      73657273 
+ 409      5C477569 
+ 409      6C6C6175 
+ 409      6D655C44 
+ 410 015f 47726970 		.ascii	"Gripper\\module-gripper-psoc.cydsn\000"
+ 410      7065725C 
+ 410      6D6F6475 
+ 410      6C652D67 
+ 410      72697070 
  411              	.LASF17:
- 412 0180 436F6E74 		.ascii	"ControlReg_Write\000"
+ 412 0181 436F6E74 		.ascii	"ControlReg_Write\000"
  412      726F6C52 
  412      65675F57 
  412      72697465 
  412      00
  413              	.LASF4:
- 414 0191 6C6F6E67 		.ascii	"long int\000"
+ 414 0192 6C6F6E67 		.ascii	"long int\000"
  414      20696E74 
  414      00
  415              	.LASF0:
- 416 019a 7369676E 		.ascii	"signed char\000"
+ 416 019b 7369676E 		.ascii	"signed char\000"
  416      65642063 
  416      68617200 
  417              	.LASF15:
- 418 01a6 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\ControlReg.c\000"
+ 418 01a7 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\ControlReg.c\000"
  418      6E657261 
  418      7465645F 
  418      536F7572 
