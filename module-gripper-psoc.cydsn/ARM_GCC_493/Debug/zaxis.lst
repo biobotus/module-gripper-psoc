@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
   55 0000 01       		.byte	1
   56              		.global	motor_down
   57              		.type	motor_down, %object
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 2
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 2
 
 
   58              		.size	motor_down, 1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
   82              		.cfi_offset 7, -8
   83              		.cfi_offset 14, -4
   84 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 3
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 3
 
 
   85              		.cfi_def_cfa_register 7
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  116 003c 01A2     		adr	r2, .L4
  117 003e 52F823F0 		ldr	pc, [r2, r3, lsl #2]
  118 0042 00BF     		.p2align 2
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 4
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 4
 
 
  119              	.L4:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  156              		.loc 1 70 0
  157 00a0 0020     		movs	r0, #0
  158 00a2 FFF7FEFF 		bl	Z_Axis_StepSizeA_Write
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 5
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 5
 
 
   71:.\zaxis.c     ****             Z_Axis_StepSizeB_Write(1);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  187              		.loc 1 96 0
  188 00d2 80BD     		pop	{r7, pc}
  189              	.L12:
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 6
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 6
 
 
  190              		.align	2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  106:.\zaxis.c     ****         sendDataToCAN(CAN_INSTRUCTION_SET_Z_AXIS_HOME, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x
  235              		.loc 1 106 0
  236 0022 0023     		movs	r3, #0
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 7
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 7
 
 
  237 0024 0093     		str	r3, [sp]
@@ -418,11 +418,11 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  284 0004 04AF     		add	r7, sp, #16
  285              		.cfi_def_cfa 7, 8
  114:.\zaxis.c     ****     switch (Z_axis_state){
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 8
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 8
 
 
  286              		.loc 1 114 0
- 287 0006 204B     		ldr	r3, .L24
+ 287 0006 214B     		ldr	r3, .L24
  288 0008 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  289 000a 012B     		cmp	r3, #1
  290 000c 13D0     		beq	.L20
@@ -455,14 +455,15 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  137:.\zaxis.c     ****             Z_Step_Dist_WriteCompare(0);
  138:.\zaxis.c     ****             Z_pos = 0;
  139:.\zaxis.c     ****             sendDataToCAN(CAN_INSTRUCTION_SET_Z_AXIS_HOME, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00
- 140:.\zaxis.c     ****             Z_axis_state = HOME;
- 141:.\zaxis.c     ****             break;
- 142:.\zaxis.c     ****         }
- 143:.\zaxis.c     ****         default:
- 144:.\zaxis.c     ****         {
- 145:.\zaxis.c     ****             break;
- 295              		.loc 1 145 0
- 296 0016 35E0     		b	.L18
+ 140:.\zaxis.c     ****             Z_Axis_Move_ISR_ClearPending();
+ 141:.\zaxis.c     ****             Z_axis_state = HOME;
+ 142:.\zaxis.c     ****             break;
+ 143:.\zaxis.c     ****         }
+ 144:.\zaxis.c     ****         default:
+ 145:.\zaxis.c     ****         {
+ 146:.\zaxis.c     ****             break;
+ 295              		.loc 1 146 0
+ 296 0016 37E0     		b	.L18
  297              	.L22:
  117:.\zaxis.c     ****             Z_pos = 0;
  298              		.loc 1 117 0
@@ -470,27 +471,27 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  300 001a FFF7FEFF 		bl	Z_Step_Dist_WriteCompare
  118:.\zaxis.c     ****             Z_Axis_Move_ISR_ClearPending();
  301              		.loc 1 118 0
- 302 001e 1B4B     		ldr	r3, .L24+4
+ 302 001e 1C4B     		ldr	r3, .L24+4
  303 0020 0022     		movs	r2, #0
  304 0022 1A80     		strh	r2, [r3]	@ movhi
  119:.\zaxis.c     ****             Z_Axis_GoTo(200);
  305              		.loc 1 119 0
  306 0024 FFF7FEFF 		bl	Z_Axis_Move_ISR_ClearPending
  120:.\zaxis.c     ****             Z_axis_state = GOING_AWAY;
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 9
+
+
  307              		.loc 1 120 0
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 9
-
-
  308 0028 C820     		movs	r0, #200
  309 002a FFF7FEFF 		bl	Z_Axis_GoTo
  121:.\zaxis.c     ****             break;
  310              		.loc 1 121 0
- 311 002e 164B     		ldr	r3, .L24
+ 311 002e 174B     		ldr	r3, .L24
  312 0030 0122     		movs	r2, #1
  313 0032 1A70     		strb	r2, [r3]
  122:.\zaxis.c     ****         }
  314              		.loc 1 122 0
- 315 0034 26E0     		b	.L18
+ 315 0034 28E0     		b	.L18
  316              	.L20:
  127:.\zaxis.c     ****             Z_pos = 0;
  317              		.loc 1 127 0
@@ -498,7 +499,7 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  319 0038 FFF7FEFF 		bl	Z_Step_Dist_WriteCompare
  128:.\zaxis.c     ****             Z_Axis_Move_ISR_ClearPending();
  320              		.loc 1 128 0
- 321 003c 134B     		ldr	r3, .L24+4
+ 321 003c 144B     		ldr	r3, .L24+4
  322 003e 0022     		movs	r2, #0
  323 0040 1A80     		strh	r2, [r3]	@ movhi
  129:.\zaxis.c     ****             Z_Axis_GoTo(200);
@@ -510,12 +511,12 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  328 0048 FFF7FEFF 		bl	Z_Axis_GoTo
  131:.\zaxis.c     ****             break;
  329              		.loc 1 131 0
- 330 004c 0E4B     		ldr	r3, .L24
+ 330 004c 0F4B     		ldr	r3, .L24
  331 004e 0122     		movs	r2, #1
  332 0050 1A70     		strb	r2, [r3]
  132:.\zaxis.c     ****         }
  333              		.loc 1 132 0
- 334 0052 17E0     		b	.L18
+ 334 0052 19E0     		b	.L18
  335              	.L21:
  137:.\zaxis.c     ****             Z_pos = 0;
  336              		.loc 1 137 0
@@ -523,10 +524,10 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  338 0056 FFF7FEFF 		bl	Z_Step_Dist_WriteCompare
  138:.\zaxis.c     ****             sendDataToCAN(CAN_INSTRUCTION_SET_Z_AXIS_HOME, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00
  339              		.loc 1 138 0
- 340 005a 0C4B     		ldr	r3, .L24+4
+ 340 005a 0D4B     		ldr	r3, .L24+4
  341 005c 0022     		movs	r2, #0
  342 005e 1A80     		strh	r2, [r3]	@ movhi
- 139:.\zaxis.c     ****             Z_axis_state = HOME;
+ 139:.\zaxis.c     ****             Z_Axis_Move_ISR_ClearPending();
  343              		.loc 1 139 0
  344 0060 0023     		movs	r3, #0
  345 0062 0093     		str	r3, [sp]
@@ -537,1286 +538,1289 @@ ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 1
  350 006c 0023     		movs	r3, #0
  351 006e 0393     		str	r3, [sp, #12]
  352 0070 0020     		movs	r0, #0
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 10
+
+
  353 0072 3021     		movs	r1, #48
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 10
-
-
  354 0074 0022     		movs	r2, #0
  355 0076 0023     		movs	r3, #0
  356 0078 FFF7FEFF 		bl	sendDataToCAN
- 140:.\zaxis.c     ****             break;
+ 140:.\zaxis.c     ****             Z_axis_state = HOME;
  357              		.loc 1 140 0
- 358 007c 024B     		ldr	r3, .L24
- 359 007e 0322     		movs	r2, #3
- 360 0080 1A70     		strb	r2, [r3]
- 141:.\zaxis.c     ****         }
- 361              		.loc 1 141 0
- 362 0082 00BF     		nop
- 363              	.L18:
- 146:.\zaxis.c     ****         }
- 147:.\zaxis.c     ****     }
- 148:.\zaxis.c     **** }
- 364              		.loc 1 148 0
- 365 0084 BD46     		mov	sp, r7
- 366              		.cfi_def_cfa_register 13
- 367              		@ sp needed
- 368 0086 80BD     		pop	{r7, pc}
- 369              	.L25:
- 370              		.align	2
- 371              	.L24:
- 372 0088 00000000 		.word	Z_axis_state
- 373 008c 00000000 		.word	Z_pos
- 374              		.cfi_endproc
- 375              	.LFE58:
- 376              		.size	Z_Axis_Bumper_Stops, .-Z_Axis_Bumper_Stops
- 377              		.section	.text.Z_Axis_GoTo,"ax",%progbits
- 378              		.align	2
- 379              		.global	Z_Axis_GoTo
- 380              		.thumb
- 381              		.thumb_func
- 382              		.type	Z_Axis_GoTo, %function
- 383              	Z_Axis_GoTo:
- 384              	.LFB59:
- 149:.\zaxis.c     **** 
- 150:.\zaxis.c     **** void Z_Axis_GoTo(uint16 position){
- 385              		.loc 1 150 0
- 386              		.cfi_startproc
- 387              		@ args = 0, pretend = 0, frame = 16
- 388              		@ frame_needed = 1, uses_anonymous_args = 0
- 389 0000 80B5     		push	{r7, lr}
- 390              		.cfi_def_cfa_offset 8
- 391              		.cfi_offset 7, -8
- 392              		.cfi_offset 14, -4
- 393 0002 88B0     		sub	sp, sp, #32
- 394              		.cfi_def_cfa_offset 40
- 395 0004 04AF     		add	r7, sp, #16
- 396              		.cfi_def_cfa 7, 24
- 397 0006 0346     		mov	r3, r0
- 398 0008 FB80     		strh	r3, [r7, #6]	@ movhi
- 151:.\zaxis.c     ****     uint16 travel;
- 152:.\zaxis.c     ****     uint32 steps_to_do;
- 153:.\zaxis.c     ****     if (position > max_distance){position = max_distance;}
- 399              		.loc 1 153 0
- 400 000a 4FF47A62 		mov	r2, #4000
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 11
+ 358 007c FFF7FEFF 		bl	Z_Axis_Move_ISR_ClearPending
+ 141:.\zaxis.c     ****             break;
+ 359              		.loc 1 141 0
+ 360 0080 024B     		ldr	r3, .L24
+ 361 0082 0322     		movs	r2, #3
+ 362 0084 1A70     		strb	r2, [r3]
+ 142:.\zaxis.c     ****         }
+ 363              		.loc 1 142 0
+ 364 0086 00BF     		nop
+ 365              	.L18:
+ 147:.\zaxis.c     ****         }
+ 148:.\zaxis.c     ****     }
+ 149:.\zaxis.c     **** }
+ 366              		.loc 1 149 0
+ 367 0088 BD46     		mov	sp, r7
+ 368              		.cfi_def_cfa_register 13
+ 369              		@ sp needed
+ 370 008a 80BD     		pop	{r7, pc}
+ 371              	.L25:
+ 372              		.align	2
+ 373              	.L24:
+ 374 008c 00000000 		.word	Z_axis_state
+ 375 0090 00000000 		.word	Z_pos
+ 376              		.cfi_endproc
+ 377              	.LFE58:
+ 378              		.size	Z_Axis_Bumper_Stops, .-Z_Axis_Bumper_Stops
+ 379              		.section	.text.Z_Axis_GoTo,"ax",%progbits
+ 380              		.align	2
+ 381              		.global	Z_Axis_GoTo
+ 382              		.thumb
+ 383              		.thumb_func
+ 384              		.type	Z_Axis_GoTo, %function
+ 385              	Z_Axis_GoTo:
+ 386              	.LFB59:
+ 150:.\zaxis.c     **** 
+ 151:.\zaxis.c     **** void Z_Axis_GoTo(uint16 position){
+ 387              		.loc 1 151 0
+ 388              		.cfi_startproc
+ 389              		@ args = 0, pretend = 0, frame = 16
+ 390              		@ frame_needed = 1, uses_anonymous_args = 0
+ 391 0000 80B5     		push	{r7, lr}
+ 392              		.cfi_def_cfa_offset 8
+ 393              		.cfi_offset 7, -8
+ 394              		.cfi_offset 14, -4
+ 395 0002 88B0     		sub	sp, sp, #32
+ 396              		.cfi_def_cfa_offset 40
+ 397 0004 04AF     		add	r7, sp, #16
+ 398              		.cfi_def_cfa 7, 24
+ 399 0006 0346     		mov	r3, r0
+ 400 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 152:.\zaxis.c     ****     uint16 travel;
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 11
 
 
- 401 000e FB88     		ldrh	r3, [r7, #6]
- 402 0010 9342     		cmp	r3, r2
- 403 0012 02D9     		bls	.L27
- 404              		.loc 1 153 0 is_stmt 0 discriminator 1
- 405 0014 4FF47A63 		mov	r3, #4000
- 406 0018 FB80     		strh	r3, [r7, #6]	@ movhi
- 407              	.L27:
- 154:.\zaxis.c     ****     if (position < Z_pos) {
- 408              		.loc 1 154 0 is_stmt 1
- 409 001a 314B     		ldr	r3, .L31
- 410 001c 1B88     		ldrh	r3, [r3]
- 411 001e FA88     		ldrh	r2, [r7, #6]
- 412 0020 9A42     		cmp	r2, r3
- 413 0022 17D2     		bcs	.L28
- 155:.\zaxis.c     ****         travel = Z_pos - position;
- 414              		.loc 1 155 0
- 415 0024 2E4B     		ldr	r3, .L31
- 416 0026 1A88     		ldrh	r2, [r3]
- 417 0028 FB88     		ldrh	r3, [r7, #6]	@ movhi
- 418 002a D31A     		subs	r3, r2, r3
- 419 002c 7B81     		strh	r3, [r7, #10]	@ movhi
- 156:.\zaxis.c     ****         steps_to_do = travel*((motor_steps_turn*f_ustepping)/screw_lead);
- 420              		.loc 1 156 0
- 421 002e 7B89     		ldrh	r3, [r7, #10]
- 422 0030 2C4A     		ldr	r2, .L31+4
- 423 0032 1288     		ldrh	r2, [r2]
- 424 0034 1146     		mov	r1, r2
- 425 0036 2C4A     		ldr	r2, .L31+8
- 426 0038 1288     		ldrh	r2, [r2]
- 427 003a 02FB01F2 		mul	r2, r2, r1
- 428 003e 2B49     		ldr	r1, .L31+12
- 429 0040 0988     		ldrh	r1, [r1]
- 430 0042 92FBF1F2 		sdiv	r2, r2, r1
- 431 0046 02FB03F3 		mul	r3, r2, r3
- 432 004a FB60     		str	r3, [r7, #12]
- 157:.\zaxis.c     ****         motor_direction = motor_up;
- 433              		.loc 1 157 0
- 434 004c 0122     		movs	r2, #1
- 435 004e 284B     		ldr	r3, .L31+16
- 436 0050 1A70     		strb	r2, [r3]
- 437 0052 34E0     		b	.L29
- 438              	.L28:
- 158:.\zaxis.c     ****     }
- 159:.\zaxis.c     ****     
- 160:.\zaxis.c     ****     else if (position > Z_pos) {
- 439              		.loc 1 160 0
- 440 0054 224B     		ldr	r3, .L31
- 441 0056 1B88     		ldrh	r3, [r3]
- 442 0058 FA88     		ldrh	r2, [r7, #6]
- 443 005a 9A42     		cmp	r2, r3
- 444 005c 17D9     		bls	.L30
- 161:.\zaxis.c     ****         travel = position - Z_pos;
- 445              		.loc 1 161 0
- 446 005e 204B     		ldr	r3, .L31
- 447 0060 1B88     		ldrh	r3, [r3]
- 448 0062 FA88     		ldrh	r2, [r7, #6]	@ movhi
- 449 0064 D31A     		subs	r3, r2, r3
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 12
+ 153:.\zaxis.c     ****     uint32 steps_to_do;
+ 154:.\zaxis.c     ****     if (position > max_distance){position = max_distance;}
+ 401              		.loc 1 154 0
+ 402 000a 4FF47A62 		mov	r2, #4000
+ 403 000e FB88     		ldrh	r3, [r7, #6]
+ 404 0010 9342     		cmp	r3, r2
+ 405 0012 02D9     		bls	.L27
+ 406              		.loc 1 154 0 is_stmt 0 discriminator 1
+ 407 0014 4FF47A63 		mov	r3, #4000
+ 408 0018 FB80     		strh	r3, [r7, #6]	@ movhi
+ 409              	.L27:
+ 155:.\zaxis.c     ****     if (position < Z_pos) {
+ 410              		.loc 1 155 0 is_stmt 1
+ 411 001a 314B     		ldr	r3, .L31
+ 412 001c 1B88     		ldrh	r3, [r3]
+ 413 001e FA88     		ldrh	r2, [r7, #6]
+ 414 0020 9A42     		cmp	r2, r3
+ 415 0022 17D2     		bcs	.L28
+ 156:.\zaxis.c     ****         travel = Z_pos - position;
+ 416              		.loc 1 156 0
+ 417 0024 2E4B     		ldr	r3, .L31
+ 418 0026 1A88     		ldrh	r2, [r3]
+ 419 0028 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 420 002a D31A     		subs	r3, r2, r3
+ 421 002c 7B81     		strh	r3, [r7, #10]	@ movhi
+ 157:.\zaxis.c     ****         steps_to_do = travel*((motor_steps_turn*f_ustepping)/screw_lead);
+ 422              		.loc 1 157 0
+ 423 002e 7B89     		ldrh	r3, [r7, #10]
+ 424 0030 2C4A     		ldr	r2, .L31+4
+ 425 0032 1288     		ldrh	r2, [r2]
+ 426 0034 1146     		mov	r1, r2
+ 427 0036 2C4A     		ldr	r2, .L31+8
+ 428 0038 1288     		ldrh	r2, [r2]
+ 429 003a 02FB01F2 		mul	r2, r2, r1
+ 430 003e 2B49     		ldr	r1, .L31+12
+ 431 0040 0988     		ldrh	r1, [r1]
+ 432 0042 92FBF1F2 		sdiv	r2, r2, r1
+ 433 0046 02FB03F3 		mul	r3, r2, r3
+ 434 004a FB60     		str	r3, [r7, #12]
+ 158:.\zaxis.c     ****         motor_direction = motor_up;
+ 435              		.loc 1 158 0
+ 436 004c 0122     		movs	r2, #1
+ 437 004e 284B     		ldr	r3, .L31+16
+ 438 0050 1A70     		strb	r2, [r3]
+ 439 0052 34E0     		b	.L29
+ 440              	.L28:
+ 159:.\zaxis.c     ****     }
+ 160:.\zaxis.c     ****     
+ 161:.\zaxis.c     ****     else if (position > Z_pos) {
+ 441              		.loc 1 161 0
+ 442 0054 224B     		ldr	r3, .L31
+ 443 0056 1B88     		ldrh	r3, [r3]
+ 444 0058 FA88     		ldrh	r2, [r7, #6]
+ 445 005a 9A42     		cmp	r2, r3
+ 446 005c 17D9     		bls	.L30
+ 162:.\zaxis.c     ****         travel = position - Z_pos;
+ 447              		.loc 1 162 0
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 12
 
 
- 450 0066 7B81     		strh	r3, [r7, #10]	@ movhi
- 162:.\zaxis.c     ****         steps_to_do = travel*((motor_steps_turn*f_ustepping)/screw_lead);
- 451              		.loc 1 162 0
- 452 0068 7B89     		ldrh	r3, [r7, #10]
- 453 006a 1E4A     		ldr	r2, .L31+4
- 454 006c 1288     		ldrh	r2, [r2]
- 455 006e 1146     		mov	r1, r2
- 456 0070 1D4A     		ldr	r2, .L31+8
- 457 0072 1288     		ldrh	r2, [r2]
- 458 0074 02FB01F2 		mul	r2, r2, r1
- 459 0078 1C49     		ldr	r1, .L31+12
- 460 007a 0988     		ldrh	r1, [r1]
- 461 007c 92FBF1F2 		sdiv	r2, r2, r1
- 462 0080 02FB03F3 		mul	r3, r2, r3
- 463 0084 FB60     		str	r3, [r7, #12]
- 163:.\zaxis.c     ****         motor_direction = motor_down;
- 464              		.loc 1 163 0
- 465 0086 0022     		movs	r2, #0
- 466 0088 194B     		ldr	r3, .L31+16
- 467 008a 1A70     		strb	r2, [r3]
- 468 008c 17E0     		b	.L29
- 469              	.L30:
- 164:.\zaxis.c     ****     }
- 165:.\zaxis.c     ****     
- 166:.\zaxis.c     ****     else {
- 167:.\zaxis.c     ****         travel = 0;
- 470              		.loc 1 167 0
- 471 008e 0023     		movs	r3, #0
- 472 0090 7B81     		strh	r3, [r7, #10]	@ movhi
- 168:.\zaxis.c     ****         steps_to_do = 0;
- 473              		.loc 1 168 0
- 474 0092 0023     		movs	r3, #0
- 475 0094 FB60     		str	r3, [r7, #12]
- 169:.\zaxis.c     ****         sendDataToCAN(CAN_INSTRUCTION_SET_Z_AXIS_POSITION, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00
- 476              		.loc 1 169 0
- 477 0096 124B     		ldr	r3, .L31
- 478 0098 1B88     		ldrh	r3, [r3]
- 479 009a 1B0A     		lsrs	r3, r3, #8
- 480 009c 9BB2     		uxth	r3, r3
- 481 009e DAB2     		uxtb	r2, r3
- 482 00a0 0F4B     		ldr	r3, .L31
- 483 00a2 1B88     		ldrh	r3, [r3]
- 484 00a4 DBB2     		uxtb	r3, r3
- 485 00a6 0021     		movs	r1, #0
- 486 00a8 0091     		str	r1, [sp]
- 487 00aa 0021     		movs	r1, #0
- 488 00ac 0191     		str	r1, [sp, #4]
- 489 00ae 0292     		str	r2, [sp, #8]
- 490 00b0 0393     		str	r3, [sp, #12]
- 491 00b2 0120     		movs	r0, #1
- 492 00b4 3021     		movs	r1, #48
- 493 00b6 0022     		movs	r2, #0
- 494 00b8 0023     		movs	r3, #0
- 495 00ba FFF7FEFF 		bl	sendDataToCAN
- 496              	.L29:
- 170:.\zaxis.c     ****     }
- 171:.\zaxis.c     ****     Z_pos = position;
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 13
+ 448 005e 204B     		ldr	r3, .L31
+ 449 0060 1B88     		ldrh	r3, [r3]
+ 450 0062 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 451 0064 D31A     		subs	r3, r2, r3
+ 452 0066 7B81     		strh	r3, [r7, #10]	@ movhi
+ 163:.\zaxis.c     ****         steps_to_do = travel*((motor_steps_turn*f_ustepping)/screw_lead);
+ 453              		.loc 1 163 0
+ 454 0068 7B89     		ldrh	r3, [r7, #10]
+ 455 006a 1E4A     		ldr	r2, .L31+4
+ 456 006c 1288     		ldrh	r2, [r2]
+ 457 006e 1146     		mov	r1, r2
+ 458 0070 1D4A     		ldr	r2, .L31+8
+ 459 0072 1288     		ldrh	r2, [r2]
+ 460 0074 02FB01F2 		mul	r2, r2, r1
+ 461 0078 1C49     		ldr	r1, .L31+12
+ 462 007a 0988     		ldrh	r1, [r1]
+ 463 007c 92FBF1F2 		sdiv	r2, r2, r1
+ 464 0080 02FB03F3 		mul	r3, r2, r3
+ 465 0084 FB60     		str	r3, [r7, #12]
+ 164:.\zaxis.c     ****         motor_direction = motor_down;
+ 466              		.loc 1 164 0
+ 467 0086 0022     		movs	r2, #0
+ 468 0088 194B     		ldr	r3, .L31+16
+ 469 008a 1A70     		strb	r2, [r3]
+ 470 008c 17E0     		b	.L29
+ 471              	.L30:
+ 165:.\zaxis.c     ****     }
+ 166:.\zaxis.c     ****     
+ 167:.\zaxis.c     ****     else {
+ 168:.\zaxis.c     ****         travel = 0;
+ 472              		.loc 1 168 0
+ 473 008e 0023     		movs	r3, #0
+ 474 0090 7B81     		strh	r3, [r7, #10]	@ movhi
+ 169:.\zaxis.c     ****         steps_to_do = 0;
+ 475              		.loc 1 169 0
+ 476 0092 0023     		movs	r3, #0
+ 477 0094 FB60     		str	r3, [r7, #12]
+ 170:.\zaxis.c     ****         sendDataToCAN(CAN_INSTRUCTION_SET_Z_AXIS_POSITION, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00
+ 478              		.loc 1 170 0
+ 479 0096 124B     		ldr	r3, .L31
+ 480 0098 1B88     		ldrh	r3, [r3]
+ 481 009a 1B0A     		lsrs	r3, r3, #8
+ 482 009c 9BB2     		uxth	r3, r3
+ 483 009e DAB2     		uxtb	r2, r3
+ 484 00a0 0F4B     		ldr	r3, .L31
+ 485 00a2 1B88     		ldrh	r3, [r3]
+ 486 00a4 DBB2     		uxtb	r3, r3
+ 487 00a6 0021     		movs	r1, #0
+ 488 00a8 0091     		str	r1, [sp]
+ 489 00aa 0021     		movs	r1, #0
+ 490 00ac 0191     		str	r1, [sp, #4]
+ 491 00ae 0292     		str	r2, [sp, #8]
+ 492 00b0 0393     		str	r3, [sp, #12]
+ 493 00b2 0120     		movs	r0, #1
+ 494 00b4 3021     		movs	r1, #48
+ 495 00b6 0022     		movs	r2, #0
+ 496 00b8 0023     		movs	r3, #0
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 13
 
 
- 497              		.loc 1 171 0
- 498 00be 084A     		ldr	r2, .L31
- 499 00c0 FB88     		ldrh	r3, [r7, #6]	@ movhi
- 500 00c2 1380     		strh	r3, [r2]	@ movhi
- 172:.\zaxis.c     ****     // Setting up motor direction
- 173:.\zaxis.c     ****     Z_Axis_Direction_Write(motor_direction);
- 501              		.loc 1 173 0
- 502 00c4 0A4B     		ldr	r3, .L31+16
- 503 00c6 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 504 00c8 1846     		mov	r0, r3
- 505 00ca FFF7FEFF 		bl	Z_Axis_Direction_Write
- 174:.\zaxis.c     ****     Z_Step_Dist_WriteCompare(steps_to_do);
- 506              		.loc 1 174 0
- 507 00ce F868     		ldr	r0, [r7, #12]
- 508 00d0 FFF7FEFF 		bl	Z_Step_Dist_WriteCompare
- 175:.\zaxis.c     ****     Z_GO_Write(1);
- 509              		.loc 1 175 0
- 510 00d4 0120     		movs	r0, #1
- 511 00d6 FFF7FEFF 		bl	Z_GO_Write
- 176:.\zaxis.c     **** }
- 512              		.loc 1 176 0
- 513 00da 1037     		adds	r7, r7, #16
- 514              		.cfi_def_cfa_offset 8
- 515 00dc BD46     		mov	sp, r7
- 516              		.cfi_def_cfa_register 13
- 517              		@ sp needed
- 518 00de 80BD     		pop	{r7, pc}
- 519              	.L32:
- 520              		.align	2
- 521              	.L31:
- 522 00e0 00000000 		.word	Z_pos
- 523 00e4 00000000 		.word	motor_steps_turn
- 524 00e8 00000000 		.word	f_ustepping
- 525 00ec 00000000 		.word	screw_lead
- 526 00f0 00000000 		.word	motor_direction
- 527              		.cfi_endproc
- 528              	.LFE59:
- 529              		.size	Z_Axis_GoTo, .-Z_Axis_GoTo
- 530              		.section	.text.Z_Axis_Bumper_ISR,"ax",%progbits
- 531              		.align	2
- 532              		.global	Z_Axis_Bumper_ISR
- 533              		.thumb
- 534              		.thumb_func
- 535              		.type	Z_Axis_Bumper_ISR, %function
- 536              	Z_Axis_Bumper_ISR:
- 537              	.LFB60:
- 177:.\zaxis.c     **** 
- 178:.\zaxis.c     **** CY_ISR(Z_Axis_Bumper_ISR){
- 538              		.loc 1 178 0
- 539              		.cfi_startproc
- 540              		@ args = 0, pretend = 0, frame = 0
- 541              		@ frame_needed = 1, uses_anonymous_args = 0
- 542 0000 80B5     		push	{r7, lr}
- 543              		.cfi_def_cfa_offset 8
- 544              		.cfi_offset 7, -8
- 545              		.cfi_offset 14, -4
- 546 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 14
+ 497 00ba FFF7FEFF 		bl	sendDataToCAN
+ 498              	.L29:
+ 171:.\zaxis.c     ****     }
+ 172:.\zaxis.c     ****     Z_pos = position;
+ 499              		.loc 1 172 0
+ 500 00be 084A     		ldr	r2, .L31
+ 501 00c0 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 502 00c2 1380     		strh	r3, [r2]	@ movhi
+ 173:.\zaxis.c     ****     // Setting up motor direction
+ 174:.\zaxis.c     ****     Z_Axis_Direction_Write(motor_direction);
+ 503              		.loc 1 174 0
+ 504 00c4 0A4B     		ldr	r3, .L31+16
+ 505 00c6 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 506 00c8 1846     		mov	r0, r3
+ 507 00ca FFF7FEFF 		bl	Z_Axis_Direction_Write
+ 175:.\zaxis.c     ****     Z_Step_Dist_WriteCompare(steps_to_do);
+ 508              		.loc 1 175 0
+ 509 00ce F868     		ldr	r0, [r7, #12]
+ 510 00d0 FFF7FEFF 		bl	Z_Step_Dist_WriteCompare
+ 176:.\zaxis.c     ****     Z_GO_Write(1);
+ 511              		.loc 1 176 0
+ 512 00d4 0120     		movs	r0, #1
+ 513 00d6 FFF7FEFF 		bl	Z_GO_Write
+ 177:.\zaxis.c     **** }
+ 514              		.loc 1 177 0
+ 515 00da 1037     		adds	r7, r7, #16
+ 516              		.cfi_def_cfa_offset 8
+ 517 00dc BD46     		mov	sp, r7
+ 518              		.cfi_def_cfa_register 13
+ 519              		@ sp needed
+ 520 00de 80BD     		pop	{r7, pc}
+ 521              	.L32:
+ 522              		.align	2
+ 523              	.L31:
+ 524 00e0 00000000 		.word	Z_pos
+ 525 00e4 00000000 		.word	motor_steps_turn
+ 526 00e8 00000000 		.word	f_ustepping
+ 527 00ec 00000000 		.word	screw_lead
+ 528 00f0 00000000 		.word	motor_direction
+ 529              		.cfi_endproc
+ 530              	.LFE59:
+ 531              		.size	Z_Axis_GoTo, .-Z_Axis_GoTo
+ 532              		.section	.text.Z_Axis_Bumper_ISR,"ax",%progbits
+ 533              		.align	2
+ 534              		.global	Z_Axis_Bumper_ISR
+ 535              		.thumb
+ 536              		.thumb_func
+ 537              		.type	Z_Axis_Bumper_ISR, %function
+ 538              	Z_Axis_Bumper_ISR:
+ 539              	.LFB60:
+ 178:.\zaxis.c     **** 
+ 179:.\zaxis.c     **** CY_ISR(Z_Axis_Bumper_ISR){
+ 540              		.loc 1 179 0
+ 541              		.cfi_startproc
+ 542              		@ args = 0, pretend = 0, frame = 0
+ 543              		@ frame_needed = 1, uses_anonymous_args = 0
+ 544 0000 80B5     		push	{r7, lr}
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 14
 
 
- 547              		.cfi_def_cfa_register 7
- 179:.\zaxis.c     ****     Z_Axis_Bumper_ISR_Stop();
- 548              		.loc 1 179 0
- 549 0004 FFF7FEFF 		bl	Z_Axis_Bumper_ISR_Stop
- 180:.\zaxis.c     ****     Z_Axis_Bumper_ISR_ClearPending();
+ 545              		.cfi_def_cfa_offset 8
+ 546              		.cfi_offset 7, -8
+ 547              		.cfi_offset 14, -4
+ 548 0002 00AF     		add	r7, sp, #0
+ 549              		.cfi_def_cfa_register 7
+ 180:.\zaxis.c     ****     Z_Axis_Bumper_ISR_Stop();
  550              		.loc 1 180 0
- 551 0008 FFF7FEFF 		bl	Z_Axis_Bumper_ISR_ClearPending
- 181:.\zaxis.c     ****     Z_Axis_Bumper_Port_ClearInterrupt();
+ 551 0004 FFF7FEFF 		bl	Z_Axis_Bumper_ISR_Stop
+ 181:.\zaxis.c     ****     Z_Axis_Bumper_ISR_ClearPending();
  552              		.loc 1 181 0
- 553 000c FFF7FEFF 		bl	Z_Axis_Bumper_Port_ClearInterrupt
- 182:.\zaxis.c     ****     Z_Axis_Bumper_Stops();
+ 553 0008 FFF7FEFF 		bl	Z_Axis_Bumper_ISR_ClearPending
+ 182:.\zaxis.c     ****     Z_Axis_Bumper_Port_ClearInterrupt();
  554              		.loc 1 182 0
- 555 0010 FFF7FEFF 		bl	Z_Axis_Bumper_Stops
- 183:.\zaxis.c     ****     Z_Axis_Bumper_ISR_StartEx(Z_Axis_Bumper_ISR);
+ 555 000c FFF7FEFF 		bl	Z_Axis_Bumper_Port_ClearInterrupt
+ 183:.\zaxis.c     ****     Z_Axis_Bumper_Stops();
  556              		.loc 1 183 0
- 557 0014 0148     		ldr	r0, .L34
- 558 0016 FFF7FEFF 		bl	Z_Axis_Bumper_ISR_StartEx
- 184:.\zaxis.c     **** }
- 559              		.loc 1 184 0
- 560 001a 80BD     		pop	{r7, pc}
- 561              	.L35:
- 562              		.align	2
- 563              	.L34:
- 564 001c 00000000 		.word	Z_Axis_Bumper_ISR
- 565              		.cfi_endproc
- 566              	.LFE60:
- 567              		.size	Z_Axis_Bumper_ISR, .-Z_Axis_Bumper_ISR
- 568              		.section	.text.Z_Axis_Move_ISR,"ax",%progbits
- 569              		.align	2
- 570              		.global	Z_Axis_Move_ISR
- 571              		.thumb
- 572              		.thumb_func
- 573              		.type	Z_Axis_Move_ISR, %function
- 574              	Z_Axis_Move_ISR:
- 575              	.LFB61:
- 185:.\zaxis.c     **** 
- 186:.\zaxis.c     **** CY_ISR(Z_Axis_Move_ISR){
- 576              		.loc 1 186 0
- 577              		.cfi_startproc
- 578              		@ args = 0, pretend = 0, frame = 0
- 579              		@ frame_needed = 1, uses_anonymous_args = 0
- 580 0000 80B5     		push	{r7, lr}
- 581              		.cfi_def_cfa_offset 8
- 582              		.cfi_offset 7, -8
- 583              		.cfi_offset 14, -4
- 584 0002 84B0     		sub	sp, sp, #16
- 585              		.cfi_def_cfa_offset 24
- 586 0004 04AF     		add	r7, sp, #16
- 587              		.cfi_def_cfa 7, 8
- 187:.\zaxis.c     ****     Z_Axis_Move_ISR_Stop();
- 588              		.loc 1 187 0
- 589 0006 FFF7FEFF 		bl	Z_Axis_Move_ISR_Stop
- 188:.\zaxis.c     ****     Z_Axis_Move_ISR_ClearPending();
+ 557 0010 FFF7FEFF 		bl	Z_Axis_Bumper_Stops
+ 184:.\zaxis.c     ****     Z_Axis_Bumper_ISR_StartEx(Z_Axis_Bumper_ISR);
+ 558              		.loc 1 184 0
+ 559 0014 0148     		ldr	r0, .L34
+ 560 0016 FFF7FEFF 		bl	Z_Axis_Bumper_ISR_StartEx
+ 185:.\zaxis.c     **** }
+ 561              		.loc 1 185 0
+ 562 001a 80BD     		pop	{r7, pc}
+ 563              	.L35:
+ 564              		.align	2
+ 565              	.L34:
+ 566 001c 00000000 		.word	Z_Axis_Bumper_ISR
+ 567              		.cfi_endproc
+ 568              	.LFE60:
+ 569              		.size	Z_Axis_Bumper_ISR, .-Z_Axis_Bumper_ISR
+ 570              		.section	.text.Z_Axis_Move_ISR,"ax",%progbits
+ 571              		.align	2
+ 572              		.global	Z_Axis_Move_ISR
+ 573              		.thumb
+ 574              		.thumb_func
+ 575              		.type	Z_Axis_Move_ISR, %function
+ 576              	Z_Axis_Move_ISR:
+ 577              	.LFB61:
+ 186:.\zaxis.c     **** 
+ 187:.\zaxis.c     **** CY_ISR(Z_Axis_Move_ISR){
+ 578              		.loc 1 187 0
+ 579              		.cfi_startproc
+ 580              		@ args = 0, pretend = 0, frame = 0
+ 581              		@ frame_needed = 1, uses_anonymous_args = 0
+ 582 0000 80B5     		push	{r7, lr}
+ 583              		.cfi_def_cfa_offset 8
+ 584              		.cfi_offset 7, -8
+ 585              		.cfi_offset 14, -4
+ 586 0002 84B0     		sub	sp, sp, #16
+ 587              		.cfi_def_cfa_offset 24
+ 588 0004 04AF     		add	r7, sp, #16
+ 589              		.cfi_def_cfa 7, 8
+ 188:.\zaxis.c     ****     Z_Axis_Move_ISR_Stop();
  590              		.loc 1 188 0
- 591 000a FFF7FEFF 		bl	Z_Axis_Move_ISR_ClearPending
- 189:.\zaxis.c     ****     switch (Z_axis_state){
+ 591 0006 FFF7FEFF 		bl	Z_Axis_Move_ISR_Stop
+ 189:.\zaxis.c     ****     Z_Axis_Move_ISR_ClearPending();
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 15
+
+
  592              		.loc 1 189 0
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 15
+ 593 000a FFF7FEFF 		bl	Z_Axis_Move_ISR_ClearPending
+ 190:.\zaxis.c     ****     switch (Z_axis_state){
+ 594              		.loc 1 190 0
+ 595 000e 244B     		ldr	r3, .L45
+ 596 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 597 0012 032B     		cmp	r3, #3
+ 598 0014 3DD8     		bhi	.L44
+ 599 0016 01A2     		adr	r2, .L39
+ 600 0018 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 601              		.p2align 2
+ 602              	.L39:
+ 603 001c 2D000000 		.word	.L38+1
+ 604 0020 57000000 		.word	.L40+1
+ 605 0024 93000000 		.word	.L44+1
+ 606 0028 69000000 		.word	.L42+1
+ 607              		.p2align 1
+ 608              	.L38:
+ 191:.\zaxis.c     ****         case WAITING_FOR_BUMPER1:
+ 192:.\zaxis.c     ****         {
+ 193:.\zaxis.c     ****             // Send back on CAN that the action is done
+ 194:.\zaxis.c     ****             sendDataToCAN(CAN_INSTRUCTION_SET_Z_AXIS_POSITION, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 
+ 609              		.loc 1 194 0
+ 610 002c 1D4B     		ldr	r3, .L45+4
+ 611 002e 1B88     		ldrh	r3, [r3]
+ 612 0030 1B0A     		lsrs	r3, r3, #8
+ 613 0032 9BB2     		uxth	r3, r3
+ 614 0034 DAB2     		uxtb	r2, r3
+ 615 0036 1B4B     		ldr	r3, .L45+4
+ 616 0038 1B88     		ldrh	r3, [r3]
+ 617 003a DBB2     		uxtb	r3, r3
+ 618 003c 0021     		movs	r1, #0
+ 619 003e 0091     		str	r1, [sp]
+ 620 0040 0021     		movs	r1, #0
+ 621 0042 0191     		str	r1, [sp, #4]
+ 622 0044 0292     		str	r2, [sp, #8]
+ 623 0046 0393     		str	r3, [sp, #12]
+ 624 0048 0120     		movs	r0, #1
+ 625 004a 3021     		movs	r1, #48
+ 626 004c 0022     		movs	r2, #0
+ 627 004e 0023     		movs	r3, #0
+ 628 0050 FFF7FEFF 		bl	sendDataToCAN
+ 195:.\zaxis.c     ****             break;
+ 629              		.loc 1 195 0
+ 630 0054 1EE0     		b	.L43
+ 631              	.L40:
+ 196:.\zaxis.c     ****         }
+ 197:.\zaxis.c     ****         
+ 198:.\zaxis.c     ****         case GOING_AWAY:
+ 199:.\zaxis.c     ****         {
+ 200:.\zaxis.c     ****             // Calls back for homing
+ 201:.\zaxis.c     ****             Z_axis_state = WAITING_FOR_BUMPER2;
+ 632              		.loc 1 201 0
+ 633 0056 124B     		ldr	r3, .L45
+ 634 0058 0222     		movs	r2, #2
+ 635 005a 1A70     		strb	r2, [r3]
+ 202:.\zaxis.c     ****             Move_Up(max_distance);
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 16
 
 
- 593 000e 244B     		ldr	r3, .L45
- 594 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 595 0012 032B     		cmp	r3, #3
- 596 0014 3DD8     		bhi	.L44
- 597 0016 01A2     		adr	r2, .L39
- 598 0018 52F823F0 		ldr	pc, [r2, r3, lsl #2]
- 599              		.p2align 2
- 600              	.L39:
- 601 001c 2D000000 		.word	.L38+1
- 602 0020 57000000 		.word	.L40+1
- 603 0024 93000000 		.word	.L44+1
- 604 0028 69000000 		.word	.L42+1
- 605              		.p2align 1
- 606              	.L38:
- 190:.\zaxis.c     ****         case WAITING_FOR_BUMPER1:
- 191:.\zaxis.c     ****         {
- 192:.\zaxis.c     ****             // Send back on CAN that the action is done
- 193:.\zaxis.c     ****             sendDataToCAN(CAN_INSTRUCTION_SET_Z_AXIS_POSITION, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 
- 607              		.loc 1 193 0
- 608 002c 1D4B     		ldr	r3, .L45+4
- 609 002e 1B88     		ldrh	r3, [r3]
- 610 0030 1B0A     		lsrs	r3, r3, #8
- 611 0032 9BB2     		uxth	r3, r3
- 612 0034 DAB2     		uxtb	r2, r3
- 613 0036 1B4B     		ldr	r3, .L45+4
- 614 0038 1B88     		ldrh	r3, [r3]
- 615 003a DBB2     		uxtb	r3, r3
- 616 003c 0021     		movs	r1, #0
- 617 003e 0091     		str	r1, [sp]
- 618 0040 0021     		movs	r1, #0
- 619 0042 0191     		str	r1, [sp, #4]
- 620 0044 0292     		str	r2, [sp, #8]
- 621 0046 0393     		str	r3, [sp, #12]
- 622 0048 0120     		movs	r0, #1
- 623 004a 3021     		movs	r1, #48
- 624 004c 0022     		movs	r2, #0
- 625 004e 0023     		movs	r3, #0
- 626 0050 FFF7FEFF 		bl	sendDataToCAN
- 194:.\zaxis.c     ****             break;
- 627              		.loc 1 194 0
- 628 0054 1EE0     		b	.L43
- 629              	.L40:
- 195:.\zaxis.c     ****         }
- 196:.\zaxis.c     ****         
- 197:.\zaxis.c     ****         case GOING_AWAY:
- 198:.\zaxis.c     ****         {
- 199:.\zaxis.c     ****             // Calls back for homing
- 200:.\zaxis.c     ****             Z_axis_state = WAITING_FOR_BUMPER2;
- 630              		.loc 1 200 0
- 631 0056 124B     		ldr	r3, .L45
- 632 0058 0222     		movs	r2, #2
- 633 005a 1A70     		strb	r2, [r3]
- 201:.\zaxis.c     ****             Move_Up(max_distance);
- 634              		.loc 1 201 0
- 635 005c 4FF47A63 		mov	r3, #4000
- 636 0060 1846     		mov	r0, r3
- 637 0062 FFF7FEFF 		bl	Move_Up
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 16
+ 636              		.loc 1 202 0
+ 637 005c 4FF47A63 		mov	r3, #4000
+ 638 0060 1846     		mov	r0, r3
+ 639 0062 FFF7FEFF 		bl	Move_Up
+ 203:.\zaxis.c     ****             break;
+ 640              		.loc 1 203 0
+ 641 0066 15E0     		b	.L43
+ 642              	.L42:
+ 204:.\zaxis.c     ****         }
+ 205:.\zaxis.c     ****         
+ 206:.\zaxis.c     ****         case WAITING_FOR_BUMPER2:
+ 207:.\zaxis.c     ****         {
+ 208:.\zaxis.c     ****             break;
+ 209:.\zaxis.c     ****         }
+ 210:.\zaxis.c     ****         
+ 211:.\zaxis.c     ****         case HOME:
+ 212:.\zaxis.c     ****         {
+ 213:.\zaxis.c     ****             sendDataToCAN(CAN_INSTRUCTION_SET_Z_AXIS_POSITION, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 
+ 643              		.loc 1 213 0
+ 644 0068 0E4B     		ldr	r3, .L45+4
+ 645 006a 1B88     		ldrh	r3, [r3]
+ 646 006c 1B0A     		lsrs	r3, r3, #8
+ 647 006e 9BB2     		uxth	r3, r3
+ 648 0070 DAB2     		uxtb	r2, r3
+ 649 0072 0C4B     		ldr	r3, .L45+4
+ 650 0074 1B88     		ldrh	r3, [r3]
+ 651 0076 DBB2     		uxtb	r3, r3
+ 652 0078 0021     		movs	r1, #0
+ 653 007a 0091     		str	r1, [sp]
+ 654 007c 0021     		movs	r1, #0
+ 655 007e 0191     		str	r1, [sp, #4]
+ 656 0080 0292     		str	r2, [sp, #8]
+ 657 0082 0393     		str	r3, [sp, #12]
+ 658 0084 0120     		movs	r0, #1
+ 659 0086 3021     		movs	r1, #48
+ 660 0088 0022     		movs	r2, #0
+ 661 008a 0023     		movs	r3, #0
+ 662 008c FFF7FEFF 		bl	sendDataToCAN
+ 214:.\zaxis.c     ****             break;
+ 663              		.loc 1 214 0
+ 664 0090 00E0     		b	.L43
+ 665              	.L44:
+ 215:.\zaxis.c     ****         }
+ 216:.\zaxis.c     ****         
+ 217:.\zaxis.c     ****         default:
+ 218:.\zaxis.c     ****         {
+ 219:.\zaxis.c     ****             break;
+ 666              		.loc 1 219 0
+ 667 0092 00BF     		nop
+ 668              	.L43:
+ 220:.\zaxis.c     ****         }
+ 221:.\zaxis.c     ****     }
+ 222:.\zaxis.c     ****     Z_Axis_Move_ISR_StartEx(Z_Axis_Move_ISR);
+ 669              		.loc 1 222 0
+ 670 0094 0448     		ldr	r0, .L45+8
+ 671 0096 FFF7FEFF 		bl	Z_Axis_Move_ISR_StartEx
+ 223:.\zaxis.c     **** }
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 17
 
 
- 202:.\zaxis.c     ****             break;
- 638              		.loc 1 202 0
- 639 0066 15E0     		b	.L43
- 640              	.L42:
- 203:.\zaxis.c     ****         }
- 204:.\zaxis.c     ****         
- 205:.\zaxis.c     ****         case WAITING_FOR_BUMPER2:
- 206:.\zaxis.c     ****         {
- 207:.\zaxis.c     ****             break;
- 208:.\zaxis.c     ****         }
- 209:.\zaxis.c     ****         
- 210:.\zaxis.c     ****         case HOME:
- 211:.\zaxis.c     ****         {
- 212:.\zaxis.c     ****             sendDataToCAN(CAN_INSTRUCTION_SET_Z_AXIS_POSITION, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 
- 641              		.loc 1 212 0
- 642 0068 0E4B     		ldr	r3, .L45+4
- 643 006a 1B88     		ldrh	r3, [r3]
- 644 006c 1B0A     		lsrs	r3, r3, #8
- 645 006e 9BB2     		uxth	r3, r3
- 646 0070 DAB2     		uxtb	r2, r3
- 647 0072 0C4B     		ldr	r3, .L45+4
- 648 0074 1B88     		ldrh	r3, [r3]
- 649 0076 DBB2     		uxtb	r3, r3
- 650 0078 0021     		movs	r1, #0
- 651 007a 0091     		str	r1, [sp]
- 652 007c 0021     		movs	r1, #0
- 653 007e 0191     		str	r1, [sp, #4]
- 654 0080 0292     		str	r2, [sp, #8]
- 655 0082 0393     		str	r3, [sp, #12]
- 656 0084 0120     		movs	r0, #1
- 657 0086 3021     		movs	r1, #48
- 658 0088 0022     		movs	r2, #0
- 659 008a 0023     		movs	r3, #0
- 660 008c FFF7FEFF 		bl	sendDataToCAN
- 213:.\zaxis.c     ****             break;
- 661              		.loc 1 213 0
- 662 0090 00E0     		b	.L43
- 663              	.L44:
- 214:.\zaxis.c     ****         }
- 215:.\zaxis.c     ****         
- 216:.\zaxis.c     ****         default:
- 217:.\zaxis.c     ****         {
- 218:.\zaxis.c     ****             break;
- 664              		.loc 1 218 0
- 665 0092 00BF     		nop
- 666              	.L43:
- 219:.\zaxis.c     ****         }
- 220:.\zaxis.c     ****     }
- 221:.\zaxis.c     ****     Z_Axis_Move_ISR_StartEx(Z_Axis_Move_ISR);
- 667              		.loc 1 221 0
- 668 0094 0448     		ldr	r0, .L45+8
- 669 0096 FFF7FEFF 		bl	Z_Axis_Move_ISR_StartEx
- 222:.\zaxis.c     **** }
- 670              		.loc 1 222 0
- 671 009a BD46     		mov	sp, r7
- 672              		.cfi_def_cfa_register 13
- 673              		@ sp needed
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 17
+ 672              		.loc 1 223 0
+ 673 009a BD46     		mov	sp, r7
+ 674              		.cfi_def_cfa_register 13
+ 675              		@ sp needed
+ 676 009c 80BD     		pop	{r7, pc}
+ 677              	.L46:
+ 678 009e 00BF     		.align	2
+ 679              	.L45:
+ 680 00a0 00000000 		.word	Z_axis_state
+ 681 00a4 00000000 		.word	Z_pos
+ 682 00a8 00000000 		.word	Z_Axis_Move_ISR
+ 683              		.cfi_endproc
+ 684              	.LFE61:
+ 685              		.size	Z_Axis_Move_ISR, .-Z_Axis_Move_ISR
+ 686              		.section	.text.Move_Up,"ax",%progbits
+ 687              		.align	2
+ 688              		.global	Move_Up
+ 689              		.thumb
+ 690              		.thumb_func
+ 691              		.type	Move_Up, %function
+ 692              	Move_Up:
+ 693              	.LFB62:
+ 224:.\zaxis.c     **** 
+ 225:.\zaxis.c     **** void Move_Up(uint16 distance){
+ 694              		.loc 1 225 0
+ 695              		.cfi_startproc
+ 696              		@ args = 0, pretend = 0, frame = 8
+ 697              		@ frame_needed = 1, uses_anonymous_args = 0
+ 698 0000 80B5     		push	{r7, lr}
+ 699              		.cfi_def_cfa_offset 8
+ 700              		.cfi_offset 7, -8
+ 701              		.cfi_offset 14, -4
+ 702 0002 82B0     		sub	sp, sp, #8
+ 703              		.cfi_def_cfa_offset 16
+ 704 0004 00AF     		add	r7, sp, #0
+ 705              		.cfi_def_cfa_register 7
+ 706 0006 0346     		mov	r3, r0
+ 707 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 226:.\zaxis.c     ****     Z_Axis_Direction_Write(motor_up);
+ 708              		.loc 1 226 0
+ 709 000a 0123     		movs	r3, #1
+ 710 000c 1846     		mov	r0, r3
+ 711 000e FFF7FEFF 		bl	Z_Axis_Direction_Write
+ 227:.\zaxis.c     ****     Z_Step_Dist_WriteCompare(distance*((motor_steps_turn*f_ustepping)/screw_lead));
+ 712              		.loc 1 227 0
+ 713 0012 FB88     		ldrh	r3, [r7, #6]
+ 714 0014 0A4A     		ldr	r2, .L48
+ 715 0016 1288     		ldrh	r2, [r2]
+ 716 0018 1146     		mov	r1, r2
+ 717 001a 0A4A     		ldr	r2, .L48+4
+ 718 001c 1288     		ldrh	r2, [r2]
+ 719 001e 02FB01F2 		mul	r2, r2, r1
+ 720 0022 0949     		ldr	r1, .L48+8
+ 721 0024 0988     		ldrh	r1, [r1]
+ 722 0026 92FBF1F2 		sdiv	r2, r2, r1
+ 723 002a 02FB03F3 		mul	r3, r2, r3
+ 724 002e 1846     		mov	r0, r3
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 18
 
 
- 674 009c 80BD     		pop	{r7, pc}
- 675              	.L46:
- 676 009e 00BF     		.align	2
- 677              	.L45:
- 678 00a0 00000000 		.word	Z_axis_state
- 679 00a4 00000000 		.word	Z_pos
- 680 00a8 00000000 		.word	Z_Axis_Move_ISR
- 681              		.cfi_endproc
- 682              	.LFE61:
- 683              		.size	Z_Axis_Move_ISR, .-Z_Axis_Move_ISR
- 684              		.section	.text.Move_Up,"ax",%progbits
- 685              		.align	2
- 686              		.global	Move_Up
- 687              		.thumb
- 688              		.thumb_func
- 689              		.type	Move_Up, %function
- 690              	Move_Up:
- 691              	.LFB62:
- 223:.\zaxis.c     **** 
- 224:.\zaxis.c     **** void Move_Up(uint16 distance){
- 692              		.loc 1 224 0
- 693              		.cfi_startproc
- 694              		@ args = 0, pretend = 0, frame = 8
- 695              		@ frame_needed = 1, uses_anonymous_args = 0
- 696 0000 80B5     		push	{r7, lr}
- 697              		.cfi_def_cfa_offset 8
- 698              		.cfi_offset 7, -8
- 699              		.cfi_offset 14, -4
- 700 0002 82B0     		sub	sp, sp, #8
- 701              		.cfi_def_cfa_offset 16
- 702 0004 00AF     		add	r7, sp, #0
- 703              		.cfi_def_cfa_register 7
- 704 0006 0346     		mov	r3, r0
- 705 0008 FB80     		strh	r3, [r7, #6]	@ movhi
- 225:.\zaxis.c     ****     Z_Axis_Direction_Write(motor_up);
- 706              		.loc 1 225 0
- 707 000a 0123     		movs	r3, #1
- 708 000c 1846     		mov	r0, r3
- 709 000e FFF7FEFF 		bl	Z_Axis_Direction_Write
- 226:.\zaxis.c     ****     Z_Step_Dist_WriteCompare(distance*((motor_steps_turn*f_ustepping)/screw_lead));
- 710              		.loc 1 226 0
- 711 0012 FB88     		ldrh	r3, [r7, #6]
- 712 0014 0A4A     		ldr	r2, .L48
- 713 0016 1288     		ldrh	r2, [r2]
- 714 0018 1146     		mov	r1, r2
- 715 001a 0A4A     		ldr	r2, .L48+4
- 716 001c 1288     		ldrh	r2, [r2]
- 717 001e 02FB01F2 		mul	r2, r2, r1
- 718 0022 0949     		ldr	r1, .L48+8
- 719 0024 0988     		ldrh	r1, [r1]
- 720 0026 92FBF1F2 		sdiv	r2, r2, r1
- 721 002a 02FB03F3 		mul	r3, r2, r3
- 722 002e 1846     		mov	r0, r3
- 723 0030 FFF7FEFF 		bl	Z_Step_Dist_WriteCompare
- 227:.\zaxis.c     ****     Z_GO_Write(1); //Motor starts
- 724              		.loc 1 227 0
- 725 0034 0120     		movs	r0, #1
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 18
+ 725 0030 FFF7FEFF 		bl	Z_Step_Dist_WriteCompare
+ 228:.\zaxis.c     ****     Z_GO_Write(1); //Motor starts
+ 726              		.loc 1 228 0
+ 727 0034 0120     		movs	r0, #1
+ 728 0036 FFF7FEFF 		bl	Z_GO_Write
+ 229:.\zaxis.c     **** }
+ 729              		.loc 1 229 0
+ 730 003a 0837     		adds	r7, r7, #8
+ 731              		.cfi_def_cfa_offset 8
+ 732 003c BD46     		mov	sp, r7
+ 733              		.cfi_def_cfa_register 13
+ 734              		@ sp needed
+ 735 003e 80BD     		pop	{r7, pc}
+ 736              	.L49:
+ 737              		.align	2
+ 738              	.L48:
+ 739 0040 00000000 		.word	motor_steps_turn
+ 740 0044 00000000 		.word	f_ustepping
+ 741 0048 00000000 		.word	screw_lead
+ 742              		.cfi_endproc
+ 743              	.LFE62:
+ 744              		.size	Move_Up, .-Move_Up
+ 745              		.text
+ 746              	.Letext0:
+ 747              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 748              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 749              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 750              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 751              		.section	.debug_info,"",%progbits
+ 752              	.Ldebug_info0:
+ 753 0000 39020000 		.4byte	0x239
+ 754 0004 0400     		.2byte	0x4
+ 755 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 756 000a 04       		.byte	0x4
+ 757 000b 01       		.uleb128 0x1
+ 758 000c 25000000 		.4byte	.LASF40
+ 759 0010 01       		.byte	0x1
+ 760 0011 00000000 		.4byte	.LASF41
+ 761 0015 41020000 		.4byte	.LASF42
+ 762 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 763 001d 00000000 		.4byte	0
+ 764 0021 00000000 		.4byte	.Ldebug_line0
+ 765 0025 02       		.uleb128 0x2
+ 766 0026 01       		.byte	0x1
+ 767 0027 06       		.byte	0x6
+ 768 0028 99020000 		.4byte	.LASF0
+ 769 002c 02       		.uleb128 0x2
+ 770 002d 01       		.byte	0x1
+ 771 002e 08       		.byte	0x8
+ 772 002f FC000000 		.4byte	.LASF1
+ 773 0033 02       		.uleb128 0x2
+ 774 0034 02       		.byte	0x2
+ 775 0035 05       		.byte	0x5
+ 776 0036 26020000 		.4byte	.LASF2
+ 777 003a 02       		.uleb128 0x2
+ 778 003b 02       		.byte	0x2
+ 779 003c 07       		.byte	0x7
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 19
 
 
- 726 0036 FFF7FEFF 		bl	Z_GO_Write
- 228:.\zaxis.c     **** }
- 727              		.loc 1 228 0
- 728 003a 0837     		adds	r7, r7, #8
- 729              		.cfi_def_cfa_offset 8
- 730 003c BD46     		mov	sp, r7
- 731              		.cfi_def_cfa_register 13
- 732              		@ sp needed
- 733 003e 80BD     		pop	{r7, pc}
- 734              	.L49:
- 735              		.align	2
- 736              	.L48:
- 737 0040 00000000 		.word	motor_steps_turn
- 738 0044 00000000 		.word	f_ustepping
- 739 0048 00000000 		.word	screw_lead
- 740              		.cfi_endproc
- 741              	.LFE62:
- 742              		.size	Move_Up, .-Move_Up
- 743              		.text
- 744              	.Letext0:
- 745              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
- 746              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
- 747              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 748              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
- 749              		.section	.debug_info,"",%progbits
- 750              	.Ldebug_info0:
- 751 0000 39020000 		.4byte	0x239
- 752 0004 0400     		.2byte	0x4
- 753 0006 00000000 		.4byte	.Ldebug_abbrev0
- 754 000a 04       		.byte	0x4
- 755 000b 01       		.uleb128 0x1
- 756 000c 25000000 		.4byte	.LASF40
- 757 0010 01       		.byte	0x1
- 758 0011 00000000 		.4byte	.LASF41
- 759 0015 41020000 		.4byte	.LASF42
- 760 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 761 001d 00000000 		.4byte	0
- 762 0021 00000000 		.4byte	.Ldebug_line0
- 763 0025 02       		.uleb128 0x2
- 764 0026 01       		.byte	0x1
- 765 0027 06       		.byte	0x6
- 766 0028 99020000 		.4byte	.LASF0
- 767 002c 02       		.uleb128 0x2
- 768 002d 01       		.byte	0x1
- 769 002e 08       		.byte	0x8
- 770 002f FC000000 		.4byte	.LASF1
- 771 0033 02       		.uleb128 0x2
- 772 0034 02       		.byte	0x2
- 773 0035 05       		.byte	0x5
- 774 0036 26020000 		.4byte	.LASF2
- 775 003a 02       		.uleb128 0x2
- 776 003b 02       		.byte	0x2
- 777 003c 07       		.byte	0x7
- 778 003d AD020000 		.4byte	.LASF3
- 779 0041 03       		.uleb128 0x3
- 780 0042 0A000000 		.4byte	.LASF9
- 781 0046 02       		.byte	0x2
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 19
+ 780 003d AD020000 		.4byte	.LASF3
+ 781 0041 03       		.uleb128 0x3
+ 782 0042 0A000000 		.4byte	.LASF9
+ 783 0046 02       		.byte	0x2
+ 784 0047 3F       		.byte	0x3f
+ 785 0048 4C000000 		.4byte	0x4c
+ 786 004c 02       		.uleb128 0x2
+ 787 004d 04       		.byte	0x4
+ 788 004e 05       		.byte	0x5
+ 789 004f 90020000 		.4byte	.LASF4
+ 790 0053 02       		.uleb128 0x2
+ 791 0054 04       		.byte	0x4
+ 792 0055 07       		.byte	0x7
+ 793 0056 2A010000 		.4byte	.LASF5
+ 794 005a 02       		.uleb128 0x2
+ 795 005b 08       		.byte	0x8
+ 796 005c 05       		.byte	0x5
+ 797 005d FC010000 		.4byte	.LASF6
+ 798 0061 02       		.uleb128 0x2
+ 799 0062 08       		.byte	0x8
+ 800 0063 07       		.byte	0x7
+ 801 0064 C2010000 		.4byte	.LASF7
+ 802 0068 04       		.uleb128 0x4
+ 803 0069 04       		.byte	0x4
+ 804 006a 05       		.byte	0x5
+ 805 006b 696E7400 		.ascii	"int\000"
+ 806 006f 02       		.uleb128 0x2
+ 807 0070 04       		.byte	0x4
+ 808 0071 07       		.byte	0x7
+ 809 0072 B5010000 		.4byte	.LASF8
+ 810 0076 03       		.uleb128 0x3
+ 811 0077 EB010000 		.4byte	.LASF10
+ 812 007b 03       		.byte	0x3
+ 813 007c 2C       		.byte	0x2c
+ 814 007d 41000000 		.4byte	0x41
+ 815 0081 03       		.uleb128 0x3
+ 816 0082 30020000 		.4byte	.LASF11
+ 817 0086 04       		.byte	0x4
+ 818 0087 A1       		.byte	0xa1
+ 819 0088 2C000000 		.4byte	0x2c
+ 820 008c 03       		.uleb128 0x3
+ 821 008d 91010000 		.4byte	.LASF12
+ 822 0091 04       		.byte	0x4
+ 823 0092 A2       		.byte	0xa2
+ 824 0093 3A000000 		.4byte	0x3a
+ 825 0097 03       		.uleb128 0x3
+ 826 0098 AE010000 		.4byte	.LASF13
+ 827 009c 04       		.byte	0x4
+ 828 009d A3       		.byte	0xa3
+ 829 009e 53000000 		.4byte	0x53
+ 830 00a2 02       		.uleb128 0x2
+ 831 00a3 04       		.byte	0x4
+ 832 00a4 04       		.byte	0x4
+ 833 00a5 E0000000 		.4byte	.LASF14
+ 834 00a9 02       		.uleb128 0x2
+ 835 00aa 08       		.byte	0x8
+ 836 00ab 04       		.byte	0x4
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 20
 
 
- 782 0047 3F       		.byte	0x3f
- 783 0048 4C000000 		.4byte	0x4c
- 784 004c 02       		.uleb128 0x2
- 785 004d 04       		.byte	0x4
- 786 004e 05       		.byte	0x5
- 787 004f 90020000 		.4byte	.LASF4
- 788 0053 02       		.uleb128 0x2
- 789 0054 04       		.byte	0x4
- 790 0055 07       		.byte	0x7
- 791 0056 2A010000 		.4byte	.LASF5
- 792 005a 02       		.uleb128 0x2
- 793 005b 08       		.byte	0x8
- 794 005c 05       		.byte	0x5
- 795 005d FC010000 		.4byte	.LASF6
- 796 0061 02       		.uleb128 0x2
- 797 0062 08       		.byte	0x8
- 798 0063 07       		.byte	0x7
- 799 0064 C2010000 		.4byte	.LASF7
- 800 0068 04       		.uleb128 0x4
- 801 0069 04       		.byte	0x4
- 802 006a 05       		.byte	0x5
- 803 006b 696E7400 		.ascii	"int\000"
- 804 006f 02       		.uleb128 0x2
- 805 0070 04       		.byte	0x4
- 806 0071 07       		.byte	0x7
- 807 0072 B5010000 		.4byte	.LASF8
- 808 0076 03       		.uleb128 0x3
- 809 0077 EB010000 		.4byte	.LASF10
- 810 007b 03       		.byte	0x3
- 811 007c 2C       		.byte	0x2c
- 812 007d 41000000 		.4byte	0x41
- 813 0081 03       		.uleb128 0x3
- 814 0082 30020000 		.4byte	.LASF11
- 815 0086 04       		.byte	0x4
- 816 0087 A1       		.byte	0xa1
- 817 0088 2C000000 		.4byte	0x2c
- 818 008c 03       		.uleb128 0x3
- 819 008d 91010000 		.4byte	.LASF12
- 820 0091 04       		.byte	0x4
- 821 0092 A2       		.byte	0xa2
- 822 0093 3A000000 		.4byte	0x3a
- 823 0097 03       		.uleb128 0x3
- 824 0098 AE010000 		.4byte	.LASF13
- 825 009c 04       		.byte	0x4
- 826 009d A3       		.byte	0xa3
- 827 009e 53000000 		.4byte	0x53
- 828 00a2 02       		.uleb128 0x2
- 829 00a3 04       		.byte	0x4
- 830 00a4 04       		.byte	0x4
- 831 00a5 E0000000 		.4byte	.LASF14
- 832 00a9 02       		.uleb128 0x2
- 833 00aa 08       		.byte	0x8
- 834 00ab 04       		.byte	0x4
- 835 00ac 55010000 		.4byte	.LASF15
- 836 00b0 02       		.uleb128 0x2
- 837 00b1 01       		.byte	0x1
- 838 00b2 08       		.byte	0x8
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 20
+ 837 00ac 55010000 		.4byte	.LASF15
+ 838 00b0 02       		.uleb128 0x2
+ 839 00b1 01       		.byte	0x1
+ 840 00b2 08       		.byte	0x8
+ 841 00b3 16020000 		.4byte	.LASF16
+ 842 00b7 02       		.uleb128 0x2
+ 843 00b8 04       		.byte	0x4
+ 844 00b9 07       		.byte	0x7
+ 845 00ba F3010000 		.4byte	.LASF17
+ 846 00be 05       		.uleb128 0x5
+ 847 00bf 85010000 		.4byte	.LASF18
+ 848 00c3 01       		.byte	0x1
+ 849 00c4 1D       		.byte	0x1d
+ 850 00c5 00000000 		.4byte	.LFB56
+ 851 00c9 E8000000 		.4byte	.LFE56-.LFB56
+ 852 00cd 01       		.uleb128 0x1
+ 853 00ce 9C       		.byte	0x9c
+ 854 00cf 05       		.uleb128 0x5
+ 855 00d0 79010000 		.4byte	.LASF19
+ 856 00d4 01       		.byte	0x1
+ 857 00d5 62       		.byte	0x62
+ 858 00d6 00000000 		.4byte	.LFB57
+ 859 00da 4C000000 		.4byte	.LFE57-.LFB57
+ 860 00de 01       		.uleb128 0x1
+ 861 00df 9C       		.byte	0x9c
+ 862 00e0 05       		.uleb128 0x5
+ 863 00e1 BC000000 		.4byte	.LASF20
+ 864 00e5 01       		.byte	0x1
+ 865 00e6 70       		.byte	0x70
+ 866 00e7 00000000 		.4byte	.LFB58
+ 867 00eb 94000000 		.4byte	.LFE58-.LFB58
+ 868 00ef 01       		.uleb128 0x1
+ 869 00f0 9C       		.byte	0x9c
+ 870 00f1 06       		.uleb128 0x6
+ 871 00f2 3C010000 		.4byte	.LASF25
+ 872 00f6 01       		.byte	0x1
+ 873 00f7 97       		.byte	0x97
+ 874 00f8 00000000 		.4byte	.LFB59
+ 875 00fc F4000000 		.4byte	.LFE59-.LFB59
+ 876 0100 01       		.uleb128 0x1
+ 877 0101 9C       		.byte	0x9c
+ 878 0102 31010000 		.4byte	0x131
+ 879 0106 07       		.uleb128 0x7
+ 880 0107 A5010000 		.4byte	.LASF27
+ 881 010b 01       		.byte	0x1
+ 882 010c 97       		.byte	0x97
+ 883 010d 8C000000 		.4byte	0x8c
+ 884 0111 02       		.uleb128 0x2
+ 885 0112 91       		.byte	0x91
+ 886 0113 6E       		.sleb128 -18
+ 887 0114 08       		.uleb128 0x8
+ 888 0115 D0000000 		.4byte	.LASF21
+ 889 0119 01       		.byte	0x1
+ 890 011a 98       		.byte	0x98
+ 891 011b 8C000000 		.4byte	0x8c
+ 892 011f 02       		.uleb128 0x2
+ 893 0120 91       		.byte	0x91
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 21
 
 
- 839 00b3 16020000 		.4byte	.LASF16
- 840 00b7 02       		.uleb128 0x2
- 841 00b8 04       		.byte	0x4
- 842 00b9 07       		.byte	0x7
- 843 00ba F3010000 		.4byte	.LASF17
- 844 00be 05       		.uleb128 0x5
- 845 00bf 85010000 		.4byte	.LASF18
- 846 00c3 01       		.byte	0x1
- 847 00c4 1D       		.byte	0x1d
- 848 00c5 00000000 		.4byte	.LFB56
- 849 00c9 E8000000 		.4byte	.LFE56-.LFB56
- 850 00cd 01       		.uleb128 0x1
- 851 00ce 9C       		.byte	0x9c
- 852 00cf 05       		.uleb128 0x5
- 853 00d0 79010000 		.4byte	.LASF19
- 854 00d4 01       		.byte	0x1
- 855 00d5 62       		.byte	0x62
- 856 00d6 00000000 		.4byte	.LFB57
- 857 00da 4C000000 		.4byte	.LFE57-.LFB57
- 858 00de 01       		.uleb128 0x1
- 859 00df 9C       		.byte	0x9c
- 860 00e0 05       		.uleb128 0x5
- 861 00e1 BC000000 		.4byte	.LASF20
- 862 00e5 01       		.byte	0x1
- 863 00e6 70       		.byte	0x70
- 864 00e7 00000000 		.4byte	.LFB58
- 865 00eb 90000000 		.4byte	.LFE58-.LFB58
- 866 00ef 01       		.uleb128 0x1
- 867 00f0 9C       		.byte	0x9c
- 868 00f1 06       		.uleb128 0x6
- 869 00f2 3C010000 		.4byte	.LASF25
- 870 00f6 01       		.byte	0x1
- 871 00f7 96       		.byte	0x96
- 872 00f8 00000000 		.4byte	.LFB59
- 873 00fc F4000000 		.4byte	.LFE59-.LFB59
- 874 0100 01       		.uleb128 0x1
- 875 0101 9C       		.byte	0x9c
- 876 0102 31010000 		.4byte	0x131
- 877 0106 07       		.uleb128 0x7
- 878 0107 A5010000 		.4byte	.LASF27
- 879 010b 01       		.byte	0x1
- 880 010c 96       		.byte	0x96
- 881 010d 8C000000 		.4byte	0x8c
- 882 0111 02       		.uleb128 0x2
- 883 0112 91       		.byte	0x91
- 884 0113 6E       		.sleb128 -18
- 885 0114 08       		.uleb128 0x8
- 886 0115 D0000000 		.4byte	.LASF21
- 887 0119 01       		.byte	0x1
- 888 011a 97       		.byte	0x97
- 889 011b 8C000000 		.4byte	0x8c
- 890 011f 02       		.uleb128 0x2
- 891 0120 91       		.byte	0x91
- 892 0121 72       		.sleb128 -14
- 893 0122 08       		.uleb128 0x8
- 894 0123 0A010000 		.4byte	.LASF22
- 895 0127 01       		.byte	0x1
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 21
+ 894 0121 72       		.sleb128 -14
+ 895 0122 08       		.uleb128 0x8
+ 896 0123 0A010000 		.4byte	.LASF22
+ 897 0127 01       		.byte	0x1
+ 898 0128 99       		.byte	0x99
+ 899 0129 97000000 		.4byte	0x97
+ 900 012d 02       		.uleb128 0x2
+ 901 012e 91       		.byte	0x91
+ 902 012f 74       		.sleb128 -12
+ 903 0130 00       		.byte	0
+ 904 0131 09       		.uleb128 0x9
+ 905 0132 D9010000 		.4byte	.LASF23
+ 906 0136 01       		.byte	0x1
+ 907 0137 B3       		.byte	0xb3
+ 908 0138 00000000 		.4byte	.LFB60
+ 909 013c 20000000 		.4byte	.LFE60-.LFB60
+ 910 0140 01       		.uleb128 0x1
+ 911 0141 9C       		.byte	0x9c
+ 912 0142 09       		.uleb128 0x9
+ 913 0143 E6000000 		.4byte	.LASF24
+ 914 0147 01       		.byte	0x1
+ 915 0148 BB       		.byte	0xbb
+ 916 0149 00000000 		.4byte	.LFB61
+ 917 014d AC000000 		.4byte	.LFE61-.LFB61
+ 918 0151 01       		.uleb128 0x1
+ 919 0152 9C       		.byte	0x9c
+ 920 0153 06       		.uleb128 0x6
+ 921 0154 A5020000 		.4byte	.LASF26
+ 922 0158 01       		.byte	0x1
+ 923 0159 E1       		.byte	0xe1
+ 924 015a 00000000 		.4byte	.LFB62
+ 925 015e 4C000000 		.4byte	.LFE62-.LFB62
+ 926 0162 01       		.uleb128 0x1
+ 927 0163 9C       		.byte	0x9c
+ 928 0164 77010000 		.4byte	0x177
+ 929 0168 07       		.uleb128 0x7
+ 930 0169 D7000000 		.4byte	.LASF28
+ 931 016d 01       		.byte	0x1
+ 932 016e E1       		.byte	0xe1
+ 933 016f 8C000000 		.4byte	0x8c
+ 934 0173 02       		.uleb128 0x2
+ 935 0174 91       		.byte	0x91
+ 936 0175 76       		.sleb128 -10
+ 937 0176 00       		.byte	0
+ 938 0177 0A       		.uleb128 0xa
+ 939 0178 48010000 		.4byte	.LASF29
+ 940 017c 05       		.byte	0x5
+ 941 017d 1606     		.2byte	0x616
+ 942 017f 83010000 		.4byte	0x183
+ 943 0183 0B       		.uleb128 0xb
+ 944 0184 76000000 		.4byte	0x76
+ 945 0188 0C       		.uleb128 0xc
+ 946 0189 5C010000 		.4byte	.LASF30
+ 947 018d 01       		.byte	0x1
+ 948 018e 12       		.byte	0x12
+ 949 018f 81000000 		.4byte	0x81
+ 950 0193 05       		.uleb128 0x5
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 22
 
 
- 896 0128 98       		.byte	0x98
- 897 0129 97000000 		.4byte	0x97
- 898 012d 02       		.uleb128 0x2
- 899 012e 91       		.byte	0x91
- 900 012f 74       		.sleb128 -12
- 901 0130 00       		.byte	0
- 902 0131 09       		.uleb128 0x9
- 903 0132 D9010000 		.4byte	.LASF23
- 904 0136 01       		.byte	0x1
- 905 0137 B2       		.byte	0xb2
- 906 0138 00000000 		.4byte	.LFB60
- 907 013c 20000000 		.4byte	.LFE60-.LFB60
- 908 0140 01       		.uleb128 0x1
- 909 0141 9C       		.byte	0x9c
- 910 0142 09       		.uleb128 0x9
- 911 0143 E6000000 		.4byte	.LASF24
- 912 0147 01       		.byte	0x1
- 913 0148 BA       		.byte	0xba
- 914 0149 00000000 		.4byte	.LFB61
- 915 014d AC000000 		.4byte	.LFE61-.LFB61
- 916 0151 01       		.uleb128 0x1
- 917 0152 9C       		.byte	0x9c
- 918 0153 06       		.uleb128 0x6
- 919 0154 A5020000 		.4byte	.LASF26
- 920 0158 01       		.byte	0x1
- 921 0159 E0       		.byte	0xe0
- 922 015a 00000000 		.4byte	.LFB62
- 923 015e 4C000000 		.4byte	.LFE62-.LFB62
- 924 0162 01       		.uleb128 0x1
- 925 0163 9C       		.byte	0x9c
- 926 0164 77010000 		.4byte	0x177
- 927 0168 07       		.uleb128 0x7
- 928 0169 D7000000 		.4byte	.LASF28
- 929 016d 01       		.byte	0x1
- 930 016e E0       		.byte	0xe0
- 931 016f 8C000000 		.4byte	0x8c
- 932 0173 02       		.uleb128 0x2
- 933 0174 91       		.byte	0x91
- 934 0175 76       		.sleb128 -10
- 935 0176 00       		.byte	0
- 936 0177 0A       		.uleb128 0xa
- 937 0178 48010000 		.4byte	.LASF29
- 938 017c 05       		.byte	0x5
- 939 017d 1606     		.2byte	0x616
- 940 017f 83010000 		.4byte	0x183
- 941 0183 0B       		.uleb128 0xb
- 942 0184 76000000 		.4byte	0x76
- 943 0188 0C       		.uleb128 0xc
- 944 0189 5C010000 		.4byte	.LASF30
- 945 018d 01       		.byte	0x1
- 946 018e 12       		.byte	0x12
- 947 018f 81000000 		.4byte	0x81
- 948 0193 05       		.uleb128 0x5
- 949 0194 03       		.byte	0x3
- 950 0195 00000000 		.4byte	Z_axis_state
- 951 0199 0C       		.uleb128 0xc
- 952 019a F6000000 		.4byte	.LASF31
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 22
+ 951 0194 03       		.byte	0x3
+ 952 0195 00000000 		.4byte	Z_axis_state
+ 953 0199 0C       		.uleb128 0xc
+ 954 019a F6000000 		.4byte	.LASF31
+ 955 019e 01       		.byte	0x1
+ 956 019f 13       		.byte	0x13
+ 957 01a0 8C000000 		.4byte	0x8c
+ 958 01a4 05       		.uleb128 0x5
+ 959 01a5 03       		.byte	0x3
+ 960 01a6 00000000 		.4byte	Z_pos
+ 961 01aa 0C       		.uleb128 0xc
+ 962 01ab 36020000 		.4byte	.LASF32
+ 963 01af 01       		.byte	0x1
+ 964 01b0 14       		.byte	0x14
+ 965 01b1 8C000000 		.4byte	0x8c
+ 966 01b5 05       		.uleb128 0x5
+ 967 01b6 03       		.byte	0x3
+ 968 01b7 00000000 		.4byte	screw_lead
+ 969 01bb 0C       		.uleb128 0xc
+ 970 01bc 14000000 		.4byte	.LASF33
+ 971 01c0 01       		.byte	0x1
+ 972 01c1 15       		.byte	0x15
+ 973 01c2 8C000000 		.4byte	0x8c
+ 974 01c6 05       		.uleb128 0x5
+ 975 01c7 03       		.byte	0x3
+ 976 01c8 00000000 		.4byte	motor_steps_turn
+ 977 01cc 0C       		.uleb128 0xc
+ 978 01cd 0A020000 		.4byte	.LASF34
+ 979 01d1 01       		.byte	0x1
+ 980 01d2 16       		.byte	0x16
+ 981 01d3 8C000000 		.4byte	0x8c
+ 982 01d7 05       		.uleb128 0x5
+ 983 01d8 03       		.byte	0x3
+ 984 01d9 00000000 		.4byte	f_ustepping
+ 985 01dd 0C       		.uleb128 0xc
+ 986 01de 69010000 		.4byte	.LASF35
+ 987 01e2 01       		.byte	0x1
+ 988 01e3 17       		.byte	0x17
+ 989 01e4 81000000 		.4byte	0x81
+ 990 01e8 05       		.uleb128 0x5
+ 991 01e9 03       		.byte	0x3
+ 992 01ea 00000000 		.4byte	motor_direction
+ 993 01ee 0C       		.uleb128 0xc
+ 994 01ef 16010000 		.4byte	.LASF36
+ 995 01f3 01       		.byte	0x1
+ 996 01f4 18       		.byte	0x18
+ 997 01f5 81000000 		.4byte	0x81
+ 998 01f9 05       		.uleb128 0x5
+ 999 01fa 03       		.byte	0x3
+ 1000 01fb 00000000 		.4byte	Z_axis_bumper_count
+ 1001 01ff 0C       		.uleb128 0xc
+ 1002 0200 B3000000 		.4byte	.LASF37
+ 1003 0204 01       		.byte	0x1
+ 1004 0205 19       		.byte	0x19
+ 1005 0206 10020000 		.4byte	0x210
+ 1006 020a 05       		.uleb128 0x5
+ 1007 020b 03       		.byte	0x3
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 23
 
 
- 953 019e 01       		.byte	0x1
- 954 019f 13       		.byte	0x13
- 955 01a0 8C000000 		.4byte	0x8c
- 956 01a4 05       		.uleb128 0x5
- 957 01a5 03       		.byte	0x3
- 958 01a6 00000000 		.4byte	Z_pos
- 959 01aa 0C       		.uleb128 0xc
- 960 01ab 36020000 		.4byte	.LASF32
- 961 01af 01       		.byte	0x1
- 962 01b0 14       		.byte	0x14
- 963 01b1 8C000000 		.4byte	0x8c
- 964 01b5 05       		.uleb128 0x5
- 965 01b6 03       		.byte	0x3
- 966 01b7 00000000 		.4byte	screw_lead
- 967 01bb 0C       		.uleb128 0xc
- 968 01bc 14000000 		.4byte	.LASF33
- 969 01c0 01       		.byte	0x1
- 970 01c1 15       		.byte	0x15
- 971 01c2 8C000000 		.4byte	0x8c
- 972 01c6 05       		.uleb128 0x5
- 973 01c7 03       		.byte	0x3
- 974 01c8 00000000 		.4byte	motor_steps_turn
- 975 01cc 0C       		.uleb128 0xc
- 976 01cd 0A020000 		.4byte	.LASF34
- 977 01d1 01       		.byte	0x1
- 978 01d2 16       		.byte	0x16
- 979 01d3 8C000000 		.4byte	0x8c
- 980 01d7 05       		.uleb128 0x5
- 981 01d8 03       		.byte	0x3
- 982 01d9 00000000 		.4byte	f_ustepping
- 983 01dd 0C       		.uleb128 0xc
- 984 01de 69010000 		.4byte	.LASF35
- 985 01e2 01       		.byte	0x1
- 986 01e3 17       		.byte	0x17
- 987 01e4 81000000 		.4byte	0x81
- 988 01e8 05       		.uleb128 0x5
- 989 01e9 03       		.byte	0x3
- 990 01ea 00000000 		.4byte	motor_direction
- 991 01ee 0C       		.uleb128 0xc
- 992 01ef 16010000 		.4byte	.LASF36
- 993 01f3 01       		.byte	0x1
- 994 01f4 18       		.byte	0x18
- 995 01f5 81000000 		.4byte	0x81
- 996 01f9 05       		.uleb128 0x5
- 997 01fa 03       		.byte	0x3
- 998 01fb 00000000 		.4byte	Z_axis_bumper_count
- 999 01ff 0C       		.uleb128 0xc
- 1000 0200 B3000000 		.4byte	.LASF37
- 1001 0204 01       		.byte	0x1
- 1002 0205 19       		.byte	0x19
- 1003 0206 10020000 		.4byte	0x210
- 1004 020a 05       		.uleb128 0x5
- 1005 020b 03       		.byte	0x3
- 1006 020c 00000000 		.4byte	motor_up
- 1007 0210 0D       		.uleb128 0xd
- 1008 0211 81000000 		.4byte	0x81
- 1009 0215 0C       		.uleb128 0xc
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 23
+ 1008 020c 00000000 		.4byte	motor_up
+ 1009 0210 0D       		.uleb128 0xd
+ 1010 0211 81000000 		.4byte	0x81
+ 1011 0215 0C       		.uleb128 0xc
+ 1012 0216 1B020000 		.4byte	.LASF38
+ 1013 021a 01       		.byte	0x1
+ 1014 021b 1A       		.byte	0x1a
+ 1015 021c 10020000 		.4byte	0x210
+ 1016 0220 05       		.uleb128 0x5
+ 1017 0221 03       		.byte	0x3
+ 1018 0222 00000000 		.4byte	motor_down
+ 1019 0226 0C       		.uleb128 0xc
+ 1020 0227 98010000 		.4byte	.LASF39
+ 1021 022b 01       		.byte	0x1
+ 1022 022c 1B       		.byte	0x1b
+ 1023 022d 37020000 		.4byte	0x237
+ 1024 0231 05       		.uleb128 0x5
+ 1025 0232 03       		.byte	0x3
+ 1026 0233 00000000 		.4byte	max_distance
+ 1027 0237 0D       		.uleb128 0xd
+ 1028 0238 8C000000 		.4byte	0x8c
+ 1029 023c 00       		.byte	0
+ 1030              		.section	.debug_abbrev,"",%progbits
+ 1031              	.Ldebug_abbrev0:
+ 1032 0000 01       		.uleb128 0x1
+ 1033 0001 11       		.uleb128 0x11
+ 1034 0002 01       		.byte	0x1
+ 1035 0003 25       		.uleb128 0x25
+ 1036 0004 0E       		.uleb128 0xe
+ 1037 0005 13       		.uleb128 0x13
+ 1038 0006 0B       		.uleb128 0xb
+ 1039 0007 03       		.uleb128 0x3
+ 1040 0008 0E       		.uleb128 0xe
+ 1041 0009 1B       		.uleb128 0x1b
+ 1042 000a 0E       		.uleb128 0xe
+ 1043 000b 55       		.uleb128 0x55
+ 1044 000c 17       		.uleb128 0x17
+ 1045 000d 11       		.uleb128 0x11
+ 1046 000e 01       		.uleb128 0x1
+ 1047 000f 10       		.uleb128 0x10
+ 1048 0010 17       		.uleb128 0x17
+ 1049 0011 00       		.byte	0
+ 1050 0012 00       		.byte	0
+ 1051 0013 02       		.uleb128 0x2
+ 1052 0014 24       		.uleb128 0x24
+ 1053 0015 00       		.byte	0
+ 1054 0016 0B       		.uleb128 0xb
+ 1055 0017 0B       		.uleb128 0xb
+ 1056 0018 3E       		.uleb128 0x3e
+ 1057 0019 0B       		.uleb128 0xb
+ 1058 001a 03       		.uleb128 0x3
+ 1059 001b 0E       		.uleb128 0xe
+ 1060 001c 00       		.byte	0
+ 1061 001d 00       		.byte	0
+ 1062 001e 03       		.uleb128 0x3
+ 1063 001f 16       		.uleb128 0x16
+ 1064 0020 00       		.byte	0
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 24
 
 
- 1010 0216 1B020000 		.4byte	.LASF38
- 1011 021a 01       		.byte	0x1
- 1012 021b 1A       		.byte	0x1a
- 1013 021c 10020000 		.4byte	0x210
- 1014 0220 05       		.uleb128 0x5
- 1015 0221 03       		.byte	0x3
- 1016 0222 00000000 		.4byte	motor_down
- 1017 0226 0C       		.uleb128 0xc
- 1018 0227 98010000 		.4byte	.LASF39
- 1019 022b 01       		.byte	0x1
- 1020 022c 1B       		.byte	0x1b
- 1021 022d 37020000 		.4byte	0x237
- 1022 0231 05       		.uleb128 0x5
- 1023 0232 03       		.byte	0x3
- 1024 0233 00000000 		.4byte	max_distance
- 1025 0237 0D       		.uleb128 0xd
- 1026 0238 8C000000 		.4byte	0x8c
- 1027 023c 00       		.byte	0
- 1028              		.section	.debug_abbrev,"",%progbits
- 1029              	.Ldebug_abbrev0:
- 1030 0000 01       		.uleb128 0x1
- 1031 0001 11       		.uleb128 0x11
- 1032 0002 01       		.byte	0x1
- 1033 0003 25       		.uleb128 0x25
- 1034 0004 0E       		.uleb128 0xe
- 1035 0005 13       		.uleb128 0x13
- 1036 0006 0B       		.uleb128 0xb
- 1037 0007 03       		.uleb128 0x3
- 1038 0008 0E       		.uleb128 0xe
- 1039 0009 1B       		.uleb128 0x1b
- 1040 000a 0E       		.uleb128 0xe
- 1041 000b 55       		.uleb128 0x55
- 1042 000c 17       		.uleb128 0x17
- 1043 000d 11       		.uleb128 0x11
- 1044 000e 01       		.uleb128 0x1
- 1045 000f 10       		.uleb128 0x10
- 1046 0010 17       		.uleb128 0x17
- 1047 0011 00       		.byte	0
- 1048 0012 00       		.byte	0
- 1049 0013 02       		.uleb128 0x2
- 1050 0014 24       		.uleb128 0x24
- 1051 0015 00       		.byte	0
- 1052 0016 0B       		.uleb128 0xb
- 1053 0017 0B       		.uleb128 0xb
- 1054 0018 3E       		.uleb128 0x3e
- 1055 0019 0B       		.uleb128 0xb
- 1056 001a 03       		.uleb128 0x3
- 1057 001b 0E       		.uleb128 0xe
- 1058 001c 00       		.byte	0
- 1059 001d 00       		.byte	0
- 1060 001e 03       		.uleb128 0x3
- 1061 001f 16       		.uleb128 0x16
- 1062 0020 00       		.byte	0
- 1063 0021 03       		.uleb128 0x3
- 1064 0022 0E       		.uleb128 0xe
- 1065 0023 3A       		.uleb128 0x3a
- 1066 0024 0B       		.uleb128 0xb
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 24
+ 1065 0021 03       		.uleb128 0x3
+ 1066 0022 0E       		.uleb128 0xe
+ 1067 0023 3A       		.uleb128 0x3a
+ 1068 0024 0B       		.uleb128 0xb
+ 1069 0025 3B       		.uleb128 0x3b
+ 1070 0026 0B       		.uleb128 0xb
+ 1071 0027 49       		.uleb128 0x49
+ 1072 0028 13       		.uleb128 0x13
+ 1073 0029 00       		.byte	0
+ 1074 002a 00       		.byte	0
+ 1075 002b 04       		.uleb128 0x4
+ 1076 002c 24       		.uleb128 0x24
+ 1077 002d 00       		.byte	0
+ 1078 002e 0B       		.uleb128 0xb
+ 1079 002f 0B       		.uleb128 0xb
+ 1080 0030 3E       		.uleb128 0x3e
+ 1081 0031 0B       		.uleb128 0xb
+ 1082 0032 03       		.uleb128 0x3
+ 1083 0033 08       		.uleb128 0x8
+ 1084 0034 00       		.byte	0
+ 1085 0035 00       		.byte	0
+ 1086 0036 05       		.uleb128 0x5
+ 1087 0037 2E       		.uleb128 0x2e
+ 1088 0038 00       		.byte	0
+ 1089 0039 3F       		.uleb128 0x3f
+ 1090 003a 19       		.uleb128 0x19
+ 1091 003b 03       		.uleb128 0x3
+ 1092 003c 0E       		.uleb128 0xe
+ 1093 003d 3A       		.uleb128 0x3a
+ 1094 003e 0B       		.uleb128 0xb
+ 1095 003f 3B       		.uleb128 0x3b
+ 1096 0040 0B       		.uleb128 0xb
+ 1097 0041 11       		.uleb128 0x11
+ 1098 0042 01       		.uleb128 0x1
+ 1099 0043 12       		.uleb128 0x12
+ 1100 0044 06       		.uleb128 0x6
+ 1101 0045 40       		.uleb128 0x40
+ 1102 0046 18       		.uleb128 0x18
+ 1103 0047 9642     		.uleb128 0x2116
+ 1104 0049 19       		.uleb128 0x19
+ 1105 004a 00       		.byte	0
+ 1106 004b 00       		.byte	0
+ 1107 004c 06       		.uleb128 0x6
+ 1108 004d 2E       		.uleb128 0x2e
+ 1109 004e 01       		.byte	0x1
+ 1110 004f 3F       		.uleb128 0x3f
+ 1111 0050 19       		.uleb128 0x19
+ 1112 0051 03       		.uleb128 0x3
+ 1113 0052 0E       		.uleb128 0xe
+ 1114 0053 3A       		.uleb128 0x3a
+ 1115 0054 0B       		.uleb128 0xb
+ 1116 0055 3B       		.uleb128 0x3b
+ 1117 0056 0B       		.uleb128 0xb
+ 1118 0057 27       		.uleb128 0x27
+ 1119 0058 19       		.uleb128 0x19
+ 1120 0059 11       		.uleb128 0x11
+ 1121 005a 01       		.uleb128 0x1
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 25
 
 
- 1067 0025 3B       		.uleb128 0x3b
- 1068 0026 0B       		.uleb128 0xb
- 1069 0027 49       		.uleb128 0x49
- 1070 0028 13       		.uleb128 0x13
- 1071 0029 00       		.byte	0
- 1072 002a 00       		.byte	0
- 1073 002b 04       		.uleb128 0x4
- 1074 002c 24       		.uleb128 0x24
- 1075 002d 00       		.byte	0
- 1076 002e 0B       		.uleb128 0xb
- 1077 002f 0B       		.uleb128 0xb
- 1078 0030 3E       		.uleb128 0x3e
- 1079 0031 0B       		.uleb128 0xb
- 1080 0032 03       		.uleb128 0x3
- 1081 0033 08       		.uleb128 0x8
- 1082 0034 00       		.byte	0
- 1083 0035 00       		.byte	0
- 1084 0036 05       		.uleb128 0x5
- 1085 0037 2E       		.uleb128 0x2e
- 1086 0038 00       		.byte	0
- 1087 0039 3F       		.uleb128 0x3f
- 1088 003a 19       		.uleb128 0x19
- 1089 003b 03       		.uleb128 0x3
- 1090 003c 0E       		.uleb128 0xe
- 1091 003d 3A       		.uleb128 0x3a
- 1092 003e 0B       		.uleb128 0xb
- 1093 003f 3B       		.uleb128 0x3b
- 1094 0040 0B       		.uleb128 0xb
- 1095 0041 11       		.uleb128 0x11
- 1096 0042 01       		.uleb128 0x1
- 1097 0043 12       		.uleb128 0x12
- 1098 0044 06       		.uleb128 0x6
- 1099 0045 40       		.uleb128 0x40
- 1100 0046 18       		.uleb128 0x18
- 1101 0047 9642     		.uleb128 0x2116
- 1102 0049 19       		.uleb128 0x19
- 1103 004a 00       		.byte	0
- 1104 004b 00       		.byte	0
- 1105 004c 06       		.uleb128 0x6
- 1106 004d 2E       		.uleb128 0x2e
- 1107 004e 01       		.byte	0x1
- 1108 004f 3F       		.uleb128 0x3f
- 1109 0050 19       		.uleb128 0x19
- 1110 0051 03       		.uleb128 0x3
- 1111 0052 0E       		.uleb128 0xe
- 1112 0053 3A       		.uleb128 0x3a
- 1113 0054 0B       		.uleb128 0xb
- 1114 0055 3B       		.uleb128 0x3b
- 1115 0056 0B       		.uleb128 0xb
- 1116 0057 27       		.uleb128 0x27
- 1117 0058 19       		.uleb128 0x19
- 1118 0059 11       		.uleb128 0x11
- 1119 005a 01       		.uleb128 0x1
- 1120 005b 12       		.uleb128 0x12
- 1121 005c 06       		.uleb128 0x6
- 1122 005d 40       		.uleb128 0x40
- 1123 005e 18       		.uleb128 0x18
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 25
+ 1122 005b 12       		.uleb128 0x12
+ 1123 005c 06       		.uleb128 0x6
+ 1124 005d 40       		.uleb128 0x40
+ 1125 005e 18       		.uleb128 0x18
+ 1126 005f 9642     		.uleb128 0x2116
+ 1127 0061 19       		.uleb128 0x19
+ 1128 0062 01       		.uleb128 0x1
+ 1129 0063 13       		.uleb128 0x13
+ 1130 0064 00       		.byte	0
+ 1131 0065 00       		.byte	0
+ 1132 0066 07       		.uleb128 0x7
+ 1133 0067 05       		.uleb128 0x5
+ 1134 0068 00       		.byte	0
+ 1135 0069 03       		.uleb128 0x3
+ 1136 006a 0E       		.uleb128 0xe
+ 1137 006b 3A       		.uleb128 0x3a
+ 1138 006c 0B       		.uleb128 0xb
+ 1139 006d 3B       		.uleb128 0x3b
+ 1140 006e 0B       		.uleb128 0xb
+ 1141 006f 49       		.uleb128 0x49
+ 1142 0070 13       		.uleb128 0x13
+ 1143 0071 02       		.uleb128 0x2
+ 1144 0072 18       		.uleb128 0x18
+ 1145 0073 00       		.byte	0
+ 1146 0074 00       		.byte	0
+ 1147 0075 08       		.uleb128 0x8
+ 1148 0076 34       		.uleb128 0x34
+ 1149 0077 00       		.byte	0
+ 1150 0078 03       		.uleb128 0x3
+ 1151 0079 0E       		.uleb128 0xe
+ 1152 007a 3A       		.uleb128 0x3a
+ 1153 007b 0B       		.uleb128 0xb
+ 1154 007c 3B       		.uleb128 0x3b
+ 1155 007d 0B       		.uleb128 0xb
+ 1156 007e 49       		.uleb128 0x49
+ 1157 007f 13       		.uleb128 0x13
+ 1158 0080 02       		.uleb128 0x2
+ 1159 0081 18       		.uleb128 0x18
+ 1160 0082 00       		.byte	0
+ 1161 0083 00       		.byte	0
+ 1162 0084 09       		.uleb128 0x9
+ 1163 0085 2E       		.uleb128 0x2e
+ 1164 0086 00       		.byte	0
+ 1165 0087 3F       		.uleb128 0x3f
+ 1166 0088 19       		.uleb128 0x19
+ 1167 0089 03       		.uleb128 0x3
+ 1168 008a 0E       		.uleb128 0xe
+ 1169 008b 3A       		.uleb128 0x3a
+ 1170 008c 0B       		.uleb128 0xb
+ 1171 008d 3B       		.uleb128 0x3b
+ 1172 008e 0B       		.uleb128 0xb
+ 1173 008f 27       		.uleb128 0x27
+ 1174 0090 19       		.uleb128 0x19
+ 1175 0091 11       		.uleb128 0x11
+ 1176 0092 01       		.uleb128 0x1
+ 1177 0093 12       		.uleb128 0x12
+ 1178 0094 06       		.uleb128 0x6
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 26
 
 
- 1124 005f 9642     		.uleb128 0x2116
- 1125 0061 19       		.uleb128 0x19
- 1126 0062 01       		.uleb128 0x1
- 1127 0063 13       		.uleb128 0x13
- 1128 0064 00       		.byte	0
- 1129 0065 00       		.byte	0
- 1130 0066 07       		.uleb128 0x7
- 1131 0067 05       		.uleb128 0x5
- 1132 0068 00       		.byte	0
- 1133 0069 03       		.uleb128 0x3
- 1134 006a 0E       		.uleb128 0xe
- 1135 006b 3A       		.uleb128 0x3a
- 1136 006c 0B       		.uleb128 0xb
- 1137 006d 3B       		.uleb128 0x3b
- 1138 006e 0B       		.uleb128 0xb
- 1139 006f 49       		.uleb128 0x49
- 1140 0070 13       		.uleb128 0x13
- 1141 0071 02       		.uleb128 0x2
- 1142 0072 18       		.uleb128 0x18
- 1143 0073 00       		.byte	0
- 1144 0074 00       		.byte	0
- 1145 0075 08       		.uleb128 0x8
- 1146 0076 34       		.uleb128 0x34
- 1147 0077 00       		.byte	0
- 1148 0078 03       		.uleb128 0x3
- 1149 0079 0E       		.uleb128 0xe
- 1150 007a 3A       		.uleb128 0x3a
- 1151 007b 0B       		.uleb128 0xb
- 1152 007c 3B       		.uleb128 0x3b
- 1153 007d 0B       		.uleb128 0xb
- 1154 007e 49       		.uleb128 0x49
- 1155 007f 13       		.uleb128 0x13
- 1156 0080 02       		.uleb128 0x2
- 1157 0081 18       		.uleb128 0x18
- 1158 0082 00       		.byte	0
- 1159 0083 00       		.byte	0
- 1160 0084 09       		.uleb128 0x9
- 1161 0085 2E       		.uleb128 0x2e
- 1162 0086 00       		.byte	0
- 1163 0087 3F       		.uleb128 0x3f
- 1164 0088 19       		.uleb128 0x19
- 1165 0089 03       		.uleb128 0x3
- 1166 008a 0E       		.uleb128 0xe
- 1167 008b 3A       		.uleb128 0x3a
- 1168 008c 0B       		.uleb128 0xb
- 1169 008d 3B       		.uleb128 0x3b
- 1170 008e 0B       		.uleb128 0xb
- 1171 008f 27       		.uleb128 0x27
- 1172 0090 19       		.uleb128 0x19
- 1173 0091 11       		.uleb128 0x11
- 1174 0092 01       		.uleb128 0x1
- 1175 0093 12       		.uleb128 0x12
- 1176 0094 06       		.uleb128 0x6
- 1177 0095 40       		.uleb128 0x40
- 1178 0096 18       		.uleb128 0x18
- 1179 0097 9642     		.uleb128 0x2116
- 1180 0099 19       		.uleb128 0x19
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 26
+ 1179 0095 40       		.uleb128 0x40
+ 1180 0096 18       		.uleb128 0x18
+ 1181 0097 9642     		.uleb128 0x2116
+ 1182 0099 19       		.uleb128 0x19
+ 1183 009a 00       		.byte	0
+ 1184 009b 00       		.byte	0
+ 1185 009c 0A       		.uleb128 0xa
+ 1186 009d 34       		.uleb128 0x34
+ 1187 009e 00       		.byte	0
+ 1188 009f 03       		.uleb128 0x3
+ 1189 00a0 0E       		.uleb128 0xe
+ 1190 00a1 3A       		.uleb128 0x3a
+ 1191 00a2 0B       		.uleb128 0xb
+ 1192 00a3 3B       		.uleb128 0x3b
+ 1193 00a4 05       		.uleb128 0x5
+ 1194 00a5 49       		.uleb128 0x49
+ 1195 00a6 13       		.uleb128 0x13
+ 1196 00a7 3F       		.uleb128 0x3f
+ 1197 00a8 19       		.uleb128 0x19
+ 1198 00a9 3C       		.uleb128 0x3c
+ 1199 00aa 19       		.uleb128 0x19
+ 1200 00ab 00       		.byte	0
+ 1201 00ac 00       		.byte	0
+ 1202 00ad 0B       		.uleb128 0xb
+ 1203 00ae 35       		.uleb128 0x35
+ 1204 00af 00       		.byte	0
+ 1205 00b0 49       		.uleb128 0x49
+ 1206 00b1 13       		.uleb128 0x13
+ 1207 00b2 00       		.byte	0
+ 1208 00b3 00       		.byte	0
+ 1209 00b4 0C       		.uleb128 0xc
+ 1210 00b5 34       		.uleb128 0x34
+ 1211 00b6 00       		.byte	0
+ 1212 00b7 03       		.uleb128 0x3
+ 1213 00b8 0E       		.uleb128 0xe
+ 1214 00b9 3A       		.uleb128 0x3a
+ 1215 00ba 0B       		.uleb128 0xb
+ 1216 00bb 3B       		.uleb128 0x3b
+ 1217 00bc 0B       		.uleb128 0xb
+ 1218 00bd 49       		.uleb128 0x49
+ 1219 00be 13       		.uleb128 0x13
+ 1220 00bf 3F       		.uleb128 0x3f
+ 1221 00c0 19       		.uleb128 0x19
+ 1222 00c1 02       		.uleb128 0x2
+ 1223 00c2 18       		.uleb128 0x18
+ 1224 00c3 00       		.byte	0
+ 1225 00c4 00       		.byte	0
+ 1226 00c5 0D       		.uleb128 0xd
+ 1227 00c6 26       		.uleb128 0x26
+ 1228 00c7 00       		.byte	0
+ 1229 00c8 49       		.uleb128 0x49
+ 1230 00c9 13       		.uleb128 0x13
+ 1231 00ca 00       		.byte	0
+ 1232 00cb 00       		.byte	0
+ 1233 00cc 00       		.byte	0
+ 1234              		.section	.debug_aranges,"",%progbits
+ 1235 0000 4C000000 		.4byte	0x4c
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 27
 
 
- 1181 009a 00       		.byte	0
- 1182 009b 00       		.byte	0
- 1183 009c 0A       		.uleb128 0xa
- 1184 009d 34       		.uleb128 0x34
- 1185 009e 00       		.byte	0
- 1186 009f 03       		.uleb128 0x3
- 1187 00a0 0E       		.uleb128 0xe
- 1188 00a1 3A       		.uleb128 0x3a
- 1189 00a2 0B       		.uleb128 0xb
- 1190 00a3 3B       		.uleb128 0x3b
- 1191 00a4 05       		.uleb128 0x5
- 1192 00a5 49       		.uleb128 0x49
- 1193 00a6 13       		.uleb128 0x13
- 1194 00a7 3F       		.uleb128 0x3f
- 1195 00a8 19       		.uleb128 0x19
- 1196 00a9 3C       		.uleb128 0x3c
- 1197 00aa 19       		.uleb128 0x19
- 1198 00ab 00       		.byte	0
- 1199 00ac 00       		.byte	0
- 1200 00ad 0B       		.uleb128 0xb
- 1201 00ae 35       		.uleb128 0x35
- 1202 00af 00       		.byte	0
- 1203 00b0 49       		.uleb128 0x49
- 1204 00b1 13       		.uleb128 0x13
- 1205 00b2 00       		.byte	0
- 1206 00b3 00       		.byte	0
- 1207 00b4 0C       		.uleb128 0xc
- 1208 00b5 34       		.uleb128 0x34
- 1209 00b6 00       		.byte	0
- 1210 00b7 03       		.uleb128 0x3
- 1211 00b8 0E       		.uleb128 0xe
- 1212 00b9 3A       		.uleb128 0x3a
- 1213 00ba 0B       		.uleb128 0xb
- 1214 00bb 3B       		.uleb128 0x3b
- 1215 00bc 0B       		.uleb128 0xb
- 1216 00bd 49       		.uleb128 0x49
- 1217 00be 13       		.uleb128 0x13
- 1218 00bf 3F       		.uleb128 0x3f
- 1219 00c0 19       		.uleb128 0x19
- 1220 00c1 02       		.uleb128 0x2
- 1221 00c2 18       		.uleb128 0x18
- 1222 00c3 00       		.byte	0
- 1223 00c4 00       		.byte	0
- 1224 00c5 0D       		.uleb128 0xd
- 1225 00c6 26       		.uleb128 0x26
- 1226 00c7 00       		.byte	0
- 1227 00c8 49       		.uleb128 0x49
- 1228 00c9 13       		.uleb128 0x13
- 1229 00ca 00       		.byte	0
- 1230 00cb 00       		.byte	0
- 1231 00cc 00       		.byte	0
- 1232              		.section	.debug_aranges,"",%progbits
- 1233 0000 4C000000 		.4byte	0x4c
- 1234 0004 0200     		.2byte	0x2
- 1235 0006 00000000 		.4byte	.Ldebug_info0
- 1236 000a 04       		.byte	0x4
- 1237 000b 00       		.byte	0
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 27
+ 1236 0004 0200     		.2byte	0x2
+ 1237 0006 00000000 		.4byte	.Ldebug_info0
+ 1238 000a 04       		.byte	0x4
+ 1239 000b 00       		.byte	0
+ 1240 000c 0000     		.2byte	0
+ 1241 000e 0000     		.2byte	0
+ 1242 0010 00000000 		.4byte	.LFB56
+ 1243 0014 E8000000 		.4byte	.LFE56-.LFB56
+ 1244 0018 00000000 		.4byte	.LFB57
+ 1245 001c 4C000000 		.4byte	.LFE57-.LFB57
+ 1246 0020 00000000 		.4byte	.LFB58
+ 1247 0024 94000000 		.4byte	.LFE58-.LFB58
+ 1248 0028 00000000 		.4byte	.LFB59
+ 1249 002c F4000000 		.4byte	.LFE59-.LFB59
+ 1250 0030 00000000 		.4byte	.LFB60
+ 1251 0034 20000000 		.4byte	.LFE60-.LFB60
+ 1252 0038 00000000 		.4byte	.LFB61
+ 1253 003c AC000000 		.4byte	.LFE61-.LFB61
+ 1254 0040 00000000 		.4byte	.LFB62
+ 1255 0044 4C000000 		.4byte	.LFE62-.LFB62
+ 1256 0048 00000000 		.4byte	0
+ 1257 004c 00000000 		.4byte	0
+ 1258              		.section	.debug_ranges,"",%progbits
+ 1259              	.Ldebug_ranges0:
+ 1260 0000 00000000 		.4byte	.LFB56
+ 1261 0004 E8000000 		.4byte	.LFE56
+ 1262 0008 00000000 		.4byte	.LFB57
+ 1263 000c 4C000000 		.4byte	.LFE57
+ 1264 0010 00000000 		.4byte	.LFB58
+ 1265 0014 94000000 		.4byte	.LFE58
+ 1266 0018 00000000 		.4byte	.LFB59
+ 1267 001c F4000000 		.4byte	.LFE59
+ 1268 0020 00000000 		.4byte	.LFB60
+ 1269 0024 20000000 		.4byte	.LFE60
+ 1270 0028 00000000 		.4byte	.LFB61
+ 1271 002c AC000000 		.4byte	.LFE61
+ 1272 0030 00000000 		.4byte	.LFB62
+ 1273 0034 4C000000 		.4byte	.LFE62
+ 1274 0038 00000000 		.4byte	0
+ 1275 003c 00000000 		.4byte	0
+ 1276              		.section	.debug_line,"",%progbits
+ 1277              	.Ldebug_line0:
+ 1278 0000 33020000 		.section	.debug_str,"MS",%progbits,1
+ 1278      02004A01 
+ 1278      00000201 
+ 1278      FB0E0D00 
+ 1278      01010101 
+ 1279              	.LASF41:
+ 1280 0000 2E5C7A61 		.ascii	".\\zaxis.c\000"
+ 1280      7869732E 
+ 1280      6300
+ 1281              	.LASF9:
+ 1282 000a 5F5F696E 		.ascii	"__int32_t\000"
+ 1282      7433325F 
+ 1282      7400
+ 1283              	.LASF33:
+ 1284 0014 6D6F746F 		.ascii	"motor_steps_turn\000"
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 28
 
 
- 1238 000c 0000     		.2byte	0
- 1239 000e 0000     		.2byte	0
- 1240 0010 00000000 		.4byte	.LFB56
- 1241 0014 E8000000 		.4byte	.LFE56-.LFB56
- 1242 0018 00000000 		.4byte	.LFB57
- 1243 001c 4C000000 		.4byte	.LFE57-.LFB57
- 1244 0020 00000000 		.4byte	.LFB58
- 1245 0024 90000000 		.4byte	.LFE58-.LFB58
- 1246 0028 00000000 		.4byte	.LFB59
- 1247 002c F4000000 		.4byte	.LFE59-.LFB59
- 1248 0030 00000000 		.4byte	.LFB60
- 1249 0034 20000000 		.4byte	.LFE60-.LFB60
- 1250 0038 00000000 		.4byte	.LFB61
- 1251 003c AC000000 		.4byte	.LFE61-.LFB61
- 1252 0040 00000000 		.4byte	.LFB62
- 1253 0044 4C000000 		.4byte	.LFE62-.LFB62
- 1254 0048 00000000 		.4byte	0
- 1255 004c 00000000 		.4byte	0
- 1256              		.section	.debug_ranges,"",%progbits
- 1257              	.Ldebug_ranges0:
- 1258 0000 00000000 		.4byte	.LFB56
- 1259 0004 E8000000 		.4byte	.LFE56
- 1260 0008 00000000 		.4byte	.LFB57
- 1261 000c 4C000000 		.4byte	.LFE57
- 1262 0010 00000000 		.4byte	.LFB58
- 1263 0014 90000000 		.4byte	.LFE58
- 1264 0018 00000000 		.4byte	.LFB59
- 1265 001c F4000000 		.4byte	.LFE59
- 1266 0020 00000000 		.4byte	.LFB60
- 1267 0024 20000000 		.4byte	.LFE60
- 1268 0028 00000000 		.4byte	.LFB61
- 1269 002c AC000000 		.4byte	.LFE61
- 1270 0030 00000000 		.4byte	.LFB62
- 1271 0034 4C000000 		.4byte	.LFE62
- 1272 0038 00000000 		.4byte	0
- 1273 003c 00000000 		.4byte	0
- 1274              		.section	.debug_line,"",%progbits
- 1275              	.Ldebug_line0:
- 1276 0000 32020000 		.section	.debug_str,"MS",%progbits,1
- 1276      02004A01 
- 1276      00000201 
- 1276      FB0E0D00 
- 1276      01010101 
- 1277              	.LASF41:
- 1278 0000 2E5C7A61 		.ascii	".\\zaxis.c\000"
- 1278      7869732E 
- 1278      6300
- 1279              	.LASF9:
- 1280 000a 5F5F696E 		.ascii	"__int32_t\000"
- 1280      7433325F 
- 1280      7400
- 1281              	.LASF33:
- 1282 0014 6D6F746F 		.ascii	"motor_steps_turn\000"
- 1282      725F7374 
- 1282      6570735F 
- 1282      7475726E 
- 1282      00
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 28
+ 1284      725F7374 
+ 1284      6570735F 
+ 1284      7475726E 
+ 1284      00
+ 1285              	.LASF40:
+ 1286 0025 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1286      4320342E 
+ 1286      392E3320 
+ 1286      32303135 
+ 1286      30333033 
+ 1287 0058 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1287      20726576 
+ 1287      6973696F 
+ 1287      6E203232 
+ 1287      31323230 
+ 1288 008b 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1288      66756E63 
+ 1288      74696F6E 
+ 1288      2D736563 
+ 1288      74696F6E 
+ 1289              	.LASF37:
+ 1290 00b3 6D6F746F 		.ascii	"motor_up\000"
+ 1290      725F7570 
+ 1290      00
+ 1291              	.LASF20:
+ 1292 00bc 5A5F4178 		.ascii	"Z_Axis_Bumper_Stops\000"
+ 1292      69735F42 
+ 1292      756D7065 
+ 1292      725F5374 
+ 1292      6F707300 
+ 1293              	.LASF21:
+ 1294 00d0 74726176 		.ascii	"travel\000"
+ 1294      656C00
+ 1295              	.LASF28:
+ 1296 00d7 64697374 		.ascii	"distance\000"
+ 1296      616E6365 
+ 1296      00
+ 1297              	.LASF14:
+ 1298 00e0 666C6F61 		.ascii	"float\000"
+ 1298      7400
+ 1299              	.LASF24:
+ 1300 00e6 5A5F4178 		.ascii	"Z_Axis_Move_ISR\000"
+ 1300      69735F4D 
+ 1300      6F76655F 
+ 1300      49535200 
+ 1301              	.LASF31:
+ 1302 00f6 5A5F706F 		.ascii	"Z_pos\000"
+ 1302      7300
+ 1303              	.LASF1:
+ 1304 00fc 756E7369 		.ascii	"unsigned char\000"
+ 1304      676E6564 
+ 1304      20636861 
+ 1304      7200
+ 1305              	.LASF22:
+ 1306 010a 73746570 		.ascii	"steps_to_do\000"
+ 1306      735F746F 
+ 1306      5F646F00 
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 29
 
 
- 1283              	.LASF40:
- 1284 0025 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 1284      4320342E 
- 1284      392E3320 
- 1284      32303135 
- 1284      30333033 
- 1285 0058 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 1285      20726576 
- 1285      6973696F 
- 1285      6E203232 
- 1285      31323230 
- 1286 008b 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 1286      66756E63 
- 1286      74696F6E 
- 1286      2D736563 
- 1286      74696F6E 
- 1287              	.LASF37:
- 1288 00b3 6D6F746F 		.ascii	"motor_up\000"
- 1288      725F7570 
- 1288      00
- 1289              	.LASF20:
- 1290 00bc 5A5F4178 		.ascii	"Z_Axis_Bumper_Stops\000"
- 1290      69735F42 
- 1290      756D7065 
- 1290      725F5374 
- 1290      6F707300 
- 1291              	.LASF21:
- 1292 00d0 74726176 		.ascii	"travel\000"
- 1292      656C00
- 1293              	.LASF28:
- 1294 00d7 64697374 		.ascii	"distance\000"
- 1294      616E6365 
- 1294      00
- 1295              	.LASF14:
- 1296 00e0 666C6F61 		.ascii	"float\000"
- 1296      7400
- 1297              	.LASF24:
- 1298 00e6 5A5F4178 		.ascii	"Z_Axis_Move_ISR\000"
- 1298      69735F4D 
- 1298      6F76655F 
- 1298      49535200 
- 1299              	.LASF31:
- 1300 00f6 5A5F706F 		.ascii	"Z_pos\000"
- 1300      7300
- 1301              	.LASF1:
- 1302 00fc 756E7369 		.ascii	"unsigned char\000"
- 1302      676E6564 
- 1302      20636861 
- 1302      7200
- 1303              	.LASF22:
- 1304 010a 73746570 		.ascii	"steps_to_do\000"
- 1304      735F746F 
- 1304      5F646F00 
- 1305              	.LASF36:
- 1306 0116 5A5F6178 		.ascii	"Z_axis_bumper_count\000"
- 1306      69735F62 
- 1306      756D7065 
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 29
-
-
- 1306      725F636F 
- 1306      756E7400 
- 1307              	.LASF5:
- 1308 012a 6C6F6E67 		.ascii	"long unsigned int\000"
- 1308      20756E73 
- 1308      69676E65 
- 1308      6420696E 
- 1308      7400
- 1309              	.LASF25:
- 1310 013c 5A5F4178 		.ascii	"Z_Axis_GoTo\000"
- 1310      69735F47 
- 1310      6F546F00 
- 1311              	.LASF29:
- 1312 0148 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1312      52784275 
- 1312      66666572 
- 1312      00
- 1313              	.LASF15:
- 1314 0155 646F7562 		.ascii	"double\000"
- 1314      6C6500
- 1315              	.LASF30:
- 1316 015c 5A5F6178 		.ascii	"Z_axis_state\000"
- 1316      69735F73 
- 1316      74617465 
- 1316      00
- 1317              	.LASF35:
- 1318 0169 6D6F746F 		.ascii	"motor_direction\000"
- 1318      725F6469 
- 1318      72656374 
- 1318      696F6E00 
- 1319              	.LASF19:
- 1320 0179 5A5F4178 		.ascii	"Z_Axis_Home\000"
- 1320      69735F48 
- 1320      6F6D6500 
- 1321              	.LASF18:
- 1322 0185 5A5F4178 		.ascii	"Z_Axis_Init\000"
- 1322      69735F49 
- 1322      6E697400 
- 1323              	.LASF12:
- 1324 0191 75696E74 		.ascii	"uint16\000"
- 1324      313600
- 1325              	.LASF39:
- 1326 0198 6D61785F 		.ascii	"max_distance\000"
- 1326      64697374 
- 1326      616E6365 
- 1326      00
- 1327              	.LASF27:
- 1328 01a5 706F7369 		.ascii	"position\000"
- 1328      74696F6E 
+ 1307              	.LASF36:
+ 1308 0116 5A5F6178 		.ascii	"Z_axis_bumper_count\000"
+ 1308      69735F62 
+ 1308      756D7065 
+ 1308      725F636F 
+ 1308      756E7400 
+ 1309              	.LASF5:
+ 1310 012a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1310      20756E73 
+ 1310      69676E65 
+ 1310      6420696E 
+ 1310      7400
+ 1311              	.LASF25:
+ 1312 013c 5A5F4178 		.ascii	"Z_Axis_GoTo\000"
+ 1312      69735F47 
+ 1312      6F546F00 
+ 1313              	.LASF29:
+ 1314 0148 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1314      52784275 
+ 1314      66666572 
+ 1314      00
+ 1315              	.LASF15:
+ 1316 0155 646F7562 		.ascii	"double\000"
+ 1316      6C6500
+ 1317              	.LASF30:
+ 1318 015c 5A5F6178 		.ascii	"Z_axis_state\000"
+ 1318      69735F73 
+ 1318      74617465 
+ 1318      00
+ 1319              	.LASF35:
+ 1320 0169 6D6F746F 		.ascii	"motor_direction\000"
+ 1320      725F6469 
+ 1320      72656374 
+ 1320      696F6E00 
+ 1321              	.LASF19:
+ 1322 0179 5A5F4178 		.ascii	"Z_Axis_Home\000"
+ 1322      69735F48 
+ 1322      6F6D6500 
+ 1323              	.LASF18:
+ 1324 0185 5A5F4178 		.ascii	"Z_Axis_Init\000"
+ 1324      69735F49 
+ 1324      6E697400 
+ 1325              	.LASF12:
+ 1326 0191 75696E74 		.ascii	"uint16\000"
+ 1326      313600
+ 1327              	.LASF39:
+ 1328 0198 6D61785F 		.ascii	"max_distance\000"
+ 1328      64697374 
+ 1328      616E6365 
  1328      00
- 1329              	.LASF13:
- 1330 01ae 75696E74 		.ascii	"uint32\000"
- 1330      333200
- 1331              	.LASF8:
- 1332 01b5 756E7369 		.ascii	"unsigned int\000"
- 1332      676E6564 
- 1332      20696E74 
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 30
+ 1329              	.LASF27:
+ 1330 01a5 706F7369 		.ascii	"position\000"
+ 1330      74696F6E 
+ 1330      00
+ 1331              	.LASF13:
+ 1332 01ae 75696E74 		.ascii	"uint32\000"
+ 1332      333200
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 30
 
 
- 1332      00
- 1333              	.LASF7:
- 1334 01c2 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1334      206C6F6E 
- 1334      6720756E 
- 1334      7369676E 
- 1334      65642069 
- 1335              	.LASF23:
- 1336 01d9 5A5F4178 		.ascii	"Z_Axis_Bumper_ISR\000"
- 1336      69735F42 
- 1336      756D7065 
- 1336      725F4953 
- 1336      5200
- 1337              	.LASF10:
- 1338 01eb 696E7433 		.ascii	"int32_t\000"
- 1338      325F7400 
- 1339              	.LASF17:
- 1340 01f3 73697A65 		.ascii	"sizetype\000"
- 1340      74797065 
- 1340      00
- 1341              	.LASF6:
- 1342 01fc 6C6F6E67 		.ascii	"long long int\000"
- 1342      206C6F6E 
- 1342      6720696E 
- 1342      7400
- 1343              	.LASF34:
- 1344 020a 665F7573 		.ascii	"f_ustepping\000"
- 1344      74657070 
- 1344      696E6700 
- 1345              	.LASF16:
- 1346 0216 63686172 		.ascii	"char\000"
- 1346      00
- 1347              	.LASF38:
- 1348 021b 6D6F746F 		.ascii	"motor_down\000"
- 1348      725F646F 
- 1348      776E00
- 1349              	.LASF2:
- 1350 0226 73686F72 		.ascii	"short int\000"
- 1350      7420696E 
- 1350      7400
- 1351              	.LASF11:
- 1352 0230 75696E74 		.ascii	"uint8\000"
- 1352      3800
- 1353              	.LASF32:
- 1354 0236 73637265 		.ascii	"screw_lead\000"
- 1354      775F6C65 
- 1354      616400
- 1355              	.LASF42:
- 1356 0241 433A5C55 		.ascii	"C:\\Users\\Guillaume\\Documents\\Projects\\Biobot\\"
- 1356      73657273 
- 1356      5C477569 
- 1356      6C6C6175 
- 1356      6D655C44 
- 1357 026e 47726970 		.ascii	"Gripper\\module-gripper-psoc.cydsn\000"
- 1357      7065725C 
- 1357      6D6F6475 
- 1357      6C652D67 
-ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccFEU9ZG.s 			page 31
+ 1333              	.LASF8:
+ 1334 01b5 756E7369 		.ascii	"unsigned int\000"
+ 1334      676E6564 
+ 1334      20696E74 
+ 1334      00
+ 1335              	.LASF7:
+ 1336 01c2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1336      206C6F6E 
+ 1336      6720756E 
+ 1336      7369676E 
+ 1336      65642069 
+ 1337              	.LASF23:
+ 1338 01d9 5A5F4178 		.ascii	"Z_Axis_Bumper_ISR\000"
+ 1338      69735F42 
+ 1338      756D7065 
+ 1338      725F4953 
+ 1338      5200
+ 1339              	.LASF10:
+ 1340 01eb 696E7433 		.ascii	"int32_t\000"
+ 1340      325F7400 
+ 1341              	.LASF17:
+ 1342 01f3 73697A65 		.ascii	"sizetype\000"
+ 1342      74797065 
+ 1342      00
+ 1343              	.LASF6:
+ 1344 01fc 6C6F6E67 		.ascii	"long long int\000"
+ 1344      206C6F6E 
+ 1344      6720696E 
+ 1344      7400
+ 1345              	.LASF34:
+ 1346 020a 665F7573 		.ascii	"f_ustepping\000"
+ 1346      74657070 
+ 1346      696E6700 
+ 1347              	.LASF16:
+ 1348 0216 63686172 		.ascii	"char\000"
+ 1348      00
+ 1349              	.LASF38:
+ 1350 021b 6D6F746F 		.ascii	"motor_down\000"
+ 1350      725F646F 
+ 1350      776E00
+ 1351              	.LASF2:
+ 1352 0226 73686F72 		.ascii	"short int\000"
+ 1352      7420696E 
+ 1352      7400
+ 1353              	.LASF11:
+ 1354 0230 75696E74 		.ascii	"uint8\000"
+ 1354      3800
+ 1355              	.LASF32:
+ 1356 0236 73637265 		.ascii	"screw_lead\000"
+ 1356      775F6C65 
+ 1356      616400
+ 1357              	.LASF42:
+ 1358 0241 433A5C55 		.ascii	"C:\\Users\\Guillaume\\Documents\\Projects\\Biobot\\"
+ 1358      73657273 
+ 1358      5C477569 
+ 1358      6C6C6175 
+ 1358      6D655C44 
+ARM GAS  C:\Users\GUILLA~1\AppData\Local\Temp\ccZaRvTB.s 			page 31
 
 
- 1357      72697070 
- 1358              	.LASF4:
- 1359 0290 6C6F6E67 		.ascii	"long int\000"
- 1359      20696E74 
- 1359      00
- 1360              	.LASF0:
- 1361 0299 7369676E 		.ascii	"signed char\000"
- 1361      65642063 
- 1361      68617200 
- 1362              	.LASF26:
- 1363 02a5 4D6F7665 		.ascii	"Move_Up\000"
- 1363      5F557000 
- 1364              	.LASF3:
- 1365 02ad 73686F72 		.ascii	"short unsigned int\000"
- 1365      7420756E 
- 1365      7369676E 
- 1365      65642069 
- 1365      6E7400
- 1366              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 1359 026e 47726970 		.ascii	"Gripper\\module-gripper-psoc.cydsn\000"
+ 1359      7065725C 
+ 1359      6D6F6475 
+ 1359      6C652D67 
+ 1359      72697070 
+ 1360              	.LASF4:
+ 1361 0290 6C6F6E67 		.ascii	"long int\000"
+ 1361      20696E74 
+ 1361      00
+ 1362              	.LASF0:
+ 1363 0299 7369676E 		.ascii	"signed char\000"
+ 1363      65642063 
+ 1363      68617200 
+ 1364              	.LASF26:
+ 1365 02a5 4D6F7665 		.ascii	"Move_Up\000"
+ 1365      5F557000 
+ 1366              	.LASF3:
+ 1367 02ad 73686F72 		.ascii	"short unsigned int\000"
+ 1367      7420756E 
+ 1367      7369676E 
+ 1367      65642069 
+ 1367      6E7400
+ 1368              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

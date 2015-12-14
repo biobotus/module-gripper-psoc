@@ -900,56 +900,55 @@ END GROUP
                 0x00000ad4       0x4c .\ARM_GCC_493\Debug\zaxis.o
                 0x00000ad4                Z_Axis_Home
  .text.Z_Axis_Bumper_Stops
-                0x00000b20       0x90 .\ARM_GCC_493\Debug\zaxis.o
+                0x00000b20       0x94 .\ARM_GCC_493\Debug\zaxis.o
                 0x00000b20                Z_Axis_Bumper_Stops
  .text.Z_Axis_GoTo
-                0x00000bb0       0xf4 .\ARM_GCC_493\Debug\zaxis.o
-                0x00000bb0                Z_Axis_GoTo
+                0x00000bb4       0xf4 .\ARM_GCC_493\Debug\zaxis.o
+                0x00000bb4                Z_Axis_GoTo
  .text.Z_Axis_Bumper_ISR
-                0x00000ca4       0x20 .\ARM_GCC_493\Debug\zaxis.o
-                0x00000ca4                Z_Axis_Bumper_ISR
+                0x00000ca8       0x20 .\ARM_GCC_493\Debug\zaxis.o
+                0x00000ca8                Z_Axis_Bumper_ISR
  .text.Z_Axis_Move_ISR
-                0x00000cc4       0xac .\ARM_GCC_493\Debug\zaxis.o
-                0x00000cc4                Z_Axis_Move_ISR
- .text.Move_Up  0x00000d70       0x4c .\ARM_GCC_493\Debug\zaxis.o
-                0x00000d70                Move_Up
+                0x00000cc8       0xac .\ARM_GCC_493\Debug\zaxis.o
+                0x00000cc8                Z_Axis_Move_ISR
+ .text.Move_Up  0x00000d74       0x4c .\ARM_GCC_493\Debug\zaxis.o
+                0x00000d74                Move_Up
  .text.treatCanMessage
-                0x00000dbc      0x358 .\ARM_GCC_493\Debug\main.o
-                0x00000dbc                treatCanMessage
+                0x00000dc0      0x358 .\ARM_GCC_493\Debug\main.o
+                0x00000dc0                treatCanMessage
  .text.CounterCanInterruptHandler
-                0x00001114       0x20 .\ARM_GCC_493\Debug\main.o
-                0x00001114                CounterCanInterruptHandler
- .text.main     0x00001134       0x60 .\ARM_GCC_493\Debug\main.o
-                0x00001134                main
+                0x00001118       0x20 .\ARM_GCC_493\Debug\main.o
+                0x00001118                CounterCanInterruptHandler
+ .text.main     0x00001138       0x60 .\ARM_GCC_493\Debug\main.o
+                0x00001138                main
  .text.init_can_module
-                0x00001194       0x24 .\ARM_GCC_493\Debug\main.o
-                0x00001194                init_can_module
+                0x00001198       0x24 .\ARM_GCC_493\Debug\main.o
+                0x00001198                init_can_module
  .text.IntDefaultHandler
-                0x000011b8        0x8 .\ARM_GCC_493\Debug\Cm3Start.o
-                0x000011b8                IntDefaultHandler
- .text._sbrk    0x000011c0       0x54 .\ARM_GCC_493\Debug\Cm3Start.o
-                0x000011c0                _sbrk
- .text.Start_c  0x00001214       0x98 .\ARM_GCC_493\Debug\Cm3Start.o
-                0x00001214                Start_c
+                0x000011bc        0x8 .\ARM_GCC_493\Debug\Cm3Start.o
+                0x000011bc                IntDefaultHandler
+ .text._sbrk    0x000011c4       0x54 .\ARM_GCC_493\Debug\Cm3Start.o
+                0x000011c4                _sbrk
+ .text.Start_c  0x00001218       0x98 .\ARM_GCC_493\Debug\Cm3Start.o
+                0x00001218                Start_c
  .text.initialize_psoc
-                0x000012ac       0x8c .\ARM_GCC_493\Debug\Cm3Start.o
-                0x000012ac                initialize_psoc
+                0x000012b0       0x8c .\ARM_GCC_493\Debug\Cm3Start.o
+                0x000012b0                initialize_psoc
  .text.CYMEMZERO
-                0x00001338       0x1c .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
+                0x0000133c       0x1c .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
  .text.CYCONFIGCPY
-                0x00001354       0x1c .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
+                0x00001358       0x1c .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
  .text.CyClockStartupError
-                0x00001370        0xc .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
+                0x00001374        0xc .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
  .text.cfg_write_bytes32
-                0x0000137c       0x74 .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
+                0x00001380       0x74 .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
  .text.ClockSetup
-                0x000013f0      0x140 .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
+                0x000013f4      0x140 .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
  .text.AnalogSetDefault
-                0x00001530       0x58 .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
+                0x00001534       0x58 .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
  .text.cyfitter_cfg
-                0x00001588      0x1bc .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
-                0x00001588                cyfitter_cfg
- *fill*         0x00001744        0x4 
+                0x0000158c      0x1bc .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
+                0x0000158c                cyfitter_cfg
  .text          0x00001748       0x58 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CyBootAsmGnu.o)
                 0x00001748                CyDelayCycles
                 0x00001786                CyEnterCriticalSection
@@ -1756,45 +1755,45 @@ END GROUP
  .debug_abbrev  0x00002521      0x12d .\ARM_GCC_493\Debug\module-gripper-psoc.a(CyFlash.o)
  .debug_abbrev  0x0000264e      0x179 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CySpc.o)
 
-.debug_line     0x00000000     0x4119
+.debug_line     0x00000000     0x411a
  *(.debug_line)
  .debug_line    0x00000000      0x1c1 .\ARM_GCC_493\Debug\CANCommunication.o
  .debug_line    0x000001c1      0x22f .\ARM_GCC_493\Debug\dynamixelCom.o
  .debug_line    0x000003f0      0x43a .\ARM_GCC_493\Debug\dynamixelPacket.o
  .debug_line    0x0000082a      0x203 .\ARM_GCC_493\Debug\gripperEeprom.o
- .debug_line    0x00000a2d      0x236 .\ARM_GCC_493\Debug\zaxis.o
- .debug_line    0x00000c63      0x238 .\ARM_GCC_493\Debug\main.o
- .debug_line    0x00000e9b       0x53 .\ARM_GCC_493\Debug\cymetadata.o
- .debug_line    0x00000eee      0x1d5 .\ARM_GCC_493\Debug\Cm3Start.o
- .debug_line    0x000010c3      0x225 .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
- .debug_line    0x000012e8       0x7f .\ARM_GCC_493\Debug\module-gripper-psoc.a(CyBootAsmGnu.o)
- .debug_line    0x00001367      0x841 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CyLib.o)
- .debug_line    0x00001ba8      0x36f .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyPm.o)
- .debug_line    0x00001f17      0x316 .\ARM_GCC_493\Debug\module-gripper-psoc.a(UART2DYNAMIXEL.o)
- .debug_line    0x0000222d       0x9c .\ARM_GCC_493\Debug\module-gripper-psoc.a(UART2DYNAMIXEL_INT.o)
- .debug_line    0x000022c9      0x174 .\ARM_GCC_493\Debug\module-gripper-psoc.a(isr_rx_interrupt.o)
- .debug_line    0x0000243d       0x9c .\ARM_GCC_493\Debug\module-gripper-psoc.a(CAN_Standby.o)
- .debug_line    0x000024d9      0x34a .\ARM_GCC_493\Debug\module-gripper-psoc.a(CAN_1.o)
- .debug_line    0x00002823       0xc0 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CAN_1_INT.o)
- .debug_line    0x000028e3      0x27a .\ARM_GCC_493\Debug\module-gripper-psoc.a(CAN_1_TX_RX_func.o)
- .debug_line    0x00002b5d       0x75 .\ARM_GCC_493\Debug\module-gripper-psoc.a(ControlReg.o)
- .debug_line    0x00002bd2      0x228 .\ARM_GCC_493\Debug\module-gripper-psoc.a(EEPROM.o)
- .debug_line    0x00002dfa      0x166 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Counter_CanReader.o)
- .debug_line    0x00002f60      0x160 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CanReaderISR.o)
- .debug_line    0x000030c0      0x1c0 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Clock.o)
- .debug_line    0x00003280      0x16b .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Motor_Speed.o)
- .debug_line    0x000033eb       0xf7 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Power.o)
- .debug_line    0x000034e2      0x18b .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Step_Dist.o)
- .debug_line    0x0000366d       0x6f .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_GO.o)
- .debug_line    0x000036dc       0xb6 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Bumper_Port.o)
- .debug_line    0x00003792      0x175 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Bumper_ISR.o)
- .debug_line    0x00003907       0xa1 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_StepSizeA.o)
- .debug_line    0x000039a8       0xa1 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_StepSizeB.o)
- .debug_line    0x00003a49       0xa1 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Direction.o)
- .debug_line    0x00003aea       0x9e .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Enable.o)
- .debug_line    0x00003b88      0x173 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Move_ISR.o)
- .debug_line    0x00003cfb      0x207 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CyFlash.o)
- .debug_line    0x00003f02      0x217 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CySpc.o)
+ .debug_line    0x00000a2d      0x237 .\ARM_GCC_493\Debug\zaxis.o
+ .debug_line    0x00000c64      0x238 .\ARM_GCC_493\Debug\main.o
+ .debug_line    0x00000e9c       0x53 .\ARM_GCC_493\Debug\cymetadata.o
+ .debug_line    0x00000eef      0x1d5 .\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_line    0x000010c4      0x225 .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyfitter_cfg.o)
+ .debug_line    0x000012e9       0x7f .\ARM_GCC_493\Debug\module-gripper-psoc.a(CyBootAsmGnu.o)
+ .debug_line    0x00001368      0x841 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CyLib.o)
+ .debug_line    0x00001ba9      0x36f .\ARM_GCC_493\Debug\module-gripper-psoc.a(cyPm.o)
+ .debug_line    0x00001f18      0x316 .\ARM_GCC_493\Debug\module-gripper-psoc.a(UART2DYNAMIXEL.o)
+ .debug_line    0x0000222e       0x9c .\ARM_GCC_493\Debug\module-gripper-psoc.a(UART2DYNAMIXEL_INT.o)
+ .debug_line    0x000022ca      0x174 .\ARM_GCC_493\Debug\module-gripper-psoc.a(isr_rx_interrupt.o)
+ .debug_line    0x0000243e       0x9c .\ARM_GCC_493\Debug\module-gripper-psoc.a(CAN_Standby.o)
+ .debug_line    0x000024da      0x34a .\ARM_GCC_493\Debug\module-gripper-psoc.a(CAN_1.o)
+ .debug_line    0x00002824       0xc0 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CAN_1_INT.o)
+ .debug_line    0x000028e4      0x27a .\ARM_GCC_493\Debug\module-gripper-psoc.a(CAN_1_TX_RX_func.o)
+ .debug_line    0x00002b5e       0x75 .\ARM_GCC_493\Debug\module-gripper-psoc.a(ControlReg.o)
+ .debug_line    0x00002bd3      0x228 .\ARM_GCC_493\Debug\module-gripper-psoc.a(EEPROM.o)
+ .debug_line    0x00002dfb      0x166 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Counter_CanReader.o)
+ .debug_line    0x00002f61      0x160 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CanReaderISR.o)
+ .debug_line    0x000030c1      0x1c0 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Clock.o)
+ .debug_line    0x00003281      0x16b .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Motor_Speed.o)
+ .debug_line    0x000033ec       0xf7 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Power.o)
+ .debug_line    0x000034e3      0x18b .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Step_Dist.o)
+ .debug_line    0x0000366e       0x6f .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_GO.o)
+ .debug_line    0x000036dd       0xb6 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Bumper_Port.o)
+ .debug_line    0x00003793      0x175 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Bumper_ISR.o)
+ .debug_line    0x00003908       0xa1 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_StepSizeA.o)
+ .debug_line    0x000039a9       0xa1 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_StepSizeB.o)
+ .debug_line    0x00003a4a       0xa1 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Direction.o)
+ .debug_line    0x00003aeb       0x9e .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Enable.o)
+ .debug_line    0x00003b89      0x173 .\ARM_GCC_493\Debug\module-gripper-psoc.a(Z_Axis_Move_ISR.o)
+ .debug_line    0x00003cfc      0x207 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CyFlash.o)
+ .debug_line    0x00003f03      0x217 .\ARM_GCC_493\Debug\module-gripper-psoc.a(CySpc.o)
 
 .debug_frame    0x00000000     0x403c
  *(.debug_frame)
