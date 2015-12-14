@@ -65,6 +65,9 @@ uint8 treatCanMessage(uint8* canPacket)
             sendPacketToDynamixel(dynamixel_setPositionRegPacket(motorType[MOTOR_TYPE_RIGHT], rightMotorPosition/*249*/));
             sendPacketToDynamixel(dynamixel_setPositionRegPacket(motorType[MOTOR_TYPE_LEFT], leftMotorPosition/*491*/));
             sendPacketToDynamixel(dynamixel_getActionPacket());
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_OPEN_GRIPPER, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
             
         case CAN_INSTRUCTION_MOVE:
@@ -75,6 +78,9 @@ uint8 treatCanMessage(uint8* canPacket)
             //      Position of the motor (between 0 and 0x3ff)
             
             sendPacketToDynamixel(dynamixel_setPositionPacket(canPacket[1], (uint16)((canPacket[3]<<8) + canPacket[2])));
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_MOVE, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
         
         case CAN_INSTRUCTION_TILT:
@@ -83,6 +89,9 @@ uint8 treatCanMessage(uint8* canPacket)
             //      position of the motor
 
             sendPacketToDynamixel(dynamixel_setPositionPacket(motorType[MOTOR_TYPE_TILT], (uint16)((canPacket[2]<<8) + canPacket[1])));
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_TILT, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
             
         case CAN_INSTRUCTION_ROTATE:
@@ -91,6 +100,9 @@ uint8 treatCanMessage(uint8* canPacket)
             //      position of the motor
             
             sendPacketToDynamixel(dynamixel_setPositionPacket(motorType[MOTOR_TYPE_ROTATE], (uint16)((canPacket[2]<<8) + canPacket[1])));
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_ROTATE, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
         
         case CAN_INSTRUCTION_SET_MOVING_SPEED:
@@ -101,6 +113,9 @@ uint8 treatCanMessage(uint8* canPacket)
             //      Moving speed of the motor (between 0 and 0x3ff)
             
             sendPacketToDynamixel(dynamixel_setMovingSpeedPacket(canPacket[1], (uint16)((canPacket[3]<<8) + canPacket[2])));
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_SET_MOVING_SPEED, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
             
         case CAN_INSTRUCTION_SET_TORQUE:
@@ -111,6 +126,9 @@ uint8 treatCanMessage(uint8* canPacket)
             //      Torque of the motor (between 0 and 0x3ff)
             
             sendPacketToDynamixel(dynamixel_setTorquePacket(canPacket[1], (uint16)((canPacket[3]<<8) + canPacket[2])));
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_SET_TORQUE, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
             
         case CAN_INSTRUCTION_SET_TORQUE_ENABLE:
@@ -123,6 +141,9 @@ uint8 treatCanMessage(uint8* canPacket)
             //      1 means apply torque
             
             sendPacketToDynamixel(dynamixel_setTorqueEnablePacket(canPacket[1], canPacket[2]));
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_SET_TORQUE_ENABLE, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
             
         case CAN_INSTRUCTION_GET_DATA:
@@ -136,6 +157,9 @@ uint8 treatCanMessage(uint8* canPacket)
 			
 			treatingAddress = canPacket[2];
 			sendPacketToDynamixel(dynamixel_getReadPacket(canPacket[1], canPacket[2], canPacket[3]));
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_GET_DATA, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 			break;
         
         case CAN_INSTRUCTION_SET_DATA:
@@ -160,16 +184,24 @@ uint8 treatCanMessage(uint8* canPacket)
                     break;
             }
             
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_SET_DATA, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
             
         case CAN_INSTRUCTION_CLOCK_4M:
             
             SETCLOCK_4MHZ;
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_CLOCK_4M, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
             
         case CAN_INSTRUCTION_CLOCK_8M:
             
             SETCLOCK_8MHZ;
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_CLOCK_8M, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
             
         case CAN_INSTRUCTION_GET_MOTOR_TYPE:
@@ -189,6 +221,9 @@ uint8 treatCanMessage(uint8* canPacket)
             
             eraseMotorType(canPacket[1]);
             saveMotorType(canPacket[1], canPacket[2]);
+            
+            //Quick fix to unlock PC APP
+            sendDataToCAN(CAN_INSTRUCTION_SET_MOTOR_TYPE, CAN_HARDWARE_FILTER_ID, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
             break;
             
     }
